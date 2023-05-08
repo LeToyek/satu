@@ -29,4 +29,9 @@ class Partner extends Model
     {
         return $this->morphMany(Document::class, 'documentable');
     }
+
+    public function campaigns()
+    {
+        return $this->hasMany(Campaign::class);
+    }
 }
