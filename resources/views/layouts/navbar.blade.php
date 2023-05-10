@@ -81,22 +81,25 @@
 					<div class="nav-menu">
 						<ul>
 							<li>
-								<a href="index.html">Home</a>
+								<a href="/">Home</a>
 							</li>
 							<li>
-								<a href="project-1.html">Daftar</a>
+								<a href="/register">Daftar</a>
 							</li>
 							<li>
-								<a href="events.html">Cara Kerja</a>
+								<a href="/cara-kerja">Cara Kerja</a>
 							</li>
 							<li>
-								<a href="news-standard.html">Testimoni</a>
+								<a href="/testimoni">Testimoni</a>
 							</li>
 							<li>
-								<a href="news-standard.html">FAQ</a>
+								<a href="/faq">FAQ</a>
 							</li>
 							<li>
-								<a href="contact.html">Kontak</a>
+								<a href="/about-us">Tentang Kami</a>
+							</li>
+							<li>
+								<a href="/contact-us">Kontak</a>
 							</li>
 						</ul>
 					</div>
