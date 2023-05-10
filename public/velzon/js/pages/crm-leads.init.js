@@ -123,7 +123,7 @@ xhttp.onload = function () {
     });
     leadsList.remove("id", `<a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a>`);
 }
-xhttp.open("GET", "build/json/leads-list.json");
+xhttp.open("GET", "velzon/json/leads-list.json");
 xhttp.send();
 
 // customer image

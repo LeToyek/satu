@@ -57,7 +57,7 @@ if (chartDonutBasicColors) {
     chart.render();
 }
 
-var url = "build/json/";
+var url = "velzon/json/";
 var allJobList = '';
 var editList = false;
 

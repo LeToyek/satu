@@ -6,7 +6,7 @@ Contact: Themesbrand@gmail.com
 File: mailbox init Js File
 */
 
-var url="build/json/";
+var url="velzon/json/";
 var allmaillist = '';
 const loader = document.querySelector("#elmLoader");
 // showing loading
