@@ -1,9 +1,5 @@
 @extends('layouts.index')
 @section('container')
-    <!--[if lte IE 9]>
-          <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-
-    <--====== Page Title Start ======-->
     <section class="page-title-area">
         <div class="container">
             <div class="row align-items-center justify-content-between">
@@ -30,23 +26,19 @@
                         <div class="tab-nav-area text-center">
                             <ul class="nav nav-tabs" id="faqTab" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" data-toggle="tab" href="#general"
-                                        role="tab">General</a>
+                                    <a class="nav-link active" data-toggle="tab" href="#general" role="tab">General</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#speakers" role="tab">Speakers</a>
+                                    <a class="nav-link" data-toggle="tab" href="#speakers" role="tab">Crowdfunding</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#pricing" role="tab">Pricing</a>
+                                    <a class="nav-link" data-toggle="tab" href="#pricing" role="tab">Pendana</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#support" role="tab">Support</a>
+                                    <a class="nav-link" data-toggle="tab" href="#support" role="tab">Mitra</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#history" role="tab">History</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#customers" role="tab">Customers</a>
+                                    <a class="nav-link" data-toggle="tab" href="#history" role="tab">Keamanan</a>
                                 </li>
                             </ul>
                         </div>
@@ -56,150 +48,77 @@
                                     <div class="accordion-item">
                                         <h5 class="accordion-title" data-toggle="collapse" aria-expanded="true"
                                             data-target="#accordion-1-1">
-                                            Better Research, Better Design, Better Results
+                                            Bagaimana SaTu menyimpan data yang telah saya berikan?
                                         </h5>
                                         <div id="accordion-1-1" class="collapse show" data-parent="#accordionFaqOne">
                                             <div class="accordion-content">
-                                                Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium
-                                                dolore seyse
-                                                mque laudantium totam rem aperiam, eaque ipsa quae ab illo inventore
-                                                veritatis et
-                                                quasi architecto beatae vitae dicta sunt explicabo.
+                                                SaTu mempertahankan dokumen yang terkait dengan Dokumentasi Identifikasi
+                                                Pelanggan (CID) minimal selama lima tahun. Namun, jika Anda ingin
+                                                menghapus
+                                                data Anda sesuai dengan peraturan hukum yang berlaku, Anda dapat meminta
+                                                bantuan dari tim dukungan pelanggan kami.
                                             </div>
                                         </div>
                                     </div>
                                     <div class="accordion-item">
                                         <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
                                             data-target="#accordion-1-2">
-                                            Smashing Book Excerpt Bringing Personality Back Web
+                                            Apakah keunikan SaTu?
                                         </h5>
                                         <div id="accordion-1-2" class="collapse" data-parent="#accordionFaqOne">
                                             <div class="accordion-content">
-                                                Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium
-                                                dolore seyse
-                                                mque laudantium totam rem aperiam, eaque ipsa quae ab illo inventore
-                                                veritatis et
-                                                quasi architecto beatae vitae dicta sunt explicabo.
+                                                <b>Pertama,</b> pendana di SaTu, baik itu individu maupun institusional
+                                                (perusahaan), melakukan pendanaan dengan tujuan sosial. Artinya, mereka
+                                                mendanai usaha Mikro serta Usaha Kecil dan Menengah (UMKM)
+                                                untuk membantu kemajuan dan meningkatkan daya saing bisnis tersebut.
+                                                <br>
+                                                <b>Kedua,</b> pendanaan SaTu disalurkan kepada pihak penerima pinjaman
+                                                setelah melewati
+                                                seleksi ketat menggunakan credit scoring dan analisis risiko menyeluruh
+                                                untuk memilih calon penerima pinjaman yang memenuhi kriteria
+                                                (credit-worthy
+                                                borrowers). Selama lebih dari 5 tahun, kami telah berpengalaman dalam
+                                                memberikan pendampingan dan pengelolaan pinjaman dengan tingkat gagal
+                                                bayar
+                                                (default atau NPL) yang sangat rendah, hampir mendekati 0%.
+                                                <br>
+
                                             </div>
                                         </div>
                                     </div>
                                     <div class="accordion-item">
                                         <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
                                             data-target="#accordion-1-3">
-                                            Using Low Vision As My Tool To Help Me Teach WordPress
+                                            Apakah yang dimaksud dengan skor kredit penerima pinjaman?
                                         </h5>
                                         <div id="accordion-1-3" class="collapse" data-parent="#accordionFaqOne">
                                             <div class="accordion-content">
-                                                Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium
-                                                dolore seyse
-                                                mque laudantium totam rem aperiam, eaque ipsa quae ab illo inventore
-                                                veritatis et
-                                                quasi architecto beatae vitae dicta sunt explicabo.
+                                                Skor kredit adalah teknologi yang dibangun SaTu dan diterapkan untuk
+                                                menyeleksi calon penerima pinjamanSkor kredit ini memberikan
+                                                transparansi
+                                                yang membantu para pendana dalam
+                                                menentukan pilihan pendanaan dengan mempertimbangkan tingkat risiko dan
+                                                imbal hasil yang sesuai.
                                             </div>
                                         </div>
                                     </div>
                                     <div class="accordion-item">
                                         <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
                                             data-target="#accordion-1-4">
-                                            How To Improve Your Design Process With Data-Based Personas
+                                            Apa itu Credit Scoring?
                                         </h5>
                                         <div id="accordion-1-4" class="collapse" data-parent="#accordionFaqOne">
                                             <div class="accordion-content">
-                                                Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium
-                                                dolore seyse
-                                                mque laudantium totam rem aperiam, eaque ipsa quae ab illo inventore
-                                                veritatis et
-                                                quasi architecto beatae vitae dicta sunt explicabo.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
-                                            data-target="#accordion-1-5">
-                                            Better Research, Better Design, Better Results
-                                        </h5>
-                                        <div id="accordion-1-5" class="collapse" data-parent="#accordionFaqOne">
-                                            <div class="accordion-content">
-                                                Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium
-                                                dolore seyse
-                                                mque laudantium totam rem aperiam, eaque ipsa quae ab illo inventore
-                                                veritatis et
-                                                quasi architecto beatae vitae dicta sunt explicabo.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
-                                            data-target="#accordion-1-6">
-                                            Smashing Book Excerpt Bringing Personality Back Web
-                                        </h5>
-                                        <div id="accordion-1-6" class="collapse" data-parent="#accordionFaqOne">
-                                            <div class="accordion-content">
-                                                Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium
-                                                dolore seyse
-                                                mque laudantium totam rem aperiam, eaque ipsa quae ab illo inventore
-                                                veritatis et
-                                                quasi architecto beatae vitae dicta sunt explicabo.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
-                                            data-target="#accordion-1-7">
-                                            Using Low Vision As My Tool To Help Me Teach WordPress
-                                        </h5>
-                                        <div id="accordion-1-7" class="collapse" data-parent="#accordionFaqOne">
-                                            <div class="accordion-content">
-                                                Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium
-                                                dolore seyse
-                                                mque laudantium totam rem aperiam, eaque ipsa quae ab illo inventore
-                                                veritatis et
-                                                quasi architecto beatae vitae dicta sunt explicabo.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
-                                            data-target="#accordion-1-8">
-                                            How To Improve Your Design Process With Data-Based Personas
-                                        </h5>
-                                        <div id="accordion-1-8" class="collapse" data-parent="#accordionFaqOne">
-                                            <div class="accordion-content">
-                                                Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium
-                                                dolore seyse
-                                                mque laudantium totam rem aperiam, eaque ipsa quae ab illo inventore
-                                                veritatis et
-                                                quasi architecto beatae vitae dicta sunt explicabo.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
-                                            data-target="#accordion-1-9">
-                                            Smashing Book Excerpt Bringing Personality Back Web
-                                        </h5>
-                                        <div id="accordion-1-9" class="collapse" data-parent="#accordionFaqOne">
-                                            <div class="accordion-content">
-                                                Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium
-                                                dolore seyse
-                                                mque laudantium totam rem aperiam, eaque ipsa quae ab illo inventore
-                                                veritatis et
-                                                quasi architecto beatae vitae dicta sunt explicabo.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
-                                            data-target="#accordion-1-10">
-                                            Using Low Vision As My Tool To Help Me Teach WordPress
-                                        </h5>
-                                        <div id="accordion-1-10" class="collapse" data-parent="#accordionFaqOne">
-                                            <div class="accordion-content">
-                                                Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium
-                                                dolore seyse
-                                                mque laudantium totam rem aperiam, eaque ipsa quae ab illo inventore
-                                                veritatis et
-                                                quasi architecto beatae vitae dicta sunt explicabo.
+                                                Skor kredit SaTu didasarkan pada kemampuan penerima pinjaman untuk
+                                                mengembalikan pinjaman tepat waktu. Sebagai contoh, penerima pinjaman
+                                                dengan
+                                                skor kredit A memiliki probabilitas tinggi, antara 97,11% hingga 100%,
+                                                untuk
+                                                mengembalikan pinjaman tepat waktu. Skor kredit kami didesain untuk
+                                                terus
+                                                belajar dari data dan berkembang menjadi semakin akurat dan presisi
+                                                seiring
+                                                dengan bertambahnya jumlah penerima pinjaman di Amartha.
                                             </div>
                                         </div>
                                     </div>
@@ -210,150 +129,81 @@
                                     <div class="accordion-item">
                                         <h5 class="accordion-title" data-toggle="collapse" aria-expanded="true"
                                             data-target="#accordion-2-1">
-                                            Better Research, Better Design, Better Results
+                                            Apakah itu pendanaan Crowdfunding?
                                         </h5>
                                         <div id="accordion-2-1" class="collapse show" data-parent="#accordionFaqTwo">
                                             <div class="accordion-content">
-                                                Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium
-                                                dolore seyse
-                                                mque laudantium totam rem aperiam, eaque ipsa quae ab illo inventore
-                                                veritatis et
-                                                quasi architecto beatae vitae dicta sunt explicabo.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
-                                            data-target="#accordion-2-2">
-                                            Smashing Book Excerpt Bringing Personality Back Web
-                                        </h5>
-                                        <div id="accordion-2-2" class="collapse" data-parent="#accordionFaqTwo">
-                                            <div class="accordion-content">
-                                                Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium
-                                                dolore seyse
-                                                mque laudantium totam rem aperiam, eaque ipsa quae ab illo inventore
-                                                veritatis et
-                                                quasi architecto beatae vitae dicta sunt explicabo.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
-                                            data-target="#accordion-2-3">
-                                            Using Low Vision As My Tool To Help Me Teach WordPress
-                                        </h5>
-                                        <div id="accordion-2-3" class="collapse" data-parent="#accordionFaqTwo">
-                                            <div class="accordion-content">
-                                                Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium
-                                                dolore seyse
-                                                mque laudantium totam rem aperiam, eaque ipsa quae ab illo inventore
-                                                veritatis et
-                                                quasi architecto beatae vitae dicta sunt explicabo.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
-                                            data-target="#accordion-2-4">
-                                            How To Improve Your Design Process With Data-Based Personas
-                                        </h5>
-                                        <div id="accordion-2-4" class="collapse" data-parent="#accordionFaqTwo">
-                                            <div class="accordion-content">
-                                                Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium
-                                                dolore seyse
-                                                mque laudantium totam rem aperiam, eaque ipsa quae ab illo inventore
-                                                veritatis et
-                                                quasi architecto beatae vitae dicta sunt explicabo.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
-                                            data-target="#accordion-2-5">
-                                            Better Research, Better Design, Better Results
-                                        </h5>
-                                        <div id="accordion-2-5" class="collapse" data-parent="#accordionFaqTwo">
-                                            <div class="accordion-content">
-                                                Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium
-                                                dolore seyse
-                                                mque laudantium totam rem aperiam, eaque ipsa quae ab illo inventore
-                                                veritatis et
-                                                quasi architecto beatae vitae dicta sunt explicabo.
+                                                Pendanaan crowdfunding adalah suatu model pendanaan yang melibatkan
+                                                sekelompok orang yang memberikan dana ke suatu proyek atau usaha,
+                                                biasanya melalui platform online. Sehingga plafon lebih ringan dan
+                                                pendana memiliki kesempatan untuk bisa melakukan diversifikasi
+                                                investasi.
                                             </div>
                                         </div>
                                     </div>
                                     <div class="accordion-item">
                                         <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
                                             data-target="#accordion-2-6">
-                                            Smashing Book Excerpt Bringing Personality Back Web
+                                            Apakah tersedia asuransi untuk pendanaan Crowdfunding?
                                         </h5>
                                         <div id="accordion-2-6" class="collapse" data-parent="#accordionFaqTwo">
                                             <div class="accordion-content">
-                                                Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium
-                                                dolore seyse
-                                                mque laudantium totam rem aperiam, eaque ipsa quae ab illo inventore
-                                                veritatis et
-                                                quasi architecto beatae vitae dicta sunt explicabo.
+                                                Produk penjaminan pendanaan/asuransi tidak tersedia untuk pendanaan
+                                                Crowdfunding. Namun, Anda bisa menyesuaikan tingkat risiko portofolio
+                                                pendanaan Anda dengan berbagai pilihan credit scoring yang tersedia di
+                                                marketplace.
                                             </div>
                                         </div>
                                     </div>
                                     <div class="accordion-item">
                                         <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
-                                            data-target="#accordion-2-7">
-                                            Using Low Vision As My Tool To Help Me Teach WordPress
+                                            data-target="#accordion-2-2">
+                                            Berapa dana yang dibutuhkan untuk melakukan pendanaan Crowdfunding?
                                         </h5>
-                                        <div id="accordion-2-7" class="collapse" data-parent="#accordionFaqTwo">
+                                        <div id="accordion-2-2" class="collapse" data-parent="#accordionFaqTwo">
                                             <div class="accordion-content">
-                                                Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium
-                                                dolore seyse
-                                                mque laudantium totam rem aperiam, eaque ipsa quae ab illo inventore
-                                                veritatis et
-                                                quasi architecto beatae vitae dicta sunt explicabo.
+                                                Untuk memulai melakukan pendanaan Crowdfunding, Anda bisa mendanai mulai
+                                                dari 100 ribu rupiah dan berlaku kelipatan sesuai dengan jumlah total
+                                                plafon yang tersedia di marketplace.
                                             </div>
                                         </div>
                                     </div>
                                     <div class="accordion-item">
                                         <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
-                                            data-target="#accordion-2-8">
-                                            How To Improve Your Design Process With Data-Based Personas
+                                            data-target="#accordion-2-4">
+                                            Berapa tenor yang tersedia untuk pendanaan Crowdfunding?
                                         </h5>
-                                        <div id="accordion-2-8" class="collapse" data-parent="#accordionFaqTwo">
+                                        <div id="accordion-2-4" class="collapse" data-parent="#accordionFaqTwo">
                                             <div class="accordion-content">
-                                                Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium
-                                                dolore seyse
-                                                mque laudantium totam rem aperiam, eaque ipsa quae ab illo inventore
-                                                veritatis et
-                                                quasi architecto beatae vitae dicta sunt explicabo.
+                                                Tenor untuk produk pendanaan Crowdfunding ini adalah 4 pilihan yaitu
+                                                20, 30, 40, 50 minggu yang mana tenor akan diatur oleh UMKM.
                                             </div>
                                         </div>
                                     </div>
                                     <div class="accordion-item">
                                         <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
-                                            data-target="#accordion-2-9">
-                                            Smashing Book Excerpt Bringing Personality Back Web
+                                            data-target="#accordion-2-3">
+                                            Mengapa pencairan pendanaan Crowdfunding saya gagal?
                                         </h5>
-                                        <div id="accordion-2-9" class="collapse" data-parent="#accordionFaqTwo">
+                                        <div id="accordion-2-3" class="collapse" data-parent="#accordionFaqTwo">
                                             <div class="accordion-content">
-                                                Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium
-                                                dolore seyse
-                                                mque laudantium totam rem aperiam, eaque ipsa quae ab illo inventore
-                                                veritatis et
-                                                quasi architecto beatae vitae dicta sunt explicabo.
+                                                Kegagalan dalam pencairan pendanaan dapat disebabkan oleh dua hal: tidak
+                                                terpenuhinya target pendanaan dalam waktu yang ditentukan atau mundurnya
+                                                mitra dari proyek pendanaan. Jika kondisi ini terjadi, maka informasi
+                                                terbaru tentang pendanaan Anda akan segera diperbarui dalam portofolio
+                                                Anda.
                                             </div>
                                         </div>
                                     </div>
                                     <div class="accordion-item">
                                         <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
-                                            data-target="#accordion-2-10">
-                                            Using Low Vision As My Tool To Help Me Teach WordPress
+                                            data-target="#accordion-2-5">
+                                            Berapa lama waktu pencairan pendanaan Crowdfunding?
                                         </h5>
-                                        <div id="accordion-2-10" class="collapse" data-parent="#accordionFaqTwo">
+                                        <div id="accordion-2-5" class="collapse" data-parent="#accordionFaqTwo">
                                             <div class="accordion-content">
-                                                Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium
-                                                dolore seyse
-                                                mque laudantium totam rem aperiam, eaque ipsa quae ab illo inventore
-                                                veritatis et
-                                                quasi architecto beatae vitae dicta sunt explicabo.
+                                                Pencairan dana kepada mitra pendanaan Crowdfunding dapat membutuhkan
+                                                waktu sampai dengan 14 hari kerja setelah pendanaan tersebut terpenuhi.
                                             </div>
                                         </div>
                                     </div>
@@ -362,92 +212,57 @@
                             <div class="tab-pane fade" id="pricing" role="tabpanel">
                                 <div class="accordion" id="accordionFaqThree">
                                     <div class="accordion-item">
-                                        <h5 class="accordion-title" data-toggle="collapse" aria-expanded="true"
-                                            data-target="#accordion-3-1">
-                                            Better Research, Better Design, Better Results
-                                        </h5>
-                                        <div id="accordion-3-1" class="collapse show" data-parent="#accordionFaqThree">
-                                            <div class="accordion-content">
-                                                Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium
-                                                dolore seyse
-                                                mque laudantium totam rem aperiam, eaque ipsa quae ab illo inventore
-                                                veritatis et
-                                                quasi architecto beatae vitae dicta sunt explicabo.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item">
                                         <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
                                             data-target="#accordion-3-2">
-                                            Smashing Book Excerpt Bringing Personality Back Web
+                                            Bagaimana cara bergabung dengan SaTu sebagai pendana?
                                         </h5>
                                         <div id="accordion-3-2" class="collapse" data-parent="#accordionFaqThree">
                                             <div class="accordion-content">
-                                                Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium
-                                                dolore seyse
-                                                mque laudantium totam rem aperiam, eaque ipsa quae ab illo inventore
-                                                veritatis et
-                                                quasi architecto beatae vitae dicta sunt explicabo.
+                                                Anda dapat mengunjungi situs web SaTu dan memilih kampanye penggalangan dana
+                                                yang ingin Anda dukung. Setelah itu, Anda dapat memberikan sumbangan
+                                                berdasarkan jumlah yang Anda inginkan dengan cara yang mudah dan aman
+                                                melalui SaTu.
                                             </div>
                                         </div>
                                     </div>
                                     <div class="accordion-item">
+                                        <h5 class="accordion-title" data-toggle="collapse" aria-expanded="true"
+                                            data-target="#accordion-3-1">
+                                            Bagaimana jika proses verifikasi saya mengalami kegagalan?
+                                        </h5>
+                                        <div id="accordion-3-1" class="collapse show" data-parent="#accordionFaqThree">
+                                            <div class="accordion-content">
+                                                Anda bisa melakukan verifikasi ulang melalui aplikasi atau website Amartha.
+                                                Pastikan bahwa foto EKTP dan selfie yang diunggah diambil secara langsung
+                                                melalui kamera smartphone dan tidak melalui proses scan atau editing.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
                                         <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
                                             data-target="#accordion-3-3">
-                                            Using Low Vision As My Tool To Help Me Teach WordPress
+                                            Bagaimana cara mengetahui perkembangan proyek setelah didanai?
                                         </h5>
                                         <div id="accordion-3-3" class="collapse" data-parent="#accordionFaqThree">
                                             <div class="accordion-content">
-                                                Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium
-                                                dolore seyse
-                                                mque laudantium totam rem aperiam, eaque ipsa quae ab illo inventore
-                                                veritatis et
-                                                quasi architecto beatae vitae dicta sunt explicabo.
+                                                Setiap proyek yang didanai akan memberikan update secara berkala kepada
+                                                pendana. Anda juga dapat melihat perkembangan proyek melalui dashboard di
+                                                akun SaTu Anda.
                                             </div>
                                         </div>
                                     </div>
                                     <div class="accordion-item">
                                         <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
                                             data-target="#accordion-3-4">
-                                            How To Improve Your Design Process With Data-Based Personas
+                                            Dapatkah saya membatalkan pendanaan yang telah saya lakukan?
                                         </h5>
                                         <div id="accordion-3-4" class="collapse" data-parent="#accordionFaqThree">
                                             <div class="accordion-content">
-                                                Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium
-                                                dolore seyse
-                                                mque laudantium totam rem aperiam, eaque ipsa quae ab illo inventore
-                                                veritatis et
-                                                quasi architecto beatae vitae dicta sunt explicabo.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
-                                            data-target="#accordion-3-5">
-                                            Better Research, Better Design, Better Results
-                                        </h5>
-                                        <div id="accordion-3-5" class="collapse" data-parent="#accordionFaqThree">
-                                            <div class="accordion-content">
-                                                Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium
-                                                dolore seyse
-                                                mque laudantium totam rem aperiam, eaque ipsa quae ab illo inventore
-                                                veritatis et
-                                                quasi architecto beatae vitae dicta sunt explicabo.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
-                                            data-target="#accordion-3-6">
-                                            Smashing Book Excerpt Bringing Personality Back Web
-                                        </h5>
-                                        <div id="accordion-3-6" class="collapse" data-parent="#accordionFaqThree">
-                                            <div class="accordion-content">
-                                                Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium
-                                                dolore seyse
-                                                mque laudantium totam rem aperiam, eaque ipsa quae ab illo inventore
-                                                veritatis et
-                                                quasi architecto beatae vitae dicta sunt explicabo.
+                                                Komitmen antara pendana dan penerima pinjaman yang diatur dalam perjanjian
+                                                harus dipertahankan hingga masa pinjaman berakhir. Oleh karena itu, tidak
+                                                diperbolehkan untuk mengakhiri perjanjian dengan cara sepihak sebelum masa
+                                                berakhir.
                                             </div>
                                         </div>
                                     </div>
@@ -458,150 +273,51 @@
                                     <div class="accordion-item">
                                         <h5 class="accordion-title" data-toggle="collapse" aria-expanded="true"
                                             data-target="#accordion-4-1">
-                                            Better Research, Better Design, Better Results
+                                            Bagaimana cara mendaftar sebagai mitra UMKM di SaTu?
                                         </h5>
                                         <div id="accordion-4-1" class="collapse show" data-parent="#accordionFaqFour">
                                             <div class="accordion-content">
-                                                Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium
-                                                dolore seyse
-                                                mque laudantium totam rem aperiam, eaque ipsa quae ab illo inventore
-                                                veritatis et
-                                                quasi architecto beatae vitae dicta sunt explicabo.
+                                                Untuk mendaftar sebagai mitra UMKM di SaTu, Anda harus mengisi formulir
+                                                pendaftaran dan mengunggah dokumen yang diperlukan. Tim SaTu akan meninjau
+                                                dan memvalidasi dokumen Anda sebelum menyetujui pengajuan Anda.
                                             </div>
                                         </div>
                                     </div>
                                     <div class="accordion-item">
                                         <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
                                             data-target="#accordion-4-2">
-                                            Smashing Book Excerpt Bringing Personality Back Web
+                                            Apa yang harus saya lakukan setelah kampanye penggalangan dana selesai?
                                         </h5>
                                         <div id="accordion-4-2" class="collapse" data-parent="#accordionFaqFour">
                                             <div class="accordion-content">
-                                                Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium
-                                                dolore seyse
-                                                mque laudantium totam rem aperiam, eaque ipsa quae ab illo inventore
-                                                veritatis et
-                                                quasi architecto beatae vitae dicta sunt explicabo.
+                                                Setelah kampanye penggalangan dana selesai, mitra UMKM harus memberikan
+                                                laporan yang jelas tentang penggunaan dana tersebut. Hal ini akan membantu
+                                                meningkatkan kepercayaan penggalang dana untuk berpartisipasi dalam kampanye
+                                                selanjutnya dan memastikan transparansi dalam penggunaan dana yang
+                                                terkumpul.
                                             </div>
                                         </div>
                                     </div>
                                     <div class="accordion-item">
                                         <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
                                             data-target="#accordion-4-3">
-                                            Using Low Vision As My Tool To Help Me Teach WordPress
+                                            Apa yang terjadi jika kampanye saya tidak berhasil mencapai target dana?
                                         </h5>
                                         <div id="accordion-4-3" class="collapse" data-parent="#accordionFaqFour">
                                             <div class="accordion-content">
-                                                Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium
-                                                dolore seyse
-                                                mque laudantium totam rem aperiam, eaque ipsa quae ab illo inventore
-                                                veritatis et
-                                                quasi architecto beatae vitae dicta sunt explicabo.
+                                                Jika kampanye Anda tidak berhasil mencapai target dana, biasanya
+                                                semua dana yang berhasil dikumpulkan dikembalikan kepada para pendana.
                                             </div>
                                         </div>
                                     </div>
                                     <div class="accordion-item">
                                         <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
                                             data-target="#accordion-4-4">
-                                            How To Improve Your Design Process With Data-Based Personas
+                                            Apakah saya dapat mengubah target penggalangan dana selama kampanye berlangsung?
                                         </h5>
                                         <div id="accordion-4-4" class="collapse" data-parent="#accordionFaqFour">
                                             <div class="accordion-content">
-                                                Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium
-                                                dolore seyse
-                                                mque laudantium totam rem aperiam, eaque ipsa quae ab illo inventore
-                                                veritatis et
-                                                quasi architecto beatae vitae dicta sunt explicabo.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
-                                            data-target="#accordion-4-5">
-                                            Better Research, Better Design, Better Results
-                                        </h5>
-                                        <div id="accordion-4-5" class="collapse" data-parent="#accordionFaqFour">
-                                            <div class="accordion-content">
-                                                Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium
-                                                dolore seyse
-                                                mque laudantium totam rem aperiam, eaque ipsa quae ab illo inventore
-                                                veritatis et
-                                                quasi architecto beatae vitae dicta sunt explicabo.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
-                                            data-target="#accordion-4-6">
-                                            Smashing Book Excerpt Bringing Personality Back Web
-                                        </h5>
-                                        <div id="accordion-4-6" class="collapse" data-parent="#accordionFaqFour">
-                                            <div class="accordion-content">
-                                                Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium
-                                                dolore seyse
-                                                mque laudantium totam rem aperiam, eaque ipsa quae ab illo inventore
-                                                veritatis et
-                                                quasi architecto beatae vitae dicta sunt explicabo.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
-                                            data-target="#accordion-4-7">
-                                            Using Low Vision As My Tool To Help Me Teach WordPress
-                                        </h5>
-                                        <div id="accordion-4-7" class="collapse" data-parent="#accordionFaqFour">
-                                            <div class="accordion-content">
-                                                Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium
-                                                dolore seyse
-                                                mque laudantium totam rem aperiam, eaque ipsa quae ab illo inventore
-                                                veritatis et
-                                                quasi architecto beatae vitae dicta sunt explicabo.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
-                                            data-target="#accordion-4-8">
-                                            How To Improve Your Design Process With Data-Based Personas
-                                        </h5>
-                                        <div id="accordion-4-8" class="collapse" data-parent="#accordionFaqFour">
-                                            <div class="accordion-content">
-                                                Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium
-                                                dolore seyse
-                                                mque laudantium totam rem aperiam, eaque ipsa quae ab illo inventore
-                                                veritatis et
-                                                quasi architecto beatae vitae dicta sunt explicabo.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
-                                            data-target="#accordion-4-9">
-                                            Smashing Book Excerpt Bringing Personality Back Web
-                                        </h5>
-                                        <div id="accordion-4-9" class="collapse" data-parent="#accordionFaqFour">
-                                            <div class="accordion-content">
-                                                Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium
-                                                dolore seyse
-                                                mque laudantium totam rem aperiam, eaque ipsa quae ab illo inventore
-                                                veritatis et
-                                                quasi architecto beatae vitae dicta sunt explicabo.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
-                                            data-target="#accordion-4-10">
-                                            Using Low Vision As My Tool To Help Me Teach WordPress
-                                        </h5>
-                                        <div id="accordion-4-10" class="collapse" data-parent="#accordionFaqFour">
-                                            <div class="accordion-content">
-                                                Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium
-                                                dolore seyse
-                                                mque laudantium totam rem aperiam, eaque ipsa quae ab illo inventore
-                                                veritatis et
-                                                quasi architecto beatae vitae dicta sunt explicabo.
+                                                Tidak, target penggalangan dana tidak dapat diubah setelah kampanye dimulai.
                                             </div>
                                         </div>
                                     </div>
@@ -612,105 +328,45 @@
                                     <div class="accordion-item">
                                         <h5 class="accordion-title" data-toggle="collapse" aria-expanded="true"
                                             data-target="#accordion-5-1">
-                                            Better Research, Better Design, Better Results
+                                            Apakah SaTu aman untuk digunakan?
                                         </h5>
                                         <div id="accordion-5-1" class="collapse show" data-parent="#accordionFaqFive">
                                             <div class="accordion-content">
-                                                Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium
-                                                dolore seyse
-                                                mque laudantium totam rem aperiam, eaque ipsa quae ab illo inventore
-                                                veritatis et
-                                                quasi architecto beatae vitae dicta sunt explicabo.
+                                                Ya, SaTu sangat aman untuk digunakan. Platform ini dilengkapi dengan
+                                                teknologi keamanan tinggi seperti enkripsi SSL dan pemrosesan pembayaran
+                                                yang aman. Selain itu, SaTu juga menerapkan prosedur verifikasi identitas
+                                                untuk menghindari penyalahgunaan dan memastikan bahwa hanya kampanye yang
+                                                sah yang diunggulkan.
                                             </div>
                                         </div>
                                     </div>
                                     <div class="accordion-item">
                                         <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
                                             data-target="#accordion-5-2">
-                                            Smashing Book Excerpt Bringing Personality Back Web
+                                            Apakah informasi saya aman di SaTu?
                                         </h5>
                                         <div id="accordion-5-2" class="collapse" data-parent="#accordionFaqFive">
                                             <div class="accordion-content">
-                                                Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium
-                                                dolore seyse
-                                                mque laudantium totam rem aperiam, eaque ipsa quae ab illo inventore
-                                                veritatis et
-                                                quasi architecto beatae vitae dicta sunt explicabo.
+                                                Ya, setiap data pada sistem akan memiliki identitas yang berupa kode unik
+                                                sehingga data akan sulit diretas. Selain itu, data yang dibutuhkan untuk
+                                                autentikasi akan
+                                                memiliki validasi yang berlapis.
                                             </div>
                                         </div>
                                     </div>
                                     <div class="accordion-item">
                                         <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
                                             data-target="#accordion-5-3">
-                                            Using Low Vision As My Tool To Help Me Teach WordPress
+                                            Apakah SaTu menjamin keamanan pembayaran saya?
                                         </h5>
                                         <div id="accordion-5-3" class="collapse" data-parent="#accordionFaqFive">
                                             <div class="accordion-content">
-                                                Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium
-                                                dolore seyse
-                                                mque laudantium totam rem aperiam, eaque ipsa quae ab illo inventore
-                                                veritatis et
-                                                quasi architecto beatae vitae dicta sunt explicabo.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
-                                            data-target="#accordion-5-4">
-                                            How To Improve Your Design Process With Data-Based Personas
-                                        </h5>
-                                        <div id="accordion-5-4" class="collapse" data-parent="#accordionFaqFive">
-                                            <div class="accordion-content">
-                                                Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium
-                                                dolore seyse
-                                                mque laudantium totam rem aperiam, eaque ipsa quae ab illo inventore
-                                                veritatis et
-                                                quasi architecto beatae vitae dicta sunt explicabo.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
-                                            data-target="#accordion-5-5">
-                                            Better Research, Better Design, Better Results
-                                        </h5>
-                                        <div id="accordion-5-5" class="collapse" data-parent="#accordionFaqFive">
-                                            <div class="accordion-content">
-                                                Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium
-                                                dolore seyse
-                                                mque laudantium totam rem aperiam, eaque ipsa quae ab illo inventore
-                                                veritatis et
-                                                quasi architecto beatae vitae dicta sunt explicabo.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
-                                            data-target="#accordion-5-6">
-                                            Smashing Book Excerpt Bringing Personality Back Web
-                                        </h5>
-                                        <div id="accordion-5-6" class="collapse" data-parent="#accordionFaqFive">
-                                            <div class="accordion-content">
-                                                Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium
-                                                dolore seyse
-                                                mque laudantium totam rem aperiam, eaque ipsa quae ab illo inventore
-                                                veritatis et
-                                                quasi architecto beatae vitae dicta sunt explicabo.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item">
-                                        <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
-                                            data-target="#accordion-5-7">
-                                            Using Low Vision As My Tool To Help Me Teach WordPress
-                                        </h5>
-                                        <div id="accordion-5-7" class="collapse" data-parent="#accordionFaqFive">
-                                            <div class="accordion-content">
-                                                Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium
-                                                dolore seyse
-                                                mque laudantium totam rem aperiam, eaque ipsa quae ab illo inventore
-                                                veritatis et
-                                                quasi architecto beatae vitae dicta sunt explicabo.
+                                                Ya, SaTu menjamin keamanan pembayaran Anda dengan menggunakan sistem
+                                                pembayaran yang aman dan terpercaya. SaTu juga menawarkan berbagai pilihan
+                                                pembayaran yang mudah dan aman seperti transfer bank, kartu kredit/debit,
+                                                dan e-wallet. Selain itu, SaTu juga memiliki kebijakan pengembalian dana
+                                                yang jelas dan transparan jika terjadi masalah dengan kampanye atau
+                                                pembayaran.
                                             </div>
                                         </div>
                                     </div>
@@ -834,129 +490,61 @@
     <!--====== FAQ Area End ======-->
 
     <!--====== Feature Section Start ======-->
-    <section class="feature-section primary-soft-bg section-gap">
-        <div class="container">
-            <div class="common-heading text-center mb-30">
-                <span class="tagline">
-                    <i class="fas fa-plus"></i> What We Do
-                    <span class="heading-shadow-text">Features</span>
-                </span>
-                <h2 class="title">Why choose us</h2>
-            </div>
+	<section class="feature-section primary-soft-bg section-gap">
+		<div class="container">
+			<div class="common-heading text-center mb-30">
+				<span class="tagline">
+					<i class="fas fa-plus"></i> Apa yang Kita Lakukan
+					<span class="heading-shadow-text">Features</span>
+				</span>
+				<h2 class="title">Kenapa Memilih Kami</h2>
+			</div>
 
-            <div class="row icon-boxes justify-content-center">
-                <div class="col-lg-4 col-md-6 col-sm-9 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="icon-box mt-30">
-                        <div class="icon">
-                            <i class="flaticon-debit-card"></i>
-                        </div>
-                        <h5 class="title">Fast & Easy Payouts</h5>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                            laudantium totam</p>
-                        <a href="project-1.html" class="link"><i class="far fa-arrow-right"></i></a>
-                        <span class="box-index">01</span>
+			<div class="row icon-boxes justify-content-center">
+				<div class="col-lg-4 col-md-6 col-sm-9 wow fadeInUp" data-wow-delay="0.1s">
+					<div class="icon-box mt-30">
+						<div class="icon">
+							<i class="flaticon-debit-card"></i>
+						</div>
+						<h5 class="title">Pembayaran Cepat dan Aman</h5>
+						<p>Kami menawarkan solusi pembayaran yang efisien dan aman untuk pengguna kami. Dengan SaTu, pengguna dapat menerima pembayaran dengan cepat dan mudah melalui metode pembayaran yang berbeda.</p>
+						<span class="box-index">01</span>
 
-                        <div class="box-img">
-                            <img src="assets/img/icon-box-bg.jpg" alt="image">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-9 wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="icon-box mt-30">
-                        <div class="icon">
-                            <i class="flaticon-payment"></i>
-                        </div>
-                        <h5 class="title">Global Payment Processing</h5>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                            laudantium totam</p>
-                        <a href="project-2.html" class="link"><i class="far fa-arrow-right"></i></a>
-                        <span class="box-index">02</span>
+						<div class="box-img">
+							<img src="assets/img/icon-box-bg.jpg" alt="image">
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 col-sm-9 wow fadeInUp" data-wow-delay="0.2s">
+					<div class="icon-box mt-30">
+						<div class="icon">
+							<i class="flaticon-payment"></i>
+						</div>
+						<h5 class="title">Pemrosesan Pembayaran Global</h5>
+						<p>Kami juga menyediakan layanan proses pembayaran global untuk memudahkan pengguna dalam melakukan transaksi bisnis di seluruh dunia. Kami menawarkan solusi pembayaran yang efektif dan terpercaya.</p>
+						<span class="box-index">02</span>
 
-                        <div class="box-img">
-                            <img src="assets/img/icon-box-bg.jpg" alt="image">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-9 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="icon-box mt-30">
-                        <div class="icon">
-                            <i class="flaticon-wallet-1"></i>
-                        </div>
-                        <h5 class="title">Many Payment Options</h5>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                            laudantium totam</p>
-                        <a href="project-1.html" class="link"><i class="far fa-arrow-right"></i></a>
-                        <span class="box-index">03</span>
+						<div class="box-img">
+							<img src="assets/img/icon-box-bg.jpg" alt="image">
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 col-sm-9 wow fadeInUp" data-wow-delay="0.3s">
+					<div class="icon-box mt-30">
+						<div class="icon">
+							<i class="flaticon-wallet-1"></i>
+						</div>
+						<h5 class="title">Banyak Pilihan Pembayaran</h5>
+						<p>Dengan banyaknya pilihan pembayaran, pengguna dapat memilih opsi yang paling nyaman dan sesuai dengan preferensi mereka. Kami berkomitmen untuk memberikan solusi pembayaran yang mudah, aman, dan terpercaya.</p>
+						<span class="box-index">03</span>
 
-                        <div class="box-img">
-                            <img src="assets/img/icon-box-bg.jpg" alt="image">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+						<div class="box-img">
+							<img src="assets/img/icon-box-bg.jpg" alt="image">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
     <!--====== Feature Section End ======-->
-
-    <!--====== Latest News Start ======-->
-    <section class="latest-blog-section section-gap-extra-bottom">
-        <div class="container">
-            <div class="common-heading text-center mb-30">
-                <span class="tagline">
-                    <i class="fas fa-plus"></i> Latest News & Blog
-                    <span class="heading-shadow-text">News Blog</span>
-                </span>
-                <h2 class="title">Get Every Single Update</h2>
-            </div>
-            <div class="row justify-content-center latest-blog-posts style-two">
-                <div class="col-lg-4 col-md-6 col-sm-9 col-11 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="latest-post-box mt-30">
-                        <div class="post-thumb">
-                            <img src="assets/img/latest-news/01.jpg" alt="Image">
-                        </div>
-                        <div class="post-content">
-                            <a href="#" class="post-date"><i class="far fa-calendar-alt"></i> 25 February 2021</a>
-                            <h6 class="title">
-                                <a href="news-details.html">Standing Out From Crowds mproving Mobile Experience</a>
-                            </h6>
-                            <a href="news-details.html" class="post-link">Read More <i
-                                    class="far fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-9 col-11 wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="latest-post-box mt-30">
-                        <div class="post-thumb">
-                            <img src="assets/img/latest-news/02.jpg" alt="Image">
-                        </div>
-                        <div class="post-content">
-                            <a href="#" class="post-date"><i class="far fa-calendar-alt"></i> 25 February 2021</a>
-                            <h6 class="title">
-                                <a href="news-details.html">Five Rules Of App Localization China Money Dating And App
-                                    Store</a>
-                            </h6>
-                            <a href="news-details.html" class="post-link">Read More <i
-                                    class="far fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-9 col-11 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="latest-post-box mt-30">
-                        <div class="post-thumb">
-                            <img src="assets/img/latest-news/03.jpg" alt="Image">
-                        </div>
-                        <div class="post-content">
-                            <a href="#" class="post-date"><i class="far fa-calendar-alt"></i> 25 February 2021</a>
-                            <h6 class="title">
-                                <a href="news-details.html">How To Use Underlined Text Improve User Experience</a>
-                            </h6>
-                            <a href="news-details.html" class="post-link">Read More <i
-                                    class="far fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--====== Latest News End ======-->
 @endsection
