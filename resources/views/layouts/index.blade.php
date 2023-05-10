@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <!--====== Title ======-->
-    <title> Funden - Crowdfunding & Charity HTML Template || Home One </title>
+    <title> SaTu - Saling Bantu </title>
 
     <!--====== Favicon Icon ======-->
     <link rel="shortcut icon" href="{{ asset('assets/img/favicon.ico') }}" type="img/png" />
