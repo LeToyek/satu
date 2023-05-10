@@ -71,26 +71,7 @@
 
 	<!--====== Header Start ======-->
 	<header class="site-header sticky-header">
-		<div class="header-topbar d-none d-sm-block">
-			<div class="container">
-				<div class="row justify-content-between align-items-center">
-					<div class="col-auto">
-						<ul class="contact-info">
-							<li><a href="#"><i class="far fa-envelope"></i> support@gmail.com</a></li>
-							<li><a href="#"><i class="far fa-map-marker-alt"></i> 250 Main Street, 2nd Floor, USA</a></li>
-						</ul>
-					</div>
-					<div class="col-auto d-none d-md-block">
-						<ul class="social-icons">
-							<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fab fa-youtube"></i></a></li>
-							<li><a href="#"><i class="fab fa-behance"></i></a></li>
-							<li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
+
 		<div class="navbar-wrapper">
 			<div class="container">
 				<div class="navbar-inner">
@@ -140,8 +121,8 @@
 						</ul>
 					</div>
 					<div class="navbar-extra d-flex align-items-center">
-						<a href="events.html" class="main-btn nav-btn d-none d-sm-inline-block">
-							Donate Now <i class="far fa-arrow-right"></i>
+						<a href="/login" class="main-btn nav-btn d-none d-sm-inline-block">
+							Sign in <i class="far fa-arrow-right"></i>
 						</a>
 						<a href="#" class="nav-toggler">
                             <span></span>
