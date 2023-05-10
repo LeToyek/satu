@@ -77,7 +77,7 @@
       </div>
       <div class="copyright-area">
         <div class="row flex-md-row-reverse">
-          <div class="col-md-6">
+          <div class="col-md-6 text-center">
             <ul class="social-icons">
               <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
               <li><a href="#"><i class="fab fa-twitter"></i></a></li>
