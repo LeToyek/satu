@@ -71,18 +71,7 @@
 
 	<!--====== Header Start ======-->
 	<header class="site-header sticky-header">
-		<div class="header-topbar d-none d-sm-block">
-			<div class="container">
-				<div class="row justify-content-between align-items-center">
-					<div class="col-auto">
-						<ul class="contact-info">
-							<li><a href="#"><i class="far fa-envelope"></i> salingbantu@gmail.com</a></li>
-							<li><a href="#"><i class="far fa-map-marker-alt"></i> Malang, Indonesia</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
+
 		<div class="navbar-wrapper">
 			<div class="container">
 				<div class="navbar-inner">
@@ -112,8 +101,8 @@
 						</ul>
 					</div>
 					<div class="navbar-extra d-flex align-items-center">
-						<a href="events.html" class="main-btn nav-btn d-none d-sm-inline-block">
-							Donasi <i class="far fa-arrow-right"></i>
+						<a href="/login" class="main-btn nav-btn d-none d-sm-inline-block">
+							Sign in <i class="far fa-arrow-right"></i>
 						</a>
 						<a href="#" class="nav-toggler">
                             <span></span>

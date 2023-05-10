@@ -224,6 +224,10 @@ return [
     "api-key" => "API Key",
     "privacy-policy" => "Privacy Policy",
     "hot" => "Hot",
+
+    //satu
+    "dashboard" => "Dashboard",
+    "marketplace" => "Marketplace",
 ];
 ?>
 

@@ -38,7 +38,7 @@ function onButtonGroupClick(event) {
 
 
 
-var url="build/json/";
+var url="velzon/json/";
 var allmemberlist = '';
 
 // Reading JSON with Fetch API
