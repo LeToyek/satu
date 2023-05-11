@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CampaignController;
+use App\Http\Controllers\MarketplaceController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -37,6 +39,10 @@ Route::get('/testimoni', function () {
 Route::get('/contact-us', function () {
     return view('pages.contact-us');
 });
-Route::get('/dashboard', function () {
-    return view('dashboard.pages.index');
+Route::prefix('dashboard')->group(function(){
+    Route::resource('/campaign', CampaignController::class);
+    Route::get('/marketplace/mitra',[MarketplaceController::class,'index_mitra']);
+    Route::get('/', function () {
+        return view('dashboard.pages.index');
+    });
 });

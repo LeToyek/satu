@@ -6,7 +6,7 @@ Contact: Themesbrand@gmail.com
 File: job grid list Js File
 */
 
-var url = "velzon/json/";
+var url = "build/json/";
 var allJobList = '';
 
 var prevButton = document.getElementById('page-prev');
