@@ -490,61 +490,65 @@
     <!--====== FAQ Area End ======-->
 
     <!--====== Feature Section Start ======-->
-	<section class="feature-section primary-soft-bg section-gap">
-		<div class="container">
-			<div class="common-heading text-center mb-30">
-				<span class="tagline">
-					<i class="fas fa-plus"></i> Apa yang Kita Lakukan
-					<span class="heading-shadow-text">Features</span>
-				</span>
-				<h2 class="title">Kenapa Memilih Kami</h2>
-			</div>
+    <section class="feature-section primary-soft-bg section-gap">
+        <div class="container">
+            <div class="common-heading text-center mb-30">
+                <span class="tagline">
+                    <i class="fas fa-plus"></i> Apa yang Kita Lakukan
+                    <span class="heading-shadow-text">Features</span>
+                </span>
+                <h2 class="title">Kenapa Memilih Kami</h2>
+            </div>
 
-			<div class="row icon-boxes justify-content-center">
-				<div class="col-lg-4 col-md-6 col-sm-9 wow fadeInUp" data-wow-delay="0.1s">
-					<div class="icon-box mt-30">
-						<div class="icon">
-							<i class="flaticon-debit-card"></i>
-						</div>
-						<h5 class="title">Pembayaran Cepat dan Aman</h5>
-						<p>Kami menawarkan solusi pembayaran yang efisien dan aman untuk pengguna kami. Dengan SaTu, pengguna dapat menerima pembayaran dengan cepat dan mudah melalui metode pembayaran yang berbeda.</p>
-						<span class="box-index">01</span>
+            <div class="row icon-boxes justify-content-center">
+                <div class="col-lg-4 col-md-6 col-sm-9 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="icon-box mt-30">
+                        <div class="icon">
+                            <i class="flaticon-debit-card"></i>
+                        </div>
+                        <h5 class="title">Pembayaran Cepat dan Aman</h5>
+                        <p>SaTu menawarkan solusi pembayaran yang efisien dan aman untuk pengguna kami. Dengan SaTu,
+                            pengguna dapat menerima pembayaran dengan cepat dan mudah melalui metode pembayaran yang
+                            berbeda.</p>
+                        <span class="box-index">01</span>
 
-						<div class="box-img">
-							<img src="assets/img/icon-box-bg.jpg" alt="image">
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 col-sm-9 wow fadeInUp" data-wow-delay="0.2s">
-					<div class="icon-box mt-30">
-						<div class="icon">
-							<i class="flaticon-payment"></i>
-						</div>
-						<h5 class="title">Pemrosesan Pembayaran Global</h5>
-						<p>Kami juga menyediakan layanan proses pembayaran global untuk memudahkan pengguna dalam melakukan transaksi bisnis di seluruh dunia. Kami menawarkan solusi pembayaran yang efektif dan terpercaya.</p>
-						<span class="box-index">02</span>
+                        <div class="box-img">
 
-						<div class="box-img">
-							<img src="assets/img/icon-box-bg.jpg" alt="image">
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 col-sm-9 wow fadeInUp" data-wow-delay="0.3s">
-					<div class="icon-box mt-30">
-						<div class="icon">
-							<i class="flaticon-wallet-1"></i>
-						</div>
-						<h5 class="title">Banyak Pilihan Pembayaran</h5>
-						<p>Dengan banyaknya pilihan pembayaran, pengguna dapat memilih opsi yang paling nyaman dan sesuai dengan preferensi mereka. Kami berkomitmen untuk memberikan solusi pembayaran yang mudah, aman, dan terpercaya.</p>
-						<span class="box-index">03</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-9 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="icon-box mt-30">
+                        <div class="icon">
+                            <i class="flaticon-payment"></i>
+                        </div>
+                        <h5 class="title">Berdampak Sosial</h5>
+                        <p>Membantu pertumbuhan UMKM dengan memberikan akses ke pasar yang lebih luas dan memperluas
+                        jangkauan pasar mereka. Dengan mendanai di SaTu, kamu telah ikut menciptakan kebaikan, 
+						sekaligus mendapatkan imbal hasil.</p>
+                        <span class="box-index">02</span>
 
-						<div class="box-img">
-							<img src="assets/img/icon-box-bg.jpg" alt="image">
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+                        <div class="box-img">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-9 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="icon-box mt-30">
+                        <div class="icon">
+                            <i class="flaticon-wallet-1"></i>
+                        </div>
+                        <h5 class="title">Risiko Terukur</h5>
+                        <p>Dengan banyaknya pilihan pembayaran, pengguna dapat memilih opsi yang paling nyaman dan sesuai
+                            dengan preferensi mereka. Kami berkomitmen untuk memberikan solusi pembayaran yang mudah, aman,
+                            dan terpercaya.</p>
+                        <span class="box-index">03</span>
+
+                        <div class="box-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!--====== Feature Section End ======-->
 @endsection
