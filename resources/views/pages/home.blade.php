@@ -6,15 +6,15 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-xl-10">
-                        <span class="tagline wow fadeInUp" data-wow-delay="0.3s">Crowdfounding Agency</span>
+                        <span class="tagline wow fadeInUp" data-wow-delay="0.3s">Crowdfunding UMKM </span>
                         <h1 class="title wow fadeInUp" data-wow-delay="0.4s">Saling Bantu</h1>
-                        <a href="project-1.html" class="main-btn wow fadeInUp" data-wow-delay="0.5s">
-                            Explore Projects <i class="far fa-arrow-right"></i>
+                        <a href="#jelajahi" class="main-btn wow fadeInUp" data-wow-delay="0.5s">
+                            Jelajahi <i class="far fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="hero-shapes">
+            <div class="hero-shapes" id="jelajahi">
                 <div class="hero-line-one">
                     <img src="assets/img/hero/hero-line.png" alt="Line">
                 </div>
@@ -27,19 +27,19 @@
         </div>
         <div class="hero-images">
             <div class="hero-img image-small fancy-bottom wow fadeInLeft" data-wow-delay="0.6s">
-                <img src="assets/img/hero/hero-one-small.jpg" alt="Image">
+                <img src="assets/img/hero/1.jpg" alt="Image">
             </div>
             <div class="hero-img main-img wow fadeInUp" data-wow-delay="0.5s">
-                <img src="assets/img/hero/hero-one-big.jpg" alt="Image">
+                <img src="assets/img/hero/1.jpeg" alt="Image">
             </div>
             <div class="hero-img image-small fancy-top wow fadeInRight" data-wow-delay="0.7s">
-                <img src="assets/img/hero/hero-one-small-2.jpg" alt="Image">
+                <img src="assets/img/hero/2.jpg" alt="Image">
             </div>
         </div>
     </section>
     <!--====== Hero Area End ======-->
 
-    <!--====== Categories Section Start ======-->
+    {{-- <!--====== Categories Section Start ======-->
     <section class="popular-categories section-gap">
         <div class="container">
             <div class="categories-header">
@@ -129,43 +129,33 @@
             </div>
         </div>
     </section>
-    <!--====== Categories Section End ======-->
+    <!--====== Categories Section End ======--> --}}
 
     <!--====== About Section Start ======-->
-    <section class="about-section-one">
+    <section class="about-section-one" style="margin-top: 110px;">
         <div class="container">
             <div class="row align-items-center justify-content-lg-start justify-content-center">
                 <div class="col-xl-6 col-lg-7 col-md-9">
                     <div class="about-img">
-                        <img src="assets/img/about/about-one.jpg" alt="Image">
+                        <img src="assets/img/about/org7.jpg" alt="Image">
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-5 col-md-10 offset-xl-1">
                     <div class="about-text mt-md-70 mb-md-50">
                         <div class="common-heading mb-30">
                             <span class="tagline">
-                                <i class="fas fa-plus"></i> who we are
-                                <span class="heading-shadow-text">Abouit Us</span>
+                                <i class="fas fa-plus"></i> siapa kami
+                                <span class="heading-shadow-text">tentang kami</span>
                             </span>
-                            <h2 class="title">Why Choose Us</h2>
+                            <h2 class="title">Kenapa Memilih Kami</h2>
                         </div>
-                        <p>
-                            Sedut perspiciatis unde omnis iste natus voluptatem accusantium dolore dantiumy totam rem apeam,
-                            eaque ipsa quaventore veritatis quasi architecto beatae.
+                        <p style="margin-bottom: 31px">
+                            Saling Bantu (SaTu) adalah platform online yang memungkinkan pengguna yaitu mitra UMKM untuk mengumpulkan dana
+                            dari banyak orang secara efisien dan efektif. SaTu dirancang untuk membantu mereka yang
+                            mempunyai ide atau proyek untuk dapat mewujudkan proyek mereka dengan cara kampaye penggalangan
+                            dana secara online. Dengan SaTu, pengguna dapat meningkatkan visibilitas kampanye dan
+                            memperluas jangkauan potensial penggalang dana mereka.
                         </p>
-                        <div class="author-note wow fadeInUp">
-                            <ul>
-                                <li><i class="far fa-check"></i> Non-Profite Crowdfunding Agency</li>
-                                <li><i class="far fa-check"></i> We're Successful Institute </li>
-                            </ul>
-                            <div class="author-info">
-                                <div class="author-img">
-                                    <img src="assets/img/author-thumbs/01.jpg" alt="Image">
-                                </div>
-                                <h5 class="name">Michel H. Heart</h5>
-                                <span class="title">CEO & Founder</span>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -447,7 +437,7 @@
                                 <span class="count">3598</span>
                                 <span class="suffix">+</span>
                             </div>
-                            <h6 class="title">We’ve Project Complate</h6>
+                            <h6 class="title">Jumlah Pendanaan Berhasil</h6>
                         </div>
                     </div>
                 </div>
@@ -461,7 +451,7 @@
                                 <span class="count">9634</span>
                                 <span class="suffix">+</span>
                             </div>
-                            <h6 class="title">Global Partners</h6>
+                            <h6 class="title">Jumlah Pendana Aktif</h6>
                         </div>
                     </div>
                 </div>
@@ -475,7 +465,7 @@
                                 <span class="count">8565</span>
                                 <span class="suffix">+</span>
                             </div>
-                            <h6 class="title">Awards Winning</h6>
+                            <h6 class="title">Total Pendanaan</h6>
                         </div>
                     </div>
                 </div>
@@ -489,7 +479,7 @@
                                 <span class="count">4756</span>
                                 <span class="suffix">+</span>
                             </div>
-                            <h6 class="title">Active Volunteer</h6>
+                            <h6 class="title">Jumlah UMKM Bergabung</h6>
                         </div>
                     </div>
                 </div>
@@ -516,7 +506,7 @@
                             totam rem aperiam eaque ipsa quae abillo inventore verit quasi architecto beatae vitae dicta
                             sunt
                         </p>
-                        <a href="/testimonial" class="main-btn mt-35">Lihat Semua Review <i
+                        <a href="/testimoni" class="main-btn mt-35">Lihat Semua Review <i
                                 class="far fa-arrow-right"></i></a>
 
                         <div class="testimonial-author-boxes wow fadeInUp" data-wow-delay="0.2s">
@@ -672,168 +662,6 @@
         </div>
     </section>
     <!--====== Testimonials End ======-->
-
-    <!--====== Emergency Project & CTA Start ======-->
-    <section class="emergency-project-with-cta">
-        <div class="container">
-            <!-- Call to Action -->
-            <div class="cta-box cta-double-content" style="background-image: url(assets/img/cta/01.jpg);">
-                <div class="row justify-content-center">
-                    <div class="col-xl-4 col-lg-5 col-md-9">
-                        <div class="content">
-                            <h2 class="cta-title">Get Funding And Support</h2>
-                            <p>Sed perspiciatis unde omniste natus error sit voluptatem accusantium doloremque laudan
-                                totamrem aperiam eaque quae abille</p>
-                            <a href="events.html" class="main-btn">Start a Funden <i class="far fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-1 cta-double-content-gap"></div>
-                    <div class="col-xl-4 col-lg-5 col-md-9">
-                        <div class="content">
-                            <h2 class="cta-title">Access Data And Insights</h2>
-                            <p>Sed perspiciatis unde omniste natus error sit voluptatem accusantium doloremque laudan
-                                totamrem aperiam eaque quae abille</p>
-                            <a href="events.html" class="main-btn">Start a Funden <i class="far fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="emergency-project-slider">
-            <div class="container">
-                <div class="common-heading text-center mb-60">
-                    <span class="tagline">
-                        <i class="fas fa-plus"></i> Donate Projects
-                        <span class="heading-shadow-text">Donate</span>
-                    </span>
-                    <h2 class="title">Emergency Needed</h2>
-                </div>
-                <div class="row project-slider-two project-items project-style-four">
-                    <div class="col">
-                        <div class="project-item">
-                            <div class="thumb" style="background-image: url(assets/img/project/project-slider-01.jpg);">
-                            </div>
-                            <div class="content">
-                                <div class="cats">
-                                    <a href="#">Covid -19</a>
-                                </div>
-
-                                <div class="author">
-                                    <img src="assets/img/author-thumbs/01.jpg" alt="Thumb">
-                                    <a href="#">James W. Barrows</a>
-                                </div>
-
-                                <h5 class="title">
-                                    <a href="project-details.html">Fundraising For The People And Causes You Car About</a>
-                                </h5>
-                                <div class="project-stats">
-                                    <div class="stats-value">
-                                        <span class="value-title">Raised of <span class="value">$59,689</span></span>
-                                        <span class="stats-percentage">83%</span>
-                                    </div>
-                                    <div class="stats-bar" data-value="90">
-                                        <div class="bar-line"></div>
-                                    </div>
-                                </div>
-                                <span class="date"><i class="far fa-calendar-alt"></i> 25 February 2021</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="project-item">
-                            <div class="thumb" style="background-image: url(assets/img/project/project-slider-02.jpg);">
-                            </div>
-                            <div class="content">
-                                <div class="cats">
-                                    <a href="#">Covid -19</a>
-                                </div>
-
-                                <div class="author">
-                                    <img src="assets/img/author-thumbs/01.jpg" alt="Thumb">
-                                    <a href="#">James W. Barrows</a>
-                                </div>
-
-                                <h5 class="title">
-                                    <a href="project-details.html">Fundraising For The People And Causes You Car About</a>
-                                </h5>
-                                <div class="project-stats">
-                                    <div class="stats-value">
-                                        <span class="value-title">Raised of <span class="value">$59,689</span></span>
-                                        <span class="stats-percentage">83%</span>
-                                    </div>
-                                    <div class="stats-bar" data-value="90">
-                                        <div class="bar-line"></div>
-                                    </div>
-                                </div>
-                                <span class="date"><i class="far fa-calendar-alt"></i> 25 February 2021</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="project-item">
-                            <div class="thumb" style="background-image: url(assets/img/project/project-slider-01.jpg);">
-                            </div>
-                            <div class="content">
-                                <div class="cats">
-                                    <a href="#">Covid -19</a>
-                                </div>
-
-                                <div class="author">
-                                    <img src="assets/img/author-thumbs/01.jpg" alt="Thumb">
-                                    <a href="#">James W. Barrows</a>
-                                </div>
-
-                                <h5 class="title">
-                                    <a href="project-details.html">Fundraising For The People And Causes You Car About</a>
-                                </h5>
-                                <div class="project-stats">
-                                    <div class="stats-value">
-                                        <span class="value-title">Raised of <span class="value">$59,689</span></span>
-                                        <span class="stats-percentage">83%</span>
-                                    </div>
-                                    <div class="stats-bar" data-value="90">
-                                        <div class="bar-line"></div>
-                                    </div>
-                                </div>
-                                <span class="date"><i class="far fa-calendar-alt"></i> 25 February 2021</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="project-item">
-                            <div class="thumb" style="background-image: url(assets/img/project/project-slider-02.jpg);">
-                            </div>
-                            <div class="content">
-                                <div class="cats">
-                                    <a href="#">Covid -19</a>
-                                </div>
-
-                                <div class="author">
-                                    <img src="assets/img/author-thumbs/01.jpg" alt="Thumb">
-                                    <a href="#">James W. Barrows</a>
-                                </div>
-
-                                <h5 class="title">
-                                    <a href="project-details.html">Fundraising For The People And Causes You Car About</a>
-                                </h5>
-                                <div class="project-stats">
-                                    <div class="stats-value">
-                                        <span class="value-title">Raised of <span class="value">$59,689</span></span>
-                                        <span class="stats-percentage">83%</span>
-                                    </div>
-                                    <div class="stats-bar" data-value="90">
-                                        <div class="bar-line"></div>
-                                    </div>
-                                </div>
-                                <span class="date"><i class="far fa-calendar-alt"></i> 25 February 2021</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--====== Emergency Project & CTA End ======-->
 
     <!--====== Partners Section Start ======-->
     <section class="partners-section section-gap section-border-bottom">
