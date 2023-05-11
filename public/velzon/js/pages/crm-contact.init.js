@@ -137,7 +137,7 @@ xhttp.onload = function () {
     });
     contactList.remove("id", `<a href="javascript:void(0);" class="fw-medium link-primary">#VZ001</a>`);
 }
-xhttp.open("GET", "velzon/json/contact-list.json");
+xhttp.open("GET", "build/json/contact-list.json");
 xhttp.send();
 
 isCount = new DOMParser().parseFromString(

@@ -48,7 +48,7 @@ File: Chat init js
     //User current Id
     var currentChatId = "users-chat";
     var currentSelectedChat = "users";
-    var url="velzon/json/";
+    var url="build/json/";
     var usersList = "";
     var userChatId = 1;
 
