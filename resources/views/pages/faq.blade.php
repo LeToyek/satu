@@ -26,7 +26,7 @@
                         <div class="tab-nav-area text-center">
                             <ul class="nav nav-tabs" id="faqTab" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" data-toggle="tab" href="#general" role="tab">General</a>
+                                    <a class="nav-link active" data-toggle="tab" href="#general" role="tab">Umum</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" data-toggle="tab" href="#speakers" role="tab">Crowdfunding</a>
@@ -35,7 +35,7 @@
                                     <a class="nav-link" data-toggle="tab" href="#pricing" role="tab">Pendana</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#support" role="tab">Mitra</a>
+                                    <a class="nav-link" data-toggle="tab" href="#support" role="tab">Mitra UMKM</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" data-toggle="tab" href="#history" role="tab">Keamanan</a>
