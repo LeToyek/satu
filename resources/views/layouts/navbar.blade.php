@@ -81,43 +81,26 @@
 					<div class="nav-menu">
 						<ul>
 							<li>
-								<a href="index.html">Home</a>
-								<ul class="submenu">
-									<li><a href="index.html">Home One</a></li>
-									<li><a href="index-2.html">Home Two</a></li>
-								</ul>
+								<a href="/">Home</a>
 							</li>
 							<li>
-								<a href="project-1.html">Project</a>
-								<ul class="submenu">
-									<li><a href="project-1.html">Project One</a></li>
-									<li><a href="project-2.html">Project Two</a></li>
-									<li><a href="project-3.html">Project Three</a></li>
-									<li><a href="project-details.html">Project Details</a></li>
-								</ul>
+								<a href="/register">Daftar</a>
 							</li>
 							<li>
-								<a href="events.html">Events</a>
+								<a href="/cara-kerja">Cara Kerja</a>
 							</li>
 							<li>
-								<a href="news-standard.html">News</a>
-								<ul class="submenu">
-									<li><a href="news-standard.html">News Standard</a></li>
-									<li><a href="news-details.html">News Details</a></li>
-								</ul>
+								<a href="/testimoni">Testimoni</a>
 							</li>
-							<li class="current">
-								<a href="#">Pages</a>
-								<ul class="submenu">
-									<li><a href="about.html">About</a></li>
-									<li><a href="company-overview.html">Company Overview</a></li>
-									<li><a href="team-member.html">Team Member</a></li>
-									<li><a href="pricing.html">Pricing</a></li>
-									<li><a href="faq.html">FAQ</a></li>
-									<li><a href="testimonial.html">Testimonials</a></li>
-								</ul>
+							<li>
+								<a href="/faq">FAQ</a>
 							</li>
-							<li><a href="contact.html">Contact</a></li>
+							<li>
+								<a href="/about-us">Tentang Kami</a>
+							</li>
+							<li>
+								<a href="/contact-us">Kontak</a>
+							</li>
 						</ul>
 					</div>
 					<div class="navbar-extra d-flex align-items-center">

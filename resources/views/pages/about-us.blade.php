@@ -10,12 +10,12 @@
 		<div class="container">
 			<div class="row align-items-center justify-content-between">
 				<div class="col-lg-8">
-					<h1 class="page-title">About Us</h1>
+					<h1 class="page-title">Tentang Kami</h1>
 				</div>
 				<div class="col-auto">
 					<ul class="page-breadcrumb">
 						<li><a href="index.html">Home</a></li>
-						<li>About Us</li>
+						<li>Tentang Kami</li>
 					</ul>
 				</div>
 			</div>
@@ -31,26 +31,27 @@
 					<div class="about-text mb-lg-50">
 						<div class="common-heading mb-30">
 							<span class="tagline">
-								<i class="fas fa-plus"></i> About us
-								<span class="heading-shadow-text">About Us</span>
+								<i class="fas fa-plus"></i> Tentang Kami
+								<span class="heading-shadow-text">Tentang Kami</span>
 							</span>
-							<h2 class="title">We Help How To Improve Product Marketing</h2>
+							<h2 class="title">Kami Membantu Meningkatkan Kampanye</h2>
 						</div>
 						<p>
-							Sedut perspiciatis unde omnis iste natus voluptatem accusan tium dolore dantiumy totam rem apeam, eaque ipsa quaventore veritatis quasi architecto beatae.
+							Saling Bantu (SaTu) adalah platform online yang memungkinkan pengguna untuk mengumpulkan dana dari banyak orang secara efisien dan efektif. Aplikasi ini dirancang untuk membantu mereka yang mempunyai ide atau proyek untuk dapat mewujudkan proyek mereka dengan cara kampaye penggalangan dana secara online. Dengan aplikasi ini, pengguna dapat meningkatkan visibilitas kampanye dan memperluas jangkauan potensial penggalang dana mereka.
 						</p>
 						<ul class="check-list mt-30">
 							<li class="wow fadeInUp" data-wow-delay="0s">
-								<h5 class="title">Highest Success Rates</h5>
-								<p>Quis autem vel eum iure reprehenderit quin</p>
+								<h5 class="title">Keberhasilan Tinggi</h5>
+								<p>Kami berkomitmen untuk memberikan hasil yang terbaik untuk pengguna kami. Oleh karena itu, kami memiliki tingkat keberhasilan tertinggi dalam membantu pengguna kami meningkatkan pemasaran produk mereka.</p>
 							</li>
 							<li class="wow fadeInUp" data-wow-delay="0.1s">
-								<h5 class="title">Raise Funds With Crowdfunding</h5>
-								<p>Voluptate esse quam nihil molestiae consequatur</p>
+								<h5 class="title">Galang Dana dengan Crowdfunding</h5>
+								<p>Selain membantu pengguna meningkatkan pemasaran kampanye mereka, SaTu juga menawarkan solusi untuk menggalang dana melalui crowdfunding. Dengan menggunakan SaTu, pengguna dapat dengan mudah membuat kampanye penggalangan dana untuk proyek atau ide mereka.
+								</p>
 							</li>
 							<li class="wow fadeInUp" data-wow-delay="0.2s">
-								<h5 class="title">Millions in Funding</h5>
-								<p>Accusan tium dolore dantiumy totam apeam</p>
+								<h5 class="title">Jutaan Dana Terkumpul</h5>
+								<p>SaTu telah membantu jutaan pengguna dalam menggalang dana untuk proyek mereka. Kami bangga dapat memberikan solusi yang efisien dan efektif dalam menggalang dana secara online.</p>
 							</li>
 						</ul>
 					</div>
@@ -78,10 +79,10 @@
 		<div class="container">
 			<div class="common-heading text-center mb-30">
 				<span class="tagline">
-					<i class="fas fa-plus"></i> What We Do
+					<i class="fas fa-plus"></i> Apa yang Kita Lakukan
 					<span class="heading-shadow-text">Features</span>
 				</span>
-				<h2 class="title">Why choose us</h2>
+				<h2 class="title">Kenapa Memilih Kami</h2>
 			</div>
 
 			<div class="row icon-boxes justify-content-center">
@@ -90,10 +91,8 @@
 						<div class="icon">
 							<i class="flaticon-debit-card"></i>
 						</div>
-						<h5 class="title">Fast & Easy Payouts</h5>
-						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-							laudantium totam</p>
-						<a href="project-details.html" class="link"><i class="far fa-arrow-right"></i></a>
+						<h5 class="title">Pembayaran Cepat dan Aman</h5>
+						<p>Kami menawarkan solusi pembayaran yang efisien dan aman untuk pengguna kami. Dengan SaTu, pengguna dapat menerima pembayaran dengan cepat dan mudah melalui metode pembayaran yang berbeda.</p>
 						<span class="box-index">01</span>
 
 						<div class="box-img">
@@ -106,10 +105,8 @@
 						<div class="icon">
 							<i class="flaticon-payment"></i>
 						</div>
-						<h5 class="title">Global Payment Processing</h5>
-						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-							laudantium totam</p>
-						<a href="project-details.html" class="link"><i class="far fa-arrow-right"></i></a>
+						<h5 class="title">Pemrosesan Pembayaran Global</h5>
+						<p>Kami juga menyediakan layanan proses pembayaran global untuk memudahkan pengguna dalam melakukan transaksi bisnis di seluruh dunia. Kami menawarkan solusi pembayaran yang efektif dan terpercaya.</p>
 						<span class="box-index">02</span>
 
 						<div class="box-img">
@@ -122,10 +119,8 @@
 						<div class="icon">
 							<i class="flaticon-wallet-1"></i>
 						</div>
-						<h5 class="title">Many Payment Options</h5>
-						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-							laudantium totam</p>
-						<a href="project-details.html" class="link"><i class="far fa-arrow-right"></i></a>
+						<h5 class="title">Banyak Pilihan Pembayaran</h5>
+						<p>Dengan banyaknya pilihan pembayaran, pengguna dapat memilih opsi yang paling nyaman dan sesuai dengan preferensi mereka. Kami berkomitmen untuk memberikan solusi pembayaran yang mudah, aman, dan terpercaya.</p>
 						<span class="box-index">03</span>
 
 						<div class="box-img">
@@ -145,14 +140,11 @@
 				<div class="col-lg-6">
 					<div class="common-heading mb-40">
 						<span class="tagline">
-							<i class="fas fa-plus"></i> Exclusive team
-							<span class="heading-shadow-text">Members</span>
+							<i class="fas fa-plus"></i> Tim Eksklusif
+							<span class="heading-shadow-text">Anggota</span>
 						</span>
-						<h2 class="title">Meet Professional Team</h2>
+						<h2 class="title">Temui Tim Kami</h2>
 					</div>
-				</div>
-				<div class="col-auto">
-					<a href="contact.html" class="main-btn mb-40">Join Our Team <i class="far fa-arrow-right"></i></a>
 				</div>
 			</div>
 
@@ -162,11 +154,11 @@
 				<div class="col">
 					<div class="member-box">
 						<div class="member-photo">
-							<img src="assets/img/team/01.jpg" alt="Member">
+							<img src="assets/img/team/tio.jpeg" alt="Member">
 						</div>
 						<div class="member-info">
-							<h5 class="name"><a href="company-overview.html">Allen J. Thompson</a></h5>
-							<span class="title">CEO & Founder</span>
+							<h5 class="name"><a href="company-overview.html">Tio Misbaqul Irawan</a></h5>
+							<span class="title">Project Manager</span>
 							<ul class="social-links">
 								<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
 								<li><a href="#"><i class="fab fa-twitter"></i></a></li>
@@ -179,11 +171,11 @@
 				<div class="col">
 					<div class="member-box">
 						<div class="member-photo">
-							<img src="assets/img/team/02.jpg" alt="Member">
+							<img src="assets/img/team/maulana.jpeg" alt="Member">
 						</div>
 						<div class="member-info">
-							<h5 class="name"><a href="company-overview.html">Steven E. Wagner</a></h5>
-							<span class="title">Jonior Manager</span>
+							<h5 class="name"><a href="company-overview.html">Maulana Arif Wijaya</a></h5>
+							<span class="title">Team Lead</span>
 							<ul class="social-links">
 								<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
 								<li><a href="#"><i class="fab fa-twitter"></i></a></li>
@@ -196,113 +188,11 @@
 				<div class="col">
 					<div class="member-box">
 						<div class="member-photo">
-							<img src="assets/img/team/03.jpg" alt="Member">
+							<img src="assets/img/team/laila.jpeg" alt="Member">
 						</div>
 						<div class="member-info">
-							<h5 class="name"><a href="company-overview.html">Dwayne C. Dawson</a></h5>
-							<span class="title">Digital Marketer</span>
-							<ul class="social-links">
-								<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-								<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fab fa-youtube"></i></a></li>
-								<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col">
-					<div class="member-box">
-						<div class="member-photo">
-							<img src="assets/img/team/04.jpg" alt="Member">
-						</div>
-						<div class="member-info">
-							<h5 class="name"><a href="company-overview.html">Steven B. Rangel</a></h5>
-							<span class="title">Web Developer</span>
-							<ul class="social-links">
-								<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-								<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fab fa-youtube"></i></a></li>
-								<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col">
-					<div class="member-box">
-						<div class="member-photo">
-							<img src="assets/img/team/05.jpg" alt="Member">
-						</div>
-						<div class="member-info">
-							<h5 class="name"><a href="company-overview.html">Richard R. Barnes</a></h5>
-							<span class="title">Web Developer</span>
-							<ul class="social-links">
-								<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-								<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fab fa-youtube"></i></a></li>
-								<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col">
-					<div class="member-box">
-						<div class="member-photo">
-							<img src="assets/img/team/06.jpg" alt="Member">
-						</div>
-						<div class="member-info">
-							<h5 class="name"><a href="company-overview.html">James P. Gutierrez</a></h5>
-							<span class="title">Sr Manager</span>
-							<ul class="social-links">
-								<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-								<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fab fa-youtube"></i></a></li>
-								<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col">
-					<div class="member-box">
-						<div class="member-photo">
-							<img src="assets/img/team/07.jpg" alt="Member">
-						</div>
-						<div class="member-info">
-							<h5 class="name"><a href="company-overview.html">Tony C. Anderson</a></h5>
-							<span class="title">Senior Developer</span>
-							<ul class="social-links">
-								<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-								<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fab fa-youtube"></i></a></li>
-								<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col">
-					<div class="member-box">
-						<div class="member-photo">
-							<img src="assets/img/team/08.jpg" alt="Member">
-						</div>
-						<div class="member-info">
-							<h5 class="name"><a href="company-overview.html">Stan H. Woodruff</a></h5>
-							<span class="title">Apps Developer</span>
-							<ul class="social-links">
-								<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-								<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fab fa-youtube"></i></a></li>
-								<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col">
-					<div class="member-box">
-						<div class="member-photo">
-							<img src="assets/img/team/09.jpg" alt="Member">
-						</div>
-						<div class="member-info">
-							<h5 class="name"><a href="company-overview.html">Ronald T. Kessler</a></h5>
-							<span class="title">Web Designer</span>
+							<h5 class="name"><a href="company-overview.html">Lailatul Badriyah</a></h5>
+							<span class="title">Project Marketing</span>
 							<ul class="social-links">
 								<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
 								<li><a href="#"><i class="fab fa-twitter"></i></a></li>
@@ -396,15 +286,14 @@
 	</section>
 	<!--====== Counter With Image Text Block End ======-->
 
-	<!--====== Testimonials Start ======-->
 	<section class="testimonials-section section-gap">
 		<div class="container">
 			<div class="common-heading text-center mb-30">
 				<span class="tagline">
-					<i class="fas fa-plus"></i> Clients Feedback
-					<span class="heading-shadow-text">Testimonials</span>
+					<i class="fas fa-plus"></i> Feedback Mitra
+					<span class="heading-shadow-text">Testimoni</span>
 				</span>
-				<h2 class="title">What People's Say</h2>
+				<h2 class="title">Apa Kata Mereka</h2>
 			</div>
 
 			<div class="row justify-content-center testimonial-boxes square-shape-two">
@@ -412,15 +301,15 @@
 					<div class="testimonial-box-one mt-30">
 						<div class="author-info">
 							<div class="author-img">
-								<img src="assets/img/author-thumbs/03.jpg" alt="Thumb">
+								<img src="assets/img/author-thumbs/org1.jpg" alt="Thumb">
 							</div>
 							<div>
-								<h5 class="name">Joseph A. Anthony</h5>
-								<p class="position">Web Developer</p>
+								<h5 class="name">Budi Irawan</h5>
+								<p class="position">Pemilik Toko Baju</p>
 							</div>
 						</div>
 						<p class="testimonial-desc">
-							Quis autem vel eum reprehenderit quiea voluptate velit essenih lestiae conseqatur veillum dolorem
+							Dengan SaTu, kampanye penggalangan dana saya menjadi lebih mudah dan efisien. Saya berhasil mengumpulkan dana yang cukup untuk memulai bisnis saya yang baru. Saya sangat senang. Terima kasih SaTu!
 						</p>
 						<div class="rating-wrap">
 							<span>Rating</span>
@@ -438,15 +327,15 @@
 					<div class="testimonial-box-one mt-30">
 						<div class="author-info">
 							<div class="author-img">
-								<img src="assets/img/author-thumbs/02.jpg" alt="Thumb">
+								<img src="assets/img/author-thumbs/org2.jpg" alt="Thumb">
 							</div>
 							<div>
-								<h5 class="name">Howard A. Guest</h5>
-								<p class="position">Web Developer</p>
+								<h5 class="name">Deni Sudrajat</h5>
+								<p class="position">Pemilik Warung Kopi</p>
 							</div>
 						</div>
 						<p class="testimonial-desc">
-							Quis autem vel eum reprehenderit quiea voluptate velit essenih lestiae conseqatur veillum dolorem
+							SaTu membantu saya mengumpulkan dana dari banyak orang dengan mudah dan meningkatkan visibilitas kampanye saya. Sangat direkomendasikan untuk yang ingin menggalang dana dengan cepat dan mudah.
 						</p>
 						<div class="rating-wrap">
 							<span>Rating</span>
@@ -464,15 +353,15 @@
 					<div class="testimonial-box-one mt-30">
 						<div class="author-info">
 							<div class="author-img">
-								<img src="assets/img/author-thumbs/01.jpg" alt="Thumb">
+								<img src="assets/img/author-thumbs/org3.jpg" alt="Thumb">
 							</div>
 							<div>
-								<h5 class="name">Howard A. Guest</h5>
-								<p class="position">Web Developer</p>
+								<h5 class="name">Rina Ariani</h5>
+								<p class="position">Pemilik Katering</p>
 							</div>
 						</div>
 						<p class="testimonial-desc">
-							Quis autem vel eum reprehenderit quiea voluptate velit essenih lestiae conseqatur veillum dolorem
+							Saya memiliki ide bisnis yang luar biasa, tetapi saya tidak punya modal untuk memulainya. SaTu membantu saya mengumpulkan dana dan sekarang bisnis saya sudah menjadi sukses dan semakin berkembang.
 						</p>
 						<div class="rating-wrap">
 							<span>Rating</span>
@@ -490,15 +379,15 @@
 					<div class="testimonial-box-one mt-30">
 						<div class="author-info">
 							<div class="author-img">
-								<img src="assets/img/author-thumbs/04.jpg" alt="Thumb">
+								<img src="assets/img/author-thumbs/org4.jpg" alt="Thumb">
 							</div>
 							<div>
-								<h5 class="name">Joseph A. Anthony</h5>
-								<p class="position">Web Developer</p>
+								<h5 class="name">Joko Handoko</h5>
+								<p class="position">Pemilik Bengkel Motor</p>
 							</div>
 						</div>
 						<p class="testimonial-desc">
-							Quis autem vel eum reprehenderit quiea voluptate velit essenih lestiae conseqatur veillum dolorem
+							Saya ingin membuka usaha bengkel motor, tetapi modal yang saya miliki tidak cukup. SaTu membantu saya mengumpulkan dana dari banyak orang dan sekarang usaha bengkel motor saya sudah berjalan dengan lancar.
 						</p>
 						<div class="rating-wrap">
 							<span>Rating</span>
@@ -516,15 +405,15 @@
 					<div class="testimonial-box-one mt-30">
 						<div class="author-info">
 							<div class="author-img">
-								<img src="assets/img/author-thumbs/05.jpg" alt="Thumb">
+								<img src="assets/img/author-thumbs/org5.jpg" alt="Thumb">
 							</div>
 							<div>
-								<h5 class="name">Howard A. Guest</h5>
-								<p class="position">Web Developer</p>
+								<h5 class="name">Maharani Aliana</h5>
+								<p class="position">Pemilik Toko Bunga</p>
 							</div>
 						</div>
 						<p class="testimonial-desc">
-							Quis autem vel eum reprehenderit quiea voluptate velit essenih lestiae conseqatur veillum dolorem
+							Saya sangat terkesan dengan layanan yang diberikan oleh SaTu. Mereka memberikan dukungan yang sangat baik dan responsif dalam setiap tahap proses penggalangan dana yang membuat proyek saya lancar. Terima kasih SaTu! 
 						</p>
 						<div class="rating-wrap">
 							<span>Rating</span>
@@ -542,16 +431,15 @@
 					<div class="testimonial-box-one mt-30">
 						<div class="author-info">
 							<div class="author-img">
-								<img src="assets/img/author-thumbs/06.jpg" alt="Thumb">
+								<img src="assets/img/author-thumbs/org6.jpg" alt="Thumb">
 							</div>
 							<div>
-								<h5 class="name">Howard A. Guest</h5>
-								<p class="position">Web Developer</p>
+								<h5 class="name">Dea Anugrah</h5>
+								<p class="position">Pemilik Toko Roti</p>
 							</div>
 						</div>
 						<p class="testimonial-desc">
-							Quis autem vel eum reprehenderit quiea voluptate velit essenih lestiae conseqatur veillum dolorem
-						</p>
+							SaTu sangat efisien dalam menggalang dana dan memberikan tingkat keamanan yang baik pada setiap transaksi. Saya merekomendasikan SaTu untuk para pengusaha yang ingin menggalang dana dengan aman dan efisien.
 						<div class="rating-wrap">
 							<span>Rating</span>
 							<ul>
@@ -567,56 +455,4 @@
 			</div>
 		</div>
 	</section>
-	<!--====== Testimonials End ======-->
-
-	<!--====== Partners Section With CTA Start ======-->
-	<section class="partners-section">
-		<div class="container">
-			<div class="partners-logos partners-section-padding section-border-top">
-				<div class="row partners-logos-two">
-					<div class="col-lg-3 col-md-4 col-sm-6">
-						<div class="logo mb-30">
-							<a href="#"><img src="assets/img/partners/01.png" alt="Image"></a>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-4 col-sm-6">
-						<div class="logo mb-30">
-							<a href="#"><img src="assets/img/partners/02.png" alt="Image"></a>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-4 col-sm-6">
-						<div class="logo mb-30">
-							<a href="#"><img src="assets/img/partners/03.png" alt="Image"></a>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-4 col-sm-6">
-						<div class="logo mb-30">
-							<a href="#"><img src="assets/img/partners/04.png" alt="Image"></a>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-4 col-sm-6">
-						<div class="logo mb-30">
-							<a href="#"><img src="assets/img/partners/05.png" alt="Image"></a>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-4 col-sm-6">
-						<div class="logo mb-30">
-							<a href="#"><img src="assets/img/partners/06.png" alt="Image"></a>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-4 col-sm-6">
-						<div class="logo mb-30">
-							<a href="#"><img src="assets/img/partners/07.png" alt="Image"></a>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-4 col-sm-6">
-						<div class="logo mb-30">
-							<a href="#"><img src="assets/img/partners/08.png" alt="Image"></a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!--====== Partners Section With CTA End ======-->
     @endsection

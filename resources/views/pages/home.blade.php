@@ -1,6 +1,5 @@
 @extends('layouts.index')
 @section('container')
-
     <!--====== Hero Area Start ======-->
     <section class="hero-area-one">
         <div class="hero-text">
@@ -8,7 +7,7 @@
                 <div class="row justify-content-center">
                     <div class="col-xl-10">
                         <span class="tagline wow fadeInUp" data-wow-delay="0.3s">Crowdfounding Agency</span>
-                        <h1 class="title wow fadeInUp" data-wow-delay="0.4s">Raise Hand to Promote Best Products</h1>
+                        <h1 class="title wow fadeInUp" data-wow-delay="0.4s">Saling Bantu</h1>
                         <a href="project-1.html" class="main-btn wow fadeInUp" data-wow-delay="0.5s">
                             Explore Projects <i class="far fa-arrow-right"></i>
                         </a>
@@ -517,7 +516,7 @@
                             totam rem aperiam eaque ipsa quae abillo inventore verit quasi architecto beatae vitae dicta
                             sunt
                         </p>
-                        <a href="testimonial.html" class="main-btn mt-35">View All Reviews <i
+                        <a href="/testimonial" class="main-btn mt-35">Lihat Semua Review <i
                                 class="far fa-arrow-right"></i></a>
 
                         <div class="testimonial-author-boxes wow fadeInUp" data-wow-delay="0.2s">
@@ -555,16 +554,19 @@
                                 <div class="testimonial-box-one wow fadeInUp" data-wow-delay="0s">
                                     <div class="author-info">
                                         <div class="author-img">
-                                            <img src="assets/img/author-thumbs/01.jpg" alt="Thumb">
+                                            <img src="assets/img/author-thumbs/org1.jpg" alt="Thumb">
                                         </div>
                                         <div>
-                                            <h5 class="name">Howard A. Guest</h5>
-                                            <p class="position">Web Developer</p>
+                                            <h5 class="name">Budi Irawan</h5>
+                                            <p class="position">Pemilik Toko Baju</p>
                                         </div>
                                     </div>
                                     <p class="testimonial-desc">
-                                        Quis autem vel eum reprehenderit quiea voluptate velit essenih lestiae conseqatur
-                                        veillum dolorem
+                                        Dengan SaTu, kampanye penggalangan dana saya menjadi lebih mudah dan efisien. Saya
+                                        berhasil
+                                        mengumpulkan dana yang cukup untuk memulai bisnis saya yang baru. Saya sangat
+                                        senang. Terima
+                                        kasih SaTu!
                                     </p>
                                     <div class="rating-wrap">
                                         <span>Rating</span>
@@ -580,16 +582,18 @@
                                 <div class="testimonial-box-one mt-30 wow fadeInUp" data-wow-delay="0.1s">
                                     <div class="author-info">
                                         <div class="author-img">
-                                            <img src="assets/img/author-thumbs/03.jpg" alt="Thumb">
+                                            <img src="assets/img/author-thumbs/org2.jpg" alt="Thumb">
                                         </div>
                                         <div>
-                                            <h5 class="name">Howard A. Guest</h5>
-                                            <p class="position">Web Developer</p>
+                                            <h5 class="name">Deni Sudrajat</h5>
+                                            <p class="position">Pemilik Warung Kopi</p>
                                         </div>
                                     </div>
                                     <p class="testimonial-desc">
-                                        Quis autem vel eum reprehenderit quiea voluptate velit essenih lestiae conseqatur
-                                        veillum dolorem
+                                        SaTu membantu saya mengumpulkan dana dari banyak orang dengan mudah dan meningkatkan
+                                        visibilitas
+                                        kampanye saya. Sangat direkomendasikan untuk yang ingin menggalang dana dengan cepat
+                                        dan mudah.
                                     </p>
                                     <div class="rating-wrap">
                                         <span>Rating</span>
@@ -607,16 +611,19 @@
                                 <div class="testimonial-box-one mt-30 wow fadeInUp" data-wow-delay="0.2s">
                                     <div class="author-info">
                                         <div class="author-img">
-                                            <img src="assets/img/author-thumbs/02.jpg" alt="Thumb">
+                                            <img src="assets/img/author-thumbs/org3.jpg" alt="Thumb">
                                         </div>
                                         <div>
-                                            <h5 class="name">Howard A. Guest</h5>
-                                            <p class="position">Web Developer</p>
+                                            <h5 class="name">Rina Ariani</h5>
+                                            <p class="position">Pemilik Katering</p>
                                         </div>
                                     </div>
                                     <p class="testimonial-desc">
-                                        Quis autem vel eum reprehenderit quiea voluptate velit essenih lestiae conseqatur
-                                        veillum dolorem
+                                        Saya memiliki ide bisnis yang luar biasa, tetapi saya tidak punya modal untuk
+                                        memulainya. SaTu
+                                        membantu saya mengumpulkan dana dan sekarang bisnis saya sudah menjadi sukses dan
+                                        semakin
+                                        berkembang.
                                     </p>
                                     <div class="rating-wrap">
                                         <span>Rating</span>
@@ -632,16 +639,19 @@
                                 <div class="testimonial-box-one mt-30 wow fadeInUp" data-wow-delay="0.3s">
                                     <div class="author-info">
                                         <div class="author-img">
-                                            <img src="assets/img/author-thumbs/04.jpg" alt="Thumb">
+                                            <img src="assets/img/author-thumbs/org4.jpg" alt="Thumb">
                                         </div>
                                         <div>
-                                            <h5 class="name">Howard A. Guest</h5>
-                                            <p class="position">Web Developer</p>
+                                            <h5 class="name">Joko Handoko</h5>
+                                            <p class="position">Pemilik Bengkel Motor</p>
                                         </div>
                                     </div>
                                     <p class="testimonial-desc">
-                                        Quis autem vel eum reprehenderit quiea voluptate velit essenih lestiae conseqatur
-                                        veillum dolorem
+                                        Saya ingin membuka usaha bengkel motor, tetapi modal yang saya miliki tidak cukup.
+                                        SaTu membantu
+                                        saya mengumpulkan dana dari banyak orang dan sekarang usaha bengkel motor saya sudah
+                                        berjalan
+                                        dengan lancar.
                                     </p>
                                     <div class="rating-wrap">
                                         <span>Rating</span>
