@@ -76,7 +76,7 @@
 			<div class="container">
 				<div class="navbar-inner">
 					<div class="site-logo">
-						<a href="index.html"><img src="assets/img/logo.png" alt="Funden"></a>
+						<a href="/"><img src="assets/img/logo saling bantu.png" alt="Funden"></a>
 					</div>
 					<div class="nav-menu">
 						<ul>
@@ -116,50 +116,29 @@
 		</div>
 		<div class="mobile-menu-panel">
 			<div class="panel-logo">
-				<a href="index.html"><img src="assets/img/logo-white.png" alt="Funden"></a>
+				<a href="index.html"><img src="assets/img/logo saling bantu.png" alt="Funden"></a>
 			</div>
 			<ul class="panel-menu">
 				<li>
-					<a href="index.html">Home</a>
-					<ul class="submenu">
-						<li><a href="index.html">Home One</a></li>
-						<li><a href="index-2.html">Home Two</a></li>
-					</ul>
+					<a href="/">Home</a>
 				</li>
 				<li>
-					<a href="project-1.html">Project</a>
-					<ul class="submenu">
-						<li><a href="project-1.html">Project One</a></li>
-						<li><a href="project-2.html">Project Two</a></li>
-						<li><a href="project-3.html">Project Three</a></li>
-						<li><a href="project-details.html">Project Details</a></li>
-					</ul>
+					<a href="/register">Daftar</a>
 				</li>
 				<li>
-					<a href="events.html">Events</a>
+					<a href="/cara-kerja">Cara Kerja</a>
 				</li>
 				<li>
-					<a href="news-standard.html">News</a>
-					<ul class="submenu">
-						<li><a href="news-standard.html">News Standard</a></li>
-						<li><a href="news-details.html">News Details</a></li>
-					</ul>
+					<a href="/testimoni">Testimoni</a>
 				</li>
-				<li class="current">
-					<a href="#">Pages</a>
-					<ul class="submenu">
-						<li><a href="about.html">About</a></li>
-						<li><a href="company-overview.html">Company Overview</a></li>
-						<li><a href="team-member.html">Team Member</a></li>
-						<li><a href="pricing.html">Pricing</a></li>
-						<li><a href="faq.html">FAQ</a></li>
-					</ul>
+				<li>
+					<a href="/faq">FAQ</a>
 				</li>
-				<li><a href="contact.html">Contact</a></li>
+				<li><a href="/contact-us">Kontak</a></li>
 			</ul>
 			<div class="panel-extra">
-				<a href="#" class="main-btn btn-white">
-					Donate Now <i class="far fa-arrow-right"></i>
+				<a href="/login" class="main-btn btn-white">
+					Sign In <i class="far fa-arrow-right"></i>
 				</a>
 			</div>
 			<a href="#" class="panel-close">
