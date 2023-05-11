@@ -300,7 +300,7 @@
     <!--====== Counter With Image Text Block End ======-->
 
     <section class="testimonials-section section-gap">
-        <div class="container">
+        <div class="container" style="margin-bottom: 0px;">
             <div class="common-heading text-center mb-30">
                 <span class="tagline">
                     <i class="fas fa-plus"></i> Feedback Mitra
