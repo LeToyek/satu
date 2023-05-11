@@ -489,7 +489,7 @@
     <!--====== Counter Area End ======-->
 
     <!--====== Testimonials Start ======-->
-    <section class="testimonials-section section-gap">
+    <section class="testimonials-section section-gap" style="padding-bottom: 0px;>
         <div class="container">
             <div class="row align-items-center justify-content-center">
                 <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10">
