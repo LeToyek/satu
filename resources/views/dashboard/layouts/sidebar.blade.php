@@ -33,56 +33,41 @@
             <ul class="navbar-nav" id="navbar-nav">
                 <li class="menu-title"><span>@lang('translation.menu')</span></li>
                 <li class="nav-item">
-                    <a class="nav-link menu-link" href="/dashboard">
+                    <a class="nav-link" href="/dashboard">
                         <i class="ri-home-3-line"></i> <span>@lang('translation.dashboard')</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/campaign">
+                        <i class="bx bxs-megaphone"></i> <span>@lang('translation.campaign')</span>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link menu-link" href="#sidebarMultilevel" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarMultilevel">
+                    <a class="nav-link" href="#sidebarMarketplace" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarMarketplace">
                         <i class=" ri-store-2-line"></i><span>@lang('translation.marketplace')</span>
                     </a>
-                    <div class="collapse menu-dropdown" id="sidebarMultilevel">
+                    <div class="collapse menu-dropdown" id="sidebarMarketplace">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a href="#" class="nav-link">@lang('translation.level-1.1')</a>
+                                <a href="/dashboard/marketplace/obligasi" class="nav-link">@lang('translation.obligasi')</a>
                             </li>
+                            
                             <li class="nav-item">
-                                <a href="#sidebarAccount" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarAccount">@lang('translation.level-1.2')
-                                </a>
-                                <div class="collapse menu-dropdown" id="sidebarAccount">
-                                    <ul class="nav nav-sm flex-column">
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">@lang('translation.level-2.1')</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#sidebarCrm" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarCrm">@lang('translation.level-2.2')
-                                            </a>
-                                            <div class="collapse menu-dropdown" id="sidebarCrm">
-                                                <ul class="nav nav-sm flex-column">
-                                                    <li class="nav-item">
-                                                        <a href="#" class="nav-link">@lang('translation.level-3.1')</a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a href="#" class="nav-link">@lang('translation.level-3.2')</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
+                                <a href="/dashboard/marketplace/mitra" class="nav-link">@lang('translation.mitra')</a>
                             </li>
+                            
                         </ul>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link menu-link" href="/portofolio">
-                        <i class="   ri-file-chart-line"></i> <span>@lang('translation.portofolio')</span>
+                    <a class="nav-link" href="/portofolio">
+                        <i class="ri-file-chart-line"></i> <span>@lang('translation.portofolio')</span>
                     </a>
                 </li>
                 
                 <li class="nav-item">
-                    <a class="nav-link menu-link" href="/profile">
+                    <a class="nav-link" href="/profile">
                         <i class="  ri-account-circle-line"></i> <span>@lang('translation.profile')</span>
                     </a>
                 </li>

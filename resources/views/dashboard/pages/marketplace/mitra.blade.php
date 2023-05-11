@@ -9,10 +9,10 @@
 @section('content')
     @component('dashboard.components.breadcrumb')
         @slot('li_1')
-            NFT Marketplace
+            Marketplace
         @endslot
         @slot('title')
-            Explore Now
+            Mitra
         @endslot
     @endcomponent
 
@@ -122,7 +122,8 @@
     <script src="{{ URL::asset('velzon/libs/nouislider/nouislider.min.js') }}"></script>
     <script src="{{ URL::asset('velzon/libs/wnumb/wNumb.min.js') }}"></script>
 
-    <script src="{{ URL::asset('velzon/js/pages/apps-nft-explore.init.js') }}"></script>
+    <script src="{{ asset('velzon/js/pages/apps-nft-explore.init.js') }}"></script>
+
 
     <script src="{{ URL::asset('velzon/js/app.js') }}"></script>
 @endsection
