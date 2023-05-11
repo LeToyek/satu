@@ -5,12 +5,12 @@
 		<div class="container">
 			<div class="row align-items-center justify-content-between">
 				<div class="col-lg-8">
-					<h1 class="page-title">Events</h1>
+					<h1 class="page-title">Cara Kerja</h1>
 				</div>
 				<div class="col-auto">
 					<ul class="page-breadcrumb">
 						<li><a href="index.html">Home</a></li>
-						<li>Events</li>
+						<li>Cara Kerja</li>
 					</ul>
 				</div>
 			</div>
