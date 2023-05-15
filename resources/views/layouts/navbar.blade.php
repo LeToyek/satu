@@ -116,7 +116,7 @@
 		</div>
 		<div class="mobile-menu-panel">
 			<div class="panel-logo">
-				<a href="index.html"><img src="assets/img/logo saling bantu.png" alt="Funden"></a>
+				<a href="/"><img src="assets/img/logo saling bantu.png" alt="Funden"></a>
 			</div>
 			<ul class="panel-menu">
 				<li>
@@ -134,7 +134,11 @@
 				<li>
 					<a href="/faq">FAQ</a>
 				</li>
-				<li><a href="/contact-us">Kontak</a></li>
+				<li>
+					<a href="/about-us">Tentang Kami</a>
+				</li>
+				<li><a href="/contact-us">Kontak</a>
+				</li>
 			</ul>
 			<div class="panel-extra">
 				<a href="/login" class="main-btn btn-white">
