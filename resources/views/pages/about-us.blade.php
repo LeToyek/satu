@@ -1,8 +1,8 @@
 @extends('layouts.index')
 @section('container')
     <!--[if lte IE 9]>
-                  <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-                 <![endif]-->
+                      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+                     <![endif]-->
 
 
     <!--====== Page Title Start ======-->
@@ -37,11 +37,11 @@
                             <h2 class="title">Kami Membantu Meningkatkan Kampanye</h2>
                         </div>
                         <p>
-                            Saling Bantu (SaTu) adalah platform online yang memungkinkan pengguna yaitu mitra UMKM untuk mengumpulkan dana
-                            dari banyak orang secara efisien dan efektif. Aplikasi ini dirancang untuk membantu mereka yang
-                            mempunyai ide atau proyek untuk dapat mewujudkan proyek mereka dengan cara kampaye penggalangan
-                            dana secara online. Dengan aplikasi ini, pengguna dapat meningkatkan visibilitas kampanye dan
-                            memperluas jangkauan potensial penggalang dana mereka.
+                            Saling Bantu (SaTu) adalah platform online yang memungkinkan pengguna yaitu mitra UMKM untuk
+                            mengumpulkan dana dari banyak orang secara efisien dan efektif. SaTu dirancang untuk membantu
+                            mereka yang mempunyai ide atau proyek untuk dapat mewujudkan proyek mereka dengan cara kampaye
+                            penggalangan dana secara online. Dengan SaTu, pengguna dapat meningkatkan visibilitas kampanye
+                            dan memperluas jangkauan potensial penggalang dana mereka.
                         </p>
                         <ul class="check-list mt-30">
                             <li class="wow fadeInUp" data-wow-delay="0s">
@@ -119,8 +119,8 @@
                         </div>
                         <h5 class="title">Berdampak Sosial</h5>
                         <p>Membantu pertumbuhan UMKM dengan memberikan akses ke pasar yang lebih luas dan memperluas
-                        jangkauan pasar mereka. Dengan mendanai di SaTu, kamu telah ikut menciptakan kebaikan, 
-						sekaligus mendapatkan imbal hasil.</p>
+                            jangkauan pasar mereka. Dengan mendanai di SaTu, kamu telah ikut menciptakan kebaikan,
+                            sekaligus mendapatkan imbal hasil.</p>
                         <span class="box-index">02</span>
 
                         <div class="box-img">
@@ -171,7 +171,7 @@
                             <img src="assets/img/team/tio.jpeg" alt="Member">
                         </div>
                         <div class="member-info">
-                            <h5 class="name"><a href="company-overview.html">Tio Misbaqul Irawan</a></h5>
+                            <h5 class="name">Tio Misbaqul Irawan</h5>
                             <span class="title">Project Manager</span>
                             <ul class="social-links">
                                 <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
@@ -188,7 +188,7 @@
                             <img src="assets/img/team/maulana.jpeg" alt="Member">
                         </div>
                         <div class="member-info">
-                            <h5 class="name"><a href="company-overview.html">Maulana Arif Wijaya</a></h5>
+                            <h5 class="name">Maulana Arif Wijaya</h5>
                             <span class="title">Team Lead</span>
                             <ul class="social-links">
                                 <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
@@ -205,7 +205,7 @@
                             <img src="assets/img/team/laila.jpeg" alt="Member">
                         </div>
                         <div class="member-info">
-                            <h5 class="name"><a href="company-overview.html">Lailatul Badriyah</a></h5>
+                            <h5 class="name">Lailatul Badriyah</h5>
                             <span class="title">Project Marketing</span>
                             <ul class="social-links">
                                 <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
@@ -222,14 +222,25 @@
     <!--====== Team section End ======-->
 
     <!--====== Counter With Image Text Block Start ======-->
-    <section class="counter-with-video">
+    {{-- <section class="counter-with-video">
         <div class="video-area">
             <div class="container">
 				<iframe width="1170" height="615" frameborder="0" allowfullscreen src="https://www.youtube.com/embed/Opksxsx8Sjw"></iframe>
                 <div class="funden-video">
                 </div>
             </div>
-        </div>	
+        </div>	 --}}
+
+    <section class="counter-with-video">
+        <div class="video-area">
+            <div class="container">
+                <div class="funden-video">
+                    <img src="https://img.youtube.com/vi/Opksxsx8Sjw/maxresdefault.jpg" alt="Thumbnail">
+                    <a href="https://www.youtube.com/embed/Opksxsx8Sjw" class="video-popup" data-lity><i
+                            class="fas fa-play"></i></a>
+                </div>
+            </div>
+        </div>
         <div class="counter-boxes-area secondary-bg">
             <div class="container">
                 <div class="row counter-boxes justify-content-lg-between justify-content-center">
