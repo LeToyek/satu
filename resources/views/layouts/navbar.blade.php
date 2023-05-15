@@ -76,7 +76,7 @@
 			<div class="container">
 				<div class="navbar-inner">
 					<div class="site-logo">
-						<a href="/"><img src="assets/img/logo saling bantu.png" alt="Funden"></a>
+						<a href="/"><img src="assets/img/logo saling bantu.png" alt="SaTu"></a>
 					</div>
 					<div class="nav-menu">
 						<ul>
@@ -116,7 +116,7 @@
 		</div>
 		<div class="mobile-menu-panel">
 			<div class="panel-logo">
-				<a href="/"><img src="assets/img/logo saling bantu.png" alt="Funden"></a>
+				<a href="/"><img src="assets/img/logo saling bantu.png" alt="SaTu"></a>
 			</div>
 			<ul class="panel-menu">
 				<li>
