@@ -229,7 +229,9 @@ return [
     "dashboard" => "Dashboard",
     "marketplace" => "Marketplace",
     "campaign" => "Campaign",
-    "portofolio" => "Portofolio"
+    "portofolio" => "Portofolio",
+    "obligasi" => "Obligasi",
+    "mitra" => "Mitra"
 ];
 ?>
 

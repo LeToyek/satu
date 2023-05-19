@@ -13,6 +13,7 @@ if (ckeditorClassic) {
         .create(document.querySelector('#ckeditor-classic'))
         .then(function (editor) {
             editor.ui.view.editable.element.style.height = '200px';
+            console.log(`editor`, editor);
         })
         .catch(function (error) {
             console.error(error);

@@ -376,7 +376,7 @@ if (document.getElementById("custom-sa-community"))
                 '<label for="input-email" class="form-label fs-13">Email</label>' +
                 '<input type="email" class="form-control" id="input-email" placeholder="Enter Email Address">' +
                 '</div>',
-            imageUrl: 'velzon/images/logo-sm.png',
+            imageUrl: 'build/images/logo-sm.png',
             footer: '<p class="fs-13 text-muted mb-0">Already have an account ? <a href="#" class="fw-semibold text-decoration-underline"> Signin </a> </p>',
             imageHeight: 40,
             confirmButtonClass: 'btn btn-primary w-xs mb-2',

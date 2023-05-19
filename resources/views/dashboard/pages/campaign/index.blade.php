@@ -4,125 +4,124 @@
 @endsection
 @section('css')
     <!-- nouisliderribute css -->
+    <link href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+    <!--datatable responsive css-->
+    <link href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap.min.css" rel="stylesheet"
+        type="text/css" />
+    <link href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css" rel="stylesheet" type="text/css" />
     <link href="{{ URL::asset('velzon/libs/nouislider/nouislider.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 @section('content')
     @component('dashboard.components.breadcrumb')
         @slot('li_1')
-            NFT Marketplace
+            Campaign
         @endslot
         @slot('title')
-            Explore Now
+            Table Campaign
         @endslot
     @endcomponent
-
+    <!-- end row -->
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
-                <div class="card-header border-0">
-                    <div class="d-flex align-items-center">
-                        <h5 class="card-title mb-0 flex-grow-1">Explore Product</h5>
-                        <div>
-                            <a class="btn btn-success" data-bs-toggle="collapse" href="#collapseExample"><i
-                                    class="ri-filter-2-line align-bottom"></i> Filters</a>
-                        </div>
-                    </div>
-                    <div class="collaps show" id="collapseExample">
-                        <div class="row row-cols-xxl-5 row-cols-lg-3 row-cols-md-2 row-cols-1 mt-3 g-3">
-                            <div class="col">
-                                <h6 class="text-uppercase fs-12 mb-2">Search</h6>
-                                <input type="text" class="form-control" placeholder="Search product name"
-                                    autocomplete="off" id="searchProductList">
-                            </div>
-                            <div class="col">
-                                <h6 class="text-uppercase fs-12 mb-2">Select Category</h6>
-                                <select class="form-control" data-choices name="select-category" data-choices-search-false
-                                    id="select-category">
-                                    <option value="">Select Category</option>
-                                    <option value="Artwork">Artwork</option>
-                                    <option value="3d Style">3d Style</option>
-                                    <option value="Photography">Photography</option>
-                                    <option value="Collectibles">Collectibles</option>
-                                    <option value="Crypto Card">Crypto Card</option>
-                                    <option value="Games">Games</option>
-                                    <option value="Music">Music</option>
-                                </select>
-                            </div>
-
-                        </div>
-                    </div>
+                <div class="card-header">
+                    <h5 class="card-title mb-0">Campaign</h5>
                 </div>
-            </div>
-        </div>
-        <div class="col-lg-12">
-            <div class="d-flex align-items-center mb-4">
-                <div class="flex-grow-1">
-                    <p class="text-muted fs-14 mb-0">Result: 8745</p>
-                </div>
-                <div class="flex-shrink-0">
-                    <div class="dropdown">
-                        <a class="text-muted fs-14 dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            All View
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- end row -->
-
-    <div class="row row-cols-xxl-5 row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-1">
-        <div class="col list-element">
-            <div class="card explore-box card-animate">
-                <div class="explore-place-bid-img"> <input type="hidden" class="form-control" id="1">
-                    <div class="d-none">undefined</div> <img src="https://img.themesbrand.com/velzon/images/img-3.gif"
-                        alt="" class="card-img-top explore-img">
-                    <div class="bg-overlay"></div>
-                    <div class="place-bid-btn"> <a href="#!" class="btn btn-success"><i
-                                class="ri-auction-fill align-bottom me-1"></i> Place Bid</a> </div>
-                </div>
-                <div class="bookmark-icon position-absolute top-0 end-0 p-2"> <button type="button"
-                        class="btn btn-icon active" data-bs-toggle="button" aria-pressed="true"><i
-                            class="mdi mdi-cards-heart fs-16"></i></button> </div>
                 <div class="card-body">
-                    <p class="fw-medium mb-0 float-end"><i class="mdi mdi-heart text-danger align-middle"></i> 37.41k </p>
-                    <h5 class="mb-1"><a href="apps-nft-item-details">Walking On Air</a></h5>
-                    <p class="text-muted mb-0">Artwork</p>
-                </div>
-                <div class="card-footer border-top border-top-dashed">
-                    <div class="d-flex align-items-center">
-                        <div class="flex-grow-1 fs-14"> <i class="ri-price-tag-3-fill text-warning align-bottom me-1"></i>
-                            Highest: <span class="fw-medium">10.35ETH</span> </div>
-                        <h5 class="flex-shrink-0 fs-14 text-primary mb-0">14.167ETH</h5>
-                    </div>
+                    <table id="scroll-horizontal" class="table nowrap align-middle" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th scope="col" style="width: 10px;">
+                                    <div class="form-check">
+                                        <input class="form-check-input fs-15" type="checkbox" id="checkAll" value="option">
+                                    </div>
+                                </th>
+                                <th>SR No.</th>
+                                <th>ID</th>
+                                <th>Title</th>
+                                <th>Description</th>
+                                <th>Fund Target</th>
+                                <th>Return Percentage</th>
+                                <th>Tenor</th>
+                                <th>Status</th>
+                                <th>Start Date</th>
+                                <th>Finish Date</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($campaigns as $campaign)
+                                <tr>
+                                    <th scope="row">
+                                        <div class="form-check">
+                                            <input class="form-check-input fs-15" type="checkbox" name="checkAll"
+                                                value="option1">
+                                        </div>
+                                    </th>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $campaign->id }}</td>
+                                    <td>{{ $campaign->title }}</td>
+                                    <td><a href="#!">{{ Str::limit($campaign->description, 20, '...') }}</a></td>
+                                    <td>{{ $campaign->fund_target }}</td>
+                                    <td>{{ $campaign->return_percentage }}</td>
+                                    <td>{{ $campaign->tenor }}</td>
+                                    @include('dashboard.components.status_campaign', ['status' => $campaign->status])
+                                    <td>{{ $campaign->start_date }}</td>
+                                    <td>{{ $campaign->finish_date }}</td>
+                                    <td>
+                                        <ul class="list-inline hstack gap-2 mb-0">
+                                            <li class="list-inline-item" data-bs-toggle="tooltip" data-bs-trigger="hover"
+                                                data-bs-placement="top" title="View">
+                                                <a href="{{ URL::asset('/apps-ecommerce-order-details') }}"
+                                                    class="text-primary d-inline-block">
+                                                    <i class="ri-eye-fill fs-16"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item edit" data-bs-toggle="tooltip"
+                                                data-bs-trigger="hover" data-bs-placement="top" title="Edit">
+                                                <a href="#showModal" data-bs-toggle="modal"
+                                                    class="text-primary d-inline-block edit-item-btn">
+                                                    <i class="ri-pencil-fill fs-16"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item" data-bs-toggle="tooltip" data-bs-trigger="hover"
+                                                data-bs-placement="top" title="Remove">
+                                                <a class="text-danger d-inline-block remove-item-btn"
+                                                    data-bs-toggle="modal" href="#deleteOrder">
+                                                    <i class="ri-delete-bin-5-fill fs-16"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- end row -->
-    <div class="py-4 text-center" id="noresult" style="display: none;">
-        <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop" colors="primary:#405189,secondary:#0ab39c"
-            style="width:72px;height:72px"></lord-icon>
-        <h5 class="mt-4">Sorry! No Result Found</h5>
-    </div>
-    <div class="text-center mb-3">
-        <button class="btn btn-link text-success mt-2" id="loadmore"><i
-                class="mdi mdi-loading mdi-spin fs-20 align-middle me-2"></i> Load More </button>
-    </div>
     </div>
 @endsection
 @section('script')
     <!-- nouisliderribute js -->
     <script src="{{ URL::asset('velzon/libs/nouislider/nouislider.min.js') }}"></script>
     <script src="{{ URL::asset('velzon/libs/wnumb/wNumb.min.js') }}"></script>
-
     <script src="{{ URL::asset('velzon/js/pages/apps-nft-explore.init.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+
+    <script src="{{ URL::asset('velzon/js/pages/datatables.init.js') }}"></script>
+
 
     <script src="{{ URL::asset('velzon/js/app.js') }}"></script>
 @endsection
