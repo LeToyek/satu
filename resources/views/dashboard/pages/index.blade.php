@@ -15,7 +15,7 @@
                     <div class="col-12">
                         <div class="d-flex align-items-lg-center flex-lg-row flex-column">
                             <div class="flex-grow-1">
-                                <h4 class="fs-16 mb-1">Good Morning, Anna!</h4>
+                                <h4 class="fs-16 mb-1">Wellcome, {{ auth()->user()->name }}!</h4>
                                 <p class="text-muted mb-0">Here's what's happening with your store
                                     today.</p>
                             </div>
@@ -36,9 +36,9 @@
                                         </div>
                                         <!--end col-->
                                         <div class="col-auto">
-                                            <button type="button" class="btn btn-soft-secondary"><i
+                                            <a type="button" href="/dashboard/campaign/create" class="btn btn-soft-secondary"><i
                                                     class="ri-add-circle-line align-middle me-1"></i>
-                                                Add Product</button>
+                                                Add Campaign</a>
                                         </div>
                                         <!--end col-->
                                         <div class="col-auto">
@@ -57,10 +57,10 @@
                 </div>
                 <!--end row-->
 
-                @include('dashboard.components.page_explore_campaign')
-                @include('dashboard.components.card_campaign_detail')
-                @include('dashboard.components.page_create_campaign')
-                @include('dashboard.components.table_campaign')
+                {{-- @include('dashboard.components.card_campaign_detail') --}}
+                {{-- @include('dashboard.components.page_create_campaign') --}}
+                {{-- @include('dashboard.components.table_campaign') --}}
+                {{-- @include('dashboard.components.page_explore_campaign') --}}
                 <div class="row">
                     <div class="col-xl-3 col-md-6">
                         <!-- card -->

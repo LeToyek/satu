@@ -4,296 +4,125 @@
 @endsection
 @section('css')
     <!-- nouisliderribute css -->
-    <link href="{{ URL::asset('velzon/libs/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ URL::asset('velzon/libs/nouislider/nouislider.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 @section('content')
     @component('dashboard.components.breadcrumb')
         @slot('li_1')
-            Marketplace
+            NFT Marketplace
         @endslot
         @slot('title')
-            Mitra
+            Explore Now
         @endslot
     @endcomponent
+
     <div class="row">
         <div class="col-lg-12">
-            <div class="card" id="customerList">
-                <div class="card-header border-bottom-dashed">
-
-                    <div class="row g-4 align-items-center">
-                        <div class="col-sm">
-                            <div>
-                                <h5 class="card-title mb-0">Customer List</h5>
-                            </div>
-                        </div>
-                        <div class="col-sm-auto">
-                            <div class="d-flex flex-wrap align-items-start gap-2">
-                                <button class="btn btn-soft-danger" id="remove-actions" onClick="deleteMultiple()"><i
-                                        class="ri-delete-bin-2-line"></i></button>
-                                <a type="button" class="btn btn-secondary add-btn" 
-                                href="/dashboard/campaign/create"
-                                    id="create-btn" ><i
-                                        class="ri-add-line align-bottom me-1"></i> Add Campaign</a>
-                                <button type="button" class="btn btn-success"><i
-                                        class="ri-file-download-line align-bottom me-1"></i>
-                                    Import</button>
-                            </div>
+            <div class="card">
+                <div class="card-header border-0">
+                    <div class="d-flex align-items-center">
+                        <h5 class="card-title mb-0 flex-grow-1">Explore Product</h5>
+                        <div>
+                            <a class="btn btn-success" data-bs-toggle="collapse" href="#collapseExample"><i
+                                    class="ri-filter-2-line align-bottom"></i> Filters</a>
                         </div>
                     </div>
-                </div>
-                <div class="card-body border-bottom-dashed border-bottom">
-
-                        <form>
-                            <div class="row g-3">
-                                <div class="col-xl-6">
-                                    <div class="search-box">
-                                        <input type="text" class="form-control search"
-                                            placeholder="Search for customer, email, phone, status or something...">
-                                        <i class="ri-search-line search-icon"></i>
-                                    </div>
-                                </div>
-                                <!--end col-->
-                                <div class="col-xl-6">
-                                    <div class="row g-3">
-                                        <div class="col-sm-4">
-                                            <div class="">
-                                                <input type="text" class="form-control" id="datepicker-range"
-                                                    data-provider="flatpickr" data-date-format="d M, Y"
-                                                    data-range-date="true" placeholder="Select date">
-                                            </div>
-                                        </div>
-                                        <!--end col-->
-                                        <div class="col-sm-4">
-                                            <div>
-                                                <select class="form-control" data-plugin="choices" data-choices
-                                                    data-choices-search-false name="choices-single-default" id="idStatus">
-                                                    <option value="">Status</option>
-                                                    <option value="all" selected>All</option>
-                                                    <option value="Active">Active</option>
-                                                    <option value="Block">Block</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <!--end col-->
-
-                                        <div class="col-sm-4">
-                                            <div>
-                                                <button type="button" class="btn btn-info w-100" onclick="SearchData();">
-                                                    <i class="ri-equalizer-fill me-2 align-bottom"></i>Filters</button>
-                                            </div>
-                                        </div>
-                                        <!--end col-->
-                                    </div>
-                                </div>
+                    <div class="collaps show" id="collapseExample">
+                        <div class="row row-cols-xxl-5 row-cols-lg-3 row-cols-md-2 row-cols-1 mt-3 g-3">
+                            <div class="col">
+                                <h6 class="text-uppercase fs-12 mb-2">Search</h6>
+                                <input type="text" class="form-control" placeholder="Search product name"
+                                    autocomplete="off" id="searchProductList">
                             </div>
-                            <!--end row-->
-                        </form>
-
-                </div>
-                <div class="card-body">
-                    <div>
-                        <div class="table-responsive table-card mb-1">
-
-                            <table class="table align-middle" id="customerTable">
-
-                                <thead class="table-light text-muted">
-                                    <tr>
-                                        <th scope="col" style="width: 50px;">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="checkAll"
-                                                    value="option">
-                                            </div>
-                                        </th>
-
-                                        <th data-sort="customer_name">Customer</th>
-                                        <th data-sort="email">Email</th>
-                                        <th data-sort="phone">Phone</th>
-                                        <th data-sort="date">Joining Date</th>
-                                        <th data-sort="status">Status</th>
-                                        <th data-sort="action">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="list form-check-all">
-                                    <tr>
-                                        <th scope="row">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="chk_child"
-                                                    value="option1">
-                                            </div>
-                                        </th>
-                                        <td class="id" style="display:none;"><a href="javascript:void(0);"
-                                                class="fw-medium link-primary">#VZ2101</a></td>
-                                        <td class="customer_name">Mary Cousar</td>
-                                        <td class="email">marycousar@velzon.com</td>
-                                        <td class="phone">580-464-4694</td>
-                                        <td class="date">06 Apr, 2021</td>
-                                        <td class="status"><span
-                                                class="badge badge-soft-success text-uppercase">Active</span>
-                                        </td>
-                                        <td>
-                                            <ul class="list-inline hstack gap-2 mb-0">
-                                                <li class="list-inline-item edit" data-bs-toggle="tooltip"
-                                                    data-bs-trigger="hover" data-bs-placement="top" title="Edit">
-                                                    <a href="#showModal" data-bs-toggle="modal"
-                                                        class="text-primary d-inline-block edit-item-btn">
-                                                        <i class="ri-pencil-fill fs-16"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item" data-bs-toggle="tooltip"
-                                                    data-bs-trigger="hover" data-bs-placement="top" title="Remove">
-                                                    <a class="text-danger d-inline-block remove-item-btn"
-                                                        data-bs-toggle="modal" href="#deleteRecordModal">
-                                                        <i class="ri-delete-bin-5-fill fs-16"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <div class="noresult" style="display: none">
-                                <div class="text-center">
-                                    <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop"
-                                        colors="primary:#121331,secondary:#08a88a" style="width:75px;height:75px">
-                                    </lord-icon>
-                                    <h5 class="mt-2">Sorry! No Result Found</h5>
-                                    <p class="text-muted mb-0">We've searched more than 150+ customers
-                                        We did not find any
-                                        customers for you search.</p>
-                                </div>
+                            <div class="col">
+                                <h6 class="text-uppercase fs-12 mb-2">Select Category</h6>
+                                <select class="form-control" data-choices name="select-category" data-choices-search-false
+                                    id="select-category">
+                                    <option value="">Select Category</option>
+                                    <option value="Artwork">Artwork</option>
+                                    <option value="3d Style">3d Style</option>
+                                    <option value="Photography">Photography</option>
+                                    <option value="Collectibles">Collectibles</option>
+                                    <option value="Crypto Card">Crypto Card</option>
+                                    <option value="Games">Games</option>
+                                    <option value="Music">Music</option>
+                                </select>
                             </div>
-                        </div>
-                        <div class="d-flex justify-content-end">
-                            <div class="pagination-wrap hstack gap-2">
-                                <a class="page-item pagination-prev disabled" href="#">
-                                    Previous
-                                </a>
-                                <ul class="pagination listjs-pagination mb-0"></ul>
-                                <a class="page-item pagination-next" href="#">
-                                    Next
-                                </a>
-                            </div>
+
                         </div>
                     </div>
-
-                    <div class="modal fade" id="showModal" tabindex="-1" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header bg-light p-3">
-                                    <h5 class="modal-title" id="exampleModalLabel"></h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-                                        id="close-modal"></button>
-                                </div>
-                                <form class="tablelist-form" autocomplete="off">
-                                    <div class="modal-body">
-                                        <input type="hidden" id="id-field" />
-
-                                        <div class="mb-3" id="modal-id" style="display: none;">
-                                            <label for="id-field1" class="form-label">ID</label>
-                                            <input type="text" id="id-field1" class="form-control" placeholder="ID"
-                                                readonly />
-                                        </div>
-
-                                        <div class="mb-3">
-                                            <label for="customername-field" class="form-label">Customer Name</label>
-                                            <input type="text" id="customername-field" class="form-control"
-                                                placeholder="Enter name" required />
-                                            <div class="invalid-feedback">Please enter a customer name.</div>
-                                        </div>
-
-                                        <div class="mb-3">
-                                            <label for="email-field" class="form-label">Email</label>
-                                            <input type="email" id="email-field" class="form-control"
-                                                placeholder="Enter email" required />
-                                            <div class="invalid-feedback">Please enter an email.</div>
-                                        </div>
-
-                                        <div class="mb-3">
-                                            <label for="phone-field" class="form-label">Phone</label>
-                                            <input type="text" id="phone-field" class="form-control"
-                                                placeholder="Enter phone no." required />
-                                            <div class="invalid-feedback">Please enter a phone.</div>
-                                        </div>
-
-                                        <div class="mb-3">
-                                            <label for="date-field" class="form-label">Joining Date</label>
-                                            <input type="date" id="date-field" class="form-control"
-                                                data-provider="flatpickr" data-date-format="d M, Y" required
-                                                placeholder="Select date" />
-                                            <div class="invalid-feedback">Please select a date.</div>
-                                        </div>
-
-                                        <div>
-                                            <label for="status-field" class="form-label">Status</label>
-                                            <select class="form-control" data-choices data-choices-search-false
-                                                name="status-field" id="status-field" required>
-                                                <option value="">Status</option>
-                                                <option value="Active">Active</option>
-                                                <option value="Block">Block</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <div class="hstack gap-2 justify-content-end">
-                                            <button type="button" class="btn btn-light"
-                                                data-bs-dismiss="modal">Close</button>
-                                            <button type="submit" class="btn btn-success" id="add-btn">Add
-                                                Customer</button>
-                                            <!-- <button type="button" class="btn btn-success" id="edit-btn">Update</button> -->
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Modal -->
-                    <div class="modal fade zoomIn" id="deleteRecordModal" tabindex="-1" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="btn-close" id="deleteRecord-close"
-                                        data-bs-dismiss="modal" aria-label="Close" id="btn-close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="mt-2 text-center">
-                                        <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json" trigger="loop"
-                                            colors="primary:#f7b84b,secondary:#f06548" style="width:100px;height:100px">
-                                        </lord-icon>
-                                        <div class="mt-4 pt-2 fs-15 mx-4 mx-sm-5">
-                                            <h4>Are you sure ?</h4>
-                                            <p class="text-muted mx-4 mb-0">Are you sure you want to
-                                                remove this record ?</p>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex gap-2 justify-content-center mt-4 mb-2">
-                                        <button type="button" class="btn w-sm btn-light"
-                                            data-bs-dismiss="modal">Close</button>
-                                        <button type="button" class="btn w-sm btn-danger " id="delete-record">Yes,
-                                            Delete
-                                            It!</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--end modal -->
                 </div>
             </div>
-
         </div>
-        <!--end col-->
+        <div class="col-lg-12">
+            <div class="d-flex align-items-center mb-4">
+                <div class="flex-grow-1">
+                    <p class="text-muted fs-14 mb-0">Result: 8745</p>
+                </div>
+                <div class="flex-shrink-0">
+                    <div class="dropdown">
+                        <a class="text-muted fs-14 dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            All View
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    @include('dashboard.components.table_campaign')
+    <!-- end row -->
+
+    <div class="row row-cols-xxl-5 row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-1">
+        <div class="col list-element">
+            <div class="card explore-box card-animate">
+                <div class="explore-place-bid-img"> <input type="hidden" class="form-control" id="1">
+                    <div class="d-none">undefined</div> <img src="https://img.themesbrand.com/velzon/images/img-3.gif"
+                        alt="" class="card-img-top explore-img">
+                    <div class="bg-overlay"></div>
+                    <div class="place-bid-btn"> <a href="#!" class="btn btn-success"><i
+                                class="ri-auction-fill align-bottom me-1"></i> Place Bid</a> </div>
+                </div>
+                <div class="bookmark-icon position-absolute top-0 end-0 p-2"> <button type="button"
+                        class="btn btn-icon active" data-bs-toggle="button" aria-pressed="true"><i
+                            class="mdi mdi-cards-heart fs-16"></i></button> </div>
+                <div class="card-body">
+                    <p class="fw-medium mb-0 float-end"><i class="mdi mdi-heart text-danger align-middle"></i> 37.41k </p>
+                    <h5 class="mb-1"><a href="apps-nft-item-details">Walking On Air</a></h5>
+                    <p class="text-muted mb-0">Artwork</p>
+                </div>
+                <div class="card-footer border-top border-top-dashed">
+                    <div class="d-flex align-items-center">
+                        <div class="flex-grow-1 fs-14"> <i class="ri-price-tag-3-fill text-warning align-bottom me-1"></i>
+                            Highest: <span class="fw-medium">10.35ETH</span> </div>
+                        <h5 class="flex-shrink-0 fs-14 text-primary mb-0">14.167ETH</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end row -->
+    <div class="py-4 text-center" id="noresult" style="display: none;">
+        <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop" colors="primary:#405189,secondary:#0ab39c"
+            style="width:72px;height:72px"></lord-icon>
+        <h5 class="mt-4">Sorry! No Result Found</h5>
+    </div>
+    <div class="text-center mb-3">
+        <button class="btn btn-link text-success mt-2" id="loadmore"><i
+                class="mdi mdi-loading mdi-spin fs-20 align-middle me-2"></i> Load More </button>
+    </div>
+    </div>
 @endsection
 @section('script')
-    <script src="{{ URL::asset('velzon/libs/list.js/list.min.js') }}"></script>
-    <script src="{{ URL::asset('velzon/libs/list.pagination.js/list.pagination.min.js') }}"></script>
+    <!-- nouisliderribute js -->
+    <script src="{{ URL::asset('velzon/libs/nouislider/nouislider.min.js') }}"></script>
+    <script src="{{ URL::asset('velzon/libs/wnumb/wNumb.min.js') }}"></script>
 
-    <!--ecommerce-customer init js -->
-    <script src="{{ URL::asset('velzon/js/pages/ecommerce-customer-list.init.js') }}"></script>
-    <script src="{{ URL::asset('velzon/libs/sweetalert2/sweetalert2.min.js') }}"></script>
+    <script src="{{ URL::asset('velzon/js/pages/apps-nft-explore.init.js') }}"></script>
 
     <script src="{{ URL::asset('velzon/js/app.js') }}"></script>
 @endsection
