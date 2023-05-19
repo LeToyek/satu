@@ -228,6 +228,8 @@ return [
     //satu
     "dashboard" => "Dashboard",
     "marketplace" => "Marketplace",
+    "campaign" => "Campaign",
+    "portofolio" => "Portofolio"
 ];
 ?>
 
