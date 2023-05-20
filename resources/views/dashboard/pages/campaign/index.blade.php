@@ -12,6 +12,13 @@
     <link href="{{ URL::asset('velzon/libs/nouislider/nouislider.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 @section('content')
+    @if (session()->has('success'))
+        <div class="alert alert-success alert-dismissible alert-solid alert-label-icon fade show" role="alert"
+            id="succ-alert" style="position: absolute;z-index: 9999;bottom: 0;right: 0;margin: 0px 24px 24px 0px">
+            <i class="ri-check-double-line label-icon"></i><strong>Success</strong> - {{ session()->get('success') }}
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
     @component('dashboard.components.breadcrumb')
         @slot('li_1')
             Campaign
@@ -24,24 +31,21 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
-                <div class="card-header">
+                <div class="card-header d-flex justify-content-between align-items-center">
                     <h5 class="card-title mb-0">Campaign</h5>
+                    <a type="button" href="/dashboard/campaign/create" class="btn btn-soft-secondary"><i
+                            class="ri-add-circle-line align-middle me-1"></i>
+                        Add Campaign</a>
                 </div>
                 <div class="card-body">
                     <table id="scroll-horizontal" class="table nowrap align-middle" style="width:100%">
                         <thead>
                             <tr>
-                                <th scope="col" style="width: 10px;">
-                                    <div class="form-check">
-                                        <input class="form-check-input fs-15" type="checkbox" id="checkAll" value="option">
-                                    </div>
-                                </th>
-                                <th>SR No.</th>
                                 <th>ID</th>
                                 <th>Title</th>
-                                <th>Description</th>
                                 <th>Fund Target</th>
                                 <th>Return Percentage</th>
+                                <th>Funding</th>
                                 <th>Tenor</th>
                                 <th>Status</th>
                                 <th>Start Date</th>
@@ -52,44 +56,69 @@
                         <tbody>
                             @foreach ($campaigns as $campaign)
                                 <tr>
-                                    <th scope="row">
-                                        <div class="form-check">
-                                            <input class="form-check-input fs-15" type="checkbox" name="checkAll"
-                                                value="option1">
-                                        </div>
-                                    </th>
-                                    <td>{{ $loop->iteration }}</td>
                                     <td>{{ $campaign->id }}</td>
                                     <td>{{ $campaign->title }}</td>
-                                    <td><a href="#!">{{ Str::limit($campaign->description, 20, '...') }}</a></td>
-                                    <td>{{ $campaign->fund_target }}</td>
+                                    <td>@include('formatting.money', ['money' => $campaign->fund_target])</td>
                                     <td>{{ $campaign->return_percentage }}</td>
+                                    <td>@include('formatting.money', ['money' => $campaign->total_fund])</td>
                                     <td>{{ $campaign->tenor }}</td>
-                                    @include('dashboard.components.status_campaign', ['status' => $campaign->status])
+                                    @include('dashboard.components.status_campaign', [
+                                        'status' => $campaign->status,
+                                    ])
                                     <td>{{ $campaign->start_date }}</td>
                                     <td>{{ $campaign->finish_date }}</td>
                                     <td>
                                         <ul class="list-inline hstack gap-2 mb-0">
                                             <li class="list-inline-item" data-bs-toggle="tooltip" data-bs-trigger="hover"
                                                 data-bs-placement="top" title="View">
-                                                <a href="{{ URL::asset('/apps-ecommerce-order-details') }}"
+                                                <a href="{{ url('dashboard/campaign/'.$campaign->slug) }}"
                                                     class="text-primary d-inline-block">
                                                     <i class="ri-eye-fill fs-16"></i>
                                                 </a>
                                             </li>
-                                            <li class="list-inline-item edit" data-bs-toggle="tooltip"
-                                                data-bs-trigger="hover" data-bs-placement="top" title="Edit">
-                                                <a href="#showModal" data-bs-toggle="modal"
+                                            <li class="list-inline-item edit"title="Edit">
+                                                <a href="{{ url('dashboard/campaign/' . $campaign->slug . '/edit') }}"
                                                     class="text-primary d-inline-block edit-item-btn">
                                                     <i class="ri-pencil-fill fs-16"></i>
                                                 </a>
                                             </li>
                                             <li class="list-inline-item" data-bs-toggle="tooltip" data-bs-trigger="hover"
                                                 data-bs-placement="top" title="Remove">
-                                                <a class="text-danger d-inline-block remove-item-btn"
-                                                    data-bs-toggle="modal" href="#deleteOrder">
+                                                <a type="button" class="text-danger d-inline-block remove-item-btn"
+                                                    data-bs-toggle="modal" data-bs-target=".bs-example-modal-center">
                                                     <i class="ri-delete-bin-5-fill fs-16"></i>
                                                 </a>
+                                                <div class="modal fade bs-example-modal-center" tabindex="-1"
+                                                    role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered">
+                                                        <div class="modal-content">
+                                                            <div class="modal-body text-center p-5">
+                                                                <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json"
+                                                                    trigger="hover"
+                                                                    colors="primary:#f7b84b,secondary:#f06548"
+                                                                    style="width:100px;height:100px"></lord-icon>
+                                                                <div class="mt-4">
+                                                                    <h3 class="mb-3">Apakah anda yakin?</h3>
+                                                                    <p class="text-muted mb-4"> Campaign yang dihapus tidak
+                                                                        bisa dikembalikan</p>
+                                                                    <div class="hstack gap-2 justify-content-center">
+                                                                        <button type="button" class="btn btn-light"
+                                                                            data-bs-dismiss="modal">Close</button>
+                                                                        <form
+                                                                            action="{{ url('dashboard/campaign/' . $campaign->slug) }}"
+                                                                            method="POST">
+                                                                            @csrf
+                                                                            @method('DELETE')
+                                                                            <button type="submit"
+                                                                                class="btn btn-danger">Hapus</button>
+                                                                        </form>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div><!-- /.modal-content -->
+                                                    </div><!-- /.modal-dialog -->
+                                                </div>
                                             </li>
                                         </ul>
                                     </td>
@@ -104,6 +133,12 @@
 @endsection
 @section('script')
     <!-- nouisliderribute js -->
+    <script>
+        setTimeout(() => {
+            var element = document.getElementById("succ-alert");
+            element.classList.remove("show");
+        }, 3000);
+    </script>
     <script src="{{ URL::asset('velzon/libs/nouislider/nouislider.min.js') }}"></script>
     <script src="{{ URL::asset('velzon/libs/wnumb/wNumb.min.js') }}"></script>
     <script src="{{ URL::asset('velzon/js/pages/apps-nft-explore.init.js') }}"></script>
@@ -121,7 +156,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
 
     <script src="{{ URL::asset('velzon/js/pages/datatables.init.js') }}"></script>
-
-
     <script src="{{ URL::asset('velzon/js/app.js') }}"></script>
 @endsection
