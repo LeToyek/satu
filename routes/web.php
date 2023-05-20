@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CampaignController;
 use App\Http\Controllers\MarketplaceController;
+use App\Http\Controllers\NewsController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -27,9 +28,15 @@ Route::get('/', function () {
 Route::get('/about-us', function () {
     return view('pages.about-us');
 });
-Route::get('/cara-kerja', function () {
-    return view('pages.cara-kerja');
+Route::get('/cara-kerja-mitra', function () {
+    return view('pages.cara-kerja-mitra');
 });
+Route::get('/cara-kerja-pendana', function () {
+    return view('pages.cara-kerja-pendana');
+});
+Route::get('/news/{id}', function ($id) {
+    return view('pages.news'.$id);
+})->name('news.show');
 Route::get('/faq', function () {
     return view('pages.faq');
 });
