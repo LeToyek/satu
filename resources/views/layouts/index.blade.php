@@ -37,19 +37,19 @@
     @include('layouts.footer')
 
     <!--====== jquery js ======-->
-    <script src="{{ 'assets/js/jquery.min.js' }}"></script>
+    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
     <!--====== Bootstrap js ======-->
-    <script src="{{ 'assets/js/bootstrap.min.js' }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
     <!--====== Inview js ======-->
-    <script src="{{ 'assets/js/jquery.inview.min.js' }}"></script>
+    <script src="{{ asset('assets/js/jquery.inview.min.js') }}"></script>
     <!--====== Slick js ======-->
-    <script src="{{ 'assets/js/slick.min.js' }}"></script>
+    <script src="{{ asset('assets/js/slick.min.js') }}"></script>
     <!--====== Lity js ======-->
-    <script src="{{ 'assets/js/lity.min.js' }}"></script>
+    <script src="{{ asset('assets/js/lity.min.js') }}"></script>
     <!--====== Wow js ======-->
-    <script src="{{ 'assets/js/wow.min.js' }}"></script>
+    <script src="{{ asset('assets/js/wow.min.js') }}"></script>
     <!--====== Main js ======-->
-    <script src="{{ 'assets/js/main.js' }}"></script>
+    <script src="{{ asset('assets/js/main.js' )}}"></script>
 
 </body>
 
