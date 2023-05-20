@@ -238,13 +238,23 @@
                                             </div>
                                         </div>
                                     </div>
-
                                     <div class="accordion-item">
                                         <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
                                             data-target="#accordion-3-3">
-                                            Bagaimana cara mengetahui perkembangan proyek setelah didanai?
+                                            Apakah ada minimum atau maksimum jumlah pendanaan yang dapat saya berikan?
                                         </h5>
                                         <div id="accordion-3-3" class="collapse" data-parent="#accordionFaqThree">
+                                            <div class="accordion-content">
+                                                Minimum jumlah pendanaan yang dapat Anda berikan adalah Rp. 100.000.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
+                                            data-target="#accordion-3-4">
+                                            Bagaimana cara mengetahui perkembangan proyek setelah didanai?
+                                        </h5>
+                                        <div id="accordion-3-4" class="collapse" data-parent="#accordionFaqThree">
                                             <div class="accordion-content">
                                                 Setiap proyek yang didanai akan memberikan update secara berkala kepada
                                                 pendana. Anda juga dapat melihat perkembangan proyek melalui dashboard di
@@ -254,10 +264,10 @@
                                     </div>
                                     <div class="accordion-item">
                                         <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
-                                            data-target="#accordion-3-4">
+                                            data-target="#accordion-3-5">
                                             Dapatkah saya membatalkan pendanaan yang telah saya lakukan?
                                         </h5>
-                                        <div id="accordion-3-4" class="collapse" data-parent="#accordionFaqThree">
+                                        <div id="accordion-3-5" class="collapse" data-parent="#accordionFaqThree">
                                             <div class="accordion-content">
                                                 Komitmen antara pendana dan penerima pinjaman yang diatur dalam perjanjian
                                                 harus dipertahankan hingga masa pinjaman berakhir. Oleh karena itu, tidak
@@ -271,11 +281,25 @@
                             <div class="tab-pane fade" id="support" role="tabpanel">
                                 <div class="accordion" id="accordionFaqFour">
                                     <div class="accordion-item">
-                                        <h5 class="accordion-title" data-toggle="collapse" aria-expanded="true"
+                                        <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
                                             data-target="#accordion-4-1">
+                                            Apa keuntungan menjadi mitra UMKM di SaTu?
+                                        </h5>
+                                        <div id="accordion-4-1" class="collapse" data-parent="#accordionFaqFour">
+                                            <div class="accordion-content">
+                                                Sebagai mitra UMKM di SaTu, Anda dapat mengumpulkan dana dari banyak orang
+                                                secara online, meningkatkan visibilitas kampanye Anda, dan memperluas
+                                                jangkauan potensial pendana. Selain itu, SaTu juga menyediakan alat dan
+                                                fitur untuk mempromosikan produk atau usaha Anda.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h5 class="accordion-title" data-toggle="collapse" aria-expanded="true"
+                                            data-target="#accordion-4-2">
                                             Bagaimana cara mendaftar sebagai mitra UMKM di SaTu?
                                         </h5>
-                                        <div id="accordion-4-1" class="collapse show" data-parent="#accordionFaqFour">
+                                        <div id="accordion-4-2" class="collapse show" data-parent="#accordionFaqFour">
                                             <div class="accordion-content">
                                                 Untuk mendaftar sebagai mitra UMKM di SaTu, Anda harus mengisi formulir
                                                 pendaftaran dan mengunggah dokumen yang diperlukan. Tim SaTu akan meninjau
@@ -284,11 +308,37 @@
                                         </div>
                                     </div>
                                     <div class="accordion-item">
+                                        <h5 class="accordion-title" data-toggle="collapse" aria-expanded="true"
+                                            data-target="#accordion-4-3">
+                                            Apakah ada biaya pendaftaran atau biaya lainnya untuk menjadi mitra UMKM di
+                                            SaTu?
+                                        </h5>
+                                        <div id="accordion-4-3" class="collapse show" data-parent="#accordionFaqFour">
+                                            <div class="accordion-content">
+                                                Tidak, menjadi mitra UMKM di SaTu tidak memerlukan biaya pendaftaran.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h5 class="accordion-title" data-toggle="collapse" aria-expanded="true"
+                                            data-target="#accordion-4-4">
+                                            Bagaimana proses verifikasi dokumen pendukung yang saya sertakan saat mendaftar
+                                            di SaTu?
+                                        </h5>
+                                        <div id="accordion-4-4" class="collapse show" data-parent="#accordionFaqFour">
+                                            <div class="accordion-content">
+                                                Setelah Anda mengunggah dokumen pendukung seperti izin usaha, laporan
+                                                keuangan, dan gambar produk, tim SaTu akan memverifikasinya untuk memastikan
+                                                validitas dan keabsahan informasi yang Anda berikan.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
                                         <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
-                                            data-target="#accordion-4-2">
+                                            data-target="#accordion-4-5">
                                             Apa yang harus saya lakukan setelah kampanye penggalangan dana selesai?
                                         </h5>
-                                        <div id="accordion-4-2" class="collapse" data-parent="#accordionFaqFour">
+                                        <div id="accordion-4-5" class="collapse" data-parent="#accordionFaqFour">
                                             <div class="accordion-content">
                                                 Setelah kampanye penggalangan dana selesai, mitra UMKM harus memberikan
                                                 laporan yang jelas tentang penggunaan dana tersebut. Hal ini akan membantu
@@ -300,10 +350,37 @@
                                     </div>
                                     <div class="accordion-item">
                                         <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
-                                            data-target="#accordion-4-3">
+                                            data-target="#accordion-4-6">
+                                            Bagaimana saya dapat mempromosikan kampanye penggalangan dana saya di SaTu?
+                                        </h5>
+                                        <div id="accordion-4-6" class="collapse" data-parent="#accordionFaqFour">
+                                            <div class="accordion-content">
+                                                SaTu menyediakan fitur untuk mempromosikan kampanye Anda, seperti
+                                                membagikan kampanye melalui media sosial.
+                                                SaTu.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
+                                            data-target="#accordion-4-7">
+                                            Bagaimana saya dapat memperoleh dukungan dari para pendana di SaTu?
+                                        </h5>
+                                        <div id="accordion-4-7" class="collapse" data-parent="#accordionFaqFour">
+                                            <div class="accordion-content">
+                                                Untuk mendapatkan dukungan dari para pendana di SaTu, pastikan kampanye Anda
+                                                memiliki deskripsi yang menarik, jelas, dan informatif. Sampaikan dengan
+                                                baik tujuan Anda dan manfaat yang akan diterima oleh para pendana jika
+                                                mereka berkontribusi.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
+                                            data-target="#accordion-4-8">
                                             Apa yang terjadi jika kampanye saya tidak berhasil mencapai target dana?
                                         </h5>
-                                        <div id="accordion-4-3" class="collapse" data-parent="#accordionFaqFour">
+                                        <div id="accordion-4-8" class="collapse" data-parent="#accordionFaqFour">
                                             <div class="accordion-content">
                                                 Jika kampanye Anda tidak berhasil mencapai target dana, biasanya
                                                 semua dana yang berhasil dikumpulkan dikembalikan kepada para pendana.
@@ -312,10 +389,10 @@
                                     </div>
                                     <div class="accordion-item">
                                         <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
-                                            data-target="#accordion-4-4">
+                                            data-target="#accordion-4-9">
                                             Apakah saya dapat mengubah target penggalangan dana selama kampanye berlangsung?
                                         </h5>
-                                        <div id="accordion-4-4" class="collapse" data-parent="#accordionFaqFour">
+                                        <div id="accordion-4-9" class="collapse" data-parent="#accordionFaqFour">
                                             <div class="accordion-content">
                                                 Tidak, target penggalangan dana tidak dapat diubah setelah kampanye dimulai.
                                             </div>
@@ -357,16 +434,62 @@
                                     <div class="accordion-item">
                                         <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
                                             data-target="#accordion-5-3">
-                                            Apakah SaTu menjamin keamanan pembayaran saya?
+                                            Apakah SaTu memerlukan verifikasi identitas pengguna?
                                         </h5>
                                         <div id="accordion-5-3" class="collapse" data-parent="#accordionFaqFive">
                                             <div class="accordion-content">
-                                                Ya, SaTu menjamin keamanan pembayaran Anda dengan menggunakan sistem
-                                                pembayaran yang aman dan terpercaya. SaTu juga menawarkan berbagai pilihan
-                                                pembayaran yang mudah dan aman seperti transfer bank, kartu kredit/debit,
-                                                dan e-wallet. Selain itu, SaTu juga memiliki kebijakan pengembalian dana
-                                                yang jelas dan transparan jika terjadi masalah dengan kampanye atau
-                                                pembayaran.
+                                                SaTu menerapkan proses verifikasi identitas pengguna untuk melindungi
+                                                keamanan platform. Kami mengharuskan pengguna untuk memverifikasi akun
+                                                mereka dengan menggunakan informasi pribadi yang valid dan mengikuti
+                                                prosedur verifikasi yang ditetapkan. Hal ini bertujuan untuk mencegah adanya
+                                                kegiatan penipuan atau pelanggaran lainnya dalam penggalangan dana.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
+                                            data-target="#accordion-5-4">
+                                            Apakah SaTu menjamin keamanan pembayaran saya?
+                                        </h5>
+                                        <div id="accordion-5-4" class="collapse" data-parent="#accordionFaqFive">
+                                            <div class="accordion-content">
+                                                SaTu bekerja sama dengan mitra pembayaran yang terpercaya untuk memproses
+                                                transaksi pembayaran. Kami menggunakan metode yang aman dan mengikuti
+                                                standar keamanan industri untuk menjaga keamanan informasi pembayaran Anda.
+                                                Namun, penting untuk diingat bahwa setiap transaksi online memiliki risiko
+                                                sendiri, dan kami mendorong pengguna untuk menggunakan metode pembayaran
+                                                yang aman dan mengikuti prinsip kehati-hatian dalam bertransaksi.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
+                                            data-target="#accordion-5-5">
+                                            Apakah SaTu menjamin keamanan pembayaran saya?
+                                        </h5>
+                                        <div id="accordion-5-5" class="collapse" data-parent="#accordionFaqFive">
+                                            <div class="accordion-content">
+                                                SaTu bekerja sama dengan mitra pembayaran yang terpercaya untuk memproses
+                                                transaksi pembayaran. Kami menggunakan metode yang aman dan mengikuti
+                                                standar keamanan industri untuk menjaga keamanan informasi pembayaran Anda.
+                                                Namun, penting untuk diingat bahwa setiap transaksi online memiliki risiko
+                                                sendiri, dan kami mendorong pengguna untuk menggunakan metode pembayaran
+                                                yang aman dan mengikuti prinsip kehati-hatian dalam bertransaksi.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h5 class="accordion-title" data-toggle="collapse" aria-expanded="false"
+                                            data-target="#accordion-5-6">
+                                            Bagaimana jika saya menemui masalah keamanan atau pelanggaran dalam SaTu?
+                                        </h5>
+                                        <div id="accordion-5-6" class="collapse" data-parent="#accordionFaqFive">
+                                            <div class="accordion-content">
+                                                Jika Anda mengalami masalah keamanan atau mencurigai adanya pelanggaran di
+                                                SaTu, kami mendorong Anda untuk segera melaporkan masalah tersebut kepada
+                                                tim dukungan kami. Kami akan segera menindaklanjuti laporan Anda dan
+                                                mengambil langkah-langkah yang diperlukan untuk menangani masalah tersebut
+                                                dan menjaga keamanan pengguna SaTu.
                                             </div>
                                         </div>
                                     </div>
@@ -524,8 +647,8 @@
                         </div>
                         <h5 class="title">Berdampak Sosial</h5>
                         <p>Membantu pertumbuhan UMKM dengan memberikan akses ke pasar yang lebih luas dan memperluas
-                        jangkauan pasar mereka. Dengan mendanai di SaTu, kamu telah ikut menciptakan kebaikan, 
-						sekaligus mendapatkan imbal hasil.</p>
+                            jangkauan pasar mereka. Dengan mendanai di SaTu, kamu telah ikut menciptakan kebaikan,
+                            sekaligus mendapatkan imbal hasil.</p>
                         <span class="box-index">02</span>
 
                         <div class="box-img">

@@ -39,98 +39,6 @@
     </section>
     <!--====== Hero Area End ======-->
 
-    {{-- <!--====== Categories Section Start ======-->
-    <section class="popular-categories section-gap">
-        <div class="container">
-            <div class="categories-header">
-                <div class="row align-items-center justify-content-between">
-                    <div class="col-auto">
-                        <div class="common-heading mb-30">
-                            <span class="tagline">
-                                <i class="fas fa-plus"></i> what we do
-                                <span class="heading-shadow-text">Category</span>
-                            </span>
-                            <h2 class="title">Popular Categories</h2>
-                        </div>
-                    </div>
-                    <div class="col-auto">
-                        <a href="project-1.html" class="main-btn mb-30">View All Category <i
-                                class="far fa-angle-right"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center fancy-icon-boxes">
-                <div class="col-xl-4 col-md-6 col-sm-10 wow fadeInUp" data-wow-delay="0s">
-                    <div class="fancy-box-item mt-30">
-                        <div class="icon">
-                            <i class="flaticon-reading-book"></i>
-                        </div>
-                        <div class="content">
-                            <h4 class="title"><a href="project-details.html">Education</a></h4>
-                            <p>School, Collage & University</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6 col-sm-10 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="fancy-box-item mt-30">
-                        <div class="icon">
-                            <i class="flaticon-stethoscope"></i>
-                        </div>
-                        <div class="content">
-                            <h4 class="title"><a href="project-details.html">Medical & Health</a></h4>
-                            <p>School, Collage & University</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6 col-sm-10 wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="fancy-box-item mt-30">
-                        <div class="icon">
-                            <i class="flaticon-tshirt-1"></i>
-                        </div>
-                        <div class="content">
-                            <h4 class="title"><a href="project-details.html">Clothes</a></h4>
-                            <p>School, Collage & University</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6 col-sm-10 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="fancy-box-item mt-30">
-                        <div class="icon">
-                            <i class="flaticon-video-camera"></i>
-                        </div>
-                        <div class="content">
-                            <h4 class="title"><a href="project-details.html">Video & Films</a></h4>
-                            <p>School, Collage & University</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6 col-sm-10 wow fadeInUp" data-wow-delay="0.4s">
-                    <div class="fancy-box-item mt-30">
-                        <div class="icon">
-                            <i class="flaticon-project-management"></i>
-                        </div>
-                        <div class="content">
-                            <h4 class="title"><a href="project-details.html">Technology</a></h4>
-                            <p>School, Collage & University</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6 col-sm-10 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="fancy-box-item mt-30">
-                        <div class="icon">
-                            <i class="flaticon-salad"></i>
-                        </div>
-                        <div class="content">
-                            <h4 class="title"><a href="project-details.html">Organic Foods</a></h4>
-                            <p>School, Collage & University</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--====== Categories Section End ======--> --}}
-
     <!--====== About Section Start ======-->
     <section class="about-section-one" style="margin-top: 110px;">
         <div class="container">
@@ -150,7 +58,8 @@
                             <h2 class="title">Kenapa Memilih Kami</h2>
                         </div>
                         <p style="margin-bottom: 31px">
-                            Saling Bantu (SaTu) adalah platform online yang memungkinkan pengguna yaitu mitra UMKM untuk mengumpulkan dana
+                            Saling Bantu (SaTu) adalah platform online yang memungkinkan pengguna yaitu mitra UMKM untuk
+                            mengumpulkan dana
                             dari banyak orang secara efisien dan efektif. SaTu dirancang untuk membantu mereka yang
                             mempunyai ide atau proyek untuk dapat mewujudkan proyek mereka dengan cara kampaye penggalangan
                             dana secara online. Dengan SaTu, pengguna dapat meningkatkan visibilitas kampanye dan
@@ -168,10 +77,10 @@
         <div class="container-fluid fluid-extra-padding">
             <div class="common-heading text-center color-version-white mb-60">
                 <span class="tagline">
-                    <i class="fas fa-plus"></i> Popular Projects
-                    <span class="heading-shadow-text">Our Projects</span>
+                    <i class="fas fa-plus"></i> Kampanye Populer
+                    <span class="heading-shadow-text">Kampanye Kita</span>
                 </span>
-                <h2 class="title">Explore Our Projects</h2>
+                <h2 class="title">Jelajahi Kampanye</h2>
             </div>
             <div class="row project-slider-one project-items project-style-one no-shadow">
                 <div class="col">
@@ -197,7 +106,7 @@
                                     <div class="bar-line"></div>
                                 </div>
                             </div>
-                            <span class="date"><i class="far fa-calendar-alt"></i> 25 February 2021</span>
+                            <span class="date"><i class="far fa-calendar-alt"></i> 15 Mei 2023</span>
                         </div>
                     </div>
                 </div>
@@ -224,7 +133,7 @@
                                     <div class="bar-line"></div>
                                 </div>
                             </div>
-                            <span class="date"><i class="far fa-calendar-alt"></i> 25 February 2021</span>
+                            <span class="date"><i class="far fa-calendar-alt"></i> 15 Mei 2023</span>
                         </div>
                     </div>
                 </div>
@@ -252,7 +161,7 @@
                                     <div class="bar-line"></div>
                                 </div>
                             </div>
-                            <span class="date"><i class="far fa-calendar-alt"></i> 25 February 2021</span>
+                            <span class="date"><i class="far fa-calendar-alt"></i> 15 Mei 2023</span>
                         </div>
                     </div>
                 </div>
@@ -279,7 +188,7 @@
                                     <div class="bar-line"></div>
                                 </div>
                             </div>
-                            <span class="date"><i class="far fa-calendar-alt"></i> 25 February 2021</span>
+                            <span class="date"><i class="far fa-calendar-alt"></i> 15 Mei 2023</span>
                         </div>
                     </div>
                 </div>
@@ -306,7 +215,7 @@
                                     <div class="bar-line"></div>
                                 </div>
                             </div>
-                            <span class="date"><i class="far fa-calendar-alt"></i> 25 February 2021</span>
+                            <span class="date"><i class="far fa-calendar-alt"></i> 15 Mei 2023</span>
                         </div>
                     </div>
                 </div>
@@ -333,7 +242,7 @@
                                     <div class="bar-line"></div>
                                 </div>
                             </div>
-                            <span class="date"><i class="far fa-calendar-alt"></i> 25 February 2021</span>
+                            <span class="date"><i class="far fa-calendar-alt"></i> 15 Mei 2023</span>
                         </div>
                     </div>
                 </div>
@@ -360,7 +269,7 @@
                                     <div class="bar-line"></div>
                                 </div>
                             </div>
-                            <span class="date"><i class="far fa-calendar-alt"></i> 25 February 2021</span>
+                            <span class="date"><i class="far fa-calendar-alt"></i> 15 Mei 2023</span>
                         </div>
                     </div>
                 </div>
@@ -387,7 +296,7 @@
                                     <div class="bar-line"></div>
                                 </div>
                             </div>
-                            <span class="date"><i class="far fa-calendar-alt"></i> 25 February 2021</span>
+                            <span class="date"><i class="far fa-calendar-alt"></i> 15 Mei 2023</span>
                         </div>
                     </div>
                 </div>
@@ -414,7 +323,7 @@
                                     <div class="bar-line"></div>
                                 </div>
                             </div>
-                            <span class="date"><i class="far fa-calendar-alt"></i> 25 February 2021</span>
+                            <span class="date"><i class="far fa-calendar-alt"></i> 15 Mei 2023</span>
                         </div>
                     </div>
                 </div>
@@ -489,52 +398,20 @@
     <!--====== Counter Area End ======-->
 
     <!--====== Testimonials Start ======-->
-    <section class="testimonials-section section-gap" style="padding-bottom: 0px;>
+    <section class="testimonials-section section-gap">
         <div class="container">
             <div class="row align-items-center justify-content-center">
                 <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10">
                     <div class="testimonials-content mb-lg-50">
                         <div class="common-heading mb-30">
                             <span class="tagline">
-                                <i class="fas fa-plus"></i> clients Feedback
-                                <span class="heading-shadow-text">Testimonials</span>
+                                <i class="fas fa-plus"></i> Feedback Mitra
+                                <span class="heading-shadow-text">Testimoni</span>
                             </span>
-                            <h2 class="title">Why Choose Us</h2>
+                            <h2 class="title">Kenapa Mereka Memilih Kami</h2>
                         </div>
-                        <p>
-                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudan
-                            totam rem aperiam eaque ipsa quae abillo inventore verit quasi architecto beatae vitae dicta
-                            sunt
-                        </p>
                         <a href="/testimoni" class="main-btn mt-35">Lihat Semua Review <i
                                 class="far fa-arrow-right"></i></a>
-
-                        <div class="testimonial-author-boxes wow fadeInUp" data-wow-delay="0.2s">
-                            <h6>Most Popular Clients</h6>
-                            <ul class="author-images">
-                                <li data-tooltip="true" data-placement="top" data-original-title="Donald L. Juarez">
-                                    <a href="#"><img src="assets/img/author-thumbs/01.jpg" alt="user one"></a>
-                                </li>
-                                <li data-tooltip="true" data-placement="top" data-original-title="Evan A. Ethridge">
-                                    <a href="#"><img src="assets/img/author-thumbs/02.jpg" alt="user one"></a>
-                                </li>
-                                <li data-tooltip="true" data-placement="top" data-original-title="Donald L. Lewis">
-                                    <a href="#"><img src="assets/img/author-thumbs/03.jpg" alt="user one"></a>
-                                </li>
-                                <li data-tooltip="true" data-placement="top" data-original-title="Marcus L. Duncan">
-                                    <a href="#"><img src="assets/img/author-thumbs/04.jpg" alt="user one"></a>
-                                </li>
-                                <li data-tooltip="true" data-placement="top" data-original-title="Evan A. Ethridge">
-                                    <a href="#"><img src="assets/img/author-thumbs/05.jpg" alt="user one"></a>
-                                </li>
-                                <li data-tooltip="true" data-placement="top" data-original-title="M. Jon Doe">
-                                    <a href="#"><img src="assets/img/author-thumbs/06.jpg" alt="user one"></a>
-                                </li>
-                                <li data-tooltip="true" data-placement="top" data-original-title="More">
-                                    <a href="#" class="more-icon"><i class="far fa-plus"></i></a>
-                                </li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
                 <div class="col-xl-8 col-lg-10">
@@ -663,84 +540,28 @@
     </section>
     <!--====== Testimonials End ======-->
 
-    <!--====== Partners Section Start ======-->
-    <section class="partners-section section-gap section-border-bottom">
-        <div class="container">
-            <div class="common-heading mb-30">
-                <span class="tagline">
-                    <i class="fas fa-plus"></i> Our Partners
-                    <span class="heading-shadow-text">Partners</span>
-                </span>
-                <h2 class="title">Trusted Partners</h2>
-            </div>
-            <div class="row partners-logos-one">
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="logo mt-30">
-                        <a href="#"><img src="assets/img/partners/01.png" alt="Image"></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="logo mt-30">
-                        <a href="#"><img src="assets/img/partners/02.png" alt="Image"></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="logo mt-30">
-                        <a href="#"><img src="assets/img/partners/03.png" alt="Image"></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="logo mt-30">
-                        <a href="#"><img src="assets/img/partners/04.png" alt="Image"></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="logo mt-30">
-                        <a href="#"><img src="assets/img/partners/05.png" alt="Image"></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="logo mt-30">
-                        <a href="#"><img src="assets/img/partners/06.png" alt="Image"></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="logo mt-30">
-                        <a href="#"><img src="assets/img/partners/07.png" alt="Image"></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="logo mt-30">
-                        <a href="#"><img src="assets/img/partners/08.png" alt="Image"></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--====== Partners Section End ======-->
-
     <!--====== Latest News Start ======-->
-    <section class="latest-blog-section section-gap">
+    <section class="latest-blog-section section-gap" style="padding-top: 0px;">
         <div class="container">
             <div class="common-heading text-center mb-30">
                 <span class="tagline">
-                    <i class="fas fa-plus"></i> Latest News & Blog
-                    <span class="heading-shadow-text">News Blog</span>
+                    <i class="fas fa-plus"></i> Artikel
+                    <span class="heading-shadow-text">Berita Artikel</span>
                 </span>
-                <h2 class="title">Get Every Single Update</h2>
+                <h2 class="title">Dapatkan Berita Artikel</h2>
             </div>
             <div class="row justify-content-center latest-blog-posts style-one">
                 <div class="col-lg-4 col-md-6 col-sm-9 col-11 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="latest-post-box mt-30">
                         <div class="post-thumb">
-                            <img src="assets/img/latest-news/01.jpg" alt="Image">
+                            <img src="assets/img/latest-news/cover1.jpg" alt="Image">
                         </div>
                         <div class="post-content">
-                            <a href="#" class="post-date"><i class="far fa-calendar-alt"></i> 25 February 2021</a>
                             <h6 class="title">
-                                <a href="news-details.html">Standing Out From Crowds mproving Mobile Experience</a>
+                                <a href="{{ route('news.show', 1) }}">6 Strategi dan Tujuan Pemberdayaan UMKM di
+                                    Indonesia</a>
                             </h6>
-                            <a href="news-details.html" class="post-link">Read More <i
+                            <a href="{{ route('news.show', 1) }}" class="post-link">Baca Selengkapnya <i
                                     class="far fa-arrow-right"></i></a>
                         </div>
                     </div>
@@ -748,15 +569,14 @@
                 <div class="col-lg-4 col-md-6 col-sm-9 col-11 wow fadeInUp" data-wow-delay="0.2s">
                     <div class="latest-post-box mt-30">
                         <div class="post-thumb">
-                            <img src="assets/img/latest-news/02.jpg" alt="Image">
+                            <img src="assets/img/latest-news/cover2.jpg" alt="Image">
                         </div>
                         <div class="post-content">
-                            <a href="#" class="post-date"><i class="far fa-calendar-alt"></i> 25 February 2021</a>
                             <h6 class="title">
-                                <a href="news-details.html">Five Rules Of App Localization China Money Dating And App
-                                    Store</a>
+                                <a href="{{ route('news.show', 2) }}">7 Strategi Pengembangan Usaha Agar Semakin
+                                    Sukses!</a>
                             </h6>
-                            <a href="news-details.html" class="post-link">Read More <i
+                            <a href="{{ route('news.show', 2) }}" class="post-link">Baca Selengkapnya <i
                                     class="far fa-arrow-right"></i></a>
                         </div>
                     </div>
@@ -764,14 +584,13 @@
                 <div class="col-lg-4 col-md-6 col-sm-9 col-11 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="latest-post-box mt-30">
                         <div class="post-thumb">
-                            <img src="assets/img/latest-news/03.jpg" alt="Image">
+                            <img src="assets/img/latest-news/cover3.jpg" alt="Image">
                         </div>
                         <div class="post-content">
-                            <a href="#" class="post-date"><i class="far fa-calendar-alt"></i> 25 February 2021</a>
                             <h6 class="title">
-                                <a href="news-details.html">How To Use Underlined Text Improve User Experience</a>
+                                <a href="{{ route('news.show', 3) }}">Cara Membuat Surat Izin Usaha Kecil Secara Online</a>
                             </h6>
-                            <a href="news-details.html" class="post-link">Read More <i
+                            <a href="{{ route('news.show', 3) }}" class="post-link">Baca Selengkapnya <i
                                     class="far fa-arrow-right"></i></a>
                         </div>
                     </div>
