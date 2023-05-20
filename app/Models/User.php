@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Storage;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
@@ -76,4 +77,13 @@ class User extends Authenticatable
             return $this->hasOne(Funder::class);
         }
     }
+    public function getAvatarUrlAttribute()
+    {
+        if ($this->avatar != null) {
+            # code...
+            return Storage::url($this->avatar->path);
+        }
+        return "https://ui-avatars.com/api/?name=".$this->name ."&background=02A95C&color=fff";
+    }
+
 }
