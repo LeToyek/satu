@@ -6,7 +6,7 @@
           <div class="col-xl-3 col-lg-4 col-md-6">
             <div class="widget about-widget">
               <div class="footer-logo">
-                <img src="assets/img/logo-white.png" alt="Funden">
+                <img src="../assets/img/logo-white.png" alt="Funden">
               </div>
               <p>
                 Sed ut perspiciatis unde omn iste natus error sit voluptatem
