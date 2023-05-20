@@ -7,7 +7,7 @@ File: apps-nft-auction init js
 */
 
 try {
-    var setEndDate1 = "March 19, 2024 6:0:0";
+    var setEndDate1 = document.querySelector('#auction-time-1').innerHTML;
     var setEndDate2 = "April 16, 2024 5:3:1";
     var setEndDate3 = "Dec 01, 2024 1:0:1";
     var setEndDate4 = "Nov 26, 2024 1:2:1";
@@ -53,53 +53,53 @@ try {
             document.querySelector("#" + targetDOM).textContent = "00 : 00 : 00 : 00";
         }
     }
-
+    console.log(`setEndDate1`, setEndDate1  );
     var cdd1 = startCountDownDate(setEndDate1);
-    var cdd2 = startCountDownDate(setEndDate2);
-    var cdd3 = startCountDownDate(setEndDate3);
-    var cdd4 = startCountDownDate(setEndDate4);
-    var cdd5 = startCountDownDate(setEndDate5);
-    var cdd6 = startCountDownDate(setEndDate6);
-    var cdd7 = startCountDownDate(setEndDate7);
-    var cdd8 = startCountDownDate(setEndDate8);
-    var cdd9 = startCountDownDate(setEndDate9);
+    // var cdd2 = startCountDownDate(setEndDate2);
+    // var cdd3 = startCountDownDate(setEndDate3);
+    // var cdd4 = startCountDownDate(setEndDate4);
+    // var cdd5 = startCountDownDate(setEndDate5);
+    // var cdd6 = startCountDownDate(setEndDate6);
+    // var cdd7 = startCountDownDate(setEndDate7);
+    // var cdd8 = startCountDownDate(setEndDate8);
+    // var cdd9 = startCountDownDate(setEndDate9);
 
     if (document.getElementById("auction-time-1"))
         setInterval(function () {
             countDownTimer(cdd1, "auction-time-1");
         }, 1000);
-    if (document.getElementById("auction-time-2"))
-        setInterval(function () {
-            countDownTimer(cdd2, "auction-time-2");
-        }, 1000);
-    if (document.getElementById("auction-time-3"))
-        setInterval(function () {
-            countDownTimer(cdd3, "auction-time-3");
-        }, 1000);
-    if (document.getElementById("auction-time-4"))
-        setInterval(function () {
-            countDownTimer(cdd4, "auction-time-4");
-        }, 1000);
-    if (document.getElementById("auction-time-5"))
-        setInterval(function () {
-            countDownTimer(cdd5, "auction-time-5");
-        }, 1000);
-    if (document.getElementById("auction-time-6"))
-        setInterval(function () {
-            countDownTimer(cdd6, "auction-time-6");
-        }, 1000);
-    if (document.getElementById("auction-time-7"))
-        setInterval(function () {
-            countDownTimer(cdd7, "auction-time-7");
-        }, 1000);
-    if (document.getElementById("auction-time-8"))
-        setInterval(function () {
-            countDownTimer(cdd8, "auction-time-8");
-        }, 1000);
-    if (document.getElementById("auction-time-9"))
-        setInterval(function () {
-            countDownTimer(cdd9, "auction-time-9");
-        }, 1000);
+    // if (document.getElementById("auction-time-2"))
+    //     setInterval(function () {
+    //         countDownTimer(cdd2, "auction-time-2");
+    //     }, 1000);
+    // if (document.getElementById("auction-time-3"))
+    //     setInterval(function () {
+    //         countDownTimer(cdd3, "auction-time-3");
+    //     }, 1000);
+    // if (document.getElementById("auction-time-4"))
+    //     setInterval(function () {
+    //         countDownTimer(cdd4, "auction-time-4");
+    //     }, 1000);
+    // if (document.getElementById("auction-time-5"))
+    //     setInterval(function () {
+    //         countDownTimer(cdd5, "auction-time-5");
+    //     }, 1000);
+    // if (document.getElementById("auction-time-6"))
+    //     setInterval(function () {
+    //         countDownTimer(cdd6, "auction-time-6");
+    //     }, 1000);
+    // if (document.getElementById("auction-time-7"))
+    //     setInterval(function () {
+    //         countDownTimer(cdd7, "auction-time-7");
+    //     }, 1000);
+    // if (document.getElementById("auction-time-8"))
+    //     setInterval(function () {
+    //         countDownTimer(cdd8, "auction-time-8");
+    //     }, 1000);
+    // if (document.getElementById("auction-time-9"))
+    //     setInterval(function () {
+    //         countDownTimer(cdd9, "auction-time-9");
+    //     }, 1000);
 } catch (error) { }
 
 

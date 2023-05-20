@@ -38,7 +38,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/campaign">
+                    <a class="nav-link" href="/dashboard/campaign">
                         <i class="bx bxs-megaphone"></i> <span>@lang('translation.campaign')</span>
                     </a>
                 </li>
@@ -61,14 +61,19 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/portofolio">
+                    <a class="nav-link" href="/dashboard/portofolio">
                         <i class="ri-file-chart-line"></i> <span>@lang('translation.portofolio')</span>
                     </a>
                 </li>
                 
                 <li class="nav-item">
-                    <a class="nav-link" href="/profile">
+                    <a class="nav-link" href="/dashboard/profile">
                         <i class="  ri-account-circle-line"></i> <span>@lang('translation.profile')</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">
+                        <i class="ri-logout-box-line"></i> <span>@lang('translation.logout')</span>
                     </a>
                 </li>
                 

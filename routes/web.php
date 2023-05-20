@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\Auth\Registration\FunderRegistrationController;
+use App\Http\Controllers\Auth\Registration\PartnerRegistrationController;
 use App\Http\Controllers\CampaignController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Marketplace\MitraController;
 use App\Http\Controllers\MarketplaceController;
 use App\Http\Controllers\NewsController;
 use Illuminate\Support\Facades\Auth;
@@ -46,10 +50,23 @@ Route::get('/testimoni', function () {
 Route::get('/contact-us', function () {
     return view('pages.contact-us');
 });
-Route::prefix('dashboard')->group(function(){
+Route::prefix('dashboard')->group(function () {
     Route::resource('/campaign', CampaignController::class);
-    Route::get('/marketplace/mitra',[MarketplaceController::class,'index_mitra']);
-    Route::get('/', function () {
-        return view('dashboard.pages.index');
+    Route::resource('/portofolio', CampaignController::class);
+    Route::prefix('/marketplace')->group(function () {
+        Route::get('/mitra', [MitraController::class, 'index']);
+        Route::post('/mitra/{id}', [MitraController::class, 'fund']);
+        Route::get('/mitra/{id}', [MitraController::class, 'show']);
+        Route::get('/mitra/checkout/invoice', [MitraController::class, 'showInvoice'])->name('invoice');
     });
+    Route::get('/', [DashboardController::class,'index'])->name('dashboard.index');
 });
+Route::prefix('/register')->group(
+    function () {
+        Route::get('/partner', [PartnerRegistrationController::class, 'index'])->name('register.partner.get');
+        Route::post('/partner', [PartnerRegistrationController::class, 'store'])->name('register.partner.post');
+        Route::get('/funder', [FunderRegistrationController::class, 'index'])->name('register.funder.get');
+        Route::post('/funder', [FunderRegistrationController::class, 'store'])->name('register.funder.post');        
+    }
+);
+

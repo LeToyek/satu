@@ -41,6 +41,17 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
+    public function redirectPath()
+    {
+        if (\request('as') == 'partner') {
+            return redirect('register.partner.get');
+        }else if (\request('as') == 'funder') {
+            return redirect('register.funder.get');
+        }else{
+            return '';
+        }
+    }
+
     /**
      * Get a validator for an incoming registration request.
      *
@@ -48,11 +59,14 @@ class RegisterController extends Controller
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
-    {
+{
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+            'username' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'gender' => ['required'],
+            'address' => ['required', 'string'],
+            'dob' => ['required']
         ]);
     }
 
@@ -65,9 +79,12 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
+            'name' => $data['username'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'gender' => $data['gender'],
+            'address' => $data['address'],
+            'birth_date' => $data['dob'],
         ]);
     }
 }

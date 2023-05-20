@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Campaign;
+use App\Models\Image;
 use Illuminate\Http\Request;
 
 class CampaignController extends Controller
@@ -13,7 +14,10 @@ class CampaignController extends Controller
     public function index()
     {
         //
-        return view('dashboard.pages.campaign.index');
+        $campaigns = Campaign::all()->where('partner_id', auth()->user()->details->id);
+        return view('dashboard.pages.campaign.index', [
+            'campaigns' => $campaigns
+        ]);
     }
 
     /**
@@ -31,6 +35,18 @@ class CampaignController extends Controller
     public function store(Request $request)
     {
         //
+        $request['partner_id'] = auth()->user()->details->id;
+        if ($request->hasFile('image')) {
+            $image_name = $request->file('image')->store('images', 'public');
+        }
+        $campaign = Campaign::create($request->except('_token', 'image'));
+        $image = new Image([
+            'path' => $image_name,
+        ]);
+        $image->imageable()->associate($campaign);
+        $image->save();
+
+        return "asodkaso";
     }
 
     /**

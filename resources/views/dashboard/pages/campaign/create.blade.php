@@ -4,6 +4,11 @@
 @endsection
 @section('css')
     <link href="{{ URL::asset('velzon/libs/dropzone/dropzone.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ URL::asset('velzon/libs/@simonwep/pickr/themes/classic.min.css') }}" />
+    <!-- 'classic' theme -->
+    <link rel="stylesheet" href="{{ URL::asset('velzon/libs/@simonwep/pickr/themes/monolith.min.css') }}" />
+    <!-- 'monolith' theme -->
+    <link rel="stylesheet" href="{{ URL::asset('velzon/libs/@simonwep/pickr/themes/nano.min.css') }}" /> <!-- 'nano' theme -->
 @endsection
 @section('content')
     @component('dashboard.components.breadcrumb')
@@ -17,66 +22,69 @@
     <div class="row">
         <div class="col-lg-8">
             <div class="card">
-                <div class="card-body">
+                <form class="card-body" method="POST" action="/dashboard/campaign" enctype="multipart/form-data">
+                    @csrf
                     <div class="mb-3">
-                        <label class="form-label" for="project-title-input">Project Title</label>
-                        <input type="text" class="form-control" id="project-title-input"
+                        <label class="form-label" for="project-title-input">Title</label>
+                        <input type="text" class="form-control" name="title" id="project-title-input"
+                            placeholder="Enter project title">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="project-slug-input">Slug</label>
+                        <input disabled type="text" class="form-control" name="slug" id="project-slug-input"
                             placeholder="Enter project title">
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label" for="project-thumbnail-img">Thumbnail Image</label>
-                        <input class="form-control" id="project-thumbnail-img" type="file" accept="image/png, image/gif, image/jpeg">
+                        <label class="form-label" for="project-thumbnail-img">Image</label>
+                        <input name="image" class="form-control" id="project-thumbnail-img" type="file">
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label">Project Description</label>
-                        <div id="ckeditor-classic">
-                            <p>It will be as simple as occidental in fact, it will be Occidental. To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is. The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary.</p>
-                            <ul>
-                                <li>Product Design, Figma (Software), Prototype</li>
-                                <li>Four Dashboards : Ecommerce, Analytics, Project etc.</li>
-                                <li>Create calendar, chat and email app pages.</li>
-                                <li>Add authentication pages</li>
-                            </ul>
-                        </div>
+                        <label class="form-label">Description</label>
+                        <textarea name="description" id="ckeditor-classic">
+                        </textarea>
                     </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="project-fundtar-input">Fund Target</label>
+                        <input type="number" class="form-control" name="fund_target" id="project-fundtar-input"
+                            placeholder="Enter fund target">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="project-retper-input">Return Percentage</label>
+                        <input type="number" class="form-control" name="return_percentage" id="project-retper-input"
+                            placeholder="Enter return percentage">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label mb-0">Tenor</label>
+                        <input type="number" class="form-control" name="tenor" placeholder="Enter tenor">
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-lg-6">
+                            <div class="mb-3 mb-lg-0">
+                                <label class="form-label mb-0">Start Date</label>
+                                <input type="date" class="form-control" name="start_date" placeholder="Enter start date">
 
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="mb-3 mb-lg-0">
-                                <label for="choices-priority-input" class="form-label">Priority</label>
-                                <select class="form-select" data-choices data-choices-search-false
-                                    id="choices-priority-input">
-                                    <option value="High" selected>High</option>
-                                    <option value="Medium">Medium</option>
-                                    <option value="Low">Low</option>
-                                </select>
                             </div>
                         </div>
-                        <div class="col-lg-4">
+                        <div class="col-lg-6">
+
                             <div class="mb-3 mb-lg-0">
-                                <label for="choices-status-input" class="form-label">Status</label>
-                                <select class="form-select" data-choices data-choices-search-false
-                                    id="choices-status-input">
-                                    <option value="Inprogress" selected>Inprogress</option>
-                                    <option value="Completed">Completed</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div>
-                                <label for="datepicker-deadline-input" class="form-label">Deadline</label>
-                                <input type="text" class="form-control" id="datepicker-deadline-input" placeholder="Enter due date" data-provider="flatpickr">
+                                <label class="form-label mb-0">Finish Date</label>
+                                
+                                <input type="date" class="form-control" name="finish_date"
+                                placeholder="Enter finish date">
                             </div>
                         </div>
                     </div>
-                </div>
+                    
+                    <button type="submit" class="btn btn-success w-sm">Create</button>
+                </form>
                 <!-- end card body -->
             </div>
             <!-- end card -->
 
-            <div class="card">
+            {{-- <div class="card">
                 <div class="card-header">
                     <h5 class="card-title mb-0">Attached files</h5>
                 </div>
@@ -104,7 +112,8 @@
                                     <div class="d-flex p-2">
                                         <div class="flex-shrink-0 me-3">
                                             <div class="avatar-sm bg-light rounded">
-                                                <img src="#" alt="Project-Image" data-dz-thumbnail class="img-fluid rounded d-block" />
+                                                <img src="#" alt="Project-Image" data-dz-thumbnail
+                                                    class="img-fluid rounded d-block" />
                                             </div>
                                         </div>
                                         <div class="flex-grow-1">
@@ -130,7 +139,7 @@
                 <button type="submit" class="btn btn-danger w-sm">Delete</button>
                 <button type="submit" class="btn btn-secondary w-sm">Draft</button>
                 <button type="submit" class="btn btn-success w-sm">Create</button>
-            </div>
+            </div> --}}
         </div>
         <!-- end col -->
         <div class="col-lg-4">
@@ -160,8 +169,7 @@
                 <div class="card-body">
                     <div class="mb-3">
                         <label for="choices-categories-input" class="form-label">Categories</label>
-                        <select class="form-select" data-choices data-choices-search-false
-                            id="choices-categories-input">
+                        <select class="form-select" data-choices data-choices-search-false id="choices-categories-input">
                             <option value="Designing" selected>Designing</option>
                             <option value="Development">Development</option>
                         </select>
@@ -169,8 +177,9 @@
 
                     <div>
                         <label for="choices-text-input" class="form-label">Skills</label>
-                        <input class="form-control" id="choices-text-input" data-choices data-choices-limit="Required Limit" placeholder="Enter Skills" type="text"
-                        value="UI/UX, Figma, HTML, CSS, Javascript, C#, Nodejs" />
+                        <input class="form-control" id="choices-text-input" data-choices
+                            data-choices-limit="Required Limit" placeholder="Enter Skills" type="text"
+                            value="UI/UX, Figma, HTML, CSS, Javascript, C#, Nodejs" />
                     </div>
                 </div>
                 <!-- end card body -->
@@ -184,8 +193,7 @@
                 <div class="card-body">
                     <div class="mb-3">
                         <label for="choices-lead-input" class="form-label">Team Lead</label>
-                        <select class="form-select" data-choices data-choices-search-false
-                            id="choices-lead-input">
+                        <select class="form-select" data-choices data-choices-search-false id="choices-lead-input">
                             <option value="Brent Gonzalez" selected>Brent Gonzalez</option>
                             <option value="Darline Williams">Darline Williams</option>
                             <option value="Sylvia Wright">Sylvia Wright</option>
@@ -198,26 +206,33 @@
                     <div>
                         <label class="form-label">Team Members</label>
                         <div class="avatar-group">
-                            <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Brent Gonzalez">
+                            <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip"
+                                data-bs-trigger="hover" data-bs-placement="top" title="Brent Gonzalez">
                                 <div class="avatar-xs">
-                                    <img src="{{ URL::asset('velzon/images/users/avatar-3.jpg') }}" alt="" class="rounded-circle img-fluid">
+                                    <img src="{{ URL::asset('velzon/images/users/avatar-3.jpg') }}" alt=""
+                                        class="rounded-circle img-fluid">
                                 </div>
                             </a>
-                            <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Sylvia Wright">
+                            <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip"
+                                data-bs-trigger="hover" data-bs-placement="top" title="Sylvia Wright">
                                 <div class="avatar-xs">
                                     <div class="avatar-title rounded-circle bg-secondary">
                                         S
                                     </div>
                                 </div>
                             </a>
-                            <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Ellen Smith">
+                            <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip"
+                                data-bs-trigger="hover" data-bs-placement="top" title="Ellen Smith">
                                 <div class="avatar-xs">
-                                    <img src="{{ URL::asset('velzon/images/users/avatar-4.jpg') }}" alt="" class="rounded-circle img-fluid">
+                                    <img src="{{ URL::asset('velzon/images/users/avatar-4.jpg') }}" alt=""
+                                        class="rounded-circle img-fluid">
                                 </div>
                             </a>
-                            <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Add Members">
+                            <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip"
+                                data-bs-trigger="hover" data-bs-placement="top" title="Add Members">
                                 <div class="avatar-xs" data-bs-toggle="modal" data-bs-target="#inviteMembersModal">
-                                    <div class="avatar-title fs-16 rounded-circle bg-light border-dashed border text-primary">
+                                    <div
+                                        class="avatar-title fs-16 rounded-circle bg-light border-dashed border text-primary">
                                         +
                                     </div>
                                 </div>
@@ -236,7 +251,8 @@
 
 
     <!-- Modal -->
-    <div class="modal fade" id="inviteMembersModal" tabindex="-1" aria-labelledby="inviteMembersModalLabel" aria-hidden="true">
+    <div class="modal fade" id="inviteMembersModal" tabindex="-1" aria-labelledby="inviteMembersModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header p-3 ps-4 bg-soft-success">
@@ -254,21 +270,26 @@
                             <h5 class="mb-0 fs-13">Members :</h5>
                         </div>
                         <div class="avatar-group justify-content-center">
-                            <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Brent Gonzalez">
+                            <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip"
+                                data-bs-trigger="hover" data-bs-placement="top" title="Brent Gonzalez">
                                 <div class="avatar-xs">
-                                    <img src="{{ URL::asset('velzon/images/users/avatar-3.jpg') }}" alt="" class="rounded-circle img-fluid">
+                                    <img src="{{ URL::asset('velzon/images/users/avatar-3.jpg') }}" alt=""
+                                        class="rounded-circle img-fluid">
                                 </div>
                             </a>
-                            <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Sylvia Wright">
+                            <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip"
+                                data-bs-trigger="hover" data-bs-placement="top" title="Sylvia Wright">
                                 <div class="avatar-xs">
                                     <div class="avatar-title rounded-circle bg-secondary">
                                         S
                                     </div>
                                 </div>
                             </a>
-                            <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Ellen Smith">
+                            <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip"
+                                data-bs-trigger="hover" data-bs-placement="top" title="Ellen Smith">
                                 <div class="avatar-xs">
-                                    <img src="{{ URL::asset('velzon/images/users/avatar-4.jpg') }}" alt="" class="rounded-circle img-fluid">
+                                    <img src="{{ URL::asset('velzon/images/users/avatar-4.jpg') }}" alt=""
+                                        class="rounded-circle img-fluid">
                                 </div>
                             </a>
                         </div>
@@ -277,10 +298,12 @@
                         <div class="vstack gap-3">
                             <div class="d-flex align-items-center">
                                 <div class="avatar-xs flex-shrink-0 me-3">
-                                    <img src="{{ URL::asset('velzon/images/users/avatar-2.jpg') }}" alt="" class="img-fluid rounded-circle">
+                                    <img src="{{ URL::asset('velzon/images/users/avatar-2.jpg') }}" alt=""
+                                        class="img-fluid rounded-circle">
                                 </div>
                                 <div class="flex-grow-1">
-                                    <h5 class="fs-13 mb-0"><a href="#" class="text-body d-block">Nancy Martino</a></h5>
+                                    <h5 class="fs-13 mb-0"><a href="#" class="text-body d-block">Nancy Martino</a>
+                                    </h5>
                                 </div>
                                 <div class="flex-shrink-0">
                                     <button type="button" class="btn btn-light btn-sm">Add</button>
@@ -294,7 +317,8 @@
                                     </div>
                                 </div>
                                 <div class="flex-grow-1">
-                                    <h5 class="fs-13 mb-0"><a href="#" class="text-body d-block">Henry Baird</a></h5>
+                                    <h5 class="fs-13 mb-0"><a href="#" class="text-body d-block">Henry Baird</a>
+                                    </h5>
                                 </div>
                                 <div class="flex-shrink-0">
                                     <button type="button" class="btn btn-light btn-sm">Add</button>
@@ -303,10 +327,12 @@
                             <!-- end member item -->
                             <div class="d-flex align-items-center">
                                 <div class="avatar-xs flex-shrink-0 me-3">
-                                    <img src="{{ URL::asset('velzon/images/users/avatar-3.jpg') }}" alt="" class="img-fluid rounded-circle">
+                                    <img src="{{ URL::asset('velzon/images/users/avatar-3.jpg') }}" alt=""
+                                        class="img-fluid rounded-circle">
                                 </div>
                                 <div class="flex-grow-1">
-                                    <h5 class="fs-13 mb-0"><a href="#" class="text-body d-block">Frank Hook</a></h5>
+                                    <h5 class="fs-13 mb-0"><a href="#" class="text-body d-block">Frank Hook</a>
+                                    </h5>
                                 </div>
                                 <div class="flex-shrink-0">
                                     <button type="button" class="btn btn-light btn-sm">Add</button>
@@ -315,10 +341,12 @@
                             <!-- end member item -->
                             <div class="d-flex align-items-center">
                                 <div class="avatar-xs flex-shrink-0 me-3">
-                                    <img src="{{ URL::asset('velzon/images/users/avatar-4.jpg') }}" alt="" class="img-fluid rounded-circle">
+                                    <img src="{{ URL::asset('velzon/images/users/avatar-4.jpg') }}" alt=""
+                                        class="img-fluid rounded-circle">
                                 </div>
                                 <div class="flex-grow-1">
-                                    <h5 class="fs-13 mb-0"><a href="#" class="text-body d-block">Jennifer Carter</a></h5>
+                                    <h5 class="fs-13 mb-0"><a href="#" class="text-body d-block">Jennifer
+                                            Carter</a></h5>
                                 </div>
                                 <div class="flex-shrink-0">
                                     <button type="button" class="btn btn-light btn-sm">Add</button>
@@ -332,7 +360,8 @@
                                     </div>
                                 </div>
                                 <div class="flex-grow-1">
-                                    <h5 class="fs-13 mb-0"><a href="#" class="text-body d-block">Alexis Clarke</a></h5>
+                                    <h5 class="fs-13 mb-0"><a href="#" class="text-body d-block">Alexis Clarke</a>
+                                    </h5>
                                 </div>
                                 <div class="flex-shrink-0">
                                     <button type="button" class="btn btn-light btn-sm">Add</button>
@@ -341,10 +370,12 @@
                             <!-- end member item -->
                             <div class="d-flex align-items-center">
                                 <div class="avatar-xs flex-shrink-0 me-3">
-                                    <img src="{{ URL::asset('velzon/images/users/avatar-7.jpg') }}" alt="" class="img-fluid rounded-circle">
+                                    <img src="{{ URL::asset('velzon/images/users/avatar-7.jpg') }}" alt=""
+                                        class="img-fluid rounded-circle">
                                 </div>
                                 <div class="flex-grow-1">
-                                    <h5 class="fs-13 mb-0"><a href="#" class="text-body d-block">Joseph Parker</a></h5>
+                                    <h5 class="fs-13 mb-0"><a href="#" class="text-body d-block">Joseph Parker</a>
+                                    </h5>
                                 </div>
                                 <div class="flex-shrink-0">
                                     <button type="button" class="btn btn-light btn-sm">Add</button>
@@ -371,4 +402,7 @@
     <script src="{{ URL::asset('velzon/libs/dropzone/dropzone-min.js') }}"></script>
     <script src="{{ URL::asset('velzon/js/pages/project-create.init.js') }}"></script>
     <script src="{{ URL::asset('velzon/js/app.js') }}"></script>
+    <script src="{{ URL::asset('velzon/js/pages/form-pickers.init.js') }}"></script>
+    <script src="{{ URL::asset('velzon/libs/@simonwep/pickr/pickr.min.js') }}"></script>
+    
 @endsection
