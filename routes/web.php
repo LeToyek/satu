@@ -44,6 +44,12 @@ Route::get('/news/{id}', function ($id) {
 Route::get('/faq', function () {
     return view('pages.faq');
 });
+Route::get('/syarat-ketentuan', function () {
+    return view('pages.syarat-ketentuan');
+});
+Route::get('/kebijakan-privasi', function () {
+    return view('pages.kebijakan-privasi');
+});
 Route::get('/testimoni', function () {
     return view('pages.testimoni');
 });
