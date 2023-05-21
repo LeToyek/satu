@@ -22,13 +22,19 @@
     <div class="row">
         <div class="col-lg-8">
             <div class="card">
-                <form class="card-body" method="POST" action="/dashboard/campaign" enctype="multipart/form-data">
+                <form class="card-body" method="POST" action="{{ '/dashboard/campaign/'.$campaign->slug }}" enctype="multipart/form-data">
                     @csrf
+                    @method('PUT')
                     <div class="mb-3">
                         <label class="form-label" for="project-title-input">Title</label>
-                        <input type="text" class="form-control" name="title" id="project-title-input"
+                        <input type="text" class="form-control" value="{{ old('title',$campaign->title) }}" name="title" id="project-title-input"
                             placeholder="Enter project title">
                     </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="project-image-preview">Image Preview</label><br>
+                        <img id="project-image-preview" src="{{ asset('storage/'.$campaign->images[0]->path) }}" alt="" width="300px" height="300px">
+                    </div>
+
                     <div class="mb-3">
                         <label class="form-label" for="project-thumbnail-img">Image</label>
                         <input name="image" class="form-control" id="project-thumbnail-img" type="file">
@@ -37,27 +43,28 @@
                     <div class="mb-3">
                         <label class="form-label">Description</label>
                         <textarea name="description" id="ckeditor-classic">
+                            {{ $campaign->description }}
                         </textarea>
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="project-fundtar-input">Fund Target</label>
-                        <input type="number" class="form-control" name="fund_target" id="project-fundtar-input"
+                        <input type="number" class="form-control" value="{{ old('fund_target',$campaign->fund_target) }}" name="fund_target" id="project-fundtar-input"
                             placeholder="Enter fund target">
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="project-retper-input">Return Percentage</label>
-                        <input type="number" class="form-control" name="return_percentage" id="project-retper-input"
+                        <input type="number" class="form-control" value="{{ old('return_percentage',$campaign->return_percentage) }}" name="return_percentage" id="project-retper-input"
                             placeholder="Enter return percentage">
                     </div>
                     <div class="mb-3">
                         <label class="form-label mb-0">Tenor</label>
-                        <input type="number" class="form-control" name="tenor" placeholder="Enter tenor">
+                        <input type="number" class="form-control"value={{ old('tenor',$campaign->tenor) }} name="tenor" placeholder="Enter tenor">
                     </div>
                     <div class="row mb-3">
                         <div class="col-lg-6">
                             <div class="mb-3 mb-lg-0">
                                 <label class="form-label mb-0">Start Date</label>
-                                <input type="date" class="form-control" name="start_date" placeholder="Enter start date">
+                                <input type="date" value="{{ old('start_date',$campaign->start_date) }}" class="form-control" name="start_date" placeholder="Enter start date">
 
                             </div>
                         </div>
@@ -66,13 +73,13 @@
                             <div class="mb-3 mb-lg-0">
                                 <label class="form-label mb-0">Finish Date</label>
                                 
-                                <input type="date" class="form-control" name="finish_date"
+                                <input type="date" value="{{ old('finish_date',$campaign->finish_date) }}" class="form-control" name="finish_date"
                                 placeholder="Enter finish date">
                             </div>
                         </div>
                     </div>
                     
-                    <button type="submit" class="btn btn-success w-sm">Create</button>
+                    <button type="submit" class="btn btn-success w-sm">Edit</button>
                 </form>
                 <!-- end card body -->
             </div>

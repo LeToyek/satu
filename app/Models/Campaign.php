@@ -28,6 +28,10 @@ class Campaign extends Model
             $model->slug = str()->slug($model->title);
         });
     }
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 
     public function partner()
     {

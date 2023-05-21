@@ -6,6 +6,7 @@ use App\Http\Controllers\CampaignController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Marketplace\MitraController;
 use App\Http\Controllers\MarketplaceController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\NewsController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -65,14 +66,14 @@ Route::prefix('dashboard')->group(function () {
         Route::get('/mitra/{id}', [MitraController::class, 'show']);
         Route::get('/mitra/checkout/invoice', [MitraController::class, 'showInvoice'])->name('invoice');
     });
-    Route::get('/', [DashboardController::class,'index'])->name('dashboard.index');
+    Route::resource('/profile', ProfileController::class);
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
 });
 Route::prefix('/register')->group(
     function () {
         Route::get('/partner', [PartnerRegistrationController::class, 'index'])->name('register.partner.get');
         Route::post('/partner', [PartnerRegistrationController::class, 'store'])->name('register.partner.post');
         Route::get('/funder', [FunderRegistrationController::class, 'index'])->name('register.funder.get');
-        Route::post('/funder', [FunderRegistrationController::class, 'store'])->name('register.funder.post');        
+        Route::post('/funder', [FunderRegistrationController::class, 'store'])->name('register.funder.post');
     }
 );
-

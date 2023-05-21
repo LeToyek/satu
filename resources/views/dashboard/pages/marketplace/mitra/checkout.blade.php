@@ -102,8 +102,6 @@
                                     <div class="accordion-body ms-2 ps-5 pt-0">
                                         <h6 class="mb-1">A funding request has been sent</h6>
                                         <p class="text-muted">{{ $funding->created_at }}</p>
-                                        <h6 class="mb-1">Seller has proccessed your order.</h6>
-                                        <p class="text-muted mb-0">Thu, 16 Dec 2021 - 5:48AM</p>
                                     </div>
                                 </div>
                             </div>
@@ -135,13 +133,13 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo"
+                                {{-- <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo"
                                     data-bs-parent="#accordionExample">
                                     <div class="accordion-body ms-2 ps-5 pt-0">
                                         <h6 class="mb-1">Your Item has been picked up by courier patner</h6>
                                         <p class="text-muted mb-0">Fri, 17 Dec 2021 - 9:45AM</p>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                         <!--end accordion-->
@@ -195,7 +193,7 @@
                                     <h6 class="fs-15 mb-1">{{ $funding->campaign->partner->name }}</h6>
                                     <p class="text-muted mb-0">Partner</p>
                                 </div>
-                            </div>
+                            </d iv>
                         </li>
                         <li><i class="ri-mail-line me-2 align-middle text-muted fs-16"></i>{{ $funding->campaign->partner->user->email }}</li>
                         <li><i class="ri-phone-line me-2 align-middle text-muted fs-16"></i>+(256) 245451 441</li>
