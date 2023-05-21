@@ -54,7 +54,7 @@
                                     <div class="info-content">
                                         <h5>Lokasi</h5>
                                         <p>
-                                            Malang, Jawa Timur
+                                            Malang, Jawa Timur, Indonesia
                                         </p>
                                     </div>
                                 </div>
@@ -76,7 +76,7 @@
                                         <i class="flaticon-phone-call-1"></i>
                                     </div>
                                     <div class="info-content">
-                                        <h5>No Telepon</h5>
+                                        <h5>Nomor Telepon</h5>
                                         <p>
                                             +6281679246178 <br>
                                         </p>
