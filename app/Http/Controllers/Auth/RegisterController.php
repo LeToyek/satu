@@ -43,11 +43,13 @@ class RegisterController extends Controller
 
     public function redirectPath()
     {
-        if (\request('as') == 'partner') {
-            return redirect('register.partner.get');
-        }else if (\request('as') == 'funder') {
-            return redirect('register.funder.get');
-        }else{
+        $role = auth()->user()->role;
+
+        if ($role == 'partner') {
+            return route('register.partner.get');
+        } else if ($role == 'funder') {
+            return route('register.funder.get');
+        } else {
             return '';
         }
     }
@@ -59,7 +61,7 @@ class RegisterController extends Controller
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
-{
+    {
         return Validator::make($data, [
             'username' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
@@ -85,6 +87,7 @@ class RegisterController extends Controller
             'gender' => $data['gender'],
             'address' => $data['address'],
             'birth_date' => $data['dob'],
+            'role' => $data['role'],
         ]);
     }
 }

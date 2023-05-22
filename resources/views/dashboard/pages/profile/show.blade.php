@@ -16,7 +16,7 @@
     @endif
     <div class="profile-foreground position-relative mx-n4 mt-n4">
         <div class="profile-wid-bg">
-            <img src="{{ URL::asset('velzon/images/profile-bg.jpg') }}" alt="" class="profile-wid-img" />
+            <img src="{{ $user->details?->image?->url }}" alt="" class="profile-wid-img" />
         </div>
     </div>
 
@@ -26,8 +26,8 @@
                 <div class="">
                     <img src="{{ $user->avatar_url }}" alt="user-img" class="img-thumbnail rounded-circle" />
                     {{-- <img src="@if (Auth::user()->avatar != '') {{ URL::asset('images/' . Auth::user()->avatar) }}@else{{ URL::asset('velzon/images/users/avatar-1.jpg') }} @endif"
-                        alt="
-                            user-img" class="img-thumbnail rounded-circle" /> --}}
+                alt="
+                user-img" class="img-thumbnail rounded-circle" /> --}}
                 </div>
             </div>
             <!--end col-->
@@ -72,7 +72,7 @@
                                     class="d-none d-md-inline-block">Overview</span>
                             </a>
                         </li>
-                        
+
                         <li class="nav-item">
                             <a class="nav-link fs-14" data-bs-toggle="tab" href="#documents" role="tab">
                                 <i class="ri-folder-4-line d-inline-block d-md-none"></i> <span
@@ -130,101 +130,134 @@
                             <div class="card-body">
 
                                 <div class="text-center">
-                                    <lord-icon src="https://cdn.lordicon.com/nocovwne.json" trigger="loop"
-                                        colors="primary:#242424,secondary:#e83a30" style="width:100px;height:100px">
-                                    </lord-icon>
-                                    <div class="mt-4">
-                                        <h3 class="mb-3">Dokumen tidak ditemukan</h3>
-                                        <p class="text-muted mb-4"> Anda belum memiliki dokumen yang diunggah.
-                                        </p>
-                                        <div class="hstack gap-2 justify-content-center">
-                                            <a type="button" class="btn btn-outline-danger custom-toggle"
-                                                data-bs-toggle="modal" data-bs-target=".add-document">
-                                                <i class="ri-file-add-line align-bottom me-1"></i>Tambah Dokumen
-                                            </a>
-                                            <div class="modal fade add-document" tabindex="-1" role="dialog"
-                                                aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog modal-dialog-centered">
-                                                    <div class="modal-content">
-                                                        <div class="modal-body p-5">
-                                                            <!-- end dropzon-preview -->
 
-                                                            <form action="{{ url('dashboard/partner') }}" method="POST"
-                                                                enctype="multipart/form-data" class="mt-4">
-                                                                @csrf
-                                                                <p class="text-muted">DropzoneJS is an open source library
-                                                                    that
-                                                                    provides drag’n’drop file uploads with image previews.
-                                                                </p>
-                                                                <div class="dropzone">
 
-                                                                    <div class="fallback">
-                                                                        <input type="file" name="files" multiple>
-                                                                    </div>
-                                                                    <div class="dz-message needsclick">
-                                                                        <div class="mb-3">
-                                                                            <i
-                                                                            class="display-4 text-muted ri-upload-cloud-2-fill"></i>
+                                    @php
+                                        $documents = auth()->user()->details->documents;
+                                    @endphp
+
+
+                                    @forelse ($documents as $document)
+                                        {{-- div row --}}
+                                        <div class="container">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="text-center">
+                                                        <img src="{{ URL::asset('velzon/images/new-document.png') }}"
+                                                            alt="document" class="img-fluid" />
+                                                    </div>
+                                                    <div class="mt-4">
+                                                        <h5 class="mb-3">{{ $document->title }}</h5>
+                                                        <a href="{{ $document->url }}" target="_blank"
+                                                            class="btn btn-outline-danger custom-toggle">
+                                                            <i class="ri-download-2-line align-bottom me-1"></i>Download
+                                                        </a>
+                                                    </div>
+                                                </div><!-- end card body -->
+                                            </div><!-- end card -->
+                                        </div>
+                                    @empty
+                                        <lord-icon src="https://cdn.lordicon.com/nocovwne.json" trigger="loop"
+                                            colors="primary:#242424,secondary:#e83a30" style="width:100px;height:100px">
+                                        </lord-icon>
+                                        <div class="mt-4">
+                                            <h3 class="mb-3">Dokumen tidak ditemukan</h3>
+                                            <p class="text-muted mb-4"> Anda belum memiliki dokumen yang diunggah.
+                                            </p>
+                                            <div class="hstack gap-2 justify-content-center">
+                                                <a type="button" class="btn btn-outline-danger custom-toggle"
+                                                    data-bs-toggle="modal" data-bs-target=".add-document">
+                                                    <i class="ri-file-add-line align-bottom me-1"></i>Tambah Dokumen
+                                                </a>
+                                                <div class="modal fade add-document" tabindex="-1" role="dialog"
+                                                    aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered">
+                                                        <div class="modal-content">
+                                                            <div class="modal-body p-5">
+                                                                <!-- end dropzon-preview -->
+
+                                                                <form action="{{ url('dashboard/partner') }}"
+                                                                    method="POST" enctype="multipart/form-data"
+                                                                    class="mt-4">
+                                                                    @csrf
+                                                                    <p class="text-muted">DropzoneJS is an open source
+                                                                        library
+                                                                        that
+                                                                        provides drag’n’drop file uploads with image
+                                                                        previews.
+                                                                    </p>
+                                                                    <div class="dropzone">
+
+                                                                        <div class="fallback">
+                                                                            <input type="file" name="files" multiple>
                                                                         </div>
-                                                                        
-                                                                        <h4>Drop files here or click to upload.</h4>
+                                                                        <div class="dz-message needsclick">
+                                                                            <div class="mb-3">
+                                                                                <i
+                                                                                    class="display-4 text-muted ri-upload-cloud-2-fill"></i>
+                                                                            </div>
+
+                                                                            <h4>Drop files here or click to upload.</h4>
+                                                                        </div>
                                                                     </div>
-                                                                </div>
 
 
-                                                                <ul class="list-unstyled mb-0" id="dropzone-preview">
-                                                                    <li class="mt-2" id="dropzone-preview-list">
-                                                                        <!-- This is used as the file preview template -->
-                                                                        <div class="border rounded">
-                                                                            <div class="d-flex p-2">
-                                                                                <div class="flex-shrink-0 me-3">
-                                                                                    <div
-                                                                                        class="avatar-sm bg-light rounded">
-                                                                                        <img data-dz-thumbnail
-                                                                                            class="img-fluid rounded d-block"
-                                                                                            src="{{ URL::asset('velzon/images/new-document.png') }}"
-                                                                                            alt="Dropzone-Image" />
+                                                                    <ul class="list-unstyled mb-0" id="dropzone-preview">
+                                                                        <li class="mt-2" id="dropzone-preview-list">
+                                                                            <!-- This is used as the file preview template -->
+                                                                            <div class="border rounded">
+                                                                                <div class="d-flex p-2">
+                                                                                    <div class="flex-shrink-0 me-3">
+                                                                                        <div
+                                                                                            class="avatar-sm bg-light rounded">
+                                                                                            <img data-dz-thumbnail
+                                                                                                class="img-fluid rounded d-block"
+                                                                                                src="{{ URL::asset('velzon/images/new-document.png') }}"
+                                                                                                alt="Dropzone-Image" />
+                                                                                        </div>
                                                                                     </div>
-                                                                                </div>
-                                                                                <div class="flex-grow-1">
-                                                                                    <div class="pt-1">
-                                                                                        <h5 class="fs-14 mb-1"
-                                                                                            data-dz-name>
-                                                                                            &nbsp;</h5>
-                                                                                        <p class="fs-13 text-muted mb-0"
-                                                                                            data-dz-size></p>
-                                                                                        <strong class="error text-danger"
-                                                                                            data-dz-errormessage></strong>
+                                                                                    <div class="flex-grow-1">
+                                                                                        <div class="pt-1">
+                                                                                            <h5 class="fs-14 mb-1"
+                                                                                                data-dz-name>
+                                                                                                &nbsp;</h5>
+                                                                                            <p class="fs-13 text-muted mb-0"
+                                                                                                data-dz-size></p>
+                                                                                            <strong
+                                                                                                class="error text-danger"
+                                                                                                data-dz-errormessage></strong>
+                                                                                        </div>
                                                                                     </div>
-                                                                                </div>
-                                                                                <div class="flex-shrink-0 ms-3">
-                                                                                    <button data-dz-remove
-                                                                                        class="btn btn-sm btn-danger">Delete</button>
+                                                                                    <div class="flex-shrink-0 ms-3">
+                                                                                        <button data-dz-remove
+                                                                                            class="btn btn-sm btn-danger">Delete</button>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
-                                                                        </div>
-                                                                    </li>
-                                                                </ul>
-                                                                {{-- <input class="mb-3" name="documents[]"
+                                                                        </li>
+                                                                    </ul>
+                                                                    {{-- <input class="mb-3" name="documents[]"
                                                                     class="form">Apakah anda yakin?</input> --}}
-                                                                <div class="hstack gap-2 justify-content-center mt-4">
+                                                                    <div class="hstack gap-2 justify-content-center mt-4">
 
-                                                                    <button type="button" class="btn btn-light"
-                                                                        data-bs-dismiss="modal">Close</button>
+                                                                        <button type="button" class="btn btn-light"
+                                                                            data-bs-dismiss="modal">Close</button>
 
-                                                                    <button type="submit"
-                                                                        class="btn btn-outline-danger custom-toggle">
-                                                                        <i
-                                                                            class=" ri-upload-cloud-line align-bottom me-1"></i>Unggah
-                                                                    </button>
-                                                                </div>
-                                                            </form>
-                                                        </div>
-                                                    </div><!-- /.modal-content -->
-                                                </div><!-- /.modal-dialog -->
+                                                                        <button type="submit"
+                                                                            class="btn btn-outline-danger custom-toggle">
+                                                                            <i
+                                                                                class=" ri-upload-cloud-line align-bottom me-1"></i>Unggah
+                                                                        </button>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div><!-- /.modal-content -->
+                                                    </div><!-- /.modal-dialog -->
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    @endforelse
+
                                 </div>
                             </div><!-- end card body -->
                         </div><!-- end card -->
@@ -238,7 +271,7 @@
             </div>
         </div>
         <!--end col-->
-    </div>  
+    </div>
     <!--end row-->
 @endsection
 @section('script')
