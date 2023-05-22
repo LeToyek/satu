@@ -33,12 +33,9 @@ Route::get('/', function () {
 Route::get('/about-us', function () {
     return view('pages.about-us');
 });
-Route::get('/cara-kerja-mitra', function () {
-    return view('pages.cara-kerja-mitra');
-});
-Route::get('/cara-kerja-pendana', function () {
-    return view('pages.cara-kerja-pendana');
-});
+Route::get('/cara-kerja/{page}', function ($page) {
+    return view('pages.cara-kerja-' . $page);
+})->name('cara-kerja.show');
 Route::get('/news/{id}', function ($id) {
     return view('pages.news'.$id);
 })->name('news.show');
