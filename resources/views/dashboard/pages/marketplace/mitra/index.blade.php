@@ -93,7 +93,7 @@
                 </div>
                 <div class="card-body">
                     <span class="badge bg-info float-end">{{ $campaign->status }} </span>
-                    <h5 class="text-success"> Rp {{ $campaign->fund_target }} </h5>
+                    <h5 class="text-success"> @include('formatting.money',['money'=>$campaign->fund_target ])</h5>
                     <h6 class="fs-16 mb-3"><a href="apps-nft-item-details" class="link-dark">{{ $campaign->title }}</a></h6>
                     <div>
                         {{-- <span class="text-muted float-end">@include('formatting.money',['money' =>$campaign->fund_target])</span> --}}

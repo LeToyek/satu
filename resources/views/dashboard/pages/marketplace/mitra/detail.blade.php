@@ -21,8 +21,7 @@
                 <div class="col-lg-4">
                     {{-- <div class="sticky-side-div"> --}}
                     <div class="card ribbon-box border shadow-none right">
-                        <div class="ribbon-two ribbon-two-danger"><span><i class="ri-fire-fill align-bottom"></i>
-                                Hot</span></div>
+                        
                         <img src="{{ asset('storage/' . $campaign->images[0]->path) }}" alt=""
                             class="img-fluid rounded">
                         <div class="position-absolute bottom-0 p-3">
