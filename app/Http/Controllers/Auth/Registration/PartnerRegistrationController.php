@@ -41,4 +41,18 @@ class PartnerRegistrationController extends Controller
         
         return redirect()->route('dashboard.index')->with('success', 'New event has been added');
     }
+    public function update(Request $request){
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'address' => 'required',
+            'monthly_income' => 'required|numeric',
+            'sector' => 'required|max:255',
+            'found_at' => 'required|date',
+        ]);
+        $validatedData['user_id'] = auth()->user()->id;
+        $partner = Partner::find($request->id);
+        $partner->update($validatedData);
+        return redirect()->route('dashboard.index')->with('success', 'New event has been added');
+    }
+
 }
