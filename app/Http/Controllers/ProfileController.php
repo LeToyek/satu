@@ -39,12 +39,12 @@ class ProfileController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(User $user)
+    public function show($id)
     {
         //
         $isUser = false;
-        $user = auth()->user();
-        if ($user->id === auth()->user()->id) {
+        $user = User::find($id);
+        if ($id === auth()->user()->id) {
             # code...
             $isUser = true;
         }

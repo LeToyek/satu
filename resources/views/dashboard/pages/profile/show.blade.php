@@ -81,7 +81,7 @@
                         </li>
                     </ul>
                     <div class="flex-shrink-0">
-                        <a href="{{ url('/dashboard/profile/' . $user->id . '/edit') }}" class="btn btn-warning"><i
+                        <a href="{{ url('/dashboard/profile/' . $user->id . '/edit') }}" class="btn btn-warning @if(!$isUser) d-none @endif"><i
                                 class="ri-edit-box-line align-bottom"></i> Edit Profile</a>
                     </div>
                 </div>
