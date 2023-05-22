@@ -76,7 +76,7 @@
 			<div class="container">
 				<div class="navbar-inner">
 					<div class="site-logo">
-						<a href="/"><img src="../assets/img/logo-saling-bantu.png" alt="SaTu"></a>
+						<a href="/"><img src="../assets/img/logo-satu.svg" alt="SaTu"></a>
 					</div>
 					<div class="nav-menu">
 						<ul>
@@ -120,7 +120,7 @@
 		</div>
 		<div class="mobile-menu-panel">
 			<div class="panel-logo">
-				<a href="/"><img src="../assets/img/logo-saling-bantu.png" alt="SaTu"></a>
+				<a href="/"><img src="../assets/img/logo-satu.svg" alt="SaTu"></a>
 			</div>
 			<ul class="panel-menu">
 				<li>
@@ -132,8 +132,8 @@
 				<li>
 					<a href="">Cara Kerja</a>
 					<ul class="submenu">
-						<li><a href="/cara-kerja-mitra">Project One</a></li>
-						<li><a href="/cara-kerja-pendana">Project Two</a></li>
+						<li><a href="/cara-kerja-mitra">Cara Kerja Mitra</a></li>
+						<li><a href="/cara-kerja-pendana">Cara Kerja Pendana</a></li>
 					</ul>
 				</li>
 				<li>
