@@ -16,6 +16,8 @@
         @endslot
     @endcomponent
 
+    @if (count($campaigns) !==0 )
+        
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
@@ -57,7 +59,7 @@
         <div class="col-lg-12">
             <div class="d-flex align-items-center mb-4">
                 <div class="flex-grow-1">
-                    <p class="text-muted fs-14 mb-0">Result: 8745</p>
+                    <p class="text-muted fs-14 mb-0">Result: {{ count($campaigns) }}</p>
                 </div>
                 <div class="flex-shrink-0">
                     <div class="dropdown">
@@ -108,16 +110,17 @@
         </div>
         @endforeach
     </div>
+    @endif
     <!-- end row -->
-    <div class="py-4 text-center" id="noresult" style="display: none;">
-        <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop" colors="primary:#405189,secondary:#0ab39c"
-            style="width:72px;height:72px"></lord-icon>
-        <h5 class="mt-4">Sorry! No Result Found</h5>
+    <div class="card py-4 text-center" style="height: 100%" id="noresult">
+        <div class="card-body">
+
+            <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop" colors="primary:#405189,secondary:#0ab39c"
+                style="width:72px;height:72px"></lord-icon>
+            <h5 class="mt-4">Sorry! No Result Found</h5>
+        </div>
     </div>
-    <div class="text-center mb-3">
-        <button class="btn btn-link text-success mt-2" id="loadmore"><i
-                class="mdi mdi-loading mdi-spin fs-20 align-middle me-2"></i> Load More </button>
-    </div>
+    
     </div>
 @endsection
 @section('script')

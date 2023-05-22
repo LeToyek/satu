@@ -142,289 +142,68 @@
                             {!! $campaign->description !!}
                         </div>
                         <div class="mt-5">
-                            <div>
-                                <h5 class="fs-14 fw-bold mb-3">Ratings & Reviews</h5>
-                            </div>
-                            <div class="row gy-4 gx-0">
-                                <div class="col-lg-4">
-                                    <div>
-                                        <div class="pb-3">
-                                            <div class="bg-light px-3 py-2 rounded-2 mb-2">
-                                                <div class="d-flex align-items-center">
-                                                    <div class="flex-grow-1">
-                                                        <div class="fs-16 align-middle text-warning">
-                                                            <i class="ri-star-fill"></i>
-                                                            <i class="ri-star-fill"></i>
-                                                            <i class="ri-star-fill"></i>
-                                                            <i class="ri-star-fill"></i>
-                                                            <i class="ri-star-half-fill"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="flex-shrink-0">
-                                                        <h6 class="mb-0">4.8 out of 5</h6>
-                                                    </div>
+                            <div class="row">
+                                <div class="d-flex flex-wrap align-items-start gap-3">
+                                    <h5 class="fs-14 fw-bold">Funders </h5>
+                                </div>
+                                <div class="col-6">
+                                    <div class="border border-dashed rounded p-3">
+                                        @foreach ($campaign->fundings as $funding)
+                                            <div class="d-flex align-items-center py-3">
+                                                <div class="avatar-xs flex-shrink-0 me-3">
+                                                    <img src="{{ $funding->user->avatar_url }}" alt=""
+                                                        class="img-fluid rounded-circle" />
                                                 </div>
-                                            </div>
-                                            <div class="text-center">
-                                                <div class="text-muted">Total <span class="fw-medium">7.32k</span> reviews
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="mt-3">
-                                            <div class="row align-items-center g-2">
-                                                <div class="col-auto">
-                                                    <div class="p-2">
-                                                        <h6 class="mb-0">5 star</h6>
-                                                    </div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="p-2">
-                                                        <div class="progress animated-progress progress-sm">
-                                                            <div class="progress-bar bg-success" role="progressbar"
-                                                                style="width: 50.16%" aria-valuenow="50.16"
-                                                                aria-valuemin="0" aria-valuemax="100"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-auto">
-                                                    <div class="p-2">
-                                                        <h6 class="mb-0 text-muted">2758</h6>
+                                                <div class="flex-grow-1">
+                                                    <div>
+                                                        <h5 class="fs-15 mb-1">{{ $funding->user->name }}</h5>
+                                                        <p class="text-muted mb-0">@include('formatting.money', [
+                                                            'money' => $funding->fund_nominal,
+                                                        ])
+                                                        </p>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- end row -->
-
-                                            <div class="row align-items-center g-2">
-                                                <div class="col-auto">
-                                                    <div class="p-2">
-                                                        <h6 class="mb-0">4 star</h6>
-                                                    </div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="p-2">
-                                                        <div class="progress animated-progress progress-sm">
-                                                            <div class="progress-bar bg-success" role="progressbar"
-                                                                style="width: 19.32%" aria-valuenow="19.32"
-                                                                aria-valuemin="0" aria-valuemax="100"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-auto">
-                                                    <div class="p-2">
-                                                        <h6 class="mb-0 text-muted">1063</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- end row -->
-
-                                            <div class="row align-items-center g-2">
-                                                <div class="col-auto">
-                                                    <div class="p-2">
-                                                        <h6 class="mb-0">3 star</h6>
-                                                    </div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="p-2">
-                                                        <div class="progress animated-progress progress-sm">
-                                                            <div class="progress-bar bg-success" role="progressbar"
-                                                                style="width: 18.12%" aria-valuenow="18.12"
-                                                                aria-valuemin="0" aria-valuemax="100"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-auto">
-                                                    <div class="p-2">
-                                                        <h6 class="mb-0 text-muted">997</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- end row -->
-
-                                            <div class="row align-items-center g-2">
-                                                <div class="col-auto">
-                                                    <div class="p-2">
-                                                        <h6 class="mb-0">2 star</h6>
-                                                    </div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="p-2">
-                                                        <div class="progress animated-progress progress-sm">
-                                                            <div class="progress-bar bg-warning" role="progressbar"
-                                                                style="width: 7.42%" aria-valuenow="7.42"
-                                                                aria-valuemin="0" aria-valuemax="100"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-auto">
-                                                    <div class="p-2">
-                                                        <h6 class="mb-0 text-muted">408</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- end row -->
-
-                                            <div class="row align-items-center g-2">
-                                                <div class="col-auto">
-                                                    <div class="p-2">
-                                                        <h6 class="mb-0">1 star</h6>
-                                                    </div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="p-2">
-                                                        <div class="progress animated-progress progress-sm">
-                                                            <div class="progress-bar bg-danger" role="progressbar"
-                                                                style="width: 4.98%" aria-valuenow="4.98"
-                                                                aria-valuemin="0" aria-valuemax="100"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-auto">
-                                                    <div class="p-2">
-                                                        <h6 class="mb-0 text-muted">274</h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- end row -->
-                                        </div>
+                                        @endforeach
                                     </div>
                                 </div>
-                                <!-- end col -->
+                                <div class="col-6">
 
-                                <div class="col-lg-8">
-                                    <div class="ps-lg-4">
+
+                                    <div class="border border-dashed rounded p-3">
+
+                                        <div id="simple_dount_chart"
+                                            data-colors='["--vz-primary", "--vz-success", "--vz-warning", "--vz-danger", "--vz-info"]'
+                                            class="apex-charts" dir="ltr"></div>
+
+                                    </div>
+                                </div>
+                                <div class="col-12">
+
+                                    <div class="p-2">
                                         <div class="d-flex flex-wrap align-items-start gap-3">
-                                            <h5 class="fs-14 fw-bold">Reviews: </h5>
+                                            <h5 class="fs-14 fw-bold">Funding Progress</h5>
+                                        </div>
+                                        <div class="progress animated-progress ">
+                                            <div class="progress-bar bg-danger" role="progressbar"
+                                                style="width: {{ $campaign->percentage }}%"
+                                                aria-valuenow="{{ $campaign->total_fund }}" aria-valuemin="0"
+                                                aria-valuemax="{{ $campaign->fund_target }}"></div>
+                                        </div>
+                                        <div class="d-flex justify-content-between mt-2">
+                                            <h6>@include('formatting.money', [
+                                                'money' => $campaign->total_fund,
+                                            ])</h6>
+                                            <h6>@include('formatting.money', [
+                                                'money' => $campaign->fund_target,
+                                            ])</h6>
                                         </div>
 
-                                        <div class="me-lg-n3 pe-lg-4" data-simplebar style="max-height: 225px;">
-                                            <ul class="list-unstyled mb-0">
-                                                <li class="py-2">
-                                                    <div class="border border-dashed rounded p-3">
-                                                        <div class="d-flex align-items-start mb-3">
-                                                            <div class="hstack gap-3">
-                                                                <div class="badge rounded-pill bg-success mb-0">
-                                                                    <i class="mdi mdi-star"></i> 4.2
-                                                                </div>
-                                                                <div class="vr"></div>
-                                                                <div class="flex-grow-1">
-                                                                    <p class="text-muted mb-0"> Superb sweatshirt. I loved
-                                                                        it. It is for winter.</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="d-flex flex-grow-1 gap-2 mb-3">
-                                                            <a href="#" class="d-block">
-                                                                <img src="{{ URL::asset('velzon/images/small/img-12.jpg') }}"
-                                                                    alt=""
-                                                                    class="avatar-sm rounded object-cover" />
-                                                            </a>
-                                                            <a href="#" class="d-block">
-                                                                <img src="{{ URL::asset('velzon/images/small/img-11.jpg') }}"
-                                                                    alt=""
-                                                                    class="avatar-sm rounded object-cover" />
-                                                            </a>
-                                                            <a href="#" class="d-block">
-                                                                <img src="{{ URL::asset('velzon/images/small/img-10.jpg') }}"
-                                                                    alt=""
-                                                                    class="avatar-sm rounded object-cover" />
-                                                            </a>
-                                                        </div>
-
-                                                        <div class="d-flex align-items-end">
-                                                            <div class="flex-grow-1">
-                                                                <h5 class="fs-14 mb-0">Henry</h5>
-                                                            </div>
-
-                                                            <div class="flex-shrink-0">
-                                                                <p class="text-muted fs-13 mb-0">12 Jul, 21</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="py-2">
-                                                    <div class="border border-dashed rounded p-3">
-                                                        <div class="d-flex align-items-start mb-3">
-                                                            <div class="hstack gap-3">
-                                                                <div class="badge rounded-pill bg-success mb-0">
-                                                                    <i class="mdi mdi-star"></i> 4.0
-                                                                </div>
-                                                                <div class="vr"></div>
-                                                                <div class="flex-grow-1">
-                                                                    <p class="text-muted mb-0"> Great at this price,
-                                                                        Product quality and look is awesome.</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="d-flex align-items-end">
-                                                            <div class="flex-grow-1">
-                                                                <h5 class="fs-14 mb-0">Nancy</h5>
-                                                            </div>
-
-                                                            <div class="flex-shrink-0">
-                                                                <p class="text-muted fs-13 mb-0">06 Jul, 21</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="py-2">
-                                                    <div class="border border-dashed rounded p-3">
-                                                        <div class="d-flex align-items-start mb-3">
-                                                            <div class="hstack gap-3">
-                                                                <div class="badge rounded-pill bg-success mb-0">
-                                                                    <i class="mdi mdi-star"></i> 4.2
-                                                                </div>
-                                                                <div class="vr"></div>
-                                                                <div class="flex-grow-1">
-                                                                    <p class="text-muted mb-0">Good product. I am so happy.
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="d-flex align-items-end">
-                                                            <div class="flex-grow-1">
-                                                                <h5 class="fs-14 mb-0">Joseph</h5>
-                                                            </div>
-
-                                                            <div class="flex-shrink-0">
-                                                                <p class="text-muted fs-13 mb-0">06 Jul, 21</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="py-2">
-                                                    <div class="border border-dashed rounded p-3">
-                                                        <div class="d-flex align-items-start mb-3">
-                                                            <div class="hstack gap-3">
-                                                                <div class="badge rounded-pill bg-success mb-0">
-                                                                    <i class="mdi mdi-star"></i> 4.1
-                                                                </div>
-                                                                <div class="vr"></div>
-                                                                <div class="flex-grow-1">
-                                                                    <p class="text-muted mb-0">Nice Product, Good Quality.
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="d-flex align-items-end">
-                                                            <div class="flex-grow-1">
-                                                                <h5 class="fs-14 mb-0">Jimmy</h5>
-                                                            </div>
-
-                                                            <div class="flex-shrink-0">
-                                                                <p class="text-muted fs-13 mb-0">24 Jun, 21</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
                                     </div>
                                 </div>
-                                <!-- end col -->
                             </div>
+                            <!-- end col -->
+
                             <!-- end Ratings & Reviews -->
                         </div>
                     </div>
@@ -437,6 +216,84 @@
     <!--end card-->
 @endsection
 @section('script')
+    <script src="{{ URL::asset('velzon/libs/apexcharts/apexcharts.min.js') }}"></script>
+    <script src="{{ URL::asset('velzon/js/pages/apexcharts-pie.init.js') }}"></script>
+    <script>
+        const fundings = @json($campaign->fundings);
+        const dataSeries = [];
+        const dataLabels = [];
+
+        fundings.forEach(element => {
+            dataSeries.push(element.fund_nominal)
+        });
+        @foreach ($campaign->fundings as $funding)
+            dataLabels.push(@json($funding->user->name))
+        @endforeach
+
+        var chartDonutBasicColors = getChartColorsArray("simple_dount_chart");
+        var options = {
+            series: dataSeries,
+            labels: dataLabels,
+            chart: {
+                height: 210,
+                type: 'donut',
+            },
+            legend: {
+                show: false,
+            },
+            plotOptions: {
+                pie: {
+                    size: 100,
+                    offsetX: 0,
+                    offsetY: 0,
+                    donut: {
+                        size: "70%",
+                        labels: {
+                            show: true,
+                            name: {
+                                show: true,
+                                fontSize: '18px',
+                                offsetY: -5,
+                            },
+                            value: {
+                                show: true,
+                                fontSize: '20px',
+                                color: '#343a40',
+                                fontWeight: 500,
+                                offsetY: 5,
+                                formatter: function(val) {
+                                    return "Rp " + val
+                                }
+                            },
+                            total: {
+                                show: true,
+                                fontSize: '13px',
+                                label: 'Dana Terkumpul',
+                                color: '#9599ad',
+                                fontWeight: 500,
+                                formatter: function(w) {
+                                    return "Rp " + w.globals.seriesTotals.reduce(function(a, b) {
+                                        return a + b
+                                    }, 0)
+                                }
+                            }
+                        }
+                    },
+                },
+            },
+
+            dataLabels: {
+                enabled: false,
+                dropShadow: {
+                    enabled: false,
+                }
+            },
+            colors: chartDonutBasicColors
+        };
+
+        var chart = new ApexCharts(document.querySelector("#simple_dount_chart"), options);
+        chart.render();
+    </script>
     <script src="{{ URL::asset('velzon/js/pages/form-advanced.init.js') }}"></script>
     <script src="{{ URL::asset('velzon/js/pages/form-input-spin.init.js') }}"></script>
     <!-- input flag init -->
