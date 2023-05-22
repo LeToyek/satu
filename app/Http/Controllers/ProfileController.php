@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Image;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProfileController extends Controller
 {
@@ -44,7 +46,7 @@ class ProfileController extends Controller
         //
         $isUser = false;
         $user = User::find($id);
-        if ($id === auth()->user()->id) {
+        if ($id == auth()->user()->id) {
             # code...
             $isUser = true;
         }
@@ -73,6 +75,16 @@ class ProfileController extends Controller
             return redirect()->route('dashboard.index')->with('error', 'Unauthorized to access that edit page');
         }
         $user = User::find($id);
+        if ($request->hasFile('avatar')) {
+            if ($user->images!=null) {
+                Storage::delete('storage/' . $user->images[0]->path);
+                $user->images[0]->delete();
+            }
+            $image_name = $request->file('avatar')->store('avatar', 'public');
+            $user->avatar->update([
+                'path' => $image_name,
+            ]);
+        }
         $user->update($request->except('_token', '_method'));
         return redirect()->route('profile.show',['profile' => $user])->with('success', 'Profile updated successfully');
     }

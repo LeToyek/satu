@@ -31,8 +31,7 @@
                                 class="rounded-circle avatar-xl img-thumbnail user-profile-image" id="img-preview"
                                 alt="user-profile-image">
                             <div class="avatar-xs p-0 rounded-circle profile-photo-edit">
-                                <input id="profile-img-file-input" name="pp_image" type="file"
-                                    class="profile-img-file-input" id="image">
+                                
                                 <label for="profile-img-file-input" class="profile-photo-edit avatar-xs">
                                     <span class="avatar-title rounded-circle bg-light text-body">
                                         <i class="ri-camera-fill"></i>
@@ -75,6 +74,8 @@
                                 @csrf
                                 @method('PUT')
                                 <div class="row">
+                                    <input id="profile-img-file-input" name="avatar" type="file"
+                                    class="profile-img-file-input d-none" id="image">
                                     <div class="col-lg-12">
                                         <div class="mb-3">
                                             <label for="firstnameInput" class="form-label">

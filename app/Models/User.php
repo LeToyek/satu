@@ -80,9 +80,10 @@ class User extends Authenticatable
     }
     public function getAvatarUrlAttribute()
     {
-        if ($this->avatar->path != null) {
+        // dd($this->avatar->path);
+        if ($this->avatar->url != null) {
             # code...
-            return Storage::url($this->avatar->path);
+            return $this->avatar->url;
         }
         return "https://ui-avatars.com/api/?name=" . $this->name . "&background=02A95C&color=fff";
     }

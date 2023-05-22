@@ -24,7 +24,7 @@
         <div class="row g-4">
             <div class="col-auto d-flex justify-content-center align-items-center">
                 <div class="">
-                    <img src="{{ $user->avatar_url }}" alt="user-img" class="img-thumbnail rounded-circle" />
+                    <img src="{{ $user->avatar_url }}" alt="user-img" class="img-thumbnail rounded-circle" style="width: 100px !important"/>
                     {{-- <img src="@if (Auth::user()->avatar != '') {{ URL::asset('images/' . Auth::user()->avatar) }}@else{{ URL::asset('velzon/images/users/avatar-1.jpg') }} @endif"
                 alt="
                 user-img" class="img-thumbnail rounded-circle" /> --}}
