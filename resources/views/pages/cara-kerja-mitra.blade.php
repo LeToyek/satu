@@ -24,7 +24,7 @@
             <div class="event-items">
                 <div class="single-event-item mb-30 wow fadeInUp" data-wow-delay="0s">
                     <div class="event-thumb">
-                        <img src="assets/img/event/daftar.png" alt="Image">
+                        <img src="../assets/img/event/daftar.png" alt="Image">
                     </div>
                     <div class="event-content">
                         <h4 class="event-title"><a href="#">Pendaftaran Mitra UMKM</a></h4>
@@ -38,7 +38,7 @@
                 </div>
                 <div class="single-event-item mb-30 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="event-thumb">
-                        <img src="assets/img/event/verifikasi.png" alt="Image">
+                        <img src="../assets/img/event/verifikasi.png" alt="Image">
                     </div>
                     <div class="event-content">
                         <h4 class="event-title"><a href="#">Pengecekan dan Verifikasi</a></h4>
@@ -51,7 +51,7 @@
                 </div>
                 <div class="single-event-item mb-30 wow fadeInUp" data-wow-delay="0.2s">
                     <div class="event-thumb">
-                        <img src="assets/img/event/campaign.png" alt="Image">
+                        <img src="../assets/img/event/campaign.png" alt="Image">
                     </div>
                     <div class="event-content">
                         <h4 class="event-title"><a href="#">Kampanye Crowdfunding</a></h4>
@@ -63,7 +63,7 @@
                 </div>
                 <div class="single-event-item mb-30 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="event-thumb">
-                        <img src="assets/img/event/crowdfunding.png" alt="Image">
+                        <img src="../assets/img/event/crowdfunding.png" alt="Image">
                     </div>
                     <div class="event-content">
                         <h4 class="event-title"><a href="#">Donasi</a></h4>
@@ -77,7 +77,7 @@
                 </div>
                 <div class="single-event-item mb-30 wow fadeInUp" data-wow-delay="0.4s">
                     <div class="event-thumb">
-                        <img src="assets/img/event/dana.png" alt="Image">
+                        <img src="../assets/img/event/dana.png" alt="Image">
                     </div>
                     <div class="event-content">
                         <h4 class="event-title"><a href="#">Pencairan Dana</a></h4>

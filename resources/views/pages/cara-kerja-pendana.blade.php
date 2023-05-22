@@ -24,7 +24,7 @@
             <div class="event-items">
                 <div class="single-event-item mb-30 wow fadeInUp" data-wow-delay="0s">
                     <div class="event-thumb">
-                        <img src="assets/img/event/daftar.png" alt="Image">
+                        <img src="../assets/img/event/daftar.png" alt="Image">
                     </div>
                     <div class="event-content">
                         <h4 class="event-title"><a href="#">Pendaftaran Pendana</a></h4>
@@ -37,7 +37,7 @@
                 </div>
                 <div class="single-event-item mb-30 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="event-thumb">
-                        <img src="assets/img/event/verifikasi.png" alt="Image">
+                        <img src="../assets/img/event/verifikasi.png" alt="Image">
                     </div>
                     <div class="event-content">
                         <h4 class="event-title"><a href="#">Pengecekan dan Verifikasi</a></h4>
@@ -51,7 +51,7 @@
                 </div>
                 <div class="single-event-item mb-30 wow fadeInUp" data-wow-delay="0.2s">
                     <div class="event-thumb">
-                        <img src="assets/img/event/campaign.png" alt="Image">
+                        <img src="../assets/img/event/campaign.png" alt="Image">
                     </div>
                     <div class="event-content">
                         <h4 class="event-title"><a href="#">Penjelajahan dan Pemilihan Kampanye</a></h4>
@@ -64,7 +64,7 @@
                 </div>
                 <div class="single-event-item mb-30 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="event-thumb">
-                        <img src="assets/img/event/nominal.png" alt="Image">
+                        <img src="../assets/img/event/nominal.png" alt="Image">
                     </div>
                     <div class="event-content">
                         <h4 class="event-title"><a href="#">Menentukan Nominal Pendanaan</a></h4>
@@ -79,7 +79,7 @@
                 </div>
                 <div class="single-event-item mb-30 wow fadeInUp" data-wow-delay="0.4s">
                     <div class="event-thumb">
-                        <img src="assets/img/event/proses.png" alt="Image">
+                        <img src="../assets/img/event/proses.png" alt="Image">
                     </div>
                     <div class="event-content">
                         <h4 class="event-title"><a href="#">Proses Pendanaan</a></h4>
@@ -93,7 +93,7 @@
                 </div>
                 <div class="single-event-item mb-30 wow fadeInUp" data-wow-delay="0.4s">
                     <div class="event-thumb">
-                        <img src="assets/img/event/monitoring.png" alt="Image">
+                        <img src="../assets/img/event/monitoring.png" alt="Image">
                     </div>
                     <div class="event-content">
                         <h4 class="event-title"><a href="#">Memantau Kampanye Yang Didanai</a></h4>
