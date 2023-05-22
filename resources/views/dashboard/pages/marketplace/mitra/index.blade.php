@@ -16,6 +16,8 @@
         @endslot
     @endcomponent
 
+    @if (count($campaigns) !==0 )
+        
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
@@ -57,7 +59,7 @@
         <div class="col-lg-12">
             <div class="d-flex align-items-center mb-4">
                 <div class="flex-grow-1">
-                    <p class="text-muted fs-14 mb-0">Result: 8745</p>
+                    <p class="text-muted fs-14 mb-0">Result: {{ count($campaigns) }}</p>
                 </div>
                 <div class="flex-shrink-0">
                     <div class="dropdown">
@@ -88,19 +90,17 @@
                     <div class="place-bid-btn">
                         <a href="{{ '/dashboard/marketplace/mitra/'.$campaign->id  }}" class="btn btn-success"><i class="ri-hand-coin-fill align-bottom me-1"></i> Mulai Bantu</a>
                     </div>
-                    <div class="discount-time">
-                        <h5 id="auction-time-1" class="mb-0 text-white"></h5>
-                    </div>
                 </div>
                 <div class="card-body">
                     <span class="badge bg-info float-end">{{ $campaign->status }} </span>
-                    <h5 class="text-success"><i class="mdi mdi-cash"></i> Rp {{ $campaign->fund_target }} </h5>
+                    <h5 class="text-success"> Rp {{ $campaign->fund_target }} </h5>
                     <h6 class="fs-16 mb-3"><a href="apps-nft-item-details" class="link-dark">{{ $campaign->title }}</a></h6>
                     <div>
-                        <span class="text-muted float-end">Available: 436</span>
-                        <span class="text-muted">Sold: 4187</span>
+                        {{-- <span class="text-muted float-end">@include('formatting.money',['money' =>$campaign->fund_target])</span> --}}
+                        <span class="text-muted">Dana: @include('formatting.money',['money' => $campaign->total_fund])</span>
                         <div class="progress progress-sm mt-2">
-                            <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 67%;" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100"></div>
+                            
+                            <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: {{ $campaign->percentage }}%;" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                     </div>
                 </div>
@@ -108,16 +108,19 @@
         </div>
         @endforeach
     </div>
+    @else
+    <div class="card py-4 text-center" style="height: 100%" id="noresult">
+        <div class="card-body">
+
+            <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop" colors="primary:#405189,secondary:#0ab39c"
+                style="width:72px;height:72px"></lord-icon>
+            <h5 class="mt-4">Sorry! No Result Found</h5>
+        </div>
+    </div>
+
+    @endif
     <!-- end row -->
-    <div class="py-4 text-center" id="noresult" style="display: none;">
-        <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop" colors="primary:#405189,secondary:#0ab39c"
-            style="width:72px;height:72px"></lord-icon>
-        <h5 class="mt-4">Sorry! No Result Found</h5>
-    </div>
-    <div class="text-center mb-3">
-        <button class="btn btn-link text-success mt-2" id="loadmore"><i
-                class="mdi mdi-loading mdi-spin fs-20 align-middle me-2"></i> Load More </button>
-    </div>
+    
     </div>
 @endsection
 @section('script')

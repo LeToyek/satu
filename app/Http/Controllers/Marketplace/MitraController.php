@@ -17,11 +17,33 @@ class MitraController extends Controller
     public function index()
     {
         $campaigns = Campaign::all();
+        foreach ($campaigns as $campaign) {
+            $campaign['total_fund'] = 0;
+            if (count($campaign->fundings) !== 0) {
+                # code...
+                foreach ($campaign->fundings as $fund) {
+                    # code...
+                    $campaign['total_fund'] += $fund->fund_nominal;
+                }
+            }
+        }
+        $campaign['percentage'] = number_format(($campaign['total_fund'] / $campaign->fund_target) * 100, 2);
         return view('dashboard.pages.marketplace.mitra.index', ['campaigns' => $campaigns]);
     }
     public function show($id)
     {
         $campaign = Campaign::find($id);
+        $campaign['total_fund'] = 0;
+        if (count($campaign->fundings) !== 0) {
+            # code...
+
+            foreach ($campaign->fundings as $fund) {
+                # code...
+                $campaign['total_fund'] += $fund->fund_nominal;
+            }
+        
+        }
+        $campaign['percentage'] = number_format(($campaign['total_fund'] / $campaign->fund_target) * 100, 2);
         return view('dashboard.pages.marketplace.mitra.detail', ['campaign' => $campaign]);
     }
     public function fund(Request $request, $id)
@@ -36,6 +58,6 @@ class MitraController extends Controller
     public function showInvoice(Request $request)
     {
         $funding = Funding::find($request->funding);
-        return view('dashboard.pages.marketplace.mitra.checkout',['funding' => $funding]);
+        return view('dashboard.pages.marketplace.mitra.checkout', ['funding' => $funding]);
     }
 }

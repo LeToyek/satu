@@ -10,6 +10,10 @@ class ProfileController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function __construct(){
+
+        $this->middleware('auth');
+    }
     public function index()
     {
         //
@@ -35,12 +39,12 @@ class ProfileController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(User $user)
+    public function show($id)
     {
         //
         $isUser = false;
-        $user = auth()->user();
-        if ($user->id === auth()->user()->id) {
+        $user = User::find($id);
+        if ($id === auth()->user()->id) {
             # code...
             $isUser = true;
         }
@@ -50,17 +54,27 @@ class ProfileController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(User $user)
+    public function edit($id)
     {
-        //
+        $user = User::find($id);
+        if ($user && $id != auth()->user()->id) {
+            return redirect()->route('dashboard.index')->with('error', 'Unauthorized to access that edit page');
+        }
+        return view('dashboard.pages.profile.edit', ['user' => $user]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, $id)
     {
         //
+        if ($id != auth()->user()->id) {
+            return redirect()->route('dashboard.index')->with('error', 'Unauthorized to access that edit page');
+        }
+        $user = User::find($id);
+        $user->update($request->except('_token', '_method'));
+        return redirect()->route('profile.show',['profile' => $user])->with('success', 'Profile updated successfully');
     }
 
     /**

@@ -26,7 +26,8 @@ class User extends Authenticatable
         'address',
         'gender',
         'birth_date',
-        'role'
+        'role',
+        'no_hp'
     ];
 
     /**
@@ -79,11 +80,10 @@ class User extends Authenticatable
     }
     public function getAvatarUrlAttribute()
     {
-        if ($this->avatar != null) {
+        if ($this->avatar->path != null) {
             # code...
             return Storage::url($this->avatar->path);
         }
-        return "https://ui-avatars.com/api/?name=".$this->name ."&background=02A95C&color=fff";
+        return "https://ui-avatars.com/api/?name=" . $this->name . "&background=02A95C&color=fff";
     }
-
 }
