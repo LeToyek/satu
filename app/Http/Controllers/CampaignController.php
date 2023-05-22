@@ -12,6 +12,10 @@ class CampaignController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         //
@@ -75,8 +79,8 @@ class CampaignController extends Controller
                 $campaign['total_fund'] += $fund->fund_nominal;
             }
             $campaign['total_fund'] = 12000000;
-            $campaign['percentage'] = number_format(($campaign['total_fund'] / $campaign->fund_target) * 100,2);
         }
+        $campaign['percentage'] = number_format(($campaign['total_fund'] / $campaign->fund_target) * 100,2);
         return view('dashboard.pages.campaign.detail', [
             'campaign' => $campaign
         ]);
