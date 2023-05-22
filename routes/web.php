@@ -8,7 +8,6 @@ use App\Http\Controllers\Marketplace\MitraController;
 use App\Http\Controllers\MarketplaceController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\NewsController;
-use App\Http\Controllers\PartnerController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -65,7 +64,6 @@ Route::prefix('dashboard')->group(function () {
         Route::get('/mitra/checkout/invoice', [MitraController::class, 'showInvoice'])->name('invoice');
     });
     Route::resource('/profile', ProfileController::class);
-    Route::resource('/partner', PartnerController::class);
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
 });
 Route::prefix('/register')->group(
