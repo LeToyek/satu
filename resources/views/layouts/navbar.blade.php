@@ -57,105 +57,105 @@
     </div>
   </div>
 </div> --}}
-	<!--====== Preloader ======-->
-	<div id="preloader">
-		<div id="loading-center">
-			<div id="loading-center-absolute">
-				<div class="object" id="object_one"></div>
-				<div class="object" id="object_two"></div>
-				<div class="object" id="object_three"></div>
-				<div class="object" id="object_four"></div>
-			</div>
-		</div>
-	</div>
+<!--====== Preloader ======-->
+<div id="preloader">
+    <div id="loading-center">
+        <div id="loading-center-absolute">
+            <div class="object" id="object_one"></div>
+            <div class="object" id="object_two"></div>
+            <div class="object" id="object_three"></div>
+            <div class="object" id="object_four"></div>
+        </div>
+    </div>
+</div>
 
-	<!--====== Header Start ======-->
-	<header class="site-header sticky-header">
+<!--====== Header Start ======-->
+<header class="site-header sticky-header">
 
-		<div class="navbar-wrapper">
-			<div class="container">
-				<div class="navbar-inner">
-					<div class="site-logo">
-						<a href="/"><img src="../assets/img/logo-satu.svg" alt="SaTu"></a>
-					</div>
-					<div class="nav-menu">
-						<ul>
-							<li>
-								<a href="/">Home</a>
-							</li>
-							<li>
-								<a href="/register">Daftar</a>
-							</li>
-							<li>
-								<a href="">Cara Kerja</a>
-								<ul class="submenu">
-									<li><a href="/cara-kerja-mitra">Cara Kerja Mitra</a></li>
-									<li><a href="/cara-kerja-pendana">Cara Kerja Pendana</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="/testimoni">Testimoni</a>
-							</li>
-							<li>
-								<a href="/faq">FAQ</a>
-							</li>
-							<li>
-								<a href="/about-us">Tentang Kami</a>
-							</li>
-							<li>
-								<a href="/contact-us">Kontak</a>
-							</li>
-						</ul>
-					</div>
-					<div class="navbar-extra d-flex align-items-center">
-						<a href="/login" class="main-btn nav-btn d-none d-sm-inline-block">
-							Sign in <i class="far fa-arrow-right"></i>
-						</a>
-						<a href="#" class="nav-toggler">
-                            <span></span>
-                        </a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="mobile-menu-panel">
-			<div class="panel-logo">
-				<a href="/"><img src="../assets/img/logo-satu.svg" alt="SaTu"></a>
-			</div>
-			<ul class="panel-menu">
-				<li>
-					<a href="/">Home</a>
-				</li>
-				<li>
-					<a href="/register">Daftar</a>
-				</li>
-				<li>
-					<a href="">Cara Kerja</a>
-					<ul class="submenu">
-						<li><a href="/cara-kerja-mitra">Cara Kerja Mitra</a></li>
-						<li><a href="/cara-kerja-pendana">Cara Kerja Pendana</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="/testimoni">Testimoni</a>
-				</li>
-				<li>
-					<a href="/faq">FAQ</a>
-				</li>
-				<li>
-					<a href="/about-us">Tentang Kami</a>
-				</li>
-				<li><a href="/contact-us">Kontak</a>
-				</li>
-			</ul>
-			<div class="panel-extra">
-				<a href="/login" class="main-btn btn-white">
-					Sign In <i class="far fa-arrow-right"></i>
-				</a>
-			</div>
-			<a href="#" class="panel-close">
-				<i class="fal fa-times"></i>
-			</a>
-		</div>
-	</header>
-	<!--====== Header End ======-->
+    <div class="navbar-wrapper">
+        <div class="container">
+            <div class="navbar-inner">
+                <div class="site-logo">
+                    <a href="/"><img src="../assets/img/logo-satu.svg" alt="SaTu"></a>
+                </div>
+                <div class="nav-menu">
+                    <ul>
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li>
+                            <a href="/register">Daftar</a>
+                        </li>
+                        <li>
+                            <a href="">Cara Kerja</a>
+                            <ul class="submenu">
+                                <li><a href="{{ route('cara-kerja.show', 'mitra') }}">Cara Kerja Mitra</a></li>
+                                <li><a href="{{ route('cara-kerja.show', 'pendana') }}">Cara Kerja Pendana</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/testimoni">Testimoni</a>
+                        </li>
+                        <li>
+                            <a href="/faq">FAQ</a>
+                        </li>
+                        <li>
+                            <a href="/about-us">Tentang Kami</a>
+                        </li>
+                        <li>
+                            <a href="/contact-us">Kontak</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbar-extra d-flex align-items-center">
+                    <a href="/login" class="main-btn nav-btn d-none d-sm-inline-block">
+                        Sign in <i class="far fa-arrow-right"></i>
+                    </a>
+                    <a href="#" class="nav-toggler">
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-menu-panel">
+        <div class="panel-logo">
+            <a href="/"><img src="../assets/img/logo-satu.svg" alt="SaTu"></a>
+        </div>
+        <ul class="panel-menu">
+            <li>
+                <a href="/">Home</a>
+            </li>
+            <li>
+                <a href="/register">Daftar</a>
+            </li>
+            <li>
+                <a href="">Cara Kerja</a>
+                <ul class="submenu">
+                    <li><a href="{{ route('cara-kerja.show', 1) }}">Cara Kerja Mitra</a></li>
+                    <li><a href="{{ route('cara-kerja.show', 2) }}">Cara Kerja Pendana</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="/testimoni">Testimoni</a>
+            </li>
+            <li>
+                <a href="/faq">FAQ</a>
+            </li>
+            <li>
+                <a href="/about-us">Tentang Kami</a>
+            </li>
+            <li><a href="/contact-us">Kontak</a>
+            </li>
+        </ul>
+        <div class="panel-extra">
+            <a href="/login" class="main-btn btn-white">
+                Sign In <i class="far fa-arrow-right"></i>
+            </a>
+        </div>
+        <a href="#" class="panel-close">
+            <i class="fal fa-times"></i>
+        </a>
+    </div>
+</header>
+<!--====== Header End ======-->
