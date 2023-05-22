@@ -22,11 +22,13 @@
                             <div class="row justify-content-center g-0">
                                 <div class="col-lg-6">
                                     <div class="p-lg-5 p-4 auth-one-bg h-100">
-                                        <div class="bg-overlay"></div>
+                                        <div class="bg-overlay"
+                                            style="background: linear-gradient(to right, #ffffff6e, #02a95cc9); opacity: 0.9;">
+                                        </div>
                                         <div class="position-relative h-100 d-flex flex-column">
                                             <div class="mb-4">
                                                 <a href="index" class="d-block">
-                                                    <img src="{{ URL::asset('velzon/images/logo-light.png') }}"
+                                                    <img src="{{ URL::asset('velzon/images/logo-satu.svg') }}"
                                                         alt="" height="18">
                                                 </a>
                                             </div>
@@ -48,16 +50,18 @@
                                                     </div>
                                                     <div class="carousel-inner text-center text-white-50 pb-5">
                                                         <div class="carousel-item active">
-                                                            <p class="fs-15 fst-italic">" Great! Clean code, clean design,
-                                                                easy for customization. Thanks very much! "</p>
+                                                            <p class="fs-15 fst-italic">"Pemberdayaan UMKM adalah kunci bagi
+                                                                pertumbuhan ekonomi yang berkelanjutan di Indonesia."</p> "
+                                                            </p>
                                                         </div>
                                                         <div class="carousel-item">
-                                                            <p class="fs-15 fst-italic">" The theme is really great with an
-                                                                amazing customer support."</p>
+                                                            <p class="fs-15 fst-italic">"Kerja keras, tekun, dan konsisten
+                                                                adalah kunci sukses dalam bisnis."</p>
                                                         </div>
                                                         <div class="carousel-item">
-                                                            <p class="fs-15 fst-italic">" Great! Clean code, clean design,
-                                                                easy for customization. Thanks very much! "</p>
+                                                            <p class="fs-15 fst-italic">"Saat ini, internet adalah jalan
+                                                                terbaik untuk memperkenalkan bisnis Anda. Jadilah hadir di
+                                                                sana."</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -162,7 +166,7 @@
 
                                                 <div class="mb-4">
                                                     <p class="mb-0 fs-12 text-muted fst-italic">By registering you agree to
-                                                        the Velzon <a href="#"
+                                                        the Saling Bantu <a href="#"
                                                             class="text-primary text-decoration-underline fst-normal fw-medium">Terms
                                                             of Use</a></p>
                                                 </div>
@@ -236,8 +240,7 @@
                             <p class="mb-0">&copy;
                                 <script>
                                     document.write(new Date().getFullYear())
-                                </script> Velzon. Crafted with <i class="mdi mdi-heart text-danger"></i> by
-                                Themesbrand
+                                </script> Saling Bantu
                             </p>
                         </div>
                     </div>
