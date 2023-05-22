@@ -17,6 +17,17 @@ class MitraController extends Controller
     public function index()
     {
         $campaigns = Campaign::all();
+        foreach ($campaigns as $campaign) {
+            $campaign['total_fund'] = 0;
+            if (count($campaign->fundings) !== 0) {
+                # code...
+                foreach ($campaign->fundings as $fund) {
+                    # code...
+                    $campaign['total_fund'] += $fund->fund_nominal;
+                }
+            }
+        }
+        $campaign['percentage'] = number_format(($campaign['total_fund'] / $campaign->fund_target) * 100, 2);
         return view('dashboard.pages.marketplace.mitra.index', ['campaigns' => $campaigns]);
     }
     public function show($id)
@@ -30,7 +41,7 @@ class MitraController extends Controller
                 # code...
                 $campaign['total_fund'] += $fund->fund_nominal;
             }
-            $campaign['total_fund'] = 12000000;
+        
         }
         $campaign['percentage'] = number_format(($campaign['total_fund'] / $campaign->fund_target) * 100, 2);
         return view('dashboard.pages.marketplace.mitra.detail', ['campaign' => $campaign]);

@@ -177,7 +177,8 @@
                     <div class="d-flex">
                         <h5 class="card-title flex-grow-1 mb-0">Partner Details</h5>
                         <div class="flex-shrink-0">
-                            <a href="javascript:void(0);" class="link-secondary">View Profile</a>
+                            
+                            <a href="{{ url('dashboard/profile/'.$funding->campaign->partner->user->id) }}" class="link-secondary">View Profile</a>
                         </div>
                     </div>
                 </div>
@@ -186,7 +187,7 @@
                         <li>
                             <div class="d-flex align-items-center">
                                 <div class="flex-shrink-0">
-                                    <img src="{{ URL::asset('velzon/images/users/avatar-3.jpg') }}" alt=""
+                                    <img src="{{ $funding->campaign->partner->user->avatar_url}}" alt=""
                                         class="avatar-sm rounded">
                                 </div>
                                 <div class="flex-grow-1 ms-3">

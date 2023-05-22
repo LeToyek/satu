@@ -78,7 +78,6 @@ class CampaignController extends Controller
                 # code...
                 $campaign['total_fund'] += $fund->fund_nominal;
             }
-            $campaign['total_fund'] = 12000000;
         }
         $campaign['percentage'] = number_format(($campaign['total_fund'] / $campaign->fund_target) * 100,2);
         return view('dashboard.pages.campaign.detail', [
