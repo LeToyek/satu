@@ -13,7 +13,6 @@ class FundTransaction extends Model
         'funding_id',
         'from_id',
         'to_id',
-        'value'
     ];
 
     public function funding()

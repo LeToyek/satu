@@ -14,6 +14,7 @@ class Funding extends Model
         'campaign_id',
         'user_id',
         'fund_nominal',
+        'price',
         'status'
     ];
 

@@ -81,7 +81,7 @@ class User extends Authenticatable
     public function getAvatarUrlAttribute()
     {
         // dd($this->avatar->path);
-        if ($this->avatar->url != null) {
+        if ($this->avatar->path != null) {
             # code...
             return $this->avatar->url;
         }
