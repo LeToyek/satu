@@ -4,7 +4,9 @@ use App\Http\Controllers\Auth\Registration\FunderRegistrationController;
 use App\Http\Controllers\Auth\Registration\PartnerRegistrationController;
 use App\Http\Controllers\CampaignController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FundingController;
 use App\Http\Controllers\Marketplace\MitraController;
+use App\Http\Controllers\Marketplace\ObligasiController;
 use App\Http\Controllers\MarketplaceController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\NewsController;
@@ -56,12 +58,23 @@ Route::get('/contact-us', function () {
 });
 Route::prefix('dashboard')->group(function () {
     Route::resource('/campaign', CampaignController::class);
-    Route::resource('/portofolio', CampaignController::class);
+    Route::prefix('/portofolio')->group(function (){
+        
+        Route::get('/', [FundingController::class,'index'])->name('portofolio.index');
+        Route::get('/{id}',[FundingController::class,'show_sell'])->name('portofolio.sell');
+        Route::post('/{id}',[FundingController::class,'sell']);
+    });
     Route::prefix('/marketplace')->group(function () {
         Route::get('/mitra', [MitraController::class, 'index']);
         Route::post('/mitra/{id}', [MitraController::class, 'fund']);
         Route::get('/mitra/{id}', [MitraController::class, 'show']);
         Route::get('/mitra/checkout/invoice', [MitraController::class, 'showInvoice'])->name('invoice');
+        Route::prefix('/obligasi')->group(function(){
+            Route::get('/',[ObligasiController::class,'index']);
+            Route::get('/{id}',[ObligasiController::class,'show']);
+            Route::post('/buy',[ObligasiController::class,'buy_funding']);
+            Route::get('/invoice/{id}',[ObligasiController::class,'showInvoice'])->name('invoice.obligasi');
+        });
     });
     Route::resource('/profile', ProfileController::class);
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
