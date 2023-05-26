@@ -25,9 +25,9 @@ class MitraController extends Controller
                     # code...
                     $campaign['total_fund'] += $fund->fund_nominal;
                 }
+                $campaign['percentage'] = number_format(($campaign['total_fund'] / $campaign->fund_target) * 100, 2);
             }
         }
-        $campaign['percentage'] = number_format(($campaign['total_fund'] / $campaign->fund_target) * 100, 2);
         return view('dashboard.pages.marketplace.mitra.index', ['campaigns' => $campaigns]);
     }
     public function show($id)
