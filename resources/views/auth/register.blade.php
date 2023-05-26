@@ -153,6 +153,15 @@
                                                     </div>
                                                 </div>
                                                 <div class="mb-3">
+                                                    <label for="no_hp" class="form-label">No HP <span
+                                                            class="text-danger">*</span></label>
+                                                    <input name="no_hp" type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" class="form-control"
+                                                        id="no_hp" placeholder="Enter no_hp">
+                                                    <div class="invalid-feedback">
+                                                        Please enter No HP
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3">
                                                     <label for="dob" class="form-label">Date of Birth <span
                                                             class="text-danger">*</span></label>
 
