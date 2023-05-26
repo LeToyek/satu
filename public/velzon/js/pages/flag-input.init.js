@@ -7,7 +7,7 @@ File: flag input Js File
 */
 (function () {
     ("use strict");
-    var url = "build/json/";
+    var url = "velzon/json/";
     var countryListData = '';
     var getJSON = function (jsonurl, callback) {
         var xhr = new XMLHttpRequest();
@@ -96,6 +96,8 @@ File: flag input Js File
                 var optionCountryName = subitem.querySelector(".country-name").innerHTML;
                 subitem.addEventListener("click", function () {
                     item.querySelector(".flag-input").value = optionCountryName;
+                    console.log(`item.querySelector(".country-codeno") ${item.querySelector(".country-codeno")}`);
+                    document.querySelectorAll('input=[name="no_hp"]').value  = item.querySelector(".country-codeno") + document.querySelectorAll('input=[name="no_hp"]').value   
                 });
                 if (countryName == optionCountryName) {
                     subitem.classList.add("active");

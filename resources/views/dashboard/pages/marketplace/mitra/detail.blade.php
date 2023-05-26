@@ -54,6 +54,7 @@
                                 max="{{ $campaign->fund_target }}" readonly>
                             <button type="button" class="plus">+</button>
                         </div>
+                        
                         <div class="hstack gap-2">
                             <a type="button" class="btn btn-success w-100" data-bs-toggle="modal"
                                 data-bs-target=".bs-example-modal-center">
