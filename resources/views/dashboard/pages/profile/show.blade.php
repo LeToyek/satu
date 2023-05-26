@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="{{ URL::asset('velzon/libs/swiper/swiper-bundle.min.css') }}">
 @endsection
 @section('content')
+    @php
+        $documents = auth()->user()->role == 'partner' ? auth()->user()->details->documents : [];
+    @endphp
     @if (session()->has('success'))
         <div class="alert alert-success alert-dismissible alert-solid alert-label-icon fade show" role="alert"
             id="succ-alert" style="position: absolute;z-index: 9999;bottom: 0;right: 0;margin: 0px 24px 24px 0px">
@@ -24,7 +27,8 @@
         <div class="row g-4">
             <div class="col-auto d-flex justify-content-center align-items-center">
                 <div class="">
-                    <img src="{{ $user->avatar_url }}" alt="user-img" class="img-thumbnail rounded-circle" style="width: 100px !important"/>
+                    <img src="{{ $user->avatar_url }}" alt="user-img" class="img-thumbnail rounded-circle"
+                        style="width: 100px !important" />
                     {{-- <img src="@if (Auth::user()->avatar != '') {{ URL::asset('images/' . Auth::user()->avatar) }}@else{{ URL::asset('velzon/images/users/avatar-1.jpg') }} @endif"
                 alt="
                 user-img" class="img-thumbnail rounded-circle" /> --}}
@@ -44,6 +48,8 @@
                 </div>
             </div>
             <!--end col-->
+            @if ($user->role == 'partner')
+                
             <div class="col-12 col-lg-auto order-last order-lg-0">
                 <div class="row text text-white-50 text-center">
                     <div class="col-lg-6 col-4">
@@ -54,6 +60,7 @@
                     </div>
                 </div>
             </div>
+            @endif
             <!--end col-->
 
         </div>
@@ -72,16 +79,19 @@
                                     class="d-none d-md-inline-block">Overview</span>
                             </a>
                         </li>
-
+                        @if ($user->role == 'partner')
+                            
                         <li class="nav-item">
                             <a class="nav-link fs-14" data-bs-toggle="tab" href="#documents" role="tab">
                                 <i class="ri-folder-4-line d-inline-block d-md-none"></i> <span
                                     class="d-none d-md-inline-block">Documents</span>
                             </a>
                         </li>
+                        @endif
                     </ul>
                     <div class="flex-shrink-0">
-                        <a href="{{ url('/dashboard/profile/' . $user->id . '/edit') }}" class="btn btn-warning @if(!$isUser) d-none @endif"><i
+                        <a href="{{ url('/dashboard/profile/' . $user->id . '/edit') }}"
+                            class="btn btn-warning @if (!$isUser) d-none @endif"><i
                                 class="ri-edit-box-line align-bottom"></i> Edit Profile</a>
                     </div>
                 </div>
@@ -124,6 +134,9 @@
 
                         <!--end row-->
                     </div>
+
+                    @if ($user != 'partner')
+                        
                     <div class="tab-pane fade" id="documents" role="tabpanel">
 
                         <div class="card">
@@ -131,10 +144,6 @@
 
                                 <div class="text-center">
 
-
-                                    @php
-                                        $documents = auth()->user()->details->documents;
-                                    @endphp
 
 
                                     @forelse ($documents as $document)
@@ -165,6 +174,8 @@
                                             <p class="text-muted mb-4"> Anda belum memiliki dokumen yang diunggah.
                                             </p>
                                             <div class="hstack gap-2 justify-content-center">
+                                                @if (auth()->user()->id == $user->id)
+                                                    
                                                 <a type="button" class="btn btn-outline-danger custom-toggle"
                                                     data-bs-toggle="modal" data-bs-target=".add-document">
                                                     <i class="ri-file-add-line align-bottom me-1"></i>Tambah Dokumen
@@ -254,6 +265,7 @@
                                                         </div><!-- /.modal-content -->
                                                     </div><!-- /.modal-dialog -->
                                                 </div>
+                                                @endif
                                             </div>
                                         </div>
                                     @endforelse
@@ -264,6 +276,7 @@
                         <!--end card-->
                         <!--end row-->
                     </div>
+                    @endif
 
                     <!--end tab-pane-->
                 </div>
