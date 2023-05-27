@@ -70,7 +70,7 @@ Route::prefix('dashboard')->group(function () {
         Route::get('/mitra/{id}', [MitraController::class, 'show']);
         Route::get('/mitra/checkout/invoice', [MitraController::class, 'showInvoice'])->name('invoice');
         Route::prefix('/obligasi')->group(function(){
-            Route::get('/',[ObligasiController::class,'index']);
+            Route::get('/',[ObligasiController::class,'index'])->name('obligasi.index');
             Route::get('/{id}',[ObligasiController::class,'show']);
             Route::post('/buy',[ObligasiController::class,'buy_funding']);
             Route::get('/invoice/{id}',[ObligasiController::class,'showInvoice'])->name('invoice.obligasi');
