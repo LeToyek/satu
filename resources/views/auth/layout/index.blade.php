@@ -8,7 +8,7 @@
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{ URL::asset('velzon/images/favicon.ico')}}">
+    <link rel="shortcut icon" href="{{ URL::asset('assets/img/header_logo.svg')}}">
         @include('auth.layout.head-css')
   </head>
 

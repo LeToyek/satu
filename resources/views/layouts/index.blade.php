@@ -11,7 +11,7 @@
     <title> SaTu - Saling Bantu </title>
 
     <!--====== Favicon Icon ======-->
-    <link rel="shortcut icon" href="{{ asset('assets/img/favicon.ico') }}" type="img/png" />
+    <link rel="shortcut icon" href="{{ URL::asset('assets/img/header_logo.svg') }}" type="img/png" />
     <!--====== Animate Css ======-->
     <link rel="stylesheet" href="{{ asset('assets/css/animate.min.css') }}">
     <!--====== Bootstrap css ======-->
