@@ -8,6 +8,8 @@ use App\Models\Funding;
 use App\Models\FundTransaction;
 use Illuminate\Http\Request;
 
+use function Spatie\Ignition\ErrorPage\report;
+
 class ObligasiController extends Controller
 {
     //
@@ -17,7 +19,7 @@ class ObligasiController extends Controller
     }
     public function index()
     {
-        $campaigns = Campaign::all();
+        $campaigns = Campaign::all()->sortDesc();
         foreach ($campaigns as $campaign) {
             $campaign['total_fund'] = 0;
             if (count($campaign->fundings) !== 0) {
@@ -34,24 +36,29 @@ class ObligasiController extends Controller
     public function show($id)
     {
         $fundings = Funding::all()->where('campaign_id', $id)->where('status', 'on_sell');
-        
+
         return view('dashboard.pages.marketplace.obligasi.detail', ['fundings' => $fundings]);
     }
-    public function buy_funding(Request $request){
+    public function buy_funding(Request $request)
+    {
         $fund_transaction = FundTransaction::create([
             'funding_id' => $request->funding_id,
             'to_id' => auth()->user()->id,
             'from_id' => $request->from_id,
         ]);
-        Funding::find($request->funding_id)->update([
-            'user_id' => auth()->user()->id,
-            'status' => 'on_going',
-        ]);
-        
-        return redirect()->route('invoice.obligasi',['id' =>$fund_transaction->id])->with('success','Berhasil membeli obligasi');
+        try {
+            $funding = Funding::find($request->funding_id);
+            $funding->transferTo(auth()->user(), $funding->fund_nominal);
+        } catch (\Throwable $e) {
+
+            return redirect()->route('obligasi.index')->with('error', $e->getMessage());
+        }
+
+        return redirect()->route('invoice.obligasi', ['id' => $fund_transaction->id])->with('success', 'Berhasil membeli obligasi');
     }
-    public function showInvoice ($id){
+    public function showInvoice($id)
+    {
         $fund_transaction = FundTransaction::find($id);
-        return view('dashboard.pages.marketplace.obligasi.invoice',['invoice' => $fund_transaction]);
+        return view('dashboard.pages.marketplace.obligasi.invoice', ['invoice' => $fund_transaction]);
     }
 }

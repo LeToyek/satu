@@ -16,7 +16,7 @@ class MitraController extends Controller
     }
     public function index()
     {
-        $campaigns = Campaign::all();
+        $campaigns = Campaign::all()->sortDesc();
         foreach ($campaigns as $campaign) {
             $campaign['total_fund'] = 0;
             if (count($campaign->fundings) !== 0) {

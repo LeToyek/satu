@@ -51,7 +51,7 @@ class Funding extends Model
             $this->transactions()->create([
                 'from_id' => $oldUserId,
                 'to_id' => $user->id,
-                'value' => $value,
+                // 'value' => $value,
             ]);
         });
     }
