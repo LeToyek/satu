@@ -68,7 +68,8 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'gender' => ['required'],
             'address' => ['required', 'string'],
-            'dob' => ['required']
+            'dob' => ['required'],
+            'no_hp' => ['required']
         ]);
     }
 
@@ -88,6 +89,7 @@ class RegisterController extends Controller
             'address' => $data['address'],
             'birth_date' => $data['dob'],
             'role' => $data['role'],
+            'no_hp' => $data['no_hp']
         ]);
     }
 }
