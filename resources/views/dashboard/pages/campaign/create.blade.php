@@ -13,10 +13,10 @@
 @section('content')
     @component('dashboard.components.breadcrumb')
         @slot('li_1')
-            Project
+            Campaign
         @endslot
         @slot('title')
-            Create Project
+            Create Campaign
         @endslot
     @endcomponent
     <div class="row">

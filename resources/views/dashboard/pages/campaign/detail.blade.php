@@ -8,10 +8,10 @@
 @section('content')
     @component('dashboard.components.breadcrumb')
         @slot('li_1')
-            Pages
+            Campaign
         @endslot
         @slot('title')
-            Item Details
+            Campaign Details
         @endslot
     @endcomponent
 
