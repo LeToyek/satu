@@ -24,7 +24,7 @@
             Campaign
         @endslot
         @slot('title')
-            Table Campaign
+            Campaign
         @endslot
     @endcomponent
     <!-- end row -->
