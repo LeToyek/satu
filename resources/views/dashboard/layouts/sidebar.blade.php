@@ -67,7 +67,7 @@
                 </li>
                 
                 <li class="nav-item">
-                    <a class="nav-link" href="/dashboard/profile">
+                    <a class="nav-link" href="{{ url('dashboard/profile/' . auth()->user()->id) }}">
                         <i class="  ri-account-circle-line"></i> <span>@lang('translation.profile')</span>
                     </a>
                 </li>
