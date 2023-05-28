@@ -10,13 +10,6 @@
     @php
         $documents = auth()->user()->role == 'partner' ? auth()->user()->details->documents : [];
     @endphp
-    @if (session()->has('success'))
-        <div class="alert alert-success alert-dismissible alert-solid alert-label-icon fade show" role="alert"
-            id="succ-alert" style="position: absolute;z-index: 9999;bottom: 0;right: 0;margin: 0px 24px 24px 0px">
-            <i class="ri-check-double-line label-icon"></i><strong>Success</strong> - {{ session()->get('success') }}
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    @endif
     <div class="profile-foreground position-relative mx-n4 mt-n4">
         <div class="profile-wid-bg">
             <img src="{{ $user->details?->image?->url }}" alt="" class="profile-wid-img" />
@@ -29,9 +22,6 @@
                 <div class="">
                     <img src="{{ $user->avatar_url }}" alt="user-img" class="img-thumbnail rounded-circle"
                         style="width: 100px !important" />
-                    {{-- <img src="@if (Auth::user()->avatar != '') {{ URL::asset('images/' . Auth::user()->avatar) }}@else{{ URL::asset('velzon/images/users/avatar-1.jpg') }} @endif"
-                alt="
-                user-img" class="img-thumbnail rounded-circle" /> --}}
                 </div>
             </div>
             <!--end col-->
