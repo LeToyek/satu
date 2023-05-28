@@ -43,7 +43,7 @@
             <div class="col-lg-12">
                 <div class="d-flex align-items-center mb-4">
                     <div class="flex-grow-1">
-                        <p class="text-muted fs-14 mb-0">Result: <span id="counter"></span></p>
+                        <p class="text-muted fs-14 mb-0">Result: <span id="counter">{{ count($campaigns) }}</span></p>
                     </div>
                     <div class="flex-shrink-0">
                         <div class="dropdown">
@@ -103,7 +103,7 @@
             @endforeach
         </div>
     @else
-        <div class="card py-4 text-center" style="height: 100%" id="noresult">
+        <div class="card py-4 text-center" style="height: 100%">
             <div class="card-body">
 
                 <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop"
@@ -112,9 +112,8 @@
             </div>
         </div>
     @endif
-    <div class="card py-4 text-center" style="height: 100%" id="noresult">
+    <div class="card py-4 text-center" style="height: 100%; display: none" id="noresult">
         <div class="card-body">
-
             <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop"
                 colors="primary:#405189,secondary:#0ab39c" style="width:72px;height:72px"></lord-icon>
             <h5 class="mt-4">Sorry! No Result Found</h5>

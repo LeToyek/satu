@@ -21,10 +21,10 @@
                 <div class="col-lg-4">
                     {{-- <div class="sticky-side-div"> --}}
                     <div class="card ribbon-box border shadow-none right">
-                        
+
                         <img src="{{ asset('storage/' . $campaign->images[0]->path) }}" alt=""
                             class="img-fluid rounded">
-                        <div class="position-absolute bottom-0 p-3">
+                        {{-- <div class="position-absolute bottom-0 p-3">
                             <div class="position-absolute top-0 end-0 start-0 bottom-0 bg-white opacity-25"></div>
                             <div class="row justify-content-center">
                                 <div class="col-3">
@@ -44,48 +44,52 @@
                                         class="img-fluid rounded">
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
-                    <form action="{{ '/dashboard/marketplace/mitra/' . $campaign->id }}" method="POST">
-                        @csrf
-                        <div class="input-step step-primary full-width mb-3">
-                            <button type="button" class="minus">–</button>
-                            <input type="number" name="amount" class="product-quantity" value="100000" min="100000"
-                                max="{{ $campaign->fund_target }}" readonly>
-                            <button type="button" class="plus">+</button>
-                        </div>
-                        
-                        <div class="hstack gap-2">
-                            <a type="button" class="btn btn-success w-100" data-bs-toggle="modal"
-                                data-bs-target=".bs-example-modal-center">
-                                Modalin
-                            </a>
-                            <div class="modal fade bs-example-modal-center" tabindex="-1" role="dialog"
-                                aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered">
-                                    <div class="modal-content">
-                                        <div class="modal-body text-center p-5">
-                                            <lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop"
-                                                colors="primary:#121331,secondary:#02a95c" style="width:100px;height:100px">
-                                            </lord-icon>
-                                            <div class="mt-4">
-                                                <h3 class="mb-3">Apakah anda yakin ?</h3>
-                                                <p class="text-muted mb-4">Setelah Anda mendanai, dana akan diproses untuk
-                                                    diteruskan</p>
-                                                <div class="hstack gap-2 justify-content-center">
-                                                    <button type="button" class="btn btn-light"
-                                                        data-bs-dismiss="modal">Batal</button>
+                    @if (auth()->user()->role !== 'partner')
+                        <form action="{{ '/dashboard/marketplace/mitra/' . $campaign->id }}" method="POST">
+                            @csrf
+                            <div class="input-step step-primary full-width mb-3">
+                                <button type="button" class="minus">–</button>
+                                <input type="number" name="amount" class="product-quantity" value="100000" min="100000"
+                                    max="{{ $campaign->fund_target }}" readonly>
+                                <button type="button" class="plus">+</button>
+                            </div>
 
-                                                    <button class="btn btn-success" type="submit">Yakin</button>
+                            <div class="hstack gap-2">
+                                <a type="button" class="btn btn-success w-100" data-bs-toggle="modal"
+                                    data-bs-target=".bs-example-modal-center">
+                                    Modalin
+                                </a>
+                                <div class="modal fade bs-example-modal-center" tabindex="-1" role="dialog"
+                                    aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-body text-center p-5">
+                                                <lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop"
+                                                    colors="primary:#121331,secondary:#02a95c"
+                                                    style="width:100px;height:100px">
+                                                </lord-icon>
+                                                <div class="mt-4">
+                                                    <h3 class="mb-3">Apakah anda yakin ?</h3>
+                                                    <p class="text-muted mb-4">Setelah Anda mendanai, dana akan diproses
+                                                        untuk
+                                                        diteruskan</p>
+                                                    <div class="hstack gap-2 justify-content-center">
+                                                        <button type="button" class="btn btn-light"
+                                                            data-bs-dismiss="modal">Batal</button>
 
+                                                        <button class="btn btn-success" type="submit">Yakin</button>
+
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div><!-- /.modal-content -->
-                                </div><!-- /.modal-dialog -->
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div>
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                    @endif
                     {{-- </div> --}}
                 </div>
                 <!--end col-->
@@ -106,8 +110,7 @@
                                             class="ri-delete-bin-fill align-bottom me-2 text-muted"></i> Delete</a></li>
                             </ul>
                         </div>
-                        <span class="badge badge-soft-info mb-3 fs-12"><i class="ri-eye-line me-1 align-bottom"></i> 8,634
-                            people views this</span>
+                        <span class="badge badge-soft-info mb-3 fs-12"><i class=" ri-user-shared-fill me-1 align-bottom"></i> Telah didanai oleh {{ count($campaign->fundings) }} orang</span>
                         <h4 class="fw-bold">{{ $campaign->title }}</h4>
                         <div class="hstack gap-3 flex-wrap">
                             <div class="text-muted">Pemilik : <a href="#" class="text-primary fw-medium">
@@ -119,7 +122,7 @@
                                     ])</span></div>
                             <div class="vr"></div>
                             <div class="text-muted">Published : <span
-                                    class="text-body fw-medium">{{ $campaign->created_at }}</span>
+                                    class="text-body fw-medium">{{ date('D, m, Y', strtotime($campaign->created_at))}}</span>
                             </div>
                         </div>
                         <div class="row mt-4">
@@ -282,7 +285,7 @@
                             name: {
                                 show: true,
                                 fontSize: '18px',
-                                offsetY: -5,    
+                                offsetY: -5,
                             },
                             value: {
                                 show: true,
