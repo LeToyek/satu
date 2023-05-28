@@ -38,24 +38,39 @@ class MitraController extends Controller
         if (count($campaign->fundings) !== 0) {
             # code...
 
-        foreach ($campaign->fundings as $fund) {
+            foreach ($campaign->fundings as $fund) {
                 # code...
                 $campaign['total_fund'] += $fund->fund_nominal;
             }
-        
         }
         $campaign['percentage'] = number_format(($campaign['total_fund'] / $campaign->fund_target) * 100, 2);
         return view('dashboard.pages.marketplace.mitra.detail', ['campaign' => $campaign]);
     }
     public function fund(Request $request, $id)
     {
-        $funding = Funding::create([
-            'campaign_id' => $id,
+        $user = auth()->user();
+        $fund_nominal = $request->amount;
+
+        if ($user->wallet->balance < $fund_nominal) {
+            return redirect()->back()->with('error', 'Saldo tidak cukup');
+        }
+
+        $campaign = Campaign::find($id);
+
+        if ($campaign->wallet->balance + $fund_nominal > $campaign->fund_target) {
+            return redirect()->back()->with('error', 'Dana yang terkumpul melebihi target');
+        }
+
+        $funding = $campaign->fundings()->create([
             'user_id' => auth()->user()->id,
             'fund_nominal' => $request->amount,
         ]);
 
-        $funding->campaign->partner->user->notify(new CampaignFunded($funding));
+        // transfer
+        $user->wallet->transfer($campaign->wallet, $fund_nominal, 'Pendanaan ' . $campaign->title);
+
+        $campaign->partner->user->notify(new CampaignFunded($funding));
+
         return redirect()->route('invoice', ['funding' => $funding]);
     }
     public function showInvoice(Request $request)

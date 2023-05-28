@@ -27,6 +27,14 @@ class Campaign extends Model
         static::creating(function ($model) {
             $model->slug = str()->slug($model->title);
         });
+
+        static::created(function ($model) {
+            $model->wallet()->create();
+        });
+
+        static::deleting(function ($model) {
+            $model->wallet()->delete();
+        });
     }
     public function getRouteKeyName()
     {
@@ -56,5 +64,10 @@ class Campaign extends Model
     public function fundings()
     {
         return $this->hasMany(Funding::class);
+    }
+
+    public function wallet()
+    {
+        return $this->morphOne(Wallet::class, 'walletable');
     }
 }

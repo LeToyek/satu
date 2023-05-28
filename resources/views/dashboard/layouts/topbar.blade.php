@@ -60,6 +60,39 @@
                     </button>
                 </div>
 
+                {{-- wallet balance --}}
+                <div class="ms-1 header-item d-none d-sm-flex">
+                    <button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <span class="d-flex align-items-center">
+
+                            <span class="text-start ms-xl-2">
+                                <span class="d-none d-xl-inline-block ms-1 fw-semibold user-name-text">Rp.
+                                    {{ number_format(auth()->user()->wallet->balance, 0, ',', '.') }}</span>
+                                <span class="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">Saldo</span>
+                            </span>
+                        </span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <!-- item-->
+                        <h6 class="dropdown-header">Riwayat Transaksi</h6>
+                        @forelse (auth()->user()->wallet->transactions as $transaction)
+                            <span class="dropdown-item">
+                                <i
+                                    class="mdi {{ $transaction->from_wallet_id == auth()->user()->wallet->id ? 'mdi-arrow-up text-danger' : 'mdi-arrow-down text-success' }}  fs-16 align-middle me-1"></i>
+                                <span class="align-middle">Rp.
+                                    {{ number_format($transaction->amount, 0, ',', '.') }}
+                                </span>
+                                <span class="align-middle">({{ $transaction->type }})</span>
+                            </span>
+                        @empty
+                            <span class="dropdown-item">
+                                <i class=""></i>
+                                <span class="align-middle">Tidak ada transaksi</span></a>
+                        @endforelse
+                    </div>
+                </div>
+
                 <div class="dropdown ms-sm-3 header-item topbar-user">
                     <button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
