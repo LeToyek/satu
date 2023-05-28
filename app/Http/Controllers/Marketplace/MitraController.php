@@ -37,7 +37,7 @@ class MitraController extends Controller
         if (count($campaign->fundings) !== 0) {
             # code...
 
-            foreach ($campaign->fundings as $fund) {
+        foreach ($campaign->fundings as $fund) {
                 # code...
                 $campaign['total_fund'] += $fund->fund_nominal;
             }

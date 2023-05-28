@@ -59,14 +59,13 @@ Route::get('/contact-us', function () {
 Route::prefix('dashboard')->group(function () {
     Route::resource('/campaign', CampaignController::class);
     Route::prefix('/portofolio')->group(function (){
-        
         Route::get('/', [FundingController::class,'index'])->name('portofolio.index');
         Route::get('/{id}',[FundingController::class,'show_sell'])->name('portofolio.sell');
         Route::post('/{id}',[FundingController::class,'sell']);
     });
     Route::prefix('/marketplace')->group(function () {
         Route::get('/mitra', [MitraController::class, 'index']);
-        Route::post('/mitra/{id}', [MitraController::class, 'fund']);
+        Route::post('/mitra/{id}', [MitraController::class, 'fund'])->middleware('auth','funder');
         Route::get('/mitra/{id}', [MitraController::class, 'show']);
         Route::get('/mitra/checkout/invoice', [MitraController::class, 'showInvoice'])->name('invoice');
         Route::prefix('/obligasi')->group(function(){
