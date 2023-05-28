@@ -111,69 +111,53 @@
             <div class="card">
                 <div class="card-header">
                     <div class="d-flex">
-                        <h5 class="card-title flex-grow-1 mb-0"><i class="mdi mdi-cash-fast text-muted"></i> Payment
-                            Method</h5>
+                        <h5 class="card-title flex-grow-1 mb-0"><i class="mdi mdi-cash-fast text-muted"></i> Log Aktifitas</h5>
                         <div class="flex-shrink-0">
-                            <a href="javascript:void(0);" class="badge badge-soft-primary fs-12">Track Order</a>
+                            <a href="javascript:void(0);" class="badge badge-soft-primary fs-12">
+                                {{ auth()->user()->role }}
+                            </a>
                         </div>
                     </div>
                 </div>
                 <div class="card-body">
-                    <div class="text-center">
+                    <div class="d-flex">
+                        <div class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ001</a></div>
+                        <div>
+                            <div class="avatar-xs">
+                                <div class="avatar-title bg-soft-danger text-danger rounded-circle fs-16">
+                                    <i class="ri-arrow-right-up-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="date">24 Dec, 2021 <small class="text-muted">08:58AM</small></div>
+                        <div class="currency_name">
+                            <div class="d-flex align-items-center">
+                                <img src="{{ URL::asset('build/images/svg/crypto-icons/btc.svg') }}" alt="" class="avatar-xxs me-2">
+                                BTC
+                            </div>
+                        </div>
+                        <div class="form_name">Wallet</div>
+                        <div class="to_name">Thomas Taylor</div>
+                        <div class="details">Membership Fees</div>
+                        <div class=div class="d-flex"transaction_id">16b1d9234b61e8778d9e3588f20</div>
+                        <div class="type">Withdraw</div>
+                        <div>
+                            <h6 class="text-danger mb-1 amount">-142.35 BTC</h6>
+                            <p class="text-muted mb-0">$697.88k</p>
+                        </div>
+                        <div class="status">
+                            <span class="badge badge-soft-warning fs-11"><i class="ri-time-line align-bottom"></i> Processing</span>
+                        </div>
+                    </div><!--end tr-->
+                    {{-- <div class="text-center">
                         <lord-icon src="https://cdn.lordicon.com/qhviklyi.json" trigger="loop"
                             colors="primary:#405189,secondary:#0ab39c" style="width:80px;height:80px"></lord-icon>
                         <h5 class="fs-16 mt-2">RQK Logistics</h5>
                         <p class="text-muted mb-0">ID: MFDS1400457854</p>
                         <p class="text-muted mb-0">Payment Mode : Debit Card</p>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
-            <!--end card-->
-
-            <div class="card">
-                <div class="card-header">
-                    <div class="d-flex">
-                        <h5 class="card-title flex-grow-1 mb-0">Partner Details</h5>
-                        <div class="flex-shrink-0">
-
-                            <a href="{{ url('dashboard/profile/') }}" class="link-secondary">View Profile</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <ul class="list-unstyled mb-0 vstack gap-3">
-                        <li>
-                            <div class="d-flex align-items-center">
-                                <div class="flex-shrink-0">
-                                    {{-- <img src="{{ $funding->campaign->partner->user->avatar_url}}" alt=""
-                                        class="avatar-sm rounded"> --}}
-                                </div>
-                                <div class="flex-grow-1 ms-3">
-                                    {{-- <h6 class="fs-15 mb-1">{{ $funding->campaign->partner->name }}</h6> --}}
-                                    <p class="text-muted mb-0">Partner</p>
-                                </div>
-                                </d iv>
-                        </li>
-                        {{-- <li><i class="ri-mail-line me-2 align-middle text-muted fs-16"></i>{{ $funding->campaign->partner->user->email }}</li> --}}
-                        <li><i class="ri-phone-line me-2 align-middle text-muted fs-16"></i>+(256) 245451 441</li>
-                    </ul>
-                </div>
-            </div>
-            <!--end card-->
-            <div class="card">
-                <div class="card-header">
-                    <h5 class="card-title mb-0"><i class="ri-map-pin-line align-middle me-1 text-muted"></i> Billing
-                        Address</h5>
-                </div>
-                <div class="card-body">
-                    <ul class="list-unstyled vstack gap-2 fs-14 mb-0">
-                        {{-- <li class="fw-semibold fs-15">{{ $funding->campaign->partner->user->name }}</li>
-                        <li>+(256) 245451 451</li>
-                        <li>{{ $funding->campaign->partner->user->address }}</li> --}}
-                    </ul>
-                </div>
-            </div>
-
             <!--end card-->
         </div>
         <!--end col-->

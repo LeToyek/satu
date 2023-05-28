@@ -73,8 +73,13 @@
                                 class="card-img-top explore-img">
                             <div class="bg-overlay"></div>
                             <div class="place-bid-btn">
-                                <a href="{{ '/dashboard/marketplace/mitra/' . $campaign->id }}" class="btn btn-success"><i
-                                        class="ri-hand-coin-fill align-bottom me-1"></i> Mulai Bantu</a>
+                                <a href="{{ '/dashboard/marketplace/mitra/' . $campaign->id }}" class="btn btn-success">
+                                        @if (auth()->user()->role === 'partner')
+                                            <i class=" ri-eye-fill align-bottom me-1"></i> Lihat Detail
+                                        @else
+                                            <i class="ri-hand-coin-fill align-bottom me-1"></i> Mulai Bantu
+                                        @endif
+                                </a>
                             </div>
                         </div>
                         <div class="card-body">
