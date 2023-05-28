@@ -36,11 +36,13 @@
                         <i class="ri-home-3-line"></i> <span>@lang('translation.dashboard')</span>
                     </a>
                 </li>
+                @if(auth()->user()->role === 'partner')
                 <li class="nav-item">
                     <a class="nav-link" href="/dashboard/campaign">
                         <i class="bx bxs-megaphone"></i> <span>@lang('translation.campaign')</span>
                     </a>
                 </li>
+                @endif
 
                 <li class="nav-item">
                     <a class="nav-link" href="#sidebarMarketplace" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarMarketplace">
