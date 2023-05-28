@@ -41,9 +41,11 @@ class CampaignFunded extends Notification
         return [
             //
             'campaign_name' => $this->funding->campaign->title,
+            'slug' => $this->funding->campaign->slug,
             'funder_name' => $this->funding->user->name,
             'funder_avatar' => $this->funding->user->avatar_url,
-            'funding_nominal' => $this->funding->fund_nominal,
+            'campaign_image' => $this->funding->campaign->images[0]->path,
+            'message' => $this->funding->user->name . ' telah mendanai ' . $this->funding->campaign->title . ' sebesar Rp ' . number_format($this->funding->fund_nominal,0,',','.') . ', jangan lupa untuk melakukan claim dan mengucapkan terima kasih!'
         ];
     }
 }
