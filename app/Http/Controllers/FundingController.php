@@ -17,6 +17,7 @@ class FundingController extends Controller
     public function index()
     {
         $fundings = Funding::where('user_id', auth()->user()->id)->get();
+        
         return view('dashboard.pages.portofolio.index', ['fundings' => $fundings]);
     }
     public function show_sell($id){

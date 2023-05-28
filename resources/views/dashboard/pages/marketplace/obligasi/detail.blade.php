@@ -226,5 +226,4 @@
 
     <script src="{{ URL::asset('velzon/js/pages/crypto-buy-sell.init.js') }}"></script>
     <script src="{{ URL::asset('velzon/js/app.js') }}"></script>
-    <script src="{{ URL::asset('velzon/js/app.js') }}"></script>
 @endsection
