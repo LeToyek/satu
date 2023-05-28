@@ -12,9 +12,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        // Schema::table('fundings', function (Blueprint $table) {
-        //     $table->dropColumn('status');
-        // });
+        Schema::table('fundings', function (Blueprint $table) {
+            $table->dropColumn('status');
+        });
         Schema::table('fundings', function (Blueprint $table) {
             $table->enum('status', ['on_going', 'on_sell', 'failed','repaid'])->default('on_going');
         });
