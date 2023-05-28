@@ -6,6 +6,7 @@
     <link href="{{ URL::asset('velzon/libs/jsvectormap/css/jsvectormap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ URL::asset('velzon/libs/swiper/swiper-bundle.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
+
 @section('content')
     <div class="row">
         <div class="col">
@@ -801,10 +802,6 @@
                                     class="apex-charts" dir="ltr"></div>
                             </div>
                         </div> <!-- .card-->
-                    </div> <!-- .col-->
-
-                    <div class="col-xl-8">
-                        @include('dashboard.components.table_users')
                     </div> <!-- .col-->
                 </div> <!-- end row-->
 

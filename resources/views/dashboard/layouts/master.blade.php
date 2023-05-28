@@ -25,6 +25,8 @@
         <div class="main-content">
             <div class="page-content">
                 <div class="container-fluid">
+                    @include('dashboard.components.message_error')
+                    @include('dashboard.components.message_success')
                     @yield('content')
                 </div>
                 <!-- container-fluid -->
