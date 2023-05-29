@@ -53,7 +53,13 @@
                         <label class="form-label mb-0">Tenor</label>
                         <input type="number" class="form-control" name="tenor" placeholder="Enter tenor">
                     </div>
-                    <div class="row mb-3">
+
+                    <div class="mb-3">
+                        <label class="form-label mb-0">Funding Deadline</label>
+                        <input type="date" class="form-control" name="funding_deadline" placeholder="Enter start date">
+                    </div>
+
+                    {{-- <div class="row mb-3">
                         <div class="col-lg-6">
                             <div class="mb-3 mb-lg-0">
                                 <label class="form-label mb-0">Start Date</label>
@@ -70,8 +76,8 @@
                                 placeholder="Enter finish date">
                             </div>
                         </div>
-                    </div>
-                    
+                    </div> --}}
+
                     <button type="submit" class="btn btn-success w-sm">Create</button>
                 </form>
                 <!-- end card body -->
@@ -171,8 +177,8 @@
 
                     <div>
                         <label for="choices-text-input" class="form-label">Skills</label>
-                        <input class="form-control" id="choices-text-input" data-choices
-                            data-choices-limit="Required Limit" placeholder="Enter Skills" type="text"
+                        <input class="form-control" id="choices-text-input" data-choices data-choices-limit="Required Limit"
+                            placeholder="Enter Skills" type="text"
                             value="UI/UX, Figma, HTML, CSS, Javascript, C#, Nodejs" />
                     </div>
                 </div>
@@ -398,5 +404,4 @@
     <script src="{{ URL::asset('velzon/js/app.js') }}"></script>
     <script src="{{ URL::asset('velzon/js/pages/form-pickers.init.js') }}"></script>
     <script src="{{ URL::asset('velzon/libs/@simonwep/pickr/pickr.min.js') }}"></script>
-    
 @endsection

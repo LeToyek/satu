@@ -84,6 +84,17 @@
                                             </p>
                                         </div>
 
+                                        @if ($errors->any())
+                                            <div class="alert alert-danger alert-dismissible fade show" role="alert <ul>
+                                                @foreach ($errors->all() as $error)
+                                                    <li>{{ $error }}</li>
+                                                @endforeach
+                                                </ul>
+                                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                        @endif
+
                                         <div class="mt-4">
                                             <form method="POST" action="/register" class="needs-validation" novalidate
                                                 action="index">
@@ -155,8 +166,9 @@
                                                 <div class="mb-3">
                                                     <label for="no_hp" class="form-label">No HP <span
                                                             class="text-danger">*</span></label>
-                                                    <input name="no_hp" type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" class="form-control"
-                                                        id="no_hp" placeholder="Enter no_hp">
+                                                    <input name="no_hp" type="text"
+                                                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                                                        class="form-control" id="no_hp" placeholder="Enter no_hp">
                                                     <div class="invalid-feedback">
                                                         Please enter No HP
                                                     </div>

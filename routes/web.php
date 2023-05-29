@@ -59,27 +59,29 @@ Route::get('/contact-us', function () {
 });
 Route::prefix('dashboard')->group(function () {
     Route::resource('/campaign', CampaignController::class);
-    Route::prefix('/portofolio')->group(function (){
-        Route::get('/', [FundingController::class,'index'])->name('portofolio.index');
-        Route::get('/{id}',[FundingController::class,'show_sell'])->name('portofolio.sell');
-        Route::post('/{id}',[FundingController::class,'sell']);
+    Route::get('/campaign/{campaign}/disburse', [CampaignController::class, 'disburse'])->name('campaign.disburse');
+    Route::post('/campaign/{campaign}/refund', [CampaignController::class, 'refund'])->name('campaign.refund');
+    Route::prefix('/portofolio')->group(function () {
+        Route::get('/', [FundingController::class, 'index'])->name('portofolio.index');
+        Route::get('/{id}', [FundingController::class, 'show_sell'])->name('portofolio.sell');
+        Route::post('/{id}', [FundingController::class, 'sell']);
     });
     Route::prefix('/marketplace')->group(function () {
         Route::get('/mitra', [MitraController::class, 'index']);
-        Route::post('/mitra/{id}', [MitraController::class, 'fund'])->middleware('auth','funder');
+        Route::post('/mitra/{id}', [MitraController::class, 'fund'])->middleware('auth', 'funder');
         Route::get('/mitra/{id}', [MitraController::class, 'show']);
         Route::get('/mitra/checkout/invoice', [MitraController::class, 'showInvoice'])->name('invoice');
-        Route::prefix('/obligasi')->group(function(){
-            Route::get('/',[ObligasiController::class,'index'])->name('obligasi.index');
-            Route::get('/{id}',[ObligasiController::class,'show']);
-            Route::post('/buy',[ObligasiController::class,'buy_funding']);
-            Route::get('/invoice/{id}',[ObligasiController::class,'showInvoice'])->name('invoice.obligasi');
+        Route::prefix('/obligasi')->group(function () {
+            Route::get('/', [ObligasiController::class, 'index'])->name('obligasi.index');
+            Route::get('/{id}', [ObligasiController::class, 'show']);
+            Route::post('/buy', [ObligasiController::class, 'buy_funding']);
+            Route::get('/invoice/{id}', [ObligasiController::class, 'showInvoice'])->name('invoice.obligasi');
         });
     });
     Route::resource('/profile', ProfileController::class);
-    Route::prefix('/wallet')->group(function(){
-        Route::get('/',[WalletController::class,'index'])->name('wallet.index');
-        Route::post('/topup',[WalletController::class,'topup'])->name('wallet.topup');
+    Route::prefix('/wallet')->group(function () {
+        Route::get('/', [WalletController::class, 'index'])->name('wallet.index');
+        Route::post('/topup', [WalletController::class, 'topup'])->name('wallet.topup');
     });
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
 });

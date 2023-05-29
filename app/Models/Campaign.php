@@ -70,4 +70,9 @@ class Campaign extends Model
     {
         return $this->morphOne(Wallet::class, 'walletable');
     }
+
+    public function getReturnTargetAttribute()
+    {
+        return $this->fund_target + ($this->fund_target * $this->return_percentage / 100);
+    }
 }

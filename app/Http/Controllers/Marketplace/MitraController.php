@@ -69,14 +69,15 @@ class MitraController extends Controller
         // transfer
         $user->wallet->transfer($campaign->wallet, $fund_nominal, 'Pendanaan ' . $campaign->title);
 
+        $campaign->partner->user->notify(new CampaignFunded($funding));
+
         if ($campaign->wallet->balance === $campaign->fund_target) {
-            # code...
             $campaign->update([
-                'status' => 'funding_close',
+                'status' => 'waiting_for_disbursement',
             ]);
+
             $campaign->partner->user->notify(new CampaignFullyFunded($campaign));
         }
-        $campaign->partner->user->notify(new CampaignFunded($funding));
 
         return redirect()->route('invoice', ['funding' => $funding]);
     }

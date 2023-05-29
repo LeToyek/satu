@@ -80,12 +80,35 @@ class CampaignController extends Controller
                 $campaign['total_fund'] += $fund->fund_nominal;
             }
         }
-        $campaign['percentage'] = number_format(($campaign['total_fund'] / $campaign->fund_target) * 100,2);
+        $campaign['percentage'] = number_format(($campaign['total_fund'] / $campaign->fund_target) * 100, 2);
         return view('dashboard.pages.campaign.detail', [
             'campaign' => $campaign,
             'fundings' => $campaign->fundings
-            
+
         ]);
+    }
+
+    public function disburse(Campaign $campaign)
+    {
+        $user = auth()->user();
+
+        if ($campaign->partner->user_id !== $user->id) {
+            return redirect()->back()->with('error', 'Anda tidak memiliki akses');
+        }
+
+        if ($campaign->fund_target !== $campaign->wallet->balance) {
+            return redirect()->back()->with('error', 'Campaign belum terdanai');
+        }
+
+        $campaign->update([
+            'status' => 'on_going',
+            'start_date' => now(),
+            'finish_date' => now()->addWeek($campaign->tenor),
+        ]);
+
+        $campaign->wallet->transfer(auth()->user()->wallet, $campaign->wallet->balance, 'Pencairan dana kampanye ' . $campaign->title);
+
+        return redirect()->route('campaign.index')->with('success', 'Dana berhasil dicairkan');
     }
 
     /**
@@ -129,5 +152,29 @@ class CampaignController extends Controller
         //
         $campaign->delete();
         return redirect()->route('campaign.index')->with('success', 'Campaign deleted successfully');
+    }
+
+    public function refund(Campaign $campaign)
+    {
+        $user = auth()->user();
+
+        if ($campaign->partner->user_id !== $user->id) {
+            return redirect()->back()->with('error', 'Anda tidak memiliki akses');
+        }
+
+        $amount = request()->amount;
+        $target = $campaign->return_target;
+
+        if ($campaign->wallet->balance + $amount > $target) {
+            return redirect()->back()->with('error', 'Dana yang ditambahkan melebihi target');
+        }
+
+        if ($user->wallet->balance < $amount) {
+            return redirect()->back()->with('error', 'Saldo tidak cukup');
+        }
+
+        $user->wallet->transfer($campaign->wallet, $amount, 'Pengembalian dana kampanye ' . $campaign->title);
+
+        return redirect()->back()->with('success', 'Dana berhasil dikembalikan');
     }
 }

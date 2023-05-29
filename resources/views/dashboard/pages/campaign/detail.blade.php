@@ -32,7 +32,14 @@
                                 class="img-fluid rounded">
 
                         </div>
+
+                        @if ($campaign->status == 'waiting_for_disbursement')
+                            <button type="button" class="btn btn-success btn-block mt-3 w-100" data-bs-toggle="modal"
+                                data-bs-target="#disburseModal">Cairkan Dana Terkumpul</button>
+                        @endif
                     </div>
+
+
                 </div>
                 <!--end col-->
                 <div class="col-lg-8">
@@ -101,6 +108,115 @@
                         </div>
                         <!--end row-->
 
+                        <div class="mt-2">
+                            <div class="col-lg-12">
+                                <div class="card">
+                                    <div class="card-header d-flex justify-content-between align-items-center">
+                                        <h5 class="card-title mb-0">Saldo</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="card overflow-hidden">
+                                            <div class="card-body bg-marketplace d-flex">
+                                                <div class="flex-grow-1">
+                                                    <h4 class="fs-14 lh-base fw-semibold mb-0">Saldo Kampanye, target
+                                                        pengembalian:
+                                                        <span class="text-success">Rp.
+                                                            {{ number_format($campaign->return_target, 0, ',', '.') }}</span>
+                                                    </h4>
+                                                    <h5 class="text-muted text-uppercase fs-13 mb-2">Satu Wallet ID
+                                                        #ST{{ $campaign->wallet->id }} </h4>
+
+                                                        <div class="mt-3">
+                                                            <h2 class="fw-bold ff-secondary mb-0">Rp <span
+                                                                    class="counter-value"
+                                                                    data-target="{{ $campaign->wallet->balance }}"></span>
+                                                            </h2>
+
+                                                            @php
+                                                                $lunas = $campaign->return_target - $campaign->wallet->balance <= 0;
+                                                            @endphp
+
+                                                            <span
+                                                                class="@if ($lunas) text-success @else text-danger @endif text-xs">
+                                                                @if (!$lunas)
+                                                                    (Rp.
+                                                                    {{ number_format($campaign->wallet->balance - $campaign->return_target, 0, ',', '.') }})
+                                                                @else
+                                                                    LUNAS
+                                                                @endif
+                                                            </span>
+                                                        </div>
+
+                                                        @if (auth()->user()->id == $campaign->partner->user_id && $campaign->status == 'on_going')
+                                                            <div class="d-flex gap-3 mt-4">
+                                                                <div class="hstack gap-2">
+                                                                    <a type="button" class="btn btn-primary"
+                                                                        data-bs-toggle="modal"
+                                                                        data-bs-target=".bs-example-modal-center">
+                                                                        Refund
+                                                                    </a>
+                                                                    <div class="modal fade bs-example-modal-center"
+                                                                        tabindex="-1" role="dialog"
+                                                                        aria-labelledby="mySmallModalLabel"
+                                                                        aria-hidden="true">
+                                                                        <div class="modal-dialog modal-dialog-centered">
+                                                                            <div class="modal-content">
+                                                                                <form
+                                                                                    action="{{ route('campaign.refund', $campaign->slug) }}"
+                                                                                    method="POST"
+                                                                                    class="modal-body text-center p-5">
+                                                                                    @csrf
+                                                                                    <h4 class="fs-24 lh-base fw-bold mb-0">
+                                                                                        Topup Wallet</h4>
+                                                                                    <h5
+                                                                                        class="text-muted text-uppercase fs-13 mb-2">
+                                                                                        Satu Wallet ID
+                                                                                        #ST{{ $campaign->wallet->id }}
+                                                                                    </h5>
+
+                                                                                    <lord-icon
+                                                                                        src="https://cdn.lordicon.com/vaeagfzc.json"
+                                                                                        trigger="loop" delay="2000"
+                                                                                        colors="primary:#121331,secondary:#02a95c"
+                                                                                        style="width:100px;height:100px">
+                                                                                    </lord-icon>
+                                                                                    <p class="mb-2 pt-1 text-muted">
+                                                                                        Harap
+                                                                                        masukkan nominal
+                                                                                        uang yang ingin ditambahkan ke
+                                                                                        wallet dengan benar</p>
+                                                                                    <div
+                                                                                        class="input-step step-success full-width mb-3">
+                                                                                        <button type="button"
+                                                                                            class="minus btn btn-success">–</button>
+                                                                                        <input type="number"
+                                                                                            name="amount"
+                                                                                            class="product-quantity"
+                                                                                            value="0" min="1"
+                                                                                            max="{{ $campaign->return_target - $campaign->wallet->balance }}">
+                                                                                        <button type="button"
+                                                                                            class="plus btn btn-success">+</button>
+                                                                                    </div>
+                                                                                    <div class="mb-3">
+                                                                                        <button type="submit"
+                                                                                            class="btn btn-success">Topup</button>
+                                                                                    </div>
+                                                                                </form>
+                                                                            </div><!-- /.modal-content -->
+                                                                        </div><!-- /.modal-dialog -->
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        @endif
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
 
                         <div class="mt-2">
                             <div class="col-lg-12">
@@ -109,7 +225,8 @@
                                         <h5 class="card-title mb-0">Pendana</h5>
                                     </div>
                                     <div class="card-body">
-                                        <table id="scroll-horizontal" class="table nowrap align-middle" style="width:100%">
+                                        <table id="scroll-horizontal" class="table nowrap align-middle"
+                                            style="width:100%">
                                             <thead>
                                                 <tr>
                                                     <th>ID</th>
@@ -206,6 +323,30 @@
         </div>
     </div>
     <!--end card-->
+
+    {{-- modal --}}
+    <div class="modal fade" id="disburseModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body text-center p-5">
+                    <lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop"
+                        colors="primary:#121331,secondary:#02a95c" style="width:100px;height:100px">
+                    </lord-icon>
+                    <div class="mt-4">
+                        <h3 class="mb-3">Apakah anda yakin ?</h3>
+                        <p class="text-muted mb-4">Dana yang dicairkan akan dikirim ke akun anda.</p>
+                        <div class="hstack gap-2 justify-content-center">
+                            <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
+
+                            <a class="btn btn-success" href="{{ route('campaign.disburse', $campaign->slug) }}">Yakin</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
 @endsection
 @section('script')
     <script src="{{ URL::asset('velzon/js/pages/datatables.init.js') }}"></script>
