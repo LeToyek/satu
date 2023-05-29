@@ -3,6 +3,12 @@
     @lang('translation.item-details')
 @endsection
 @section('css')
+    <!-- nouisliderribute css -->
+    <link href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+    <!--datatable responsive css-->
+    <link href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap.min.css" rel="stylesheet"
+        type="text/css" />
+    <link href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css" rel="stylesheet" type="text/css" />
     <link href="{{ URL::asset('velzon/libs/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 @section('content')
@@ -24,7 +30,7 @@
 
                             <img src="{{ asset('storage/' . $campaign->images[0]->path) }}" alt=""
                                 class="img-fluid rounded">
-                            
+
                         </div>
                     </div>
                 </div>
@@ -61,7 +67,7 @@
                                     class="text-body fw-medium">{{ $campaign->created_at }}</span>
                             </div>
                         </div>
-                        
+
                         <div class="row mt-4">
                             <div class="col-lg-4 col-sm-6">
                                 <div class="p-2 border border-dashed rounded text-center">
@@ -94,33 +100,64 @@
                             </div><!-- end col -->
                         </div>
                         <!--end row-->
-                        <div class="mt-4 text-muted">
-                            <h5 class="fs-14 fw-bold">Description :</h5>
-                            {!! $campaign->description !!}
+
+
+                        <div class="mt-2">
+                            <div class="col-lg-12">
+                                <div class="card">
+                                    <div class="card-header d-flex justify-content-between align-items-center">
+                                        <h5 class="card-title mb-0">Pendana</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <table id="scroll-horizontal" class="table nowrap align-middle" style="width:100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Pendana</th>
+                                                    <th>Nominal</th>
+                                                    <th>Status</th>
+                                                    <th>Aksi</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                                @foreach ($fundings as $funding)
+                                                    <tr>
+                                                        <td>{{ $funding->id }}</td>
+                                                        <td>
+                                                            <img class="rounded-circle header-profile-user"
+                                                                src="{{ $funding->user->avatar_url }}" height="40"
+                                                                alt="">
+                                                            {{ $funding->user->name }}
+                                                        </td>
+                                                        <td>@include('formatting.money', [
+                                                            'money' => $funding->fund_nominal,
+                                                        ])</td>
+                                                        @include('dashboard.components.status_funding', [
+                                                            'status' => $funding->status,
+                                                        ])
+                                                        <td class="text-center">
+                                                            @if ($funding->status == 'unclaimed')
+                                                                <a href="{{ route('dashboard.fundings.approve', $funding->id) }}"
+                                                                    class="btn btn-soft-success btn-sm">Claim</a>
+                                                            @else
+                                                                -
+                                                            @endif
+                                                        </td>
+
+                                                    </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
                         <div class="mt-5">
                             <div class="row">
                                 <div class="d-flex flex-wrap align-items-start gap-3">
                                     <h5 class="fs-14 fw-bold">Funders </h5>
-                                </div>
-                                <div class="col-6">
-                                    <div class="border border-dashed rounded p-3">
-                                        @foreach ($campaign->fundings as $funding)
-                                            <div class="d-flex align-items-center py-3">
-                                                <div class="avatar-xs flex-shrink-0 me-3">
-                                                    <img src="{{ $funding->user->avatar_url}}"
-                                                        alt="" class="img-fluid rounded-circle" />
-                                                </div>
-                                                <div class="flex-grow-1">
-                                                    <div>
-                                                        <h5 class="fs-15 mb-1">{{ $funding->user->name }}</h5>
-                                                        <p class="text-muted mb-0">@include('formatting.money',['money'=>$funding->fund_nominal])
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        @endforeach
-                                    </div>
                                 </div>
                                 <div class="col-6">
 
@@ -171,6 +208,7 @@
     <!--end card-->
 @endsection
 @section('script')
+    <script src="{{ URL::asset('velzon/js/pages/datatables.init.js') }}"></script>
     <script src="{{ URL::asset('velzon/libs/apexcharts/apexcharts.min.js') }}"></script>
     <script src="{{ URL::asset('velzon/js/pages/apexcharts-pie.init.js') }}"></script>
     <script>

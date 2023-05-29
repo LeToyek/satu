@@ -82,7 +82,9 @@ class CampaignController extends Controller
         }
         $campaign['percentage'] = number_format(($campaign['total_fund'] / $campaign->fund_target) * 100,2);
         return view('dashboard.pages.campaign.detail', [
-            'campaign' => $campaign
+            'campaign' => $campaign,
+            'fundings' => $campaign->fundings
+            
         ]);
     }
 
