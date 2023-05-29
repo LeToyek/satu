@@ -24,27 +24,7 @@
 
                             <img src="{{ asset('storage/' . $campaign->images[0]->path) }}" alt=""
                                 class="img-fluid rounded">
-                            <div class="position-absolute bottom-0 p-3">
-                                <div class="position-absolute top-0 end-0 start-0 bottom-0 bg-white opacity-25"></div>
-                                <div class="row justify-content-center">
-                                    <div class="col-3">
-                                        <img src="{{ URL::asset('velzon/images/nft/img-02.jpg') }}" alt=""
-                                            class="img-fluid rounded">
-                                    </div>
-                                    <div class="col-3">
-                                        <img src="{{ URL::asset('velzon/images/nft/img-03.jpg') }}" alt=""
-                                            class="img-fluid rounded">
-                                    </div>
-                                    <div class="col-3">
-                                        <img src="https://img.themesbrand.com/velzon/images/img-3.gif" alt=""
-                                            class="img-fluid rounded h-100 object-cover">
-                                    </div>
-                                    <div class="col-3">
-                                        <img src="{{ URL::asset('velzon/images/nft/img-06.jpg') }}" alt=""
-                                            class="img-fluid rounded">
-                                    </div>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
