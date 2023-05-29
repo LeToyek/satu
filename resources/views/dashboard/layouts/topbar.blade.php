@@ -54,10 +54,9 @@
                         aria-haspopup="true" aria-expanded="false">
                         <i class='bx bx-bell fs-22'></i>
                         @if (count($user->unreadNotifications))
-                            
-                        <span
-                            class="position-absolute topbar-badge fs-10 translate-middle badge rounded-pill bg-danger">{{ count($user->unreadNotifications) }}<span
-                                class="visually-hidden">unread messages</span></span>
+                            <span
+                                class="position-absolute topbar-badge fs-10 translate-middle badge rounded-pill bg-danger">{{ count($user->unreadNotifications) }}<span
+                                    class="visually-hidden">unread messages</span></span>
                         @endif
                     </button>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
@@ -70,10 +69,10 @@
                                         <h6 class="m-0 fs-16 fw-semibold text-white"> Notifications </h6>
                                     </div>
                                     @if (count($user->unreadNotifications))
-                                        
-                                    <div class="col-auto dropdown-tabs">
-                                        <span class="badge badge-soft-light fs-13"> {{ count($user->unreadNotifications) }} New</span>
-                                    </div>
+                                        <div class="col-auto dropdown-tabs">
+                                            <span class="badge badge-soft-light fs-13">
+                                                {{ count($user->unreadNotifications) }} New</span>
+                                        </div>
                                     @endif
                                 </div>
                             </div>
@@ -84,7 +83,9 @@
                                     <li class="nav-item waves-effect waves-light">
                                         <a class="nav-link active" data-bs-toggle="tab" href="#all-noti-tab"
                                             role="tab" aria-selected="true">
-                                            All @if (count($user->unreadNotifications)) ({{ count($user->unreadNotifications) }})@endif
+                                            All @if (count($user->unreadNotifications))
+                                                ({{ count($user->unreadNotifications) }})
+                                            @endif
                                         </a>
                                     </li>
                                     <li class="nav-item waves-effect waves-light">
@@ -106,32 +107,64 @@
 
                         <div class="tab-content position-relative" id="notificationItemsTabContent">
                             <div class="tab-pane fade show active py-2 ps-2" id="all-noti-tab" role="tabpanel">
-                                <div data-simplebar style="max-height: 300px;" class="pe-2" onclick="@json($user->unreadNotifications->markAsRead())">
-                                  
+                                <div data-simplebar style="max-height: 300px;" class="pe-2"
+                                    onclick="@json($user->unreadNotifications->markAsRead())">
+
                                     @forelse ($user->notifications as $notif)
-                                        
-                                    <div class="text-reset notification-item d-block dropdown-item position-relative">
-                                        <div class="d-flex">
-                                            <img src="{{ URL::asset($notif->data['funder_avatar']) }}"
-                                                class="me-3 rounded-circle avatar-xs" alt="user-pic">
-                                            <div class="flex-1">
-                                                <a href="#!" class="stretched-link">
-                                                    <h6 class="mt-0 mb-1 fs-13 fw-semibold">{{ $notif->data['funder_name'] }}</h6>
-                                                </a>
-                                                <div class="fs-13 text-muted">
-                                                    <p class="mb-1">{{ $notif->data['message'] }}</p>
+                                        @if ($notif->type === 'App\Notifications\CampaignFunded')
+                                            <div
+                                                class="text-reset notification-item d-block dropdown-item position-relative">
+                                                <div class="d-flex">
+                                                    <img src="{{ URL::asset($notif->data['funder_avatar']) }}"
+                                                        class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                                    <div class="flex-1">
+                                                        <a href="#!" class="stretched-link">
+                                                            <h6 class="mt-0 mb-1 fs-13 fw-semibold">
+                                                                {{ $notif->data['funder_name'] }}</h6>
+                                                        </a>
+                                                        <div class="fs-13 text-muted">
+                                                            <p class="mb-1">{{ $notif->data['message'] }}</p>
+                                                        </div>
+                                                        <p class="mb-0 fs-11 fw-medium text-uppercase text-muted">
+                                                            <span><i class="mdi mdi-clock-outline"></i>
+                                                                {{ $notif->created_at->diffForHumans() }}</span>
+                                                        </p>
+                                                    </div>
+                                                    <div class="px-2 fs-15">
+                                                        <img src="{{ URL::asset('storage/' . $notif->data['campaign_image']) }}"
+                                                            width="36">
+                                                    </div>
                                                 </div>
-                                                <p class="mb-0 fs-11 fw-medium text-uppercase text-muted">
-                                                    <span><i class="mdi mdi-clock-outline"></i> {{ $notif->created_at->diffForHumans() }}</span>
-                                                </p>
                                             </div>
-                                            <div class="px-2 fs-15">
-                                                <img src="{{URL::asset('storage/'.$notif->data['campaign_image']) }}" width="36">
-                                            </div>
+                                        @elseif ($notif->type === 'App\Notifications\CampaignFullyFunded')
+                                        <div
+                                                class="text-reset notification-item d-block dropdown-item position-relative">
+                                                <div class="d-flex">
+                                                    <div class="avatar-xs me-3">
+                                                        <span
+                                                            class="avatar-title bg-soft-info text-info rounded-circle fs-16">
+                                                            <i class="bx bx-party"></i>
+                                                        </span>
+                                                    </div>
+                                                    <div class="flex-1">
+                                                        <a href="#!" class="stretched-link">
+                                                            <h6 class="mt-0 mb-2 lh-base">
+                                                                {{ $notif->data['message'] }}
+                                                            </h6>
+                                                        </a>
+                                                        <p class="mb-0 fs-11 fw-medium text-uppercase text-muted">
+                                                            {{ $notif->created_at->diffForHumans() }}
+                                                        </p>
+                                                    </div>
+                                                    <div class="px-2 fs-15">
+                                                        <img src="{{ URL::asset('storage/' . $notif->data['campaign_image']) }}"
+                                                            width="36">
+                                                    </div>
+                                                    
+                                                </div>
                                         </div>
-                                    </div>
+                                        @endif
                                     @empty
-                                        
                                     @endforelse
 
                                     <div class="my-3 text-center view-all">
@@ -216,6 +249,7 @@
                     </button>
                     <div class="dropdown-menu dropdown-menu-end">
                         <!-- item-->
+
                         <h6 class="dropdown-header">Riwayat Transaksi</h6>
                         @forelse (auth()->user()->wallet->transactions as $transaction)
                             <span class="dropdown-item">
@@ -227,9 +261,9 @@
                                 <span class="align-middle">({{ $transaction->type }})</span>
                             </span>
                         @empty
-                            <span class="dropdown-item">
+                            <span class="dropdown-item btn">
                                 <i class=""></i>
-                                <span class="align-middle">Tidak ada transaksi</span></a>
+                                <span class="align-middle">Tidak ada transaksi</span></span>
                         @endforelse
                     </div>
                 </div>

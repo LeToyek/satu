@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Marketplace;
 use App\Http\Controllers\Controller;
 use App\Models\Campaign;
 use App\Models\Funding;
+use App\Notifications\CampaignFullyFunded;
 use App\Notifications\CampaignFunded;
 use Illuminate\Http\Request;
 
@@ -65,10 +66,16 @@ class MitraController extends Controller
             'user_id' => auth()->user()->id,
             'fund_nominal' => $request->amount,
         ]);
-
         // transfer
         $user->wallet->transfer($campaign->wallet, $fund_nominal, 'Pendanaan ' . $campaign->title);
 
+        if ($campaign->wallet->balance === $campaign->fund_target) {
+            # code...
+            $campaign->update([
+                'status' => 'funding_close',
+            ]);
+            $campaign->partner->user->notify(new CampaignFullyFunded($campaign));
+        }
         $campaign->partner->user->notify(new CampaignFunded($funding));
 
         return redirect()->route('invoice', ['funding' => $funding]);
