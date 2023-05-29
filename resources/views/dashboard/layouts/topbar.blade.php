@@ -137,7 +137,7 @@
                                                 </div>
                                             </div>
                                         @elseif ($notif->type === 'App\Notifications\CampaignFullyFunded')
-                                        <div
+                                            <div
                                                 class="text-reset notification-item d-block dropdown-item position-relative">
                                                 <div class="d-flex">
                                                     <div class="avatar-xs me-3">
@@ -160,9 +160,9 @@
                                                         <img src="{{ URL::asset('storage/' . $notif->data['campaign_image']) }}"
                                                             width="36">
                                                     </div>
-                                                    
+
                                                 </div>
-                                        </div>
+                                            </div>
                                         @endif
                                     @empty
                                     @endforelse
@@ -250,8 +250,8 @@
                     <div class="dropdown-menu dropdown-menu-end">
                         <!-- item-->
 
-                        <h6 class="dropdown-header">Riwayat Transaksi</h6>
-                        @forelse (auth()->user()->wallet->transactions as $transaction)
+                        <h6 class="dropdown-header">Riwayat Transaksi Terakhir</h6>
+                        @forelse (auth()->user()->wallet->transactions->sortByDesc('created_at')->take(5) as $transaction)
                             <span class="dropdown-item">
                                 <i
                                     class="mdi {{ $transaction->from_wallet_id == auth()->user()->wallet->id ? 'mdi-arrow-up text-danger' : 'mdi-arrow-down text-success' }}  fs-16 align-middle me-1"></i>
@@ -259,6 +259,7 @@
                                     {{ number_format($transaction->amount, 0, ',', '.') }}
                                 </span>
                                 <span class="align-middle">({{ $transaction->type }})</span>
+                                <p class="align-middle max-w-50 text-muted">{{ $transaction->description }}</p>
                             </span>
                         @empty
                             <span class="dropdown-item btn">

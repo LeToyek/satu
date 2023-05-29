@@ -41,18 +41,28 @@ class Funding extends Model
             throw new \Exception('Cannot transfer to the same user');
         }
 
-        DB::transaction(function () use ($user, $value) {
+        DB::beginTransaction();
+
+        try {
             $oldUserId = $this->user_id;
 
             $this->update([
                 'user_id' => $user->id,
+                'status' => 'on_going',
             ]);
 
-            $this->transactions()->create([
+            $transaction = $this->transactions()->create([
                 'from_id' => $oldUserId,
                 'to_id' => $user->id,
-                // 'value' => $value,
+                'value' => $value,
             ]);
-        });
+
+            DB::commit();
+
+            return $transaction;
+        } catch (\Throwable $e) {
+            DB::rollBack();
+            throw $e;
+        }
     }
 }

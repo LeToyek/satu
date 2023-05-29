@@ -41,20 +41,22 @@ class ObligasiController extends Controller
     }
     public function buy_funding(Request $request)
     {
-        $fund_transaction = FundTransaction::create([
-            'funding_id' => $request->funding_id,
-            'to_id' => auth()->user()->id,
-            'from_id' => $request->from_id,
-        ]);
         try {
             $funding = Funding::find($request->funding_id);
-            $funding->transferTo(auth()->user(), $funding->fund_nominal);
-        } catch (\Throwable $e) {
 
+            if (auth()->user()->wallet->balance < $funding->price) {
+                return redirect()->route('obligasi.index')->with('error', 'Saldo tidak mencukupi');
+            }
+
+            // transfer the money to previous owner
+            auth()->user()->wallet->transfer($funding->user->wallet, $funding->price, "Pembelian Obligasi {$funding->campaign->title}");
+
+            $transaction = $funding->transferTo(auth()->user(), $funding->price);
+
+            return redirect()->route('invoice.obligasi', ['id' => $transaction->id])->with('success', 'Berhasil membeli obligasi');
+        } catch (\Throwable $e) {
             return redirect()->route('obligasi.index')->with('error', $e->getMessage());
         }
-
-        return redirect()->route('invoice.obligasi', ['id' => $fund_transaction->id])->with('success', 'Berhasil membeli obligasi');
     }
     public function showInvoice($id)
     {
