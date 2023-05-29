@@ -231,7 +231,8 @@ return [
     "campaign" => "Campaign",
     "portofolio" => "Portofolio",
     "obligasi" => "Obligasi",
-    "mitra" => "Mitra"
+    "mitra" => "Mitra",
+    "wallet" => "Wallet"
 ];
 ?>
 

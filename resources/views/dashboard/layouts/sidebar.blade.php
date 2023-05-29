@@ -73,6 +73,11 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="/dashboard/wallet">
+                        <i class="ri-wallet-line"></i> <span>@lang('translation.wallet')</span>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="/logout">
                         <i class="ri-logout-box-line"></i> <span>@lang('translation.logout')</span>
                     </a>

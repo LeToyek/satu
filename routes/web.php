@@ -10,6 +10,7 @@ use App\Http\Controllers\Marketplace\ObligasiController;
 use App\Http\Controllers\MarketplaceController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\WalletController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -76,6 +77,10 @@ Route::prefix('dashboard')->group(function () {
         });
     });
     Route::resource('/profile', ProfileController::class);
+    Route::prefix('/wallet')->group(function(){
+        Route::get('/',[WalletController::class,'index'])->name('wallet.index');
+        Route::post('/topup',[WalletController::class,'topup'])->name('wallet.topup');
+    });
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
 });
 Route::prefix('/register')->group(
