@@ -18,21 +18,15 @@ function isData() {
         Array.from(plus).forEach(function (e) {
             e.addEventListener("click", function (event) {
                 // if(event.target.previousElementSibling.value )
-                if (
-                    parseInt(e.previousElementSibling.value) <
-                    event.target.previousElementSibling.getAttribute("max")
-                ) {
-                    event.target.previousElementSibling.value =
-                        parseInt(event.target.previousElementSibling.value) +
-                        100000;
-                    console.log(
-                        typeof event.target.previousElementSibling.value
-                    );
-                    if (product) {
-                        Array.from(product).forEach(function (x) {
-                            updateQuantity(event.target);
-                        });
-                    }
+
+                event.target.previousElementSibling.value =
+                    parseInt(event.target.previousElementSibling.value) +
+                    100000;
+                console.log(typeof event.target.previousElementSibling.value);
+                if (product) {
+                    Array.from(product).forEach(function (x) {
+                        updateQuantity(event.target);
+                    });
                 }
             });
         });
@@ -43,7 +37,7 @@ function isData() {
             e.addEventListener("click", function (event) {
                 if (
                     parseInt(e.nextElementSibling.value) >
-                    event.target.nextElementSibling.getAttribute("min")
+                    0
                 ) {
                     event.target.nextElementSibling.value =
                         parseInt(event.target.nextElementSibling.value) -
