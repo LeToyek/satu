@@ -50,9 +50,11 @@
                     </a>
                     <div class="collapse menu-dropdown" id="sidebarMarketplace">
                         <ul class="nav nav-sm flex-column">
+                            @if(auth()->user()->role === 'funder')
                             <li class="nav-item">
                                 <a href="/dashboard/marketplace/obligasi" class="nav-link">@lang('translation.obligasi')</a>
                             </li>
+                            @endif
                             
                             <li class="nav-item">
                                 <a href="/dashboard/marketplace/mitra" class="nav-link">@lang('translation.mitra')</a>
@@ -61,11 +63,13 @@
                         </ul>
                     </div>
                 </li>
+                @if(auth()->user()->role === 'funder')
                 <li class="nav-item">
                     <a class="nav-link" href="/dashboard/portofolio">
                         <i class="ri-file-chart-line"></i> <span>@lang('translation.portofolio')</span>
                     </a>
                 </li>
+                @endif
                 
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('dashboard/profile/' . auth()->user()->id) }}">
