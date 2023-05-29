@@ -12,13 +12,6 @@
     <link href="{{ URL::asset('velzon/libs/nouislider/nouislider.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 @section('content')
-    @if (session()->has('success'))
-        <div class="alert alert-success alert-dismissible alert-solid alert-label-icon fade show" role="alert"
-            id="succ-alert" style="position: absolute;z-index: 9999;bottom: 0;right: 0;margin: 0px 24px 24px 0px">
-            <i class="ri-check-double-line label-icon"></i><strong>Success</strong> - {{ session()->get('success') }}
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    @endif
     @component('dashboard.components.breadcrumb')
         @slot('li_1')
             Obligasi
@@ -223,7 +216,6 @@
     <script src="{{ URL::asset('velzon/libs/list.js/list.min.js') }}"></script>
     <script src="{{ URL::asset('velzon/libs/list.pagination.js/list.pagination.min.js') }}"></script>
     <script src="{{ URL::asset('velzon/libs/apexcharts/apexcharts.min.js') }}"></script>
-
     <script src="{{ URL::asset('velzon/js/pages/crypto-buy-sell.init.js') }}"></script>
     <script src="{{ URL::asset('velzon/js/app.js') }}"></script>
 @endsection

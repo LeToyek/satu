@@ -43,7 +43,6 @@ class ObligasiController extends Controller
     {
         try {
             $funding = Funding::find($request->funding_id);
-
             if (auth()->user()->wallet->balance < $funding->price) {
                 return redirect()->route('obligasi.index')->with('error', 'Saldo tidak mencukupi');
             }

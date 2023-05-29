@@ -34,7 +34,6 @@
                                     <input type="text" class="form-control" placeholder="Search product name"
                                         autocomplete="off" id="the-filter">
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -43,12 +42,12 @@
             <div class="col-lg-12">
                 <div class="d-flex align-items-center mb-4">
                     <div class="flex-grow-1">
-                        <p class="text-muted fs-14 mb-0">Result: {{ count($campaigns) }}</p>
+                        <p class="text-muted fs-14 mb-0">Result: <span id="counter">{{ count($campaigns) }}</span></p>
                     </div>
                     <div class="flex-shrink-0">
                         <div class="dropdown">
                             <a class="text-muted fs-14 dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                data-bs-toggle="dropdown" aria-expanded=`"false">
+                                data-bs-toggle="dropdown" aria-expanded="false">
                                 All View
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -68,7 +67,6 @@
                 <div id="the-item" class="col-xxl-3 col-lg-4 col-md-6 product-item upto-15">
                     <div class="card explore-box card-animate">
                         <div class="position-relative rounded overflow-hidden explore-place-bid-img ">
-
                             <img src="{{ asset('storage/' . $campaign->images[0]->path) }}" alt=""
                                 class="card-img-top explore-img">
                             <div class="bg-overlay"></div>
@@ -108,7 +106,7 @@
             </div>
         </div>
     @endif
-    <div class="card py-4 text-center" style="height: 100%" id="noresult">
+    <div class="card py-4 text-center" style="height: 100%;display: none" id="noresult">
         <div class="card-body">
             <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop"
                 colors="primary:#405189,secondary:#0ab39c" style="width:72px;height:72px"></lord-icon>
@@ -127,6 +125,8 @@
             var theList = document.getElementById('the-list');
             var theItem = document.getElementById('the-item');
             var noResult = document.getElementById('noresult');
+            var counter = document.getElementById('counter');
+            var count = 0;
 
             theFilter.addEventListener('keyup', filterItems);
 
@@ -137,6 +137,7 @@
                 var x = 0;
                 items.forEach(function(i) {
                     var itemName = i.querySelector('.card-body h6').textContent.toLowerCase();
+
                     if (itemName.indexOf(text) != -1) {
                         i.style.display = 'block';
                     } else {
@@ -144,6 +145,7 @@
                         x++;
                     }
                 });
+                counter.innerHTML = items.length - x;
                 if (items.length === x) {
                     noResult.style.display = 'block';
                 } else {
