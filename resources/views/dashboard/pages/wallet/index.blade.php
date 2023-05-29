@@ -63,7 +63,7 @@
                                                                     <button type="button"
                                                                         class="minus btn btn-success">–</button>
                                                                     <input type="number" name="amount"
-                                                                        class="product-quantity" value="0" readonly>
+                                                                        class="product-quantity" value="0" >
                                                                     <button type="button"
                                                                         class="plus btn btn-success">+</button>
                                                                 </div>
@@ -110,13 +110,13 @@
                                     <h5 class="text-muted text-uppercase fs-13 mb-0">Total Revenue</h5>
                                 </div>
                             </div>
-                            <div class="mt-4 pt-1">
+                            {{-- <div class="mt-4 pt-1">
                                 <h4 class="fs-22 fw-semibold ff-secondary mb-0">$<span class="counter-value"
                                         data-target="559526.564"></span> </h4>
                                 <p class="mt-4 mb-0 text-muted"><span class="badge bg-soft-danger text-danger mb-0 me-1"> <i
                                             class="ri-arrow-down-line align-middle"></i> 3.96 % </span> vs. previous month
                                 </p>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>

@@ -67,8 +67,7 @@
                                             <span class="input-group-text" id="cleave-numeral">Rp</span>
                                             <input min="{{ $funding->min_price }}" max="{{ $funding->max_price }}"
                                                 type="number" class="form-control" id="cleave-numeral" name="price"
-                                                placeholder="Masukkan Harga yang sesuai" required>
-
+                                                placeholder="Masukkan Harga yang sesuai">
                                         </div>
                                         <div class="d-flex mt-2" style="justify-content: space-between !important">
                                             <p class="muted"> min: @include('formatting.money', ['money' => $funding->min_price])</p>
@@ -270,7 +269,7 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <div class="table-responsive table-card">
+                    {{-- <div class="table-responsive table-card">
                         <table class="table table-borderless align-middle mb-0">
                             <thead class="table-light text-muted">
                                 <tr>
@@ -352,7 +351,7 @@
                             </tbody>
                         </table>
 
-                    </div>
+                    </div> --}}
                 </div>
                 <!-- end card body -->
             </div>

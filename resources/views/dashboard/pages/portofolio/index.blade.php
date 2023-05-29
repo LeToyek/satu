@@ -120,7 +120,7 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <div class="d-flex">
+                    {{-- <div class="d-flex">
                         <div class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ001</a></div>
                         <div>
                             <div class="avatar-xs">
@@ -148,7 +148,8 @@
                         <div class="status">
                             <span class="badge badge-soft-warning fs-11"><i class="ri-time-line align-bottom"></i> Processing</span>
                         </div>
-                    </div><!--end tr-->
+                    </div> --}}
+                    <!--end tr-->
                     {{-- <div class="text-center">
                         <lord-icon src="https://cdn.lordicon.com/qhviklyi.json" trigger="loop"
                             colors="primary:#405189,secondary:#0ab39c" style="width:80px;height:80px"></lord-icon>
