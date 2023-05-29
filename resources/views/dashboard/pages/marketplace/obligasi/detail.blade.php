@@ -101,7 +101,7 @@
                                                                 <h6 class="text-start">Kampanye</h6>
                                                                 <div class="d-flex">
                                                                     <div
-                                                                        class="flex-shrink-0 avatar-md bg-light rounded p-1">
+                                                                        class="flex-shrink-0 avatar-md bg-light rounded p-1" style="overflow: hidden">
                                                                         <img src="{{ URL::asset('storage/' . $funding->campaign->images[0]->path) }}"
                                                                             alt="" height="60">
                                                                     </div>
