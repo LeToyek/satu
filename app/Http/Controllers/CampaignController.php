@@ -216,6 +216,10 @@ class CampaignController extends Controller
             'finish_date' => now(),
         ]);
 
+        $campaign->fundings()->update([
+            'status' => 'repaid',
+        ]);
+
         return redirect()->back()->with('success', 'Campaign berhasil ditutup');
     }
 }
