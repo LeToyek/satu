@@ -63,12 +63,13 @@
                                                                     <button type="button"
                                                                         class="minus btn btn-success">–</button>
                                                                     <input type="number" name="amount"
-                                                                        class="product-quantity" value="0" >
+                                                                        class="product-quantity" value="0">
                                                                     <button type="button"
                                                                         class="plus btn btn-success">+</button>
                                                                 </div>
                                                                 <div class="mb-3">
-                                                                    <button type="submit" class="btn btn-success">Topup</button>
+                                                                    <button type="submit"
+                                                                        class="btn btn-success">Topup</button>
                                                                 </div>
                                                         </form>
                                                     </div><!-- /.modal-content -->
@@ -77,7 +78,6 @@
                                         </div>
                                     </div>
                             </div>
-
                         </div>
                     </div>
                 </div>

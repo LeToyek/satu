@@ -61,6 +61,7 @@ Route::prefix('dashboard')->group(function () {
     Route::resource('/campaign', CampaignController::class);
     Route::get('/campaign/{campaign}/disburse', [CampaignController::class, 'disburse'])->name('campaign.disburse');
     Route::post('/campaign/{campaign}/refund', [CampaignController::class, 'refund'])->name('campaign.refund');
+    Route::post('/campaign/{campaign}/close', [CampaignController::class, 'close'])->name('campaign.close');
     Route::prefix('/portofolio')->group(function () {
         Route::get('/', [FundingController::class, 'index'])->name('portofolio.index');
         Route::get('/{id}', [FundingController::class, 'show_sell'])->name('portofolio.sell');

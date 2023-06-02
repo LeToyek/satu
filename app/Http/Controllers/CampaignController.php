@@ -177,4 +177,45 @@ class CampaignController extends Controller
 
         return redirect()->back()->with('success', 'Dana berhasil dikembalikan');
     }
+
+    public function close(Campaign $campaign)
+    {
+        $user = auth()->user();
+
+        if ($campaign->partner->user_id !== $user->id) {
+            return redirect()->back()->with('error', 'Anda tidak memiliki akses');
+        }
+
+        if ($campaign->status !== 'on_going') {
+            return redirect()->back()->with('error', 'Campaign belum berjalan');
+        }
+
+        if ($campaign->wallet->balance != $campaign->return_target) {
+            return redirect()->back()->with('error', 'Campaign belum terdanai + bunga');
+        }
+
+
+        // validate funding expected return match with campaign balance
+        $total_expected = 0;
+        foreach ($campaign->fundings as $funding) {
+            $total_expected += $funding->expected_return;
+        }
+
+        if ($total_expected != $campaign->wallet->balance) {
+            return $total_expected . " " . $campaign->wallet->balance;
+            return redirect()->back()->with('error', 'Campaign belum terdanai + bunga');
+        }
+
+        // transfers to all funders
+        foreach ($campaign->fundings as $funding) {
+            $campaign->wallet->transfer($funding->user->wallet, $funding->expected_return, 'Pengembalian dana kampanye ' . $campaign->title);
+        }
+
+        $campaign->update([
+            'status' => 'finished',
+            'finish_date' => now(),
+        ]);
+
+        return redirect()->back()->with('success', 'Campaign berhasil ditutup');
+    }
 }

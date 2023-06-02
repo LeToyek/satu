@@ -147,69 +147,170 @@
                                                             </span>
                                                         </div>
 
-                                                        @if (auth()->user()->id == $campaign->partner->user_id && $campaign->status == 'on_going')
-                                                            <div class="d-flex gap-3 mt-4">
-                                                                <div class="hstack gap-2">
-                                                                    <a type="button" class="btn btn-primary"
-                                                                        data-bs-toggle="modal"
-                                                                        data-bs-target=".bs-example-modal-center">
-                                                                        Refund
-                                                                    </a>
-                                                                    <div class="modal fade bs-example-modal-center"
-                                                                        tabindex="-1" role="dialog"
-                                                                        aria-labelledby="mySmallModalLabel"
-                                                                        aria-hidden="true">
-                                                                        <div class="modal-dialog modal-dialog-centered">
-                                                                            <div class="modal-content">
-                                                                                <form
-                                                                                    action="{{ route('campaign.refund', $campaign->slug) }}"
-                                                                                    method="POST"
-                                                                                    class="modal-body text-center p-5">
-                                                                                    @csrf
-                                                                                    <h4 class="fs-24 lh-base fw-bold mb-0">
-                                                                                        Topup Wallet</h4>
-                                                                                    <h5
-                                                                                        class="text-muted text-uppercase fs-13 mb-2">
-                                                                                        Satu Wallet ID
-                                                                                        #ST{{ $campaign->wallet->id }}
-                                                                                    </h5>
+                                                        @if (auth()->user()->id == $campaign->partner->user_id)
+                                                            @if ($campaign->status == 'on_going' && !$lunas)
+                                                                <div class="d-flex gap-3 mt-4">
+                                                                    <div class="hstack gap-2">
+                                                                        <a type="button" class="btn btn-primary"
+                                                                            data-bs-toggle="modal"
+                                                                            data-bs-target=".bs-example-modal-center">
+                                                                            Refund
+                                                                        </a>
+                                                                        <div class="modal fade bs-example-modal-center"
+                                                                            tabindex="-1" role="dialog"
+                                                                            aria-labelledby="mySmallModalLabel"
+                                                                            aria-hidden="true">
+                                                                            <div class="modal-dialog modal-dialog-centered">
+                                                                                <div class="modal-content">
+                                                                                    <form
+                                                                                        action="{{ route('campaign.refund', $campaign->slug) }}"
+                                                                                        method="POST"
+                                                                                        class="modal-body text-center p-5">
+                                                                                        @csrf
+                                                                                        <h4
+                                                                                            class="fs-24 lh-base fw-bold mb-0">
+                                                                                            Topup Wallet</h4>
+                                                                                        <h5
+                                                                                            class="text-muted text-uppercase fs-13 mb-2">
+                                                                                            Satu Wallet ID
+                                                                                            #ST{{ $campaign->wallet->id }}
+                                                                                        </h5>
 
-                                                                                    <lord-icon
-                                                                                        src="https://cdn.lordicon.com/vaeagfzc.json"
-                                                                                        trigger="loop" delay="2000"
-                                                                                        colors="primary:#121331,secondary:#02a95c"
-                                                                                        style="width:100px;height:100px">
-                                                                                    </lord-icon>
-                                                                                    <p class="mb-2 pt-1 text-muted">
-                                                                                        Harap
-                                                                                        masukkan nominal
-                                                                                        uang yang ingin ditambahkan ke
-                                                                                        wallet dengan benar</p>
-                                                                                    <div
-                                                                                        class="input-step step-success full-width mb-3">
-                                                                                        <button type="button"
-                                                                                            class="minus btn btn-success">–</button>
-                                                                                        <input type="number"
-                                                                                            name="amount"
-                                                                                            class="product-quantity"
-                                                                                            value="0" min="1"
-                                                                                            max="{{ $campaign->return_target - $campaign->wallet->balance }}">
-                                                                                        <button type="button"
-                                                                                            class="plus btn btn-success">+</button>
-                                                                                    </div>
-                                                                                    <div class="mb-3">
-                                                                                        <button type="submit"
-                                                                                            class="btn btn-success">Topup</button>
-                                                                                    </div>
-                                                                                </form>
-                                                                            </div><!-- /.modal-content -->
-                                                                        </div><!-- /.modal-dialog -->
+                                                                                        <lord-icon
+                                                                                            src="https://cdn.lordicon.com/vaeagfzc.json"
+                                                                                            trigger="loop" delay="2000"
+                                                                                            colors="primary:#121331,secondary:#02a95c"
+                                                                                            style="width:100px;height:100px">
+                                                                                        </lord-icon>
+                                                                                        <p class="mb-2 pt-1 text-muted">
+                                                                                            Harap
+                                                                                            masukkan nominal
+                                                                                            uang yang ingin ditambahkan ke
+                                                                                            wallet dengan benar</p>
+                                                                                        <div
+                                                                                            class="input-step step-success full-width mb-3">
+                                                                                            <button type="button"
+                                                                                                class="minus btn btn-success">–</button>
+                                                                                            <input type="number"
+                                                                                                name="amount"
+                                                                                                class="product-quantity"
+                                                                                                value="0"
+                                                                                                min="1"
+                                                                                                max="{{ $campaign->return_target - $campaign->wallet->balance }}">
+                                                                                            <button type="button"
+                                                                                                class="plus btn btn-success">+</button>
+                                                                                        </div>
+                                                                                        <div class="mb-3">
+                                                                                            <button type="submit"
+                                                                                                class="btn btn-success">Topup</button>
+                                                                                        </div>
+                                                                                    </form>
+                                                                                </div><!-- /.modal-content -->
+                                                                            </div><!-- /.modal-dialog -->
+                                                                        </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>
+                                                            @elseif($lunas)
+                                                                <div class="d-flex gap-3 mt-4">
+                                                                    <div class="hstack gap-2">
+                                                                        <a type="button" class="btn btn-primary"
+                                                                            data-bs-toggle="modal"
+                                                                            data-bs-target="#bs-modal-close-campaign">
+                                                                            Tutup Kampanye
+                                                                        </a>
+                                                                        <div class="modal fade"
+                                                                            id="bs-modal-close-campaign" tabindex="-1"
+                                                                            role="dialog"
+                                                                            aria-labelledby="mySmallModalLabel"
+                                                                            aria-hidden="true">
+                                                                            <div
+                                                                                class="modal-dialog modal-dialog-centered">
+                                                                                <div class="modal-content">
+                                                                                    <form
+                                                                                        action="{{ route('campaign.close', $campaign->slug) }}"
+                                                                                        method="POST"
+                                                                                        class="modal-body text-center p-5">
+                                                                                        @csrf
+                                                                                        <h4
+                                                                                            class="fs-24 lh-base fw-bold mb-0">
+                                                                                            Tutup Kampanye?</h4>
+                                                                                        <h5
+                                                                                            class="text-muted text-uppercase fs-13 mb-2">
+                                                                                            Dana akan dikembalikan ke
+                                                                                            Pendana sesuai dengan proporsi
+                                                                                            pinjaman yang diberikan
+                                                                                        </h5>
+
+                                                                                        <table
+                                                                                            class="table table-bordered my-4">
+                                                                                            <thead>
+                                                                                                <tr>
+                                                                                                    <th scope="col">
+                                                                                                        Pendana</th>
+                                                                                                    <th scope="col">
+                                                                                                        Pendanaan</th>
+                                                                                                    <th scope="col">
+                                                                                                        Pengembalian</th>
+                                                                                                </tr>
+                                                                                            </thead>
+                                                                                            <tbody>
+                                                                                                @foreach ($campaign->fundings as $funding)
+                                                                                                    <tr>
+                                                                                                        <td><img class="rounded-circle mr-2"
+                                                                                                                width="30px"
+                                                                                                                height="30px"
+                                                                                                                src="{{ $funding->user->avatar_url }}">
+                                                                                                            {{ $funding->user->name }}
+                                                                                                        </td>
+                                                                                                        <td>@include(
+                                                                                                            'formatting.money',
+                                                                                                            [
+                                                                                                                'money' =>
+                                                                                                                    $funding->fund_nominal,
+                                                                                                            ]
+                                                                                                        )
+                                                                                                        </td>
+                                                                                                        <td>@include(
+                                                                                                            'formatting.money',
+                                                                                                            [
+                                                                                                                'money' =>
+                                                                                                                    $funding->expected_return,
+                                                                                                            ]
+                                                                                                        )
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                @endforeach
+                                                                                                <tr>
+                                                                                                    <th colspan="2">
+                                                                                                        Total</th>
+                                                                                                    <th>@include(
+                                                                                                        'formatting.money',
+                                                                                                        [
+                                                                                                            'money' =>
+                                                                                                                $campaign->return_target,
+                                                                                                        ]
+                                                                                                    )
+                                                                                                    </th>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+
+                                                                                        <div class="mb-2">
+                                                                                            <button type="button"
+                                                                                                class="btn btn-light mr-1"
+                                                                                                data-bs-dismiss="modal">Batal</button>
+                                                                                            <button type="submit"
+                                                                                                class="btn btn-success ml-1">Konfirmasi</button>
+                                                                                        </div>
+                                                                                    </form>
+                                                                                </div><!-- /.modal-content -->
+                                                                            </div><!-- /.modal-dialog -->
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            @endif
                                                         @endif
                                                 </div>
-
                                             </div>
                                         </div>
                                     </div>

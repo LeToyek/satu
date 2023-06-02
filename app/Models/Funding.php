@@ -33,6 +33,11 @@ class Funding extends Model
         return $this->hasMany(FundTransaction::class);
     }
 
+    public function getExpectedReturnAttribute()
+    {
+        return $this->fund_nominal + ($this->fund_nominal * $this->campaign->return_percentage / 100);
+    }
+
     // NOTE!! this only transfer the ownership of the funding
     // handle the money transfer separately, using wallet->transfer()
     public function transferTo(User $user, int $value)
