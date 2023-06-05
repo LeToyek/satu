@@ -40,4 +40,10 @@ class Partner extends Model
     {
         return $this->hasMany(Campaign::class);
     }
+
+    // BACKPACK
+    public function identifiableAttribute()
+    {
+        return 'name';
+    }
 }
