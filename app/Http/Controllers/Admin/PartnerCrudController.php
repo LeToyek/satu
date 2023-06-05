@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\CampaignRequest;
+use App\Http\Requests\PartnerRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class CampaignCrudController
+ * Class PartnerCrudController
  * @package App\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
-class CampaignCrudController extends CrudController
+class PartnerCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
-    // use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
+    use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
@@ -26,9 +26,9 @@ class CampaignCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Campaign::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/kampanye');
-        CRUD::setEntityNameStrings('kampanye', 'kampanye');
+        CRUD::setModel(\App\Models\Partner::class);
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/mitra');
+        CRUD::setEntityNameStrings('mitra', 'mitra');
     }
 
     /**
@@ -39,16 +39,13 @@ class CampaignCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('partner_id');
-        CRUD::column('title');
-        CRUD::column('status');
-        CRUD::column('description');
-        CRUD::column('fund_target');
-        CRUD::column('return_percentage');
-        CRUD::column('tenor');
-        CRUD::column('start_date');
-        CRUD::column('finish_date');
-        CRUD::column('slug');
+        CRUD::column('user_id');
+        CRUD::column('name');
+        CRUD::column('address');
+        CRUD::column('found_at');
+        CRUD::column('sector');
+        CRUD::column('monthly_income')->type('number')->prefix('Rp.')->attributes(['step' => '1000']);
+        CRUD::column('grade')->type('enum')->options(['a' => 'A', 'b' => 'B', 'c' => 'C', 'd' => 'D', 'e' => 'E']);
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -69,16 +66,16 @@ class CampaignCrudController extends CrudController
             // 'name' => 'required|min:2',
         ]);
 
-        CRUD::field('partner_id');
-        CRUD::field('title');
-        CRUD::field('description');
-        CRUD::field('fund_target');
-        CRUD::field('return_percentage');
-        CRUD::field('tenor');
-        CRUD::field('start_date');
-        CRUD::field('finish_date');
-        CRUD::field('status');
-        CRUD::field('slug');
+        CRUD::field('user_id')->type('select')->options(function ($query) {
+            // only show users with role 'partner'
+            return $query->where('role', 'partner')->get();
+        });
+        CRUD::field('name');
+        CRUD::field('address');
+        CRUD::field('found_at');
+        CRUD::field('sector');
+        CRUD::field('monthly_income')->type('number')->prefix('Rp.')->attributes(['step' => '1000']);
+        CRUD::field('grade')->type('enum')->options(['a' => 'A', 'b' => 'B', 'c' => 'C', 'd' => 'D', 'e' => 'E']);
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:
