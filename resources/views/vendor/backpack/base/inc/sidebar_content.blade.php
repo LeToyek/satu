@@ -10,3 +10,6 @@
 
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('mitra') }}"><i class="nav-icon la la-handshake"></i>
         Mitra</a></li>
+
+<li class="nav-item"><a class="nav-link" href="{{ backpack_url('funding') }}"><i
+            class="nav-icon la la-file-invoice-dollar"></i> Pendanaan</a></li>

@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\PartnerRequest;
+use App\Http\Requests\FundingRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class PartnerCrudController
+ * Class FundingCrudController
  * @package App\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
-class PartnerCrudController extends CrudController
+class FundingCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
-    use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
+    // use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;
-    use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
+    // use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
 
     /**
@@ -26,9 +26,9 @@ class PartnerCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Partner::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/mitra');
-        CRUD::setEntityNameStrings('mitra', 'mitra');
+        CRUD::setModel(\App\Models\Funding::class);
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/funding');
+        CRUD::setEntityNameStrings('funding', 'fundings');
     }
 
     /**
@@ -39,13 +39,16 @@ class PartnerCrudController extends CrudController
      */
     protected function setupListOperation()
     {
+        CRUD::column('campaign_id');
         CRUD::column('user_id');
-        CRUD::column('name');
-        CRUD::column('address');
-        CRUD::column('found_at');
-        CRUD::column('sector');
-        CRUD::column('monthly_income')->type('number')->prefix('Rp.');
-        CRUD::column('grade')->type('enum')->options(['a' => 'A', 'b' => 'B', 'c' => 'C', 'd' => 'D', 'e' => 'E']);
+        CRUD::column('fund_nominal')->type('number')->prefix('Rp.');
+        CRUD::column('price')->type('number')->prefix('Rp.');
+        CRUD::column('status')->type('enum')->options([
+            'on_going' => 'On Going',
+            'on_sell' => 'On Sell',
+            'unclaimed' => 'UNCLAIMED',
+            'failed' => 'FAILED',
+        ]);
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -66,16 +69,11 @@ class PartnerCrudController extends CrudController
             // 'name' => 'required|min:2',
         ]);
 
-        CRUD::field('user_id')->type('select')->options(function ($query) {
-            // only show users with role 'partner'
-            return $query->where('role', 'partner')->get();
-        });
-        CRUD::field('name');
-        CRUD::field('address');
-        CRUD::field('found_at');
-        CRUD::field('sector');
-        CRUD::field('monthly_income')->type('number')->prefix('Rp.')->attributes(['step' => '1000']);
-        CRUD::field('grade')->type('enum')->options(['a' => 'A', 'b' => 'B', 'c' => 'C', 'd' => 'D', 'e' => 'E']);
+        CRUD::field('campaign_id');
+        CRUD::field('user_id');
+        CRUD::field('fund_nominal')->type('number')->prefix('Rp.');
+        CRUD::field('price')->type('number')->prefix('Rp.');
+        CRUD::field('status');
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:
@@ -92,6 +90,17 @@ class PartnerCrudController extends CrudController
      */
     protected function setupUpdateOperation()
     {
-        $this->setupCreateOperation();
+        // $this->setupCreateOperation();
+
+        CRUD::field('campaign_id')->attributes(['readonly' => 'readonly']);
+        CRUD::field('user_id');
+        CRUD::field('fund_nominal')->type('number')->prefix('Rp.')->attributes(['readonly' => 'readonly']);
+        CRUD::field('price')->type('number')->prefix('Rp.')->attributes(['step' => '1000']);;
+        CRUD::field('status')->type('enum')->options([
+            'on_going' => 'On Going',
+            'on_sell' => 'On Sell',
+            'unclaimed' => 'UNCLAIMED',
+            'failed' => 'FAILED',
+        ]);
     }
 }
