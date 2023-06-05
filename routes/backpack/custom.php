@@ -20,4 +20,5 @@ Route::group([
     Route::crud('kampanye', 'CampaignCrudController');
     Route::crud('mitra', 'PartnerCrudController');
     Route::crud('funding', 'FundingCrudController');
+    Route::crud('dompet', 'WalletCrudController');
 }); // this should be the absolute last line of this file

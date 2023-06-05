@@ -31,7 +31,9 @@ class Campaign extends Model
         });
 
         static::created(function ($model) {
-            $model->wallet()->create();
+            if (!$model->wallet) {
+                $model->wallet()->create();
+            }
         });
 
         static::deleting(function ($model) {

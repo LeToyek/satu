@@ -13,3 +13,6 @@
 
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('funding') }}"><i
             class="nav-icon la la-file-invoice-dollar"></i> Pendanaan</a></li>
+
+<li class="nav-item"><a class="nav-link" href="{{ backpack_url('dompet') }}"><i class="nav-icon la la-wallet"></i>
+        Dompet</a></li>

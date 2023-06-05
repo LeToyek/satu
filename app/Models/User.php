@@ -56,8 +56,12 @@ class User extends Authenticatable
     public function __construct()
     {
         static::created(function ($user) {
-            $user->avatar()->create();
-            $user->wallet()->create();
+            if (!$user->avatar) {
+                $user->avatar()->create();
+            }
+            if (!$user->wallet) {
+                $user->wallet()->create();
+            }
         });
     }
 
