@@ -57,7 +57,7 @@ Route::get('/testimoni', function () {
 Route::get('/contact-us', function () {
     return view('pages.contact-us');
 });
-Route::prefix('dashboard')->group(function () {
+Route::prefix('dashboard')->middleware('notadmin')->group(function () {
     Route::resource('/campaign', CampaignController::class);
     Route::get('/campaign/{campaign}/disburse', [CampaignController::class, 'disburse'])->name('campaign.disburse');
     Route::post('/campaign/{campaign}/refund', [CampaignController::class, 'refund'])->name('campaign.refund');

@@ -37,4 +37,15 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    public function redirectPath()
+    {
+        $role = auth()->user()->role;
+
+        if ($role == 'role') {
+            return route('backpack.dashboard');
+        } else {
+            return url($this->redirectTo);
+        }
+    }
 }

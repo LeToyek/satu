@@ -3,6 +3,7 @@
 namespace App\Http;
 
 use App\Http\Middleware\Funder;
+use App\Http\Middleware\NotAdmin;
 use App\Http\Middleware\Partner;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -42,7 +43,7 @@ class Kernel extends HttpKernel
 
         'api' => [
             // \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
-            \Illuminate\Routing\Middleware\ThrottleRequests::class.':api',
+            \Illuminate\Routing\Middleware\ThrottleRequests::class . ':api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
     ];
@@ -66,6 +67,7 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'partner' => Partner::class,
-        'funder'=> Funder::class
+        'funder' => Funder::class,
+        'notadmin' => NotAdmin::class,
     ];
 }
