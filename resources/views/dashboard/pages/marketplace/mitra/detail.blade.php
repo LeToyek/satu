@@ -52,7 +52,7 @@
                             <div class="input-step step-primary full-width mb-3">
                                 <button type="button" class="minus">–</button>
                                 <input type="number" name="amount" class="product-quantity" value="100000" min="100000"
-                                    max="{{ $campaign->fund_target }}" readonly>
+                                    max="{{ $campaign->fund_target }}" >
                                 <button type="button" class="plus">+</button>
                             </div>
 
