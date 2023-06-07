@@ -20,7 +20,8 @@
                 <img src="{{ URL::asset('assets/img/logo-satu.svg') }}" alt="" height="24">
             </span>
         </a>
-        <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover" id="vertical-hover">
+        <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover"
+            id="vertical-hover">
             <i class="ri-record-circle-line"></i>
         </button>
     </div>
@@ -29,55 +30,62 @@
         <div class="container-fluid">
 
             <div id="two-column-menu">
+
             </div>
+
             <ul class="navbar-nav" id="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="/dashboard">
+                    <a class="nav-link @if (request()->is('dashboard')) active @endif" href="/dashboard">
                         <i class="ri-home-3-line"></i> <span>@lang('translation.dashboard')</span>
                     </a>
                 </li>
-                @if(auth()->user()->role === 'partner')
-                <li class="nav-item">
-                    <a class="nav-link" href="/dashboard/campaign">
-                        <i class="bx bxs-megaphone"></i> <span>@lang('translation.campaign')</span>
-                    </a>
-                </li>
+                @if (auth()->user()->role === 'partner')
+                    <li class="nav-item">
+                        <a class="nav-link @if (request()->is('dashboard/campaign*')) active @endif" href="/dashboard/campaign">
+                            <i class="bx bxs-megaphone"></i> <span>@lang('translation.campaign')</span>
+                        </a>
+                    </li>
                 @endif
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#sidebarMarketplace" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarMarketplace">
+                    <a class="nav-link" href="#sidebarMarketplace" data-bs-toggle="collapse" role="button"
+                        aria-expanded="false" aria-controls="sidebarMarketplace">
                         <i class=" ri-store-2-line"></i><span>@lang('translation.marketplace')</span>
                     </a>
-                    <div class="collapse menu-dropdown" id="sidebarMarketplace">
+                    <div class="menu-dropdown @if (!request()->is('dashboard/marketplace*')) collapse @endif"
+                        id="sidebarMarketplace">
                         <ul class="nav nav-sm flex-column">
-                            @if(auth()->user()->role === 'funder')
-                            <li class="nav-item">
-                                <a href="/dashboard/marketplace/obligasi" class="nav-link">@lang('translation.obligasi')</a>
-                            </li>
+                            @if (auth()->user()->role === 'funder')
+                                <li class="nav-item">
+                                    <a href="/dashboard/marketplace/obligasi"
+                                        class="nav-link @if (request()->is('dashboard/marketplace/obligasi*')) active @endif">@lang('translation.obligasi')</a>
+                                </li>
                             @endif
-                            
+
                             <li class="nav-item">
-                                <a href="/dashboard/marketplace/mitra" class="nav-link">@lang('translation.mitra')</a>
+                                <a href="/dashboard/marketplace/mitra"
+                                    class="nav-link @if (request()->is('dashboard/marketplace/mitra*')) active @endif">@lang('translation.mitra')</a>
                             </li>
-                            
+
                         </ul>
                     </div>
                 </li>
-                @if(auth()->user()->role === 'funder')
-                <li class="nav-item">
-                    <a class="nav-link" href="/dashboard/portofolio">
-                        <i class="ri-file-chart-line"></i> <span>@lang('translation.portofolio')</span>
-                    </a>
-                </li>
+                @if (auth()->user()->role === 'funder')
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard/portofolio">
+                            <i class="ri-file-chart-line"></i> <span>@lang('translation.portofolio')</span>
+                        </a>
+                    </li>
                 @endif
-                
+
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('dashboard/profile/' . auth()->user()->id) }}">
+                    <a class="nav-link @if (request()->is('dashboard/profile*')) active @endif"
+                        href="{{ url('dashboard/profile/' . auth()->user()->id) }}">
                         <i class="  ri-account-circle-line"></i> <span>@lang('translation.profile')</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/dashboard/wallet">
+                    <a class="nav-link @if (request()->is('dashboard/wallet*')) active @endif" href="/dashboard/wallet">
                         <i class="ri-wallet-line"></i> <span>@lang('translation.wallet')</span>
                     </a>
                 </li>
