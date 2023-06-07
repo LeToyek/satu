@@ -51,13 +51,16 @@ class MitraController extends Controller
     {
         $user = auth()->user();
         $fund_nominal = $request->amount;
-
+        
         if ($user->wallet->balance < $fund_nominal) {
             return redirect()->back()->with('error', 'Saldo tidak cukup');
         }
-
+        
         $campaign = Campaign::find($id);
-
+        
+        if ($campaign->status !== 'funding_open') {
+            return redirect()->back()->with('error', 'Campaign tidak aktif');
+        }
         if ($campaign->wallet->balance + $fund_nominal > $campaign->fund_target) {
             return redirect()->back()->with('error', 'Dana yang terkumpul melebihi target');
         }
