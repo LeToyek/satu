@@ -1,7 +1,7 @@
 @if ($status == 'on_going')
     <td><span class="badge bg-primary">On Going</span></td>
 @elseif ($status == 'repaid')
-    <td><span class="badge bg-info">Waiting for return</span></td>
+    <td><span class="badge bg-info">Repaid</span></td>
 @elseif ($status == 'on_sell')
     <td><span class="badge bg-warning">On Sell</span></td>
 @elseif ($status == 'unclaimed')
