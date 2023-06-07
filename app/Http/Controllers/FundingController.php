@@ -31,6 +31,11 @@ class FundingController extends Controller
             'price' => 'required',
         ]);
         $funding = Funding::find($id);
+        $transaction['max_price'] = $funding->fund_nominal + ($funding->fund_nominal * 0.05);
+        $transaction['min_price'] = $funding->fund_nominal - ($funding->fund_nominal * 0.05);
+        if ($transaction['price'] > $transaction['max_price'] || $transaction['price'] < $transaction['min_price']) {
+            return redirect()->route('portofolio.sell',['id' => $id])->with('error', 'Mohon masukkan nominal harga yang sesuai dengan batas minimal dan maksimal');
+        }
         if ($funding->status == 'on_sell') {
             return redirect()->route('portofolio.index',['id' => $id])->with('error', 'Funding already on sell');
         }

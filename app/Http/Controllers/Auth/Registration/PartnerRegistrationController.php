@@ -23,9 +23,9 @@ class PartnerRegistrationController extends Controller
             'monthly_income' => 'required|numeric',
             'sector' => 'required|max:255',
             'found_at' => 'required|date',
-            'image' => 'required|image|max:2048',
-            'bussines_permit' => 'required|mimes:pdf|max:2048',
-            'npwp' => 'required|mimes:pdf|max:2048',
+            'image' => 'required|image',
+            'bussines_permit' => 'required|mimes:pdf',
+            'npwp' => 'required|mimes:pdf',
         ]);
 
         $user =  auth()->user();
