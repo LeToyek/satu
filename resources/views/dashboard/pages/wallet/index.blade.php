@@ -19,7 +19,7 @@
     @endcomponent
 
     <div class="row dash-nft">
-        <div class="col-xxl-9">
+        <div class="col-xxl-12">
             <div class="row">
                 <div class="col-xl-6">
                     <div class="card overflow-hidden">
@@ -107,16 +107,16 @@
                                     </span>
                                 </div>
                                 <div class="flex-grow-1 ps-3">
-                                    <h5 class="text-muted text-uppercase fs-13 mb-0">Total Revenue</h5>
+                                    <h5 class="text-muted text-uppercase fs-13 mb-0">Total Keuntungan</h5>
                                 </div>
                             </div>
-                            {{-- <div class="mt-4 pt-1">
-                                <h4 class="fs-22 fw-semibold ff-secondary mb-0">$<span class="counter-value"
-                                        data-target="559526.564"></span> </h4>
-                                <p class="mt-4 mb-0 text-muted"><span class="badge bg-soft-danger text-danger mb-0 me-1"> <i
-                                            class="ri-arrow-down-line align-middle"></i> 3.96 % </span> vs. previous month
+                            <div class="mt-4 pt-1">
+                                <h4 class="fs-22 fw-semibold ff-secondary mb-0">Rp <span class="counter-value"
+                                        data-target="{{ $keuntungan }}"></span></h4>
+                                <p class="mt-4 mb-0 text-muted"><span class="badge bg-soft-success text-success mb-0"> <i
+                                            class="ri-arrow-up-line align-middle"></i> 16.24 % </span> vs. previous month
                                 </p>
-                            </div> --}}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -156,6 +156,33 @@
                                             class="ri-arrow-up-line align-middle"></i> 16.24 % </span> vs. previous month
                                 </p>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-6">
+                    <div class="card">
+                        <div class="card-header">
+
+                            <h6 class="card-title mb-0">Histori Transaksi</h6>
+                        </div>
+                        <div class="card-body" style="max-height: 300px;overflow: scroll;overflow-x: hidden">
+                            @forelse (auth()->user()->wallet->transactions->sortByDesc('created_at') as $transaction)
+                                <span class="dropdown-item">
+                                    <i
+                                        class="mdi {{ $transaction->from_wallet_id == auth()->user()->wallet->id ? 'mdi-arrow-up text-danger' : 'mdi-arrow-down text-success' }}  fs-16 align-middle me-1"></i>
+                                    <span class="align-middle">Rp.
+                                        {{ number_format($transaction->amount, 0, ',', '.') }}
+                                    </span>
+                                    <span class="align-middle">({{ $transaction->type }})</span>
+                                    <p class="align-middle max-w-50 text-muted">{{ $transaction->description }}</p>
+                                </span>
+                            @empty
+                                <span class="dropdown-item btn">
+                                    <i class=""></i>
+                                    <span class="align-middle">Tidak ada transaksi</span></span>
+                            @endforelse
                         </div>
                     </div>
                 </div>

@@ -74,7 +74,7 @@
                                             'status' => $funding->status,
                                         ])
                                         <td><a href="{{ url('dashboard/portofolio/' . $funding->id) }}"
-                                                class="btn btn-soft-danger btn-sm @if ($funding->status == 'on_sell') disabled @endif">Sell</a>
+                                                class="btn btn-soft-danger btn-sm @if ($funding->status != 'on_going') disabled @endif">Sell</a>
                                         </td>
                                     </tr>
                                 @empty
@@ -120,43 +120,21 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    {{-- <div class="d-flex">
-                        <div class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ001</a></div>
-                        <div>
-                            <div class="avatar-xs">
-                                <div class="avatar-title bg-soft-danger text-danger rounded-circle fs-16">
-                                    <i class="ri-arrow-right-up-fill"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="date">24 Dec, 2021 <small class="text-muted">08:58AM</small></div>
-                        <div class="currency_name">
-                            <div class="d-flex align-items-center">
-                                <img src="{{ URL::asset('build/images/svg/crypto-icons/btc.svg') }}" alt="" class="avatar-xxs me-2">
-                                BTC
-                            </div>
-                        </div>
-                        <div class="form_name">Wallet</div>
-                        <div class="to_name">Thomas Taylor</div>
-                        <div class="details">Membership Fees</div>
-                        <div class=div class="d-flex"transaction_id">16b1d9234b61e8778d9e3588f20</div>
-                        <div class="type">Withdraw</div>
-                        <div>
-                            <h6 class="text-danger mb-1 amount">-142.35 BTC</h6>
-                            <p class="text-muted mb-0">$697.88k</p>
-                        </div>
-                        <div class="status">
-                            <span class="badge badge-soft-warning fs-11"><i class="ri-time-line align-bottom"></i> Processing</span>
-                        </div>
-                    </div> --}}
-                    <!--end tr-->
-                    {{-- <div class="text-center">
-                        <lord-icon src="https://cdn.lordicon.com/qhviklyi.json" trigger="loop"
-                            colors="primary:#405189,secondary:#0ab39c" style="width:80px;height:80px"></lord-icon>
-                        <h5 class="fs-16 mt-2">RQK Logistics</h5>
-                        <p class="text-muted mb-0">ID: MFDS1400457854</p>
-                        <p class="text-muted mb-0">Payment Mode : Debit Card</p>
-                    </div> --}}
+                    @forelse (auth()->user()->wallet->transactions->sortByDesc('created_at') as $transaction)
+                    <span class="dropdown-item">
+                        <i
+                            class="mdi {{ $transaction->from_wallet_id == auth()->user()->wallet->id ? 'mdi-arrow-up text-danger' : 'mdi-arrow-down text-success' }}  fs-16 align-middle me-1"></i>
+                        <span class="align-middle">Rp.
+                            {{ number_format($transaction->amount, 0, ',', '.') }}
+                        </span>
+                        <span class="align-middle">({{ $transaction->type }})</span>
+                        <p class="align-middle max-w-50 text-muted">{{ $transaction->description }}</p>
+                    </span>
+                @empty
+                    <span class="dropdown-item btn">
+                        <i class=""></i>
+                        <span class="align-middle">Tidak ada transaksi</span></span>
+                @endforelse
                 </div>
             </div>
             <!--end card-->

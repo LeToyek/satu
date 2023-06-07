@@ -65,8 +65,7 @@
                                         <label for="billinginfo-price" class="form-label">Harga</label>
                                         <div class="input-group">
                                             <span class="input-group-text" id="cleave-numeral">Rp</span>
-                                            <input min="{{ $funding->min_price }}" max="{{ $funding->max_price }}"
-                                                type="number" class="form-control" id="cleave-numeral" name="price"
+                                            <input type="number" class="form-control" id="cleave-numeral" name="price"
                                                 placeholder="Masukkan Harga yang sesuai">
                                         </div>
                                         <div class="d-flex mt-2" style="justify-content: space-between !important">
@@ -269,89 +268,21 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    {{-- <div class="table-responsive table-card">
-                        <table class="table table-borderless align-middle mb-0">
-                            <thead class="table-light text-muted">
-                                <tr>
-                                    <th style="width: 90px;" scope="col">Product</th>
-                                    <th scope="col">Product Info</th>
-                                    <th scope="col" class="text-end">Price</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <div class="avatar-md bg-light rounded p-1">
-                                            <img src="{{ URL::asset('velzon/images/products/img-8.png') }}" alt=""
-                                                class="img-fluid d-block">
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <h5 class="fs-15"><a href="{{ URL::asset('/apps-ecommerce-product-details') }}"
-                                                class="text-dark">Sweatshirt for Men (Pink)</a>
-                                        </h5>
-                                        <p class="text-muted mb-0">$ 119.99 x 2</p>
-                                    </td>
-                                    <td class="text-end">$ 239.98</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="avatar-md bg-light rounded p-1">
-                                            <img src="{{ URL::asset('velzon/images/products/img-7.png') }}"
-                                                alt="" class="img-fluid d-block">
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <h5 class="fs-15"><a href="{{ URL::asset('/apps-ecommerce-product-details') }}"
-                                                class="text-dark">Noise Evolve Smartwatch</a></h5>
-                                        <p class="text-muted mb-0">$ 94.99 x 1</p>
-                                    </td>
-                                    <td class="text-end">$ 94.99</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="avatar-md bg-light rounded p-1">
-                                            <img src="{{ URL::asset('velzon/images/products/img-3.png') }}"
-                                                alt="" class="img-fluid d-block">
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <h5 class="fs-15"><a href="{{ URL::asset('/apps-ecommerce-product-details') }}"
-                                                class="text-dark">350 ml Glass Grocery Container</a>
-                                        </h5>
-                                        <p class="text-muted mb-0">$ 24.99 x 1</p>
-                                    </td>
-                                    <td class="text-end">$ 24.99</td>
-                                </tr>
-                                <tr>
-                                    <td class="fw-semibold" colspan="2">Sub Total :</td>
-                                    <td class="fw-semibold text-end">$ 359.96</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2">Discount <span class="text-muted">(VELZON15)</span>
-                                        : </td>
-                                    <td class="text-end">- $ 50.00</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2">Shipping Charge :</td>
-                                    <td class="text-end">$ 24.99</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2">Estimated Tax (12%): </td>
-                                    <td class="text-end">$ 18.20</td>
-                                </tr>
-                                <tr class="table-active">
-                                    <th colspan="2">Total (USD) :</th>
-                                    <td class="text-end">
-                                        <span class="fw-semibold">
-                                            $353.15
-                                        </span>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                    </div> --}}
+                    @forelse (auth()->user()->wallet->transactions->sortByDesc('created_at') as $transaction)
+                        <span class="dropdown-item">
+                            <i
+                                class="mdi {{ $transaction->from_wallet_id == auth()->user()->wallet->id ? 'mdi-arrow-up text-danger' : 'mdi-arrow-down text-success' }}  fs-16 align-middle me-1"></i>
+                            <span class="align-middle">Rp.
+                                {{ number_format($transaction->amount, 0, ',', '.') }}
+                            </span>
+                            <span class="align-middle">({{ $transaction->type }})</span>
+                            <p class="align-middle max-w-50 text-muted">{{ $transaction->description }}</p>
+                        </span>
+                    @empty
+                        <span class="dropdown-item btn">
+                            <i class=""></i>
+                            <span class="align-middle">Tidak ada transaksi</span></span>
+                    @endforelse
                 </div>
                 <!-- end card body -->
             </div>
