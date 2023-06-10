@@ -57,13 +57,15 @@
                                 Personal Details
                             </a>
                         </li>
+                        @if ($user->role === 'partner')
                         <li class="nav-item">
                             <a class="nav-link" data-bs-toggle="tab" href="#experience" role="tab">
                                 <i class="far fa-envelope"></i>
                                 Partner
                             </a>
                         </li>
-
+                        @else
+                        @endif
                     </ul>
                 </div>
                 <div class="card-body p-4">
@@ -81,7 +83,7 @@
                                             <label for="firstnameInput" class="form-label">
                                                 Nama</label>
                                             <input type="text" class="form-control" name="name" id="firstnameInput"
-                                                placeholder="Enter your firstname" value="{{ old('name', $user->name) }}">
+                                                placeholder="Masukkan nama anda" value="{{ old('name', $user->name) }}">
                                         </div>
                                     </div>
 
@@ -90,7 +92,7 @@
                                         <div class="mb-3">
                                             <label for="phonenumberInput" class="form-label">Nomor HP</label>
                                             <input type="text" class="form-control" id="phonenumberInput" name="no_hp"
-                                                placeholder="Enter your phone number"
+                                                placeholder="Masukkan nomor telepon anda"
                                                 value="{{ old('no_hp', $user->no_hp) }}">
                                         </div>
                                     </div>
@@ -99,7 +101,7 @@
                                         <div class="mb-3">
                                             <label for="emailInput" class="form-label">Email</label>
                                             <input type="email" class="form-control" id="emailInput" name="email"
-                                                placeholder="Enter your email" value="{{ old('email', $user->email) }}">
+                                                placeholder="Masukkan email anda" value="{{ old('email', $user->email) }}">
                                         </div>
                                     </div>
                                     <!--end col-->
@@ -121,7 +123,7 @@
                                         <div class="mb-3">
                                             <label for="zipcodeInput" class="form-label">Alamat</label>
                                             <input type="text" class="form-control" name="address" id="zipcodeInput"
-                                                placeholder="Enter zipcode" value="{{ old('address', $user->address) }}">
+                                                placeholder="Masukkan alamat anda" value="{{ old('address', $user->address) }}">
                                         </div>
                                     </div>
                                     <!--end col-->
@@ -168,6 +170,7 @@
                         </div>
                         <!--end tab-pane-->
                         <div class="tab-pane" id="experience" role="tabpanel">
+                            @if ($user->role === 'partner')
                             <form>
                                 <div id="newlink">
                                     <div id="1">
@@ -264,6 +267,8 @@
                                     <!--end col-->
                             </form>
                         </div>
+                        @else
+                        @endif
                         <!--end tab-pane-->
                         <!--end tab-pane-->
                     </div>
