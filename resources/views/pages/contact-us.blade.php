@@ -54,7 +54,10 @@
                                     <div class="info-content">
                                         <h5>Lokasi</h5>
                                         <p>
-                                            Malang, Jawa Timur, Indonesia
+                                            <a target="_blank"
+                                                href="https://www.google.com/maps/place/Politeknik+Negeri+Malang,+Jl.+Soekarno+Hatta+No.9,+Jatimulyo,+Kec.+Lowokwaru,+Kota+Malang,+Jawa+Timur+65141/@-7.9467136,112.6156684,17z/data=!4m6!3m5!1s0x2e78827687d272e7:0x789ce9a636cd3aa2!8m2!3d-7.9467136!4d112.6156684!16s%2Fg%2F1237vy8k" style="color: #696969;">Jl.
+                                                Soekarno Hatta No.9, Jatimulyo, Kec. Lowokwaru, Kota Malang, Jawa Timur
+                                                65141</a>
                                         </p>
                                     </div>
                                 </div>
@@ -65,7 +68,7 @@
                                     <div class="info-content">
                                         <h5>Alamat Email</h5>
                                         <p>
-                                            salingbantu@gmail.com <br>
+                                            <a target="_blank" href="mailto:salingbantu@gmail.com" style="color: #696969;">salingbantu@gmail.com</a>
                                         </p>
                                     </div>
                                 </div>
@@ -78,7 +81,7 @@
                                     <div class="info-content">
                                         <h5>Nomor Telepon</h5>
                                         <p>
-                                            +6281679246178 <br>
+                                            <a target="_blank" href="https://api.whatsapp.com/send?phone=6283848492366" style="color: #696969;">+6283848492366</a>
                                         </p>
                                     </div>
                                 </div>
@@ -88,7 +91,7 @@
                 </div>
             </div>
             <!-- Contact Info End -->
-            <div class="contact-from-area">
+            {{-- <div class="contact-from-area">
                 <div class="row no-gutters">
                     <div class="col-lg-5">
                         <div class="contact-maps">
@@ -149,7 +152,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </section>
     <!--====== Contact Section End ======-->
