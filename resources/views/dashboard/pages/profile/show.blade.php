@@ -28,7 +28,7 @@
             <div class="col">
                 <div class="p-2">
                     <h3 class="text-white mb-1">{{ $user->name }}</h3>
-                    <p class="text-white-75">{{ $user->role }}</p>
+                    <p class="text-white-75">{{ ucfirst($user->role) }}</p>
                     <div class="hstack text-white-50 gap-1">
                         <div class="me-2"><i
                                 class="ri-map-pin-user-line me-1 text-white-75 fs-16 align-bottom"></i>{{ $user->address }}
@@ -95,24 +95,24 @@
                                     <table class="table table-borderless mb-0">
                                         <tbody>
                                             <tr>
-                                                <th class="ps-0" scope="row">Full Name :</th>
+                                                <th class="ps-0" scope="row">Nama Lengkap :</th>
                                                 <td class="text-muted">{{ $user->name }}</td>
                                             </tr>
                                             <tr>
-                                                <th class="ps-0" scope="row">Mobile :</th>
+                                                <th class="ps-0" scope="row">Nomor HP :</th>
                                                 <td class="text-muted">{{ $user->no_hp }}</td>
                                             </tr>
                                             <tr>
-                                                <th class="ps-0" scope="row">E-mail :</th>
+                                                <th class="ps-0" scope="row">Email :</th>
                                                 <td class="text-muted">{{ $user->email }}</td>
                                             </tr>
                                             <tr>
-                                                <th class="ps-0" scope="row">Location :</th>
+                                                <th class="ps-0" scope="row">Alamat :</th>
                                                 <td class="text-muted">{{ $user->address }}</td>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th class="ps-0" scope="row">Joining Date</th>
+                                                <th class="ps-0" scope="row">Tanggal Bergabung : </th>
                                                 <td class="text-muted">{{ $user->created_at }}</td>
                                             </tr>
                                         </tbody>
