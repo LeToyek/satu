@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .address a {
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .address a:first-child {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
 <footer class="site-footer">
     <div class="footer-content-area">
         <div class="container">
@@ -30,26 +47,37 @@
                             <h4 class="widget-title">Hubungi Kami</h4>
                             <ul class="info-list">
                                 <li>
-                                    <span class="icon" style="display: flex; align-items: center; justify-content: center;"><i class="far fa-phone"></i></span>
+                                    <span class="icon"
+                                        style="display: flex; align-items: center; justify-content: center;"><i
+                                            class="far fa-phone"></i></span>
                                     <span class="info">
                                         <span class="info-title">Nomor Telepon</span>
-                                        <a href="#">+6281679246178</a>
+                                        <a target="_blank" href="https://api.whatsapp.com/send?phone=6283848492366">+6283848492366</a>
                                     </span>
                                 </li>
                                 <li>
-                                    <span class="icon" style="display: flex; align-items: center; justify-content: center;"><i class="far fa-envelope-open"></i></span>
+                                    <span class="icon"
+                                        style="display: flex; align-items: center; justify-content: center;"><i
+                                            class="far fa-envelope-open"></i></span>
                                     <span class="info">
                                         <span class="info-title">Alamat Email</span>
-                                        <a href="#">salingbantu@gmail.com</a>
+                                        <a target="_blank" href="mailto:salingbantu@gmail.com">salingbantu@gmail.com</a>
                                     </span>
                                 </li>
                                 <li>
                                     <span class="icon" style="display: flex; align-items: center; justify-content: center;"><i class="far fa-map-marker-alt"></i></span>
                                     <span class="info">
                                         <span class="info-title">Lokasi</span>
-                                        <a href="#">Malang, Jawa Timur, Indonesia</a>
+                                        <div class="address">
+                                            <a target="_blank"
+                                            href="https://www.google.com/maps/place/Politeknik+Negeri+Malang,+Jl.+Soekarno+Hatta+No.9,+Jatimulyo,+Kec.+Lowokwaru,+Kota+Malang,+Jawa+Timur+65141/@-7.9467136,112.6156684,17z/data=!4m6!3m5!1s0x2e78827687d272e7:0x789ce9a636cd3aa2!8m2!3d-7.9467136!4d112.6156684!16s%2Fg%2F1237vy8k">Jl. Soekarno Hatta No.9, Jatimulyo,</a>
+                                            <a target="_blank"
+                                            href="https://www.google.com/maps/place/Politeknik+Negeri+Malang,+Jl.+Soekarno+Hatta+No.9,+Jatimulyo,+Kec.+Lowokwaru,+Kota+Malang,+Jawa+Timur+65141/@-7.9467136,112.6156684,17z/data=!4m6!3m5!1s0x2e78827687d272e7:0x789ce9a636cd3aa2!8m2!3d-7.9467136!4d112.6156684!16s%2Fg%2F1237vy8k">Kec. Lowokwaru, Kota Malang,</a>
+                                            <a target="_blank"
+                                            href="https://www.google.com/maps/place/Politeknik+Negeri+Malang,+Jl.+Soekarno+Hatta+No.9,+Jatimulyo,+Kec.+Lowokwaru,+Kota+Malang,+Jawa+Timur+65141/@-7.9467136,112.6156684,17z/data=!4m6!3m5!1s0x2e78827687d272e7:0x789ce9a636cd3aa2!8m2!3d-7.9467136!4d112.6156684!16s%2Fg%2F1237vy8k">Jawa Timur 65141</a>
+                                        </div>
                                     </span>
-                                </li>
+                                </li>                                
                             </ul>
                         </div>
                     </div>
@@ -73,3 +101,5 @@
         </div>
     </div>
 </footer>
+</body>
+</html>
