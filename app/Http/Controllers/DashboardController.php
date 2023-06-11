@@ -17,13 +17,13 @@ class DashboardController extends Controller
     public function index()
     {
         $user = auth()->user();
+        $topCampaign = Campaign::orderBy('created_at', 'desc')->take(3)->get();
         if ($user->role === 'funder') {
             # code...
             $total_fund = 0;
             $total_obligasi = 0;
             $estimations = 0;
             $fundings = Funding::where('user_id',$user->id)->get();
-            $topCampaign = Campaign::orderBy('created_at', 'desc')->take(3)->get();
             $totalPendapatan = 0;
             foreach (auth()->user()->wallet->transactions as $transaction) {
                 if ($transaction->to_wallet_id == auth()->user()->wallet->id && $transaction->type != 'deposit') {
@@ -51,8 +51,8 @@ class DashboardController extends Controller
                     'total_pendapatan' => $totalPendapatan/1000
                 ],
                 'topCampaign' => $topCampaign
-            ]
-                );
+                ]
+            );
         }
         if ($user->role === 'partner') {
             # code...
@@ -60,22 +60,23 @@ class DashboardController extends Controller
             $campaigns = Campaign::all()->where('partner_id', $user->details->id);
             $fund_raised = 0;
             $total_funder = 0;
-
+            
             foreach ($campaigns as $campaign) {
                 foreach ($campaign->fundings as $funding) {
                     $fund_raised += $funding->fund_nominal;
                 }
                 $total_funder += Funding::all()->where('campaign_id', $campaign->id)->count();
             }
-
-
+            
+            
             return view('dashboard.pages.index', [
                 'partner_data' => [
                     'campaigns_count' => count($campaigns),
                     'fund_raised' => $fund_raised/1000,
-                    'total_funder' => $total_funder
-                ]
-            ]);
+                    'total_funder' => $total_funder,
+                ],
+                    'topCampaign' => $topCampaign,
+                ]);
         }
         return view('dashboard.index');
     }
