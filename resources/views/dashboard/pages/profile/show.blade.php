@@ -12,7 +12,7 @@
     @endphp
     <div class="profile-foreground position-relative mx-n4 mt-n4">
         <div class="profile-wid-bg">
-            <img src="{{ $user->details?->image?->url }}" alt="" class="profile-wid-img" />
+            <img src="{{ $user->details?->image?->url }}" alt="" class="rounded-circle" style="width: 100px; height: 100px"/>
         </div>
     </div>
 

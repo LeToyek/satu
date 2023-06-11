@@ -57,12 +57,15 @@
                                 Personal Details
                             </a>
                         </li>
+                        @if (auth()->user()->role === 'partner')
+                            
                         <li class="nav-item">
                             <a class="nav-link" data-bs-toggle="tab" href="#experience" role="tab">
                                 <i class="far fa-envelope"></i>
                                 Partner
                             </a>
                         </li>
+                        @endif
 
                     </ul>
                 </div>
