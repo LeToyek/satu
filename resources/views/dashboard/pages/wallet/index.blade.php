@@ -161,7 +161,19 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-xl-6">
+                <div class="col-xl-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title mb-0">Grafik Pendapatan</h4>
+                        </div><!-- end card header -->
+
+                        <div class="card-body">
+                            <div id="line_chart_datalabel" data-colors='["--vz-primary", "--vz-success"]'
+                                class="apex-charts" dir="ltr"></div>
+                        </div><!-- end card-body -->
+                    </div>
+                </div>
+                <div class="col-xl-4">
                     <div class="card">
                         <div class="card-header">
 
@@ -196,11 +208,115 @@
     <!--end row-->
 @endsection
 @section('script')
+    <!-- apexcharts -->
+    <script src="{{ URL::asset('velzon/libs/apexcharts/apexcharts.min.js') }}"></script>
+    <script>
+        function getChartColorsArray(chartId) {
+            if (document.getElementById(chartId) !== null) {
+                var colors = document.getElementById(chartId).getAttribute("data-colors");
+                if (colors) {
+                    colors = JSON.parse(colors);
+                    return colors.map(function(value) {
+                        var newValue = value.replace(" ", "");
+                        if (newValue.indexOf(",") === -1) {
+                            var color = getComputedStyle(document.documentElement).getPropertyValue(newValue);
+                            if (color) return color.trim();
+                            else return newValue;;
+                        } else {
+                            var val = value.split(',');
+                            if (val.length == 2) {
+                                var rgbaColor = getComputedStyle(document.documentElement).getPropertyValue(val[0]);
+                                rgbaColor = "rgba(" + rgbaColor + "," + val[1] + ")";
+                                return rgbaColor;
+                            } else {
+                                return newValue;
+                            }
+                        }
+                    });
+                }
+            }
+        }
+        var linechartDatalabelColors = getChartColorsArray("line_chart_datalabel");
+        if (linechartDatalabelColors) {
+            var options = {
+                chart: {
+                    height: 380,
+                    type: 'line',
+                    zoom: {
+                        enabled: false
+                    },
+                    toolbar: {
+                        show: false
+                    }
+                },
+                colors: linechartDatalabelColors,
+                dataLabels: {
+                    enabled: false,
+                },
+                stroke: {
+                    width: [3, 3],
+                    curve: 'straight'
+                },
+                series: [{
+                        name: "Pendapatan",
+                        data: [26, 24, 32, 36, 33, 31, 33]
+                    },
+                ],
+                grid: {
+                    row: {
+                        colors: ['transparent', 'transparent'], // takes an array which will be repeated on columns
+                        opacity: 0.2
+                    },
+                    borderColor: '#f1f1f1'
+                },
+                markers: {
+                    style: 'inverted',
+                    size: 6
+                },
+                xaxis: {
+                    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+                    title: {
+                        text: 'Tanggal'
+                    }
+                },
+                yaxis: {
+                    title: {
+                        text: 'Nominal Pendapatan'
+                    },
+                },
+                legend: {
+                    position: 'top',
+                    horizontalAlign: 'right',
+                    floating: true,
+                    offsetY: -25,
+                    offsetX: -5
+                },
+                responsive: [{
+                    breakpoint: 600,
+                    options: {
+                        chart: {
+                            toolbar: {
+                                show: false
+                            }
+                        },
+                        legend: {
+                            show: false
+                        },
+                    }
+                }]
+            }
+
+            var chart = new ApexCharts(
+                document.querySelector("#line_chart_datalabel"),
+                options
+            );
+            chart.render();
+        }
+    </script>
+
     <script src="{{ URL::asset('velzon/js/pages/form-input-spin.init.js') }}"></script>
     <script src="{{ URL::asset('velzon/js/pages/apps-nft-item-details.init.js') }}"></script>
 
-    <!-- apexcharts -->
-    <script src="{{ URL::asset('velzon/libs/apexcharts/apexcharts.min.js') }}"></script>
 
     <!--Swiper slider js-->
     <script src="{{ URL::asset('velzon/libs/swiper/swiper-bundle.min.js') }}"></script>
