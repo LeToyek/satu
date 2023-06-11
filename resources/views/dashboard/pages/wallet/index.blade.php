@@ -86,19 +86,9 @@
                     <div class="card card-height-100">
                         <div class="card-body">
                             <div class="float-end">
-                                <div class="dropdown card-header-dropdown">
-                                    <a class="text-reset dropdown-btn" href="#" data-bs-toggle="dropdown"
-                                        aria-haspopup="true" aria-expanded="false">
-                                        <span class="text-muted fs-18"><i
-                                                class="mdi mdi-dots-vertical align-middle"></i></span>
-                                    </a>
-                                    <div class="dropdown-menu dropdown-menu-end">
-                                        <a class="dropdown-item" href="#">Today</a>
-                                        <a class="dropdown-item" href="#">Last Week</a>
-                                        <a class="dropdown-item" href="#">Last Month</a>
-                                        <a class="dropdown-item" href="#">Current Year</a>
-                                    </div>
-                                </div>
+                                <a type="button"  data-bs-toggle="tooltip" data-bs-placement="right" title="Keuntungan yang didapat dari pendanaan">
+                                    <i class="fs-16 ri-question-line text-info"></i>
+                                </a>
                             </div>
                             <div class="d-flex align-items-center">
                                 <div class="avatar-sm flex-shrink-0">
@@ -112,33 +102,23 @@
                             </div>
                             <div class="mt-4 pt-1">
                                 <h4 class="fs-22 fw-semibold ff-secondary mb-0">Rp <span class="counter-value"
-                                        data-target="{{ $keuntungan }}"></span></h4>
-                                <p class="mt-4 mb-0 text-muted"><span class="badge bg-soft-success text-success mb-0"> <i
-                                            class="ri-arrow-up-line align-middle"></i> 16.24 % </span> vs. previous month
-                                </p>
+                                    data-target="{{ $keuntungan }}"></span></h4>
+                                    
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!--end col-->
-                <div class="col-xl-3 col-md-6">
-                    <div class="card card-height-100">
+                    <!--end col-->
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card card-height-100">
                         <div class="card-body">
+                            <!-- tooltip -->
                             <div class="float-end">
-                                <div class="dropdown card-header-dropdown">
-                                    <a class="text-reset dropdown-btn" href="#" data-bs-toggle="dropdown"
-                                        aria-haspopup="true" aria-expanded="false">
-                                        <span class="text-muted fs-18"><i
-                                                class="mdi mdi-dots-vertical align-middle"></i></span>
-                                    </a>
-                                    <div class="dropdown-menu dropdown-menu-end">
-                                        <a class="dropdown-item" href="#">Today</a>
-                                        <a class="dropdown-item" href="#">Last Week</a>
-                                        <a class="dropdown-item" href="#">Last Month</a>
-                                        <a class="dropdown-item" href="#">Current Year</a>
-                                    </div>
-                                </div>
+                                <a type="button"  data-bs-toggle="tooltip" data-bs-placement="right" title="Estimasi keuntungan yang didapat dari pendanaan">
+                                    <i class="fs-16 ri-question-line text-info"></i>
+                                </a>
                             </div>
+                            
                             <div class="d-flex align-items-center">
                                 <div class="avatar-sm flex-shrink-0">
                                     <span class="avatar-title bg-soft-info rounded fs-3">
@@ -152,9 +132,7 @@
                             <div class="mt-4 pt-1">
                                 <h4 class="fs-22 fw-semibold ff-secondary mb-0">Rp <span class="counter-value"
                                         data-target="{{ $estimations }}"></span></h4>
-                                <p class="mt-4 mb-0 text-muted"><span class="badge bg-soft-success text-success mb-0"> <i
-                                            class="ri-arrow-up-line align-middle"></i> 16.24 % </span> vs. previous month
-                                </p>
+                                
                             </div>
                         </div>
                     </div>
@@ -162,16 +140,30 @@
             </div>
             <div class="row">
                 <div class="col-xl-8">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4 class="card-title mb-0">Grafik Pendapatan</h4>
-                        </div><!-- end card header -->
+                    @if (auth()->user()->role == 'partner')
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title mb-0">Grafik Pendapatan</h4>
+                            </div><!-- end card header -->
 
-                        <div class="card-body">
-                            <div id="line_chart_datalabel" data-colors='["--vz-primary", "--vz-success"]'
-                                class="apex-charts" dir="ltr"></div>
-                        </div><!-- end card-body -->
-                    </div>
+                            <div class="card-body">
+                                <div id="line_chart_datalabel" data-colors='["--vz-primary", "--vz-success"]'
+                                    class="apex-charts" dir="ltr"></div>
+                            </div><!-- end card-body -->
+                        </div>
+                    @elseif(auth()->user()->role == 'funder')
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title mb-0">Basic Bar Chart</h4>
+                            </div><!-- end card header -->
+
+                            <div class="card-body">
+                                <div id="stacked_bar"
+                                    data-colors='["--vz-primary", "--vz-success", "--vz-warning", "--vz-danger", "--vz-info"]'
+                                    class="apex-charts" dir="ltr"></div>
+                            </div>
+                        </div><!-- end card -->
+                    @endif
                 </div>
                 <div class="col-xl-4">
                     <div class="card">
@@ -200,7 +192,7 @@
                 </div>
             </div>
             <!--end row-->
-
+            {{-- @dd($fundings[46],$fundings[46]->campaign) --}}
         </div>
         <!--end col-->
         <!--end col-->
@@ -210,6 +202,97 @@
 @section('script')
     <!-- apexcharts -->
     <script src="{{ URL::asset('velzon/libs/apexcharts/apexcharts.min.js') }}"></script>
+
+    <script>
+        function getChartColorsArray(chartId) {
+            if (document.getElementById(chartId) !== null) {
+                var colors = document.getElementById(chartId).getAttribute("data-colors");
+                colors = JSON.parse(colors);
+                return colors.map(function(value) {
+                    var newValue = value.replace(" ", "");
+                    if (newValue.indexOf(",") === -1) {
+                        var color = getComputedStyle(document.documentElement).getPropertyValue(newValue);
+                        if (color) return color.trim();
+                        else return newValue;;
+                    } else {
+                        var val = value.split(',');
+                        if (val.length == 2) {
+                            var rgbaColor = getComputedStyle(document.documentElement).getPropertyValue(val[0]);
+                            rgbaColor = "rgba(" + rgbaColor + "," + val[1] + ")";
+                            return rgbaColor;
+                        } else {
+                            return newValue;
+                        }
+                    }
+                });
+            }
+        }
+        const dataArr = []
+        console.log("testt");
+        @foreach ($fundings as $funding)
+            dataArr.push({
+                name: @json($funding->campaign->title),
+                nominal: @json($funding->fund_nominal),
+                estimation: @json(($funding->campaign->return_percentage / 100) * $funding->fund_nominal )
+            })
+        @endforeach
+        console.log(dataArr);
+        
+        var chartStackedBarColors = getChartColorsArray("stacked_bar");
+        if (chartStackedBarColors) {
+            var options = {
+                series: [{
+                    name: 'Nominal Pendanaan',
+                    data: dataArr.map((item) => item.nominal)
+                }, {
+                    name: 'Estimasi Pendapatan',
+                    data: dataArr.map((item) => item.estimation)
+                }],
+                chart: {
+                    type: 'bar',
+                    height: 350,
+                    stacked: true,
+                    
+                    toolbar: {
+                        show: true,
+                    }
+                },
+                plotOptions: {
+                    bar: {
+                        horizontal: true,
+                        distributed:false,
+                       
+                    },
+                },
+                stroke: {
+                    width: 1,
+                    colors: ['#fff']
+                },
+                xaxis: {
+                    categories: dataArr.map((item) => item.name),
+                },
+                yaxis: {
+                    title: {
+                        text: undefined
+                    },
+                },
+                fill: {
+                    opacity: 1
+                },
+                legend: {
+                    position: 'top',
+                    horizontalAlign: 'left',
+                    offsetX: 40
+                },
+                colors: chartStackedBarColors
+            };
+
+            var chart = new ApexCharts(document.querySelector("#stacked_bar"), options);
+            chart.render();
+        }
+    </script>
+
+
     <script>
         function getChartColorsArray(chartId) {
             if (document.getElementById(chartId) !== null) {
@@ -258,10 +341,9 @@
                     curve: 'straight'
                 },
                 series: [{
-                        name: "Pendapatan",
-                        data: [26, 24, 32, 36, 33, 31, 33]
-                    },
-                ],
+                    name: "Pendapatan",
+                    data: [26, 24, 32, 36, 33, 31, 33]
+                }, ],
                 grid: {
                     row: {
                         colors: ['transparent', 'transparent'], // takes an array which will be repeated on columns
