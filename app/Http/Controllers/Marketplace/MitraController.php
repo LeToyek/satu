@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Marketplace;
 use App\Http\Controllers\Controller;
 use App\Models\Campaign;
 use App\Models\Funding;
+use App\Models\FundTransaction;
 use App\Notifications\CampaignFullyFunded;
 use App\Notifications\CampaignFunded;
 use Illuminate\Http\Request;
@@ -81,12 +82,12 @@ class MitraController extends Controller
 
             $campaign->partner->user->notify(new CampaignFullyFunded($campaign));
         }
-
-        return redirect()->route('invoice', ['funding' => $funding]);
+    $transaction = $funding->transferTo($campaign->partner->user, $request->amount);
+        return redirect()->route('invoice', ['id' => $transaction->id]);
     }
     public function showInvoice(Request $request)
     {
-        $funding = Funding::find($request->funding);
-        return view('dashboard.pages.marketplace.mitra.checkout', ['funding' => $funding]);
+        $fund_transaction = FundTransaction::find($request->id);
+        return view('dashboard.pages.invoice', ['invoice' => $fund_transaction,'type'=>'mitra']);
     }
 }

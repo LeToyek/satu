@@ -40,7 +40,7 @@
                                     <tr>
                                         <td>
                                             <div class="d-flex">
-                                                <div class="flex-shrink-0 avatar-md bg-light rounded p-1">
+                                                <div class="bg-light p-1" style="width: 80px">
                                                     <img src="{{ URL::asset('storage/' . $funding->campaign->images[0]->path) }}"
                                                         alt="" class="img-fluid d-block">
                                                 </div>

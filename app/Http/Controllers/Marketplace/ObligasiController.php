@@ -60,6 +60,6 @@ class ObligasiController extends Controller
     public function showInvoice($id)
     {
         $fund_transaction = FundTransaction::find($id);
-        return view('dashboard.pages.marketplace.obligasi.invoice', ['invoice' => $fund_transaction]);
+        return view('dashboard.pages.invoice', ['invoice' => $fund_transaction,'type'=>'obligasi']);
     }
 }

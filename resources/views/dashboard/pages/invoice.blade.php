@@ -64,55 +64,63 @@
                                     </h5>
                                 </div>
                                 <!--end col-->
-                                <div class="col-lg-3 col-6">
-                                    <p class="text-muted mb-2 text-uppercase fw-semibold fs-13">Status Pembayaran</p>
-                                    <span class="badge badge-soft-success fs-12" id="payment-status">Paid</span>
-                                </div>
+                                
                                 <!--end col-->
                                 <div class="col-lg-3 col-6">
+                                    @if ($type == "mitra")
+                                    <p class="text-muted mb-2 text-uppercase fw-semibold fs-13">Total Pendanaan</p>
+                                    <h5 class="fs-15 mb-0"><span id="total-amount">@include('formatting.money', ['money' => $invoice->funding->fund_nominal])</span></h5>
+                                    @elseif($type == "obligasi")
                                     <p class="text-muted mb-2 text-uppercase fw-semibold fs-13">Total Pembelian</p>
                                     <h5 class="fs-15 mb-0"><span id="total-amount">@include('formatting.money', ['money' => $invoice->funding->price])</span></h5>
+                                    @endif
                                 </div>
                                 <!--end col-->
+                                <div class="col-lg-3 col-6">
+                                    
+                                        <h6 class="text-muted text-uppercase fw-semibold mb-3 fs-13">Alamat Pembeli</h6>
+                                        <p class="fw-medium mb-2" id="billing-name">{{ $invoice->to->name }}</p>
+                                        <p class="text-muted mb-1" id="billing-address-line-1">{{ $invoice->to->address }}</p>
+                                        <p class="text-muted mb-1"><span>Phone: </span><span
+                                                id="billing-phone-no">{{ $invoice->to->no_hp }}</span></p>
+    
+                                    
+                                </div>
                             </div>
                             <!--end row-->
                         </div>
                         <!--end card-body-->
                     </div>
                     <!--end col-->
-                    <div class="col-lg-12">
-                        <div class="card-body p-4 border-top border-top-dashed">
-                            <div class="row g-3">
-                                <div class="col-6">
-                                    <h6 class="text-muted text-uppercase fw-semibold mb-3 fs-13">Alamat Pembeli</h6>
-                                    <p class="fw-medium mb-2" id="billing-name">{{ $invoice->to->name }}</p>
-                                    <p class="text-muted mb-1" id="billing-address-line-1">{{ $invoice->to->address }}</p>
-                                    <p class="text-muted mb-1"><span>Phone: </span><span
-                                            id="billing-phone-no">{{ $invoice->to->no_hp }}</span></p>
-
-                                </div>
-                                <!--end col-->
-
-                            </div>
-                            <!--end row-->
-                        </div>
-                        <!--end card-body-->
-                    </div>
+                   
                     <!--end col-->
                     <div class="col-lg-12">
                         <div class="card-body p-4">
                             <table class="table align-middle table-nowrap" id="customerTable">
                                 <thead class="table-light text-muted">
                                     <tr>
+                                        @if ($type == "obligasi")
                                         <th>Pemilik Obligasi</th>
+                                        @elseif($type == "mitra")
+                                        <th>Pemilik Kampanye</th>
+                                        @endif
                                         <th>Nama Kampanye</th>
                                         <th>Nominal Pendanaan</th>
+                                        @if ($type == "obligasi")
+                                            
                                         <th>Harga Obligasi</th>
+                                        @endif
                                     </tr>
                                 </thead>
                                 <tbody class="list form-check-all">
                                     <td>
-                                        {{ $invoice->from->name }}
+                                        @if ($type == "obligasi")
+                                            {{ $invoice->from->name }}
+                                        @elseif($type == "mitra")
+                                            {{ $invoice->to->name }}
+                                            
+                                        @endif
+                                        
                                     </td>
                                     <td>
                                         {{ $invoice->funding->campaign->title }}
@@ -122,20 +130,29 @@
                                             'money' => $invoice->funding->fund_nominal,
                                         ])
                                     </td>
+                                    @if ($type == "obligasi")
+                                        
                                     <td>
                                         @include('formatting.money', ['money' => $invoice->funding->price])
                                     </td>
+                                    @endif
                                 </tbody>
                             </table>
                             <div class="mt-3">
                                 <h6 class="text-muted text-uppercase fw-semibold mb-3 fs-13">Detail Pembayaran:</h6>
                                 <p class="text-muted mb-1">Metode Pembayaran: <span class="fw-medium"
                                     id="payment-method">Satu Wallet</span></p>
-                                    <p class="text-muted mb-1">Card Holder: <span class="fw-medium" id="card-holder-name">{{ $invoice->from->name }}</span></p>
-                                    <p class="text-muted mb-1">Card Number: <span class="fw-medium" id="card-number">walletable id</span></p>
+                                    <p class="text-muted mb-1">Pemilik Wallet: <span class="fw-medium" id="card-holder-name">{{ auth()->user()->name }}</span></p>
+                                    <p class="text-muted mb-1">ID Wallet: <span class="fw-medium" id="card-number">{{ auth()->user()->wallet->id }}</span></p>
                                     <p class="text-muted">Total Amount: <span class="fw-medium" id=""></span><span
                                         
-                                        id="card-total-amount">@include('formatting.money', ['money' => $invoice->funding->price])</span></p>
+                                        id="card-total-amount">
+                                        @if ($type == "mitra")
+                                        @include('formatting.money', ['money' => $invoice->funding->fund_nominal])
+                                        @elseif($type == "obligasi")
+                                        @include('formatting.money', ['money' => $invoice->funding->price])
+                                        @endif
+                                    </span></p>
                             </div>
                             <div class="mt-4">
                                 <div class="alert alert-info">
@@ -153,8 +170,7 @@
                             <div class="hstack gap-2 justify-content-end d-print-none mt-4">
                                 <a href="javascript:window.print()" class="btn btn-success"><i
                                         class="ri-printer-line align-bottom me-1"></i> Print</a>
-                                <a href="javascript:void(0);" class="btn btn-primary"><i
-                                        class="ri-download-2-line align-bottom me-1"></i> Download</a>
+                                
                             </div>
                         </div>
                         <!--end card-body-->
