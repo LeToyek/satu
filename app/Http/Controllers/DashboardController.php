@@ -16,14 +16,40 @@ class DashboardController extends Controller
     }
     public function index()
     {
-        if (auth()->user()->role === 'funder') {
+        $user = auth()->user();
+        if ($user->role === 'funder') {
             # code...
-            return view('dashboard.pages.index');
+            $total_fund = 0;
+            $total_obligasi = 0;
+            $estimations = 0;
+            $fundings = Funding::where('user_id',$user->id)->get();
+            
+            if ($fundings) {
+            $total_obligasi = $fundings->count();
+                foreach ($fundings as $funding) {
+                    if ($funding->status == 'on_sell') {
+                        $estimations += $funding->price;
+                    }
+                    if ($funding->status == 'on_going') {
+                        $surplus = $funding->fund_nominal * $funding->campaign->return_percentage/100;
+                        $estimations += $funding->fund_nominal + $surplus;
+                        $total_fund += $funding->fund_nominal;
+                    }
+                }
+            }
+            return view('dashboard.pages.index',[
+                'funder_data' => [
+                    'total_fund' => $total_fund/1000,
+                    'total_obligasi' => $total_obligasi,
+                    'estimations' => $estimations/1000
+                ]
+            ]
+                );
         }
-        if (auth()->user()->role === 'partner') {
+        if ($user->role === 'partner') {
             # code...
             
-            $campaigns = Campaign::all()->where('partner_id', auth()->user()->details->id);
+            $campaigns = Campaign::all()->where('partner_id', $user->details->id);
             $fund_raised = 0;
             $total_funder = 0;
 

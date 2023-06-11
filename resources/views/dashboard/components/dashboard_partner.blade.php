@@ -8,17 +8,12 @@
                         <p class="text-uppercase fw-bold text-white-50 text-truncate mb-0">
                             Total Pendapatan</p>
                     </div>
-                    <div class="flex-shrink-0">
-                        <h5 class="text-white fs-14 mb-0">
-                            <i class="ri-arrow-right-up-line fs-13 align-middle"></i>
-                            +16.24 %
-                        </h5>
-                    </div>
+                    
                 </div>
                 <div class="d-flex align-items-end justify-content-between mt-4">
                     <div>
                         <h4 class="fs-22 fw-bold ff-secondary text-white mb-4">Rp <span class="counter-value"
-                                data-target="559.25">0</span>
+                                data-target="">0</span>k
                         </h4>
                         <a href="" class="text-decoration-underline text-white-50">Lihat Pendapatan</a>
                     </div>
@@ -72,7 +67,7 @@
                 <div class="d-flex align-items-center">
                     <div class="flex-grow-1 overflow-hidden">
                         <p class="text-uppercase fw-bold text-white-50 text-truncate mb-0">
-                            Pendana</p>
+                            Pendanaan</p>
                     </div>
 
                 </div>

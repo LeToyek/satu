@@ -85,7 +85,7 @@ return [
     // ------
 
     // Menu logo. You can replace this with an <img> tag if you have a logo.
-    'project_logo'   => '<b>Back</b>pack',
+    'project_logo'   => '<img src="'.config('app.url').'/assets/img/logo-satu.svg'.'" alt="Logo" class="navbar-brand-img" width="100">',
 
     // Show / hide breadcrumbs on admin panel pages.
     'breadcrumbs' => true,
