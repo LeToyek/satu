@@ -74,20 +74,25 @@
                             <div class="bg-overlay"></div>
                             <div class="place-bid-btn">
                                 <a href="{{ '/dashboard/marketplace/mitra/' . $campaign->id }}" class="btn btn-success">
-                                        @if (auth()->user()->role === 'partner')
-                                            <i class=" ri-eye-fill align-bottom me-1"></i> Lihat Detail
-                                        @else
-                                            <i class="ri-hand-coin-fill align-bottom me-1"></i> Mulai Bantu
-                                        @endif
+                                    @if (auth()->user()->role === 'partner')
+                                        <i class=" ri-eye-fill align-bottom me-1"></i> Lihat Detail
+                                    @else
+                                        <i class="ri-hand-coin-fill align-bottom me-1"></i> Mulai Bantu
+                                    @endif
                                 </a>
                             </div>
                         </div>
                         <div class="card-body">
-                            <span class="badge bg-info float-end">{{ $campaign->status }} </span>
+                            <div class="float-end">
+                                @include('dashboard.components.status_campaign', [
+                                    'status' => $campaign->status,
+                                ])
+                            </div>
                             <h5 class="text-success"> @include('formatting.money', ['money' => $campaign->fund_target])</h5>
-                            <h6 class="fs-16 mb-3"><a href="apps-nft-item-details"
+                            <h6 class="fs-16 fw-semibold mb-0"><a href="apps-nft-item-details"
                                     class="link-dark">{{ $campaign->title }}</a></h6>
-                            <div>
+                            <span class="fs-12 text-muted">{{ $campaign->partner->name }}</span>
+                            <div class="mt-2">
                                 {{-- <span class="text-muted float-end">@include('formatting.money',['money' =>$campaign->fund_target])</span> --}}
                                 <span class="text-muted">Dana: @include('formatting.money', ['money' => $campaign->total_fund])</span>
                                 <div class="progress progress-sm mt-2">
@@ -133,7 +138,7 @@
             var noResult = document.getElementById('noresult');
             var counter = document.getElementById('counter');
             var count = 0;
-            
+
             theFilter.addEventListener('keyup', filterItems);
 
             function filterItems(e) {
