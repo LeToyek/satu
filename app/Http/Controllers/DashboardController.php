@@ -23,7 +23,13 @@ class DashboardController extends Controller
             $total_obligasi = 0;
             $estimations = 0;
             $fundings = Funding::where('user_id',$user->id)->get();
-            
+            $topCampaign = Campaign::orderBy('created_at', 'desc')->take(3)->get();
+            $totalPendapatan = 0;
+            foreach (auth()->user()->wallet->transactions as $transaction) {
+                if ($transaction->to_wallet_id == auth()->user()->wallet->id && $transaction->type != 'deposit') {
+                    $totalPendapatan += $transaction->amount;
+                }
+            }
             if ($fundings) {
             $total_obligasi = $fundings->count();
                 foreach ($fundings as $funding) {
@@ -41,8 +47,10 @@ class DashboardController extends Controller
                 'funder_data' => [
                     'total_fund' => $total_fund/1000,
                     'total_obligasi' => $total_obligasi,
-                    'estimations' => $estimations/1000
-                ]
+                    'estimations' => $estimations/1000,
+                    'total_pendapatan' => $totalPendapatan/1000
+                ],
+                'topCampaign' => $topCampaign
             ]
                 );
         }
