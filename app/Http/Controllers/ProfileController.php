@@ -12,7 +12,8 @@ class ProfileController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function __construct(){
+    public function __construct()
+    {
 
         $this->middleware('auth');
     }
@@ -76,7 +77,7 @@ class ProfileController extends Controller
         }
         $user = User::find($id);
         if ($request->hasFile('avatar')) {
-            if ($user->images!=null) {
+            if ($user->images != null) {
                 Storage::delete('storage/' . $user->images[0]->path);
                 $user->images[0]->delete();
             }
@@ -86,7 +87,10 @@ class ProfileController extends Controller
             ]);
         }
         $user->update($request->except('_token', '_method'));
-        return redirect()->route('profile.show',['profile' => $user])->with('success', 'Profile updated successfully');
+        if ($user->role === 'partner') {
+            $user->details->update($request->only(['partner_name', 'found_at', 'sector', 'monthly_income', 'partner_address']));
+        }
+        return redirect()->route('profile.show', ['profile' => $user])->with('success', 'Profile updated successfully');
     }
 
     /**

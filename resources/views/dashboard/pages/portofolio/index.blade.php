@@ -114,7 +114,7 @@
                         <h5 class="card-title flex-grow-1 mb-0"><i class="mdi mdi-cash-fast text-muted"></i> Log Aktifitas</h5>
                         <div class="flex-shrink-0">
                             <a href="javascript:void(0);" class="badge badge-soft-primary fs-12">
-                                {{ auth()->user()->role }}
+                                {{ ucfirst(auth()->user()->role) }}
                             </a>
                         </div>
                     </div>
@@ -128,7 +128,7 @@
                             {{ number_format($transaction->amount, 0, ',', '.') }}
                         </span>
                         <span class="align-middle">({{ $transaction->type }})</span>
-                        <p class="align-middle max-w-50 text-muted">{{ $transaction->description }}</p>
+                        <p class="align-middle max-w-50 text-muted" style="word-wrap: break-word; white-space: normal;">{{ $transaction->description }}</p>
                     </span>
                 @empty
                     <span class="dropdown-item btn">

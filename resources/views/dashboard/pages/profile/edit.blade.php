@@ -31,7 +31,7 @@
                                 class="rounded-circle avatar-xl img-thumbnail user-profile-image" id="img-preview"
                                 alt="user-profile-image">
                             <div class="avatar-xs p-0 rounded-circle profile-photo-edit">
-                                
+
                                 <label for="profile-img-file-input" class="profile-photo-edit avatar-xs">
                                     <span class="avatar-title rounded-circle bg-light text-body">
                                         <i class="ri-camera-fill"></i>
@@ -57,16 +57,15 @@
                                 Personal Details
                             </a>
                         </li>
-                        @if (auth()->user()->role === 'partner')
-                            
-                        <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="tab" href="#experience" role="tab">
-                                <i class="far fa-envelope"></i>
-                                Partner
-                            </a>
-                        </li>
+                        @if ($user->role === 'partner')
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="tab" href="#experience" role="tab">
+                                    <i class="far fa-envelope"></i>
+                                    Partner
+                                </a>
+                            </li>
+                        @else
                         @endif
-
                     </ul>
                 </div>
                 <div class="card-body p-4">
@@ -78,13 +77,13 @@
                                 @method('PUT')
                                 <div class="row">
                                     <input id="profile-img-file-input" name="avatar" type="file"
-                                    class="profile-img-file-input d-none" id="image">
+                                        class="profile-img-file-input d-none" id="image">
                                     <div class="col-lg-12">
                                         <div class="mb-3">
                                             <label for="firstnameInput" class="form-label">
                                                 Nama</label>
                                             <input type="text" class="form-control" name="name" id="firstnameInput"
-                                                placeholder="Enter your firstname" value="{{ old('name', $user->name) }}">
+                                                placeholder="Masukkan nama anda" value="{{ old('name', $user->name) }}">
                                         </div>
                                     </div>
 
@@ -93,7 +92,7 @@
                                         <div class="mb-3">
                                             <label for="phonenumberInput" class="form-label">Nomor HP</label>
                                             <input type="text" class="form-control" id="phonenumberInput" name="no_hp"
-                                                placeholder="Enter your phone number"
+                                                placeholder="Masukkan nomor telepon anda"
                                                 value="{{ old('no_hp', $user->no_hp) }}">
                                         </div>
                                     </div>
@@ -102,7 +101,7 @@
                                         <div class="mb-3">
                                             <label for="emailInput" class="form-label">Email</label>
                                             <input type="email" class="form-control" id="emailInput" name="email"
-                                                placeholder="Enter your email" value="{{ old('email', $user->email) }}">
+                                                placeholder="Masukkan email anda" value="{{ old('email', $user->email) }}">
                                         </div>
                                     </div>
                                     <!--end col-->
@@ -124,7 +123,8 @@
                                         <div class="mb-3">
                                             <label for="zipcodeInput" class="form-label">Alamat</label>
                                             <input type="text" class="form-control" name="address" id="zipcodeInput"
-                                                placeholder="Enter zipcode" value="{{ old('address', $user->address) }}">
+                                                placeholder="Masukkan alamat anda"
+                                                value="{{ old('address', $user->address) }}">
                                         </div>
                                     </div>
                                     <!--end col-->
@@ -171,102 +171,107 @@
                         </div>
                         <!--end tab-pane-->
                         <div class="tab-pane" id="experience" role="tabpanel">
-                            <form>
-                                <div id="newlink">
-                                    <div id="1">
+                            @if ($user->role === 'partner')
+                                <form action="{{ route('profile.update', ['profile' => $user->id]) }}" method="POST">
+                                    @csrf
+                                    @method('PUT')
+                                    <div id="newlink">
+                                        <div id="1">
 
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <div class="mb-3">
-                                                    <label for="jobTitle" class="form-label">Nama Mitra</label>
-                                                    <input type="text" class="form-control" id="jobTitle" name="name"
-                                                        placeholder="Job title" value="{{ $user->details->name }}">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="mb-3">
+                                                        <label for="jobTitle" class="form-label">Nama Mitra</label>
+                                                        <input type="text" class="form-control" id="jobTitle"
+                                                            name="name" placeholder="Masukkan nama mitra"
+                                                            value="{{ $user->details->name }}">
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <!--end col-->
-                                            <div class="col-lg-4">
-                                                <div class="mb-3">
-                                                    <label for="found_at" class="form-label">Didirikan Pada</label>
-                                                    <input type="date" name="found_at" class="form-control"
-                                                        id="found_at" placeholder="Didirikan pada"
-                                                        value="{{ $user->details->found_at }}">
+                                                <!--end col-->
+                                                <div class="col-lg-4">
+                                                    <div class="mb-3">
+                                                        <label for="found_at" class="form-label">Tanggal Didirikan</label>
+                                                        <input type="date" name="found_at" class="form-control"
+                                                            id="found_at" placeholder="Masukkan tanggal pendirian usaha"
+                                                            value="{{ $user->details->found_at }}">
 
-                                                    <!--end row-->
+                                                        <!--end row-->
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="mb-3">
-                                                    <label for="found_at" class="form-label">Sektor</label>
-                                                    <input type="text" name="sektor" class="form-control"
-                                                        id="found_at" placeholder="sektor"
-                                                        value="{{ $user->details->sector }}">
+                                                <div class="col-lg-4">
+                                                    <div class="mb-3">
+                                                        <label for="found_at" class="form-label">Sektor</label>
+                                                        <input type="text" name="sector" class="form-control"
+                                                            id="found_at" placeholder="Masukkan sektor usaha"
+                                                            value="{{ $user->details->sector }}">
 
-                                                    <!--end row-->
+                                                        <!--end row-->
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="mb-3">
-                                                    <label for="found_at" class="form-label">Pendapatan Perbulan</label>
-                                                    <input type="number" name="monthly_income" class="form-control"
-                                                        step="100000" min="100000" id="found_at"
-                                                        placeholder="Pendapatan Perbulan"
-                                                        value="{{ $user->details->monthly_income }}">
-                                                    <!--end row-->
+                                                <div class="col-lg-4">
+                                                    <div class="mb-3">
+                                                        <label for="found_at" class="form-label">Pendapatan
+                                                            Perbulan</label>
+                                                        <input type="number" name="monthly_income" class="form-control"
+                                                            step="100000" min="100000" id="found_at"
+                                                            placeholder="Masukkan pendapatan perbulan"
+                                                            value="{{ $user->details->monthly_income }}">
+                                                        <!--end row-->
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <div class="mb-3">
-                                                    <label for="companyName" class="form-label">Address</label>
-                                                    <input type="text" name="partner_address" class="form-control"
-                                                        id="companyName" placeholder="Nama Mitra"
-                                                        value="{{ $user->details->address }}">
+                                                <div class="col-lg-12">
+                                                    <div class="mb-3">
+                                                        <label for="companyName" class="form-label">Alamat</label>
+                                                        <input type="text" name="partner_address" class="form-control"
+                                                            id="companyName" placeholder="Masukkan alamat usaha"
+                                                            value="{{ $user->details->address }}">
+                                                    </div>
                                                 </div>
+                                                <!--end col-->
                                             </div>
-                                            <!--end col-->
+                                            <!--end row-->
                                         </div>
-                                        <!--end row-->
                                     </div>
-                                </div>
-                                <div id="newForm" style="display: none;">
+                                    <div id="newForm" style="display: none;">
 
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="hstack gap-2">
-                                        <a type="button" class="btn btn-info d-inline-block " data-bs-toggle="modal"
-                                            data-bs-target=".partner">
-                                            Ubah
-                                        </a>
-                                        <div class="modal fade partner" tabindex="-1" role="dialog"
-                                            aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog modal-dialog-centered">
-                                                <div class="modal-content">
-                                                    <div class="modal-body text-center p-5">
-                                                        <lord-icon
-                                                        src="https://cdn.lordicon.com/wloilxuq.json"
-                                                        trigger="loop"
-                                                        colors="primary:#16c79e,secondary:#e8b730"
-                                                        style="width:100px;height:100px">
-                                                    </lord-icon>
-                                                        <div class="mt-4">
-                                                            <h3 class="mb-3">Apakah anda yakin?</h3>
-                                                            <p class="text-muted mb-4"> Data mitra anda akan diubah</p>
-                                                            <div class="hstack gap-2 justify-content-center">
-                                                                <button type="button" class="btn btn-light"
-                                                                    data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="hstack gap-2">
+                                            <a type="button" class="btn btn-info d-inline-block " data-bs-toggle="modal"
+                                                data-bs-target=".partner">
+                                                Ubah
+                                            </a>
+                                            <div class="modal fade partner" tabindex="-1" role="dialog"
+                                                aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered">
+                                                    <div class="modal-content">
+                                                        <div class="modal-body text-center p-5">
+                                                            <lord-icon src="https://cdn.lordicon.com/wloilxuq.json"
+                                                                trigger="loop" colors="primary:#16c79e,secondary:#e8b730"
+                                                                style="width:100px;height:100px">
+                                                            </lord-icon>
+                                                            <div class="mt-4">
+                                                                <h3 class="mb-3">Apakah anda yakin?</h3>
+                                                                <p class="text-muted mb-4"> Data mitra anda akan diubah</p>
+                                                                <div class="hstack gap-2 justify-content-center">
+                                                                    <button type="button" class="btn btn-light"
+                                                                        data-bs-dismiss="modal">Close</button>
 
-                                                                <button type="submit"
-                                                                    class="btn btn-warning">Ubah</button>
+                                                                    <button type="submit"
+                                                                        class="btn btn-warning">Ubah</button>
 
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                </div><!-- /.modal-content -->
-                                            </div><!-- /.modal-dialog -->
+                                                    </div><!-- /.modal-content -->
+                                                </div><!-- /.modal-dialog -->
+                                            </div>
                                         </div>
-                                    </div>
-                                    <!--end col-->
-                            </form>
+                                        <!--end col-->
+                                </form>
                         </div>
+                    @else
+                        @endif
                         <!--end tab-pane-->
                         <!--end tab-pane-->
                     </div>
