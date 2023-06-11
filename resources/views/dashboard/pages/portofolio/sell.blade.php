@@ -32,21 +32,21 @@
                                         id="pills-bill-info-tab" data-bs-toggle="pill" data-bs-target="#pills-bill-info"
                                         type="button" role="tab" aria-controls="pills-bill-info"
                                         aria-selected="true"><i
-                                            class=" ri-price-tag-3-line fs-16 p-2 bg-soft-primary text-primary rounded-circle align-middle me-2"></i>
+                                            class=" ri-price-tag-3-line fs-16 p-2 bg-soft-primary text-success rounded-circle align-middle me-2"></i>
                                         Harga Jual</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link fs-15 p-3" id="pills-bill-address-tab" data-bs-toggle="pill"
                                         data-bs-target="#pills-bill-address" type="button" role="tab"
                                         aria-controls="pills-bill-address" aria-selected="false"><i
-                                            class=" ri-article-line fs-16 p-2 bg-soft-primary text-primary rounded-circle align-middle me-2"></i>
+                                            class=" ri-article-line fs-16 p-2 bg-soft-primary text-success rounded-circle align-middle me-2"></i>
                                         Obligasi Info</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link fs-15 p-3 @if (session()->has('success')) active @endif"
                                         disabled id="pills-finish-tab" data-bs-toggle="pill" data-bs-target="#pills-finish"
                                         type="button" role="tab" aria-controls="pills-finish" aria-selected="false"><i
-                                            class="ri-checkbox-circle-line fs-16 p-2 bg-soft-primary text-primary rounded-circle align-middle me-2"></i>Finish</button>
+                                            class="ri-checkbox-circle-line fs-16 p-2 bg-soft-primary text-success rounded-circle align-middle me-2"></i>Finish</button>
                                 </li>
                             </ul>
                         </div>
@@ -93,7 +93,7 @@
 
                                 <div class="mt-4">
                                     <div class="d-flex">
-                                        <div class="flex-shrink-0 avatar-md bg-light rounded p-1">
+                                        <div class="flex-shrink-0 bg-light rounded p-1" style="width: 80px">
                                             <img src="{{ URL::asset('storage/' . $funding->campaign->images[0]->path) }}"
                                                 alt="" class="img-fluid d-block">
                                         </div>
