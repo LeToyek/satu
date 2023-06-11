@@ -71,7 +71,7 @@ Route::prefix('dashboard')->middleware('notadmin')->group(function () {
         Route::get('/mitra', [MitraController::class, 'index']);
         Route::post('/mitra/{id}', [MitraController::class, 'fund'])->middleware('auth', 'funder');
         Route::get('/mitra/{id}', [MitraController::class, 'show']);
-        Route::get('/mitra/checkout/invoice', [MitraController::class, 'showInvoice'])->name('invoice');
+        Route::get('/mitra/invoice/{id}', [MitraController::class, 'showInvoice'])->name('invoice');
         Route::prefix('/obligasi')->group(function () {
             Route::get('/', [ObligasiController::class, 'index'])->name('obligasi.index');
             Route::get('/{id}', [ObligasiController::class, 'show']);
