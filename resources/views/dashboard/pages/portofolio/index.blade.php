@@ -119,7 +119,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-body">
+                <div class="card-body" style="max-height: 300px; overflow: scroll; overflow-x: hidden">
                     @forelse (auth()->user()->wallet->transactions->sortByDesc('created_at') as $transaction)
                     <span class="dropdown-item">
                         <i
