@@ -73,18 +73,20 @@
                                                     style="width: 100%; object-fit: contain">
                                                     <img src="{{ asset('storage/' . $topCampaign[$i]->images[0]->path) }}"
                                                         alt="" class="card-img-top explore-img"
-                                                        style="height: 300px" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7))">
+                                                        style="height: 300px"
+                                                        style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7))">
                                                     <div class="carousel-caption" style="text-align: start">
                                                         <h5 class="fs-32 fw-semibold mb-0 text-white">
-                                                                {{ $topCampaign[$i]->title }}</h5>
-                                                        <span class="fs-16 text-white">{{ $topCampaign[$i]->partner->name }}</span>
+                                                            {{ $topCampaign[$i]->title }}</h5>
+                                                        <span
+                                                            class="fs-16 text-white">{{ $topCampaign[$i]->partner->name }}</span>
                                                         <div class="mt-1">
                                                             {{-- <span class="text-muted float-end">@include('formatting.money',['money' =>$topCampaign[$i]->fund_target])</span> --}}
                                                             <span class="fs-24 text-white">Target:
                                                                 @include('formatting.money', [
                                                                     'money' => $topCampaign[$i]->fund_target,
                                                                 ])</span>
-                                                            
+
                                                         </div>
                                                     </div>
                                                     <div class="bg-overlay"></div>
@@ -124,8 +126,12 @@
                         <div class="card">
                             <div class="card-header">
                                 <div class="d-flex">
-                                    <div class="flex-grow-1">
-                                        <h5 class="card-title mb-0">Histori</h5>
+                                    <h5 class="card-title flex-grow-1 mb-0"><i class="mdi mdi-cash-fast text-muted"></i>
+                                        Histori</h5>
+                                    <div class="flex-shrink-0">
+                                        <a href="javascript:void(0);" class="badge badge-soft-primary fs-12">
+                                            {{ ucfirst(auth()->user()->role) }}
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -138,7 +144,9 @@
                                             {{ number_format($transaction->amount, 0, ',', '.') }}
                                         </span>
                                         <span class="align-middle">({{ $transaction->type }})</span>
-                                        <p class="align-middle max-w-50 text-muted">{{ $transaction->description }}</p>
+                                        <p class="align-middle max-w-50 text-muted"
+                                            style="word-wrap: break-word; white-space: normal;">
+                                            {{ $transaction->description }}</p>
                                     </span>
                                 @empty
                                     <span class="dropdown-item btn">
