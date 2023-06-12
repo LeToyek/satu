@@ -86,7 +86,8 @@
                     <div class="card card-height-100">
                         <div class="card-body">
                             <div class="float-end">
-                                <a type="button"  data-bs-toggle="tooltip" data-bs-placement="right" title="Keuntungan yang didapat dari pendanaan">
+                                <a type="button" data-bs-toggle="tooltip" data-bs-placement="right"
+                                    title="Keuntungan yang didapat dari pendanaan">
                                     <i class="fs-16 ri-question-line text-info"></i>
                                 </a>
                             </div>
@@ -102,23 +103,24 @@
                             </div>
                             <div class="mt-4 pt-1">
                                 <h4 class="fs-22 fw-semibold ff-secondary mb-0">Rp <span class="counter-value"
-                                    data-target="{{ $keuntungan }}"></span></h4>
-                                    
-                                </div>
+                                        data-target="{{ $keuntungan }}"></span></h4>
+
                             </div>
                         </div>
                     </div>
-                    <!--end col-->
-                    <div class="col-xl-3 col-md-6">
-                        <div class="card card-height-100">
+                </div>
+                <!--end col-->
+                <div class="col-xl-3 col-md-6">
+                    <div class="card card-height-100">
                         <div class="card-body">
                             <!-- tooltip -->
                             <div class="float-end">
-                                <a type="button"  data-bs-toggle="tooltip" data-bs-placement="right" title="Estimasi keuntungan yang didapat dari pendanaan">
+                                <a type="button" data-bs-toggle="tooltip" data-bs-placement="right"
+                                    title="Estimasi keuntungan yang didapat dari pendanaan">
                                     <i class="fs-16 ri-question-line text-info"></i>
                                 </a>
                             </div>
-                            
+
                             <div class="d-flex align-items-center">
                                 <div class="avatar-sm flex-shrink-0">
                                     <span class="avatar-title bg-soft-info rounded fs-3">
@@ -132,7 +134,7 @@
                             <div class="mt-4 pt-1">
                                 <h4 class="fs-22 fw-semibold ff-secondary mb-0">Rp <span class="counter-value"
                                         data-target="{{ $estimations }}"></span></h4>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -168,8 +170,15 @@
                 <div class="col-xl-4">
                     <div class="card">
                         <div class="card-header">
-
-                            <h6 class="card-title mb-0">Histori Transaksi</h6>
+                            <div class="d-flex">
+                                <h5 class="card-title flex-grow-1 mb-0"><i class="mdi mdi-cash-fast text-muted"></i>
+                                    Histori</h5>
+                                <div class="flex-shrink-0">
+                                    <a href="javascript:void(0);" class="badge badge-soft-primary fs-12">
+                                        {{ ucfirst(auth()->user()->role) }}
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                         <div class="card-body" style="max-height: 300px;overflow: scroll;overflow-x: hidden">
                             @forelse (auth()->user()->wallet->transactions->sortByDesc('created_at') as $transaction)
@@ -180,7 +189,9 @@
                                         {{ number_format($transaction->amount, 0, ',', '.') }}
                                     </span>
                                     <span class="align-middle">({{ $transaction->type }})</span>
-                                    <p class="align-middle max-w-50 text-muted">{{ $transaction->description }}</p>
+                                    <p class="align-middle max-w-50 text-muted"
+                                        style="word-wrap: break-word; white-space: normal;">
+                                        {{ $transaction->description }}</p>
                                 </span>
                             @empty
                                 <span class="dropdown-item btn">
@@ -233,11 +244,11 @@
             dataArr.push({
                 name: @json($funding->campaign->title),
                 nominal: @json($funding->fund_nominal),
-                estimation: @json(($funding->campaign->return_percentage / 100) * $funding->fund_nominal )
+                estimation: @json(($funding->campaign->return_percentage / 100) * $funding->fund_nominal)
             })
         @endforeach
         console.log(dataArr);
-        
+
         var chartStackedBarColors = getChartColorsArray("stacked_bar");
         if (chartStackedBarColors) {
             var options = {
@@ -252,7 +263,7 @@
                     type: 'bar',
                     height: 350,
                     stacked: true,
-                    
+
                     toolbar: {
                         show: true,
                     }
@@ -260,8 +271,8 @@
                 plotOptions: {
                     bar: {
                         horizontal: true,
-                        distributed:false,
-                       
+                        distributed: false,
+
                     },
                 },
                 stroke: {
