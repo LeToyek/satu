@@ -8,6 +8,7 @@ use App\Models\FundTransaction;
 use App\Models\Transaction;
 use App\Models\Wallet;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class WalletController extends Controller
 {
@@ -17,7 +18,7 @@ class WalletController extends Controller
         $user = auth()->user();
         $wallet = $user->wallet;
         $transactions = Transaction::all()->where('to_wallet_id', $user->wallet->id)->where('type', 'transfer');
-        
+
         $fundings = Funding::all()->where('user_id', $user->id);
         $estimations = 0;
         $keuntungan = 0;
@@ -27,7 +28,6 @@ class WalletController extends Controller
                 if ($funding->status == 'on_sell') {
                     $estimations += $funding->price;
                     continue;
-    
                 }
                 if ($funding->status == 'on_going') {
                     $surplus = $funding->fund_nominal * $funding->campaign->return_percentage / 100;
@@ -45,21 +45,23 @@ class WalletController extends Controller
         }
         if ($user->role == 'partner') {
             # code...
-            $campaigns =Campaign::all()->where('partner_id', $user->details->id);
-            foreach ($campaigns as $campaign) {
-                # code...
-                $fundings = Funding::all()->where('campaign_id',$campaign->id );
-                foreach ($fundings as $funding) {
-                    # code...
-                    
-                    if ($funding->status == 'on_going') {
-                        $surplus = $funding->fund_nominal * $funding->campaign->return_percentage / 100;
-                        $estimations += $funding->fund_nominal + $surplus;
-                        continue;
-                    }
+            $fundings;
+
+
+            $fundings = Funding::select('fundings.*', DB::raw('SUM(fundings.fund_nominal) as fundTot'))
+                ->join('campaigns', 'campaigns.id', '=', 'fundings.campaign_id')
+                ->join('partners', 'partners.id', '=', 'campaigns.partner_id')
+                ->where('partners.user_id', auth()->user()->id)
+                ->groupBy(DB::raw('DATE(fundings.created_at), partners.user_id'))
+                ->get();
+
+            $estimations = auth()->user()->details->campaigns->sum(function ($campaign) {
+                if ($campaign->status == 'on_going') {
+                    return $campaign->fundings->sum('fund_nominal');
                 }
-            }
-            
+
+                return 0;
+            });
             return view('dashboard.pages.wallet.index', ['wallet' => $wallet, 'fundings' => $fundings, 'keuntungan' => $keuntungan, 'estimations' => $estimations]);
         }
     }

@@ -34,6 +34,7 @@ class Funding extends Model
     {
         return $this->hasMany(FundTransaction::class);
     }
+    
 
     public function getExpectedReturnAttribute()
     {

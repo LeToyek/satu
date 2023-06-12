@@ -88,18 +88,7 @@
                                             @endif
                                         </a>
                                     </li>
-                                    <li class="nav-item waves-effect waves-light">
-                                        <a class="nav-link" data-bs-toggle="tab" href="#messages-tab" role="tab"
-                                            aria-selected="false">
-                                            Messages
-                                        </a>
-                                    </li>
-                                    <li class="nav-item waves-effect waves-light">
-                                        <a class="nav-link" data-bs-toggle="tab" href="#alerts-tab" role="tab"
-                                            aria-selected="false">
-                                            Alerts
-                                        </a>
-                                    </li>
+                                        
                                 </ul>
                             </div>
 
@@ -279,7 +268,7 @@
                                 <span
                                     class="d-none d-xl-inline-block ms-1 fw-semibold user-name-text">{{ auth()->user()->name }}</span>
                                 <span
-                                    class="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">{{ ucfirst(auth()->user()->role) }}</span>
+                                    class="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">{{ ucfirst(auth()->user()->role_string) }}</span>
                             </span>
                         </span>
                     </button>

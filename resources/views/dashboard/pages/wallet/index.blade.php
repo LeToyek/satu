@@ -82,11 +82,13 @@
                     </div>
                 </div>
                 <!--end col-->
+                @if (auth()->user()->role == "funder")
                 <div class="col-xl-3 col-md-6">
                     <div class="card card-height-100">
                         <div class="card-body">
                             <div class="float-end">
-                                <a type="button"  data-bs-toggle="tooltip" data-bs-placement="right" title="Keuntungan yang didapat dari pendanaan">
+                                <a type="button" data-bs-toggle="tooltip" data-bs-placement="right"
+                                    title="Keuntungan yang didapat dari pendanaan">
                                     <i class="fs-16 ri-question-line text-info"></i>
                                 </a>
                             </div>
@@ -102,23 +104,34 @@
                             </div>
                             <div class="mt-4 pt-1">
                                 <h4 class="fs-22 fw-semibold ff-secondary mb-0">Rp <span class="counter-value"
-                                    data-target="{{ $keuntungan }}"></span></h4>
-                                    
-                                </div>
+                                        data-target="{{ $keuntungan }}"></span></h4>
+
                             </div>
                         </div>
                     </div>
-                    <!--end col-->
-                    <div class="col-xl-3 col-md-6">
-                        <div class="card card-height-100">
+                </div>
+                    
+                @endif
+                <!--end col-->
+                <div class="@if(auth()->user()->role =='funder') col-xl-3 @endif col-md-6">
+                    <div class="card card-height-100">
                         <div class="card-body">
                             <!-- tooltip -->
                             <div class="float-end">
-                                <a type="button"  data-bs-toggle="tooltip" data-bs-placement="right" title="Estimasi keuntungan yang didapat dari pendanaan">
+                                @if(auth()->user()->role == 'funder')
+                                <a type="button" data-bs-toggle="tooltip" data-bs-placement="right"
+                                    title="Estimasi keuntungan yang didapat dari pendanaan">
                                     <i class="fs-16 ri-question-line text-info"></i>
                                 </a>
+                                
+                                @elseif(auth()->user()->role == 'partner') 
+                                <a type="button" data-bs-toggle="tooltip" data-bs-placement="right"
+                                    title="Dana pendanaan yang sudah dicairkan">
+                                    <i class="fs-16 ri-question-line text-info"></i>
+                                </a>
+                                @endif
                             </div>
-                            
+
                             <div class="d-flex align-items-center">
                                 <div class="avatar-sm flex-shrink-0">
                                     <span class="avatar-title bg-soft-info rounded fs-3">
@@ -126,13 +139,16 @@
                                     </span>
                                 </div>
                                 <div class="flex-grow-1 ps-3">
-                                    <h5 class="text-muted text-uppercase fs-13 mb-0">Estimated</h5>
+                                    @if (auth()->user()->role == 'funder')
+                                        <h5 class="text-muted text-uppercase fs-13 mb-0">Estimasi Pendapatan</h5>
+                                        @elseif(auth()->user()->role == 'partner')
+                                        <h5 class="text-muted text-uppercase fs-13 mb-0">Dana Terkumpul</h5>
+                                    @endif
                                 </div>
                             </div>
                             <div class="mt-4 pt-1">
                                 <h4 class="fs-22 fw-semibold ff-secondary mb-0">Rp <span class="counter-value"
                                         data-target="{{ $estimations }}"></span></h4>
-                                
                             </div>
                         </div>
                     </div>
@@ -233,11 +249,11 @@
             dataArr.push({
                 name: @json($funding->campaign->title),
                 nominal: @json($funding->fund_nominal),
-                estimation: @json(($funding->campaign->return_percentage / 100) * $funding->fund_nominal )
+                estimation: @json(($funding->campaign->return_percentage / 100) * $funding->fund_nominal)
             })
         @endforeach
         console.log(dataArr);
-        
+
         var chartStackedBarColors = getChartColorsArray("stacked_bar");
         if (chartStackedBarColors) {
             var options = {
@@ -252,7 +268,7 @@
                     type: 'bar',
                     height: 350,
                     stacked: true,
-                    
+
                     toolbar: {
                         show: true,
                     }
@@ -260,8 +276,8 @@
                 plotOptions: {
                     bar: {
                         horizontal: true,
-                        distributed:false,
-                       
+                        distributed: false,
+
                     },
                 },
                 stroke: {
@@ -294,6 +310,21 @@
 
 
     <script>
+        const dataPartnerArr = []
+        @foreach ($fundings as $funding)
+            dataPartnerArr.push({
+                name: @json($funding->campaign->title),
+                nominal: @json($funding->fundTot),
+                tanggal: new Date(@json($funding->created_at)).toLocaleDateString("id-ID", {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                }),
+                estimation: @json(($funding->campaign->return_percentage / 100) * $funding->fund_nominal)
+            })
+        @endforeach
+        console.log(dataPartnerArr);
+
         function getChartColorsArray(chartId) {
             if (document.getElementById(chartId) !== null) {
                 var colors = document.getElementById(chartId).getAttribute("data-colors");
@@ -342,7 +373,7 @@
                 },
                 series: [{
                     name: "Pendapatan",
-                    data: [26, 24, 32, 36, 33, 31, 33]
+                    data: dataPartnerArr.map((item) => item.nominal)
                 }, ],
                 grid: {
                     row: {
@@ -356,7 +387,7 @@
                     size: 6
                 },
                 xaxis: {
-                    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+                    categories: dataPartnerArr.map((item) => item.tanggal),
                     title: {
                         text: 'Tanggal'
                     }
@@ -365,6 +396,7 @@
                     title: {
                         text: 'Nominal Pendapatan'
                     },
+                    min: 100000
                 },
                 legend: {
                     position: 'top',

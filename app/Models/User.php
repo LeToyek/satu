@@ -99,4 +99,14 @@ class User extends Authenticatable
         }
         return "https://ui-avatars.com/api/?name=" . $this->name . "&background=02A95C&color=fff";
     }
+    public function getRoleStringAttribute()
+    {
+        if ($this->role === 'admin') {
+            return 'Admin';
+        } else if ($this->role === 'partner') {
+            return 'Mitra';
+        } else if ($this->role === 'funder') {
+            return 'Pendana';
+        }
+    }
 }

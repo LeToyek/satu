@@ -52,13 +52,13 @@ class MitraController extends Controller
     {
         $user = auth()->user();
         $fund_nominal = $request->amount;
-        
+
         if ($user->wallet->balance < $fund_nominal) {
             return redirect()->back()->with('error', 'Saldo tidak cukup');
         }
-        
+
         $campaign = Campaign::find($id);
-        
+
         if ($campaign->status !== 'funding_open') {
             return redirect()->back()->with('error', 'Campaign tidak aktif');
         }
@@ -73,6 +73,12 @@ class MitraController extends Controller
         // transfer
         $user->wallet->transfer($campaign->wallet, $fund_nominal, 'Pendanaan ' . $campaign->title);
 
+        $fundingTransaction = $funding->transactions()->create([
+            'from_id' => $campaign->partner->user_id,
+            'to_id' => auth()->user()->id,
+            'value' =>  $request->amount,
+        ]);
+
         $campaign->partner->user->notify(new CampaignFunded($funding));
 
         if ($campaign->wallet->balance === $campaign->fund_target) {
@@ -82,12 +88,12 @@ class MitraController extends Controller
 
             $campaign->partner->user->notify(new CampaignFullyFunded($campaign));
         }
-    $transaction = $funding->transferTo($campaign->partner->user, $request->amount);
-        return redirect()->route('invoice', ['id' => $transaction->id]);
+
+        return redirect()->route('invoice', ['id' => $fundingTransaction->id]);
     }
     public function showInvoice(Request $request)
     {
         $fund_transaction = FundTransaction::find($request->id);
-        return view('dashboard.pages.invoice', ['invoice' => $fund_transaction,'type'=>'mitra']);
+        return view('dashboard.pages.invoice', ['invoice' => $fund_transaction, 'type' => 'mitra']);
     }
 }
