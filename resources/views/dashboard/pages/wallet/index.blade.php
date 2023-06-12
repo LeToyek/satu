@@ -184,8 +184,15 @@
                 <div class="col-xl-4">
                     <div class="card">
                         <div class="card-header">
-
-                            <h6 class="card-title mb-0">Histori Transaksi</h6>
+                            <div class="d-flex">
+                                <h5 class="card-title flex-grow-1 mb-0"><i class="mdi mdi-cash-fast text-muted"></i>
+                                    Histori</h5>
+                                <div class="flex-shrink-0">
+                                    <a href="javascript:void(0);" class="badge badge-soft-primary fs-12">
+                                        {{ ucfirst(auth()->user()->role) }}
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                         <div class="card-body" style="max-height: 300px;overflow: scroll;overflow-x: hidden">
                             @forelse (auth()->user()->wallet->transactions->sortByDesc('created_at') as $transaction)
@@ -196,7 +203,9 @@
                                         {{ number_format($transaction->amount, 0, ',', '.') }}
                                     </span>
                                     <span class="align-middle">({{ $transaction->type }})</span>
-                                    <p class="align-middle max-w-50 text-muted">{{ $transaction->description }}</p>
+                                    <p class="align-middle max-w-50 text-muted"
+                                        style="word-wrap: break-word; white-space: normal;">
+                                        {{ $transaction->description }}</p>
                                 </span>
                             @empty
                                 <span class="dropdown-item btn">

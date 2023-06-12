@@ -182,8 +182,8 @@
                                                 <div class="col-lg-12">
                                                     <div class="mb-3">
                                                         <label for="jobTitle" class="form-label">Nama Mitra</label>
-                                                        <input type="text" class="form-control" id="jobTitle"
-                                                            name="name" placeholder="Masukkan nama mitra"
+                                                        <input type="text" class="form-control" id="partner_name"
+                                                            name="parter_name" placeholder="Masukkan nama mitra"
                                                             value="{{ $user->details->name }}">
                                                     </div>
                                                 </div>
@@ -223,7 +223,7 @@
                                                     <div class="mb-3">
                                                         <label for="companyName" class="form-label">Alamat</label>
                                                         <input type="text" name="partner_address" class="form-control"
-                                                            id="companyName" placeholder="Masukkan alamat usaha"
+                                                            id="partner_address" placeholder="Masukkan alamat usaha"
                                                             value="{{ $user->details->address }}">
                                                     </div>
                                                 </div>

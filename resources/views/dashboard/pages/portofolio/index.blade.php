@@ -111,7 +111,7 @@
             <div class="card">
                 <div class="card-header">
                     <div class="d-flex">
-                        <h5 class="card-title flex-grow-1 mb-0"><i class="mdi mdi-cash-fast text-muted"></i> Log Aktifitas</h5>
+                        <h5 class="card-title flex-grow-1 mb-0"><i class="mdi mdi-cash-fast text-muted"></i> Histori</h5>
                         <div class="flex-shrink-0">
                             <a href="javascript:void(0);" class="badge badge-soft-primary fs-12">
                                 {{ ucfirst(auth()->user()->role) }}
@@ -119,7 +119,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-body">
+                <div class="card-body" style="max-height: 300px; overflow: scroll; overflow-x: hidden">
                     @forelse (auth()->user()->wallet->transactions->sortByDesc('created_at') as $transaction)
                     <span class="dropdown-item">
                         <i
