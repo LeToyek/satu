@@ -202,7 +202,7 @@ class CampaignController extends Controller
         }
 
         if ($total_expected != $campaign->wallet->balance) {
-            return $total_expected . " " . $campaign->wallet->balance;
+            // return $total_expected . " " . $campaign->wallet->balance;
             return redirect()->back()->with('error', 'Campaign belum terdanai + bunga');
         }
 
