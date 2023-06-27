@@ -24,4 +24,7 @@ Route::group([
 
     Route::get('partner/{partner}/verify', 'PartnerCrudController@verify')->name('partner.verify');
     Route::get('partner/{partner}/unverify', 'PartnerCrudController@unverify')->name('partner.unverify');
+
+    Route::get('campaign/{campaign}/verify', 'CampaignCrudController@verify')->name('campaign.verify');
+    Route::get('campaign/{campaign}/unverify', 'CampaignCrudController@unverify')->name('campaign.unverify');
 }); // this should be the absolute last line of this file
