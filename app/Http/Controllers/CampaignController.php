@@ -42,7 +42,10 @@ class CampaignController extends Controller
      */
     public function create()
     {
-        //
+        if (auth()->user()->details->verified_at == null) {
+            return redirect()->route('campaign.index')->with('error', 'Status kemitraan Anda belum terverifikasi');
+        }
+
         return view('dashboard.pages.campaign.create');
     }
 
