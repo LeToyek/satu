@@ -88,7 +88,7 @@
                                             @endif
                                         </a>
                                     </li>
-                                        
+
                                 </ul>
                             </div>
 
@@ -267,8 +267,15 @@
                             <span class="text-start ms-xl-2">
                                 <span
                                     class="d-none d-xl-inline-block ms-1 fw-semibold user-name-text">{{ auth()->user()->name }}</span>
-                                <span
-                                    class="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">{{ ucfirst(auth()->user()->role_string) }}</span>
+                                <span class="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">
+
+                                    {{ ucfirst(auth()->user()->role_string) }}
+
+                                </span>
+
+                                @if (auth()->user()->role == 'partner' && auth()->user()->details->is_verified == null)
+                                    <span class="badge badge-soft-danger">Belum Terverifikasi</span>
+                                @endif
                             </span>
                         </span>
                     </button>
