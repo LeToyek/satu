@@ -20,7 +20,8 @@ class Partner extends Model
         'found_at',
         'sector',
         'monthly_income',
-        'grade'
+        'grade',
+        'verified_at'
     ];
 
     public function user()
@@ -43,9 +44,33 @@ class Partner extends Model
         return $this->hasMany(Campaign::class);
     }
 
+    public function getIsVerifiedAttribute()
+    {
+        return $this->verified_at != null;
+    }
+
+    public function verify()
+    {
+        $this->update(['verified_at' => now()]);
+    }
+
+    public function unverify()
+    {
+        $this->update(['verified_at' => null]);
+    }
+
     // BACKPACK
     public function identifiableAttribute()
     {
         return 'name';
+    }
+
+    public function verifyButton()
+    {
+        if ($this->is_verified) {
+            return '<a href="' . backpack_url('partner/' . $this->id . '/unverify') . '" class="btn btn-sm btn-link-secondary"><i class="la la-times"></i> Batalkan Verifikasi</a>';
+        }
+
+        return '<a href="' . backpack_url('partner/' . $this->id . '/verify') . '" class="btn btn-sm btn-link"><i class="la la-check"></i> Verifikasi</a>';
     }
 }

@@ -21,4 +21,7 @@ Route::group([
     Route::crud('mitra', 'PartnerCrudController');
     Route::crud('funding', 'FundingCrudController');
     Route::crud('dompet', 'WalletCrudController');
+
+    Route::get('partner/{partner}/verify', 'PartnerCrudController@verify')->name('partner.verify');
+    Route::get('partner/{partner}/unverify', 'PartnerCrudController@unverify')->name('partner.unverify');
 }); // this should be the absolute last line of this file
