@@ -79,4 +79,15 @@ class Campaign extends Model
     {
         return $this->fund_target + ($this->fund_target * $this->return_percentage / 100);
     }
+
+    public function getFunderCountAttribute()
+    {
+        return $this->fundings->count('user_id');
+    }
+
+    public function getCollectedPerTotalAttribute()
+    {
+
+        return  'Rp. ' . number_format($this->fundings->sum('fund_nominal'), 0, ',', '.') . " / Rp. " . number_format($this->fund_target, 0, ',', '.');
+    }
 }

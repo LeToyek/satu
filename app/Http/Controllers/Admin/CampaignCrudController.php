@@ -42,13 +42,16 @@ class CampaignCrudController extends CrudController
         CRUD::column('partner_id');
         CRUD::column('title');
         CRUD::column('status');
-        CRUD::column('description');
         CRUD::column('fund_target');
+        CRUD::column('funder_count');
+        CRUD::column('collected_per_total');
         CRUD::column('return_percentage');
         CRUD::column('tenor');
         CRUD::column('start_date');
         CRUD::column('finish_date');
         CRUD::column('slug');
+
+        // CRUD::column('description');
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:

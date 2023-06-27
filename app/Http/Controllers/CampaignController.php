@@ -17,6 +17,7 @@ class CampaignController extends Controller
         $this->middleware('auth');
         $this->middleware('partner');
     }
+
     public function index()
     {
         //
