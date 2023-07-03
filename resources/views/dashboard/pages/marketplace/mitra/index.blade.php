@@ -106,6 +106,7 @@
                     </div>
                 </div>
             @endforeach
+            {{ $campaigns->links() }}
         </div>
     @else
         <div class="card py-4 text-center" style="height: 100%">

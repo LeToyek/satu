@@ -17,7 +17,7 @@ class FundingController extends Controller
     public function index()
     {
         
-        $fundings = Funding::where('user_id', auth()->user()->id)->get();
+        $fundings = Funding::where('user_id', auth()->user()->id)->orderBy('updated_at')->paginate(5);
         
         return view('dashboard.pages.portofolio.index', ['fundings' => $fundings]);
     }

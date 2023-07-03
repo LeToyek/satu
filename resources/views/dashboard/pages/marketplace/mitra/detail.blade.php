@@ -113,7 +113,7 @@
                         <span class="badge badge-soft-info mb-3 fs-12"><i class=" ri-user-shared-fill me-1 align-bottom"></i> Telah didanai oleh {{ count($campaign->fundings) }} orang</span>
                         <h4 class="fw-bold">{{ $campaign->title }}</h4>
                         <div class="hstack gap-3 flex-wrap">
-                            <div class="text-muted">Pemilik : <a href="#" class="text-primary fw-medium">
+                            <div class="text-muted">Pemilik : <a href="{{ url('dashboard/profile/'. $campaign->partner->user->id) }}" class="text-primary fw-medium">
                                     {{ $campaign->partner->name }}</a></div>
                             <div class="vr"></div>
                             <div class="text-muted">Status : <span

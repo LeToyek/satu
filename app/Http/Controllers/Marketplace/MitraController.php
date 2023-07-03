@@ -19,7 +19,7 @@ class MitraController extends Controller
     }
     public function index()
     {
-        $campaigns = Campaign::all()->sortDesc();
+        $campaigns = Campaign::orderBy('updated_at',"DESC")->paginate(6);
         foreach ($campaigns as $campaign) {
             $campaign['total_fund'] = 0;
             if (count($campaign->fundings) !== 0) {

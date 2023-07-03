@@ -98,9 +98,11 @@
                                     </div>
                                 @endforelse
 
-
                             </tbody>
                         </table>
+                        <div class="container">
+                            {{ $fundings->links() }}
+                        </div>
                     </div>
                 </div>
             </div>
