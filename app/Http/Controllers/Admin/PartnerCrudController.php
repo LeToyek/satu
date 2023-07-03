@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\PartnerRequest;
+use App\Models\Partner;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
@@ -40,12 +41,15 @@ class PartnerCrudController extends CrudController
     protected function setupListOperation()
     {
         CRUD::column('user_id');
+        CRUD::column('verified_at');
         CRUD::column('name');
         CRUD::column('address');
         CRUD::column('found_at');
         CRUD::column('sector');
         CRUD::column('monthly_income')->type('number')->prefix('Rp.');
         CRUD::column('grade')->type('enum')->options(['a' => 'A', 'b' => 'B', 'c' => 'C', 'd' => 'D', 'e' => 'E']);
+
+        CRUD::addButtonFromModelFunction('line', 'verify', 'verifyButton', 'end');
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -93,5 +97,20 @@ class PartnerCrudController extends CrudController
     protected function setupUpdateOperation()
     {
         $this->setupCreateOperation();
+    }
+
+    // custom function to verify partner
+    public function verify(Partner $partner)
+    {
+        $partner->verify();
+
+        return redirect()->back();
+    }
+
+    public function unverify(Partner $partner)
+    {
+        $partner->unverify();
+
+        return redirect()->back();
     }
 }

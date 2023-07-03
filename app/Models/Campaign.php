@@ -21,7 +21,8 @@ class Campaign extends Model
         'tenor',
         'start_date',
         'finish_date',
-        'status'
+        'status',
+        'verified_at'
     ];
 
     public function __construct()
@@ -78,5 +79,40 @@ class Campaign extends Model
     public function getReturnTargetAttribute()
     {
         return $this->fund_target + ($this->fund_target * $this->return_percentage / 100);
+    }
+
+    public function getFunderCountAttribute()
+    {
+        return $this->fundings->count('user_id');
+    }
+
+    public function getCollectedPerTotalAttribute()
+    {
+
+        return  'Rp. ' . number_format($this->fundings->sum('fund_nominal'), 0, ',', '.') . " / Rp. " . number_format($this->fund_target, 0, ',', '.');
+    }
+
+    public function getIsVerifiedAttribute()
+    {
+        return $this->verified_at != null;
+    }
+
+    public function verify()
+    {
+        $this->update(['verified_at' => now()]);
+    }
+
+    public function unverify()
+    {
+        $this->update(['verified_at' => null]);
+    }
+
+    public function verifyButton()
+    {
+        if ($this->is_verified) {
+            return '<a href="' . backpack_url('campaign/' . $this->slug . '/unverify') . '" class="btn btn-sm btn-link-secondary"><i class="la la-times"></i> Batalkan Verifikasi</a>';
+        }
+
+        return '<a href="' . backpack_url('campaign/' . $this->slug . '/verify') . '" class="btn btn-sm btn-link"><i class="la la-check"></i> Verifikasi</a>';
     }
 }

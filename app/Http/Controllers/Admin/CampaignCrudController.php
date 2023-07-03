@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\CampaignRequest;
+use App\Models\Campaign;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
@@ -40,15 +41,21 @@ class CampaignCrudController extends CrudController
     protected function setupListOperation()
     {
         CRUD::column('partner_id');
+        CRUD::column('verified_at');
         CRUD::column('title');
         CRUD::column('status');
-        CRUD::column('description');
         CRUD::column('fund_target');
+        CRUD::column('funder_count');
+        CRUD::column('collected_per_total');
         CRUD::column('return_percentage');
         CRUD::column('tenor');
         CRUD::column('start_date');
         CRUD::column('finish_date');
         CRUD::column('slug');
+
+        CRUD::addButtonFromModelFunction('line', 'verify', 'verifyButton', 'end');
+
+        // CRUD::column('description');
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -96,5 +103,20 @@ class CampaignCrudController extends CrudController
     protected function setupUpdateOperation()
     {
         $this->setupCreateOperation();
+    }
+
+    // custom function to verify campaign
+    public function verify(Campaign $campaign)
+    {
+        $campaign->verify();
+
+        return redirect()->back();
+    }
+
+    public function unverify(Campaign $campaign)
+    {
+        $campaign->unverify();
+
+        return redirect()->back();
     }
 }

@@ -17,6 +17,7 @@ class CampaignController extends Controller
         $this->middleware('auth');
         $this->middleware('partner');
     }
+
     public function index()
     {
         //
@@ -41,7 +42,10 @@ class CampaignController extends Controller
      */
     public function create()
     {
-        //
+        if (auth()->user()->details->verified_at == null) {
+            return redirect()->route('campaign.index')->with('error', 'Status kemitraan Anda belum terverifikasi');
+        }
+
         return view('dashboard.pages.campaign.create');
     }
 
@@ -202,7 +206,7 @@ class CampaignController extends Controller
         }
 
         if ($total_expected != $campaign->wallet->balance) {
-            return $total_expected . " " . $campaign->wallet->balance;
+            // return $total_expected . " " . $campaign->wallet->balance;
             return redirect()->back()->with('error', 'Campaign belum terdanai + bunga');
         }
 
